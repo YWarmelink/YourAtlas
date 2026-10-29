@@ -1,0 +1,14 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+USH,Ushuaia,AR,out,1100,via Buenos Aires (Aerolineas/KLM + domestic),mirror of USH back; no search,2026-10-29,low,Dec high season
+FTE,El Calafate,AR,out,1000,via Buenos Aires + domestic,notes return EUR 1200-1800 halved plus premium; est,2026-10-29,low,
+PUQ,Punta Arenas,CL,back,900,via Santiago (LATAM/KLM),estimate (no search),2026-10-29,low,
+COO,Cotonou,BJ,back,550,via hub (Air France/Brussels/Royal Air Maroc/Turkish),estimate (no search),2026-10-29,low,
+GEO,Georgetown,GY,out,650,KLM (technical stop Sint Maarten),notes return EUR 740-1460; est,2026-10-29,low,2x/week
+GEO,Georgetown,GY,back,600,KLM nonstop,estimate (no search),2026-10-29,low,2x/week
+LIM,Lima,PE,out,550,via hub,notes return EUR 800-950; est,2026-10-29,low,
+LPB,La Paz,BO,back,650,via hub (Lima/Bogota/Madrid/Sao Paulo),estimate (no search),2026-10-29,low,
+DSS,Dakar,SN,out,350,TUI fly direct winter / via hub otherwise,notes return EUR 500-900; est,2026-10-29,low,
+BJL,Banjul,GM,back,320,TUI fly/Corendon winter / via hub,estimate (no search),2026-10-29,low,
+DLA,Douala,CM,out,480,via Paris/Brussels,notes return EUR 700-1150; est,2026-10-29,low,
+MVD,Montevideo,UY,out,560,via Madrid or Sao Paulo/Buenos Aires,notes return EUR 850-1100; est,2026-10-29,low,
+MVD,Montevideo,UY,back,520,one stop,estimate (no search),2026-10-29,low,

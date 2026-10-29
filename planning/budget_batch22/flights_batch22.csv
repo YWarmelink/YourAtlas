@@ -1,0 +1,35 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+BBK,Kasane,BW,out,800,via Johannesburg (KLM + Airlink/Air Botswana),route notes (return ±EUR 900-1300) one-way estimate; no web search,2026-10-29,low,est
+MUB,Maun,BW,back,750,Maun-JNB (~EUR 170) + KLM JNB-AMS ~EUR 580,estimate from route notes + typical JNB fare,2026-10-29,low,est
+RAI,Praia,CV,back,240,TAP via Lisbon,estimate from VXE out fare 250,2026-10-29,low,est
+ADD,Addis Ababa,ET,out,450,Ethiopian direct / 1 connection,route notes (return ±EUR 500-900) one-way estimate; no web search,2026-10-29,low,est
+ADD,Addis Ababa,ET,back,450,Ethiopian direct / 1 connection,same as out,2026-10-29,low,est
+LBV,Libreville,GA,out,700,via Paris or Addis,reuse LBV back fare,2026-10-29,low,est
+ACC,Accra,GH,out,450,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
+ACC,Accra,GH,back,420,KLM direct,same as out,2026-10-29,low,est
+NBO,Nairobi,KE,out,480,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
+NBO,Nairobi,KE,back,450,KLM direct,same as out,2026-10-29,low,est
+TNG,Tangier,MA,out,120,Transavia/Ryanair direct (seasonal),estimate; no web search,2026-10-29,low,est
+RAK,Marrakech,MA,back,120,Transavia/easyJet direct,route notes (return ±EUR 100-280),2026-10-29,medium,est
+TNR,Antananarivo,MG,out,650,1 stop via Paris/Nairobi,route notes (return ±EUR 650-1100),2026-10-29,low,est
+TNR,Antananarivo,MG,back,650,1 stop via Paris/Nairobi,same as out,2026-10-29,low,est
+MRU,Mauritius,MU,out,600,1 stop via Paris/Dubai/Istanbul,route notes (return ±EUR 600-1500),2026-10-29,low,est
+MRU,Mauritius,MU,back,600,1 stop,same as out,2026-10-29,low,est
+MPM,Maputo,MZ,out,600,via Doha or Lisbon,route notes (return ±EUR 610-1200),2026-10-29,low,est
+MPM,Maputo,MZ,back,600,via Doha,same as out,2026-10-29,low,est
+WDH,Windhoek,NA,out,650,1 connection (FRA/ZRH/JNB),route notes (return ±EUR 700-1200),2026-10-29,low,est
+WDH,Windhoek,NA,back,620,1 connection,same as out,2026-10-29,low,est
+KGL,Kigali,RW,out,500,KLM direct,route notes (return ±EUR 800-1000),2026-10-29,low,est
+KGL,Kigali,RW,back,470,KLM direct,same as out,2026-10-29,low,est
+SEZ,Mahe,SC,out,600,1 stop via Doha/Abu Dhabi/Nairobi,route notes (return ±EUR 680-900),2026-10-29,low,est
+SEZ,Mahe,SC,back,580,1 stop,same as out,2026-10-29,low,est
+TMS,Sao Tome,ST,out,550,TAP via Lisbon,route notes (return ±EUR 700-2500 volatile),2026-10-29,low,est
+TMS,Sao Tome,ST,back,550,TAP via Lisbon,same as out,2026-10-29,low,est
+JRO,Kilimanjaro,TZ,out,600,KLM direct,route notes (return ±EUR 1050-1500),2026-10-29,low,est
+DAR,Dar es Salaam,TZ,back,600,1 stop (Doha/Addis/Nairobi),estimate; JRO direct would need an extra domestic flight,2026-10-29,low,est
+JNB,Johannesburg,ZA,back,560,KLM direct,estimate; no web search,2026-10-29,low,est
+MTS,Manzini,SZ,back,680,Airlink to JNB (~EUR 120) + KLM JNB-AMS (~EUR 560),estimate,2026-10-29,low,est
+HRE,Harare,ZW,out,650,via Addis (Ethiopian),route notes (return ±EUR 700-1000),2026-10-29,low,est
+VFA,Victoria Falls,ZW,back,600,via Addis (Ethiopian),route notes,2026-10-29,low,est
+LUN,Lusaka,ZM,out,600,1 connection (Nairobi/Doha/Addis),route notes (return ±EUR 600-1250),2026-10-29,low,est
+LLW,Lilongwe,MW,back,600,1 connection,route notes,2026-10-29,low,est

@@ -1,0 +1,37 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+DXB,Dubai,AE,out,300,KLM/Emirates direct,WebSearch 2026-10-29 (Kayak EUR 175 / Expedia EUR 182 floors; Emirates USD 739),2026-10-29,medium,typical above floors
+DXB,Dubai,AE,back,280,KLM/Emirates direct,estimate from out fare,2026-10-29,low,est
+PBH,Paro,BT,out,900,via Delhi/Bangkok (Drukair),mirror of PBH back (batch 21),2026-10-29,low,est
+TBS,Tbilisi,GE,out,260,1 stop (Istanbul/Frankfurt/Zurich etc.),route notes EUR 250-400 return; est,2026-10-29,low,est
+GYD,Baku,AZ,back,280,1 stop,estimate (no search),2026-10-29,low,est
+DEL,Delhi,IN,back,550,KLM direct / connecting,notes EUR 350-550 return; est,2026-10-29,low,est
+AMM,Amman,JO,out,260,1 stop (Austrian/Turkish/Royal Jordanian),route notes EUR 300-700 return; est,2026-10-29,low,est
+AMM,Amman,JO,back,240,1 stop,estimate from out fare,2026-10-29,low,est
+TYO,Tokyo (HND/NRT),JP,out,520,KLM/Air France/SAS direct or 1 stop,WebSearch 2026-10-29 (Skyscanner EUR 361 / Expedia USD 420-432 floors; route notes EUR 900-1300 return),2026-10-29,medium,typical above floors
+ALA,Almaty,KZ,out,300,via Istanbul (Turkish) / Frankfurt,route notes EUR 250-650 return; est,2026-10-29,low,est
+FRU,Bishkek,KG,out,330,via Istanbul (Turkish/Pegasus),route notes EUR 450-700 return; est,2026-10-29,low,est
+FRU,Bishkek,KG,back,320,via Istanbul,estimate from out fare,2026-10-29,low,est
+ICN,Seoul Incheon,KR,out,480,KLM/Korean Air direct,WebSearch 2026-10-29 (Expedia EUR 314 / Skyscanner EUR 370 / Cheapflights USD 406-458 floors; route notes EUR 700-1100 return),2026-10-29,medium,typical above floors
+ICN,Seoul Incheon,KR,back,450,KLM/Korean Air direct,WebSearch 2026-10-29 (Skyscanner EUR 426 floor),2026-10-29,medium,
+CMB,Colombo,LK,out,500,1 stop via Gulf hub,estimate (no search),2026-10-29,low,est
+CMB,Colombo,LK,back,470,1 stop via Gulf hub,estimate from out fare,2026-10-29,low,est
+ULN,Ulaanbaatar,MN,out,450,via Istanbul (Turkish),route notes EUR 600-800 return; est,2026-10-29,low,est
+ULN,Ulaanbaatar,MN,back,420,via Istanbul,estimate from out fare,2026-10-29,low,est
+MLE,Male,MV,out,520,1 stop (Qatar/Emirates/Turkish/Austrian),estimate (no search),2026-10-29,low,est
+MLE,Male,MV,back,480,1 stop,estimate from out fare,2026-10-29,low,est
+KUL,Kuala Lumpur,MY,out,450,KLM direct (~4x/week),route notes EUR 650-950 return; est,2026-10-29,low,est
+KUL,Kuala Lumpur,MY,back,420,KLM direct,estimate from out fare,2026-10-29,low,est
+KTM,Kathmandu,NP,out,480,1 stop (Qatar/Turkish/Emirates),route notes EUR 550-950 return (Nov peak); est,2026-10-29,low,est
+KTM,Kathmandu,NP,back,420,1 stop,estimate from out fare,2026-10-29,low,est
+MCT,Muscat,OM,out,500,KLM direct,route notes EUR 1190-1300 return (raised by regional tensions); est,2026-10-29,low,volatile
+MNL,Manila,PH,out,480,KLM direct,route notes EUR 700-900 return; est,2026-10-29,low,est
+MNL,Manila,PH,back,450,KLM direct,estimate from out fare,2026-10-29,low,est
+BKK,Bangkok,TH,out,420,KLM/Thai/Qatar/Etihad direct or 1 stop,WebSearch 2026-10-29 (Kayak EUR 344 / Expedia EUR 364 / Travelocity USD 394 floors),2026-10-29,medium,typical above floors
+BKK,Bangkok,TH,back,400,KLM/Thai direct or 1 stop,estimate from out fare,2026-10-29,low,est
+DYU,Dushanbe,TJ,back,350,1 stop via Istanbul,estimate (no search),2026-10-29,low,est
+BJV,Bodrum,TR,out,170,seasonal direct/1 stop,estimate (no search),2026-10-29,low,est
+BJV,Bodrum,TR,back,160,seasonal direct/1 stop,estimate from out fare,2026-10-29,low,est
+ADB,Izmir,TR,back,160,Transavia/Pegasus/KLM,estimate from ADB out fare,2026-10-29,low,est
+TAS,Tashkent,UZ,out,330,via Istanbul (Turkish),route notes EUR 500-700 return; est,2026-10-29,low,est
+SGN,Ho Chi Minh City,VN,back,480,1 stop,estimate (HAN out 520 reused as benchmark),2026-10-29,low,est
+PNH,Phnom Penh,KH,back,520,1-2 stops via Bangkok/Singapore/Doha,estimate (no search),2026-10-29,low,est

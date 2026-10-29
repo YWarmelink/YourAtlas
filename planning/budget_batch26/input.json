@@ -1,0 +1,1250 @@
+{
+ "batch": 26,
+ "group": "South America, Patagonia & West/Central Africa",
+ "routes": [
+  {
+   "id": "gt_seed_antarctica-cruise",
+   "name": "Antarctica Cruise 🐧",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Only via an organized expedition cruise from Ushuaia — no other way to get there.",
+   "description": "Expedition cruise from Ushuaia to the Antarctic Peninsula: glaciers, penguin colonies and whales.",
+   "notes": "Split off from Patagonia & Antarctica Expedition 🧊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Days and budget (a real cruise price, not a backpacker daily estimate) are carried over unchanged. This is the cleanest \"plug-in\" block in the whole modularization analysis: no neighboring countries, its own booking category, easy to book separately from Ushuaia or as a continuation of Patagonia Overland 🏔️. Patagonia & Antarctica Expedition 🧊 itself remains unchanged as a separate, complete expedition.",
+   "distance": {
+    "id": "gt_seed_antarctica-cruise",
+    "name": "Antarctica Cruise 🐧",
+    "stops": 7,
+    "km_in_route": 3380,
+    "km_from_nl": 17770,
+    "km_back_to_nl": 17770,
+    "km_by_country": {
+     "AQ": 3380
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AQ",
+     "country": "Antarctica",
+     "days": 11,
+     "budget": 9500,
+     "dailyRate": 864,
+     "carInDailyRate": false,
+     "inDailyRate": "the Antarctica cruise IS this rate",
+     "notes": "Entry: flight Amsterdam-Buenos Aires, with a domestic connection to Ushuaia (±17-19 hours total, from ±€1,200-1,700 return, December falls in the South American high season so this is on the pricier side). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07): €9,500 fits comfortably within the realistic range for an entry-level/shared-cabin Antarctica cruise (2026: ≈$8,000-12,000). 11 days is realistic for an entry-level expedition cruise (2026-08, search-confirmed).",
+     "transport_to_next": "End of the expedition — flight back from Ushuaia",
+     "destinations": [
+      {
+       "name": "Expedition Cruise from Ushuaia",
+       "lat": -54.8019,
+       "lng": -68.303
+      },
+      {
+       "name": "South Shetland Islands",
+       "lat": -62.15,
+       "lng": -58.45
+      },
+      {
+       "name": "Antarctic Peninsula",
+       "lat": -64.86,
+       "lng": -62.86
+      },
+      {
+       "name": "Glaciers & Icebergs",
+       "lat": -65,
+       "lng": -63.5
+      },
+      {
+       "name": "Penguin colonies",
+       "lat": -64.77,
+       "lng": -62.9
+      },
+      {
+       "name": "Whales",
+       "lat": -64.6,
+       "lng": -62.6
+      },
+      {
+       "name": "Return to Ushuaia",
+       "lat": -54.8019,
+       "lng": -68.303
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_argentine-patagonia",
+   "name": "Argentine Patagonia 🥩",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/trekking — refugios and camping in the national parks, local buses between the Patagonian towns.",
+   "description": "A trekking expedition through Argentine Patagonia: Fitz Roy, El Chaltén and Ushuaia/Tierra del Fuego.",
+   "notes": "Split off from Patagonia Overland 🏔️ (itself already split off from Patagonia & Antarctica Expedition 🧊 — see ROUTE_BUILDER_MODULES.md, where this was already named as a vacation-scale candidate, 18 days) as part of the fourth batch of standalone countries (2026-08) — the Argentine part of Patagonia Overland 🏔️ as a standalone trip, without the Chilean part. Country, days and budget are carried over unchanged. Patagonia Overland 🏔️ and Patagonia & Antarctica Expedition 🧊 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_argentine-patagonia",
+    "name": "Argentine Patagonia 🥩",
+    "stops": 8,
+    "km_in_route": 1270,
+    "km_from_nl": 17560,
+    "km_back_to_nl": 17750,
+    "km_by_country": {
+     "AR": 1270
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AR",
+     "country": "Argentina",
+     "days": 10,
+     "budget": 650,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-El Calafate, via Buenos Aires (KLM/Aerolíneas Argentinas + a domestic connecting flight, ±21.5-24 hours total incl. connection; from ±€1,200-1,800 return; best period November). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07), correct. Wildfire season December-March in Patagonia (including around El Chaltén) — check the current situation shortly before departure. New (2026-08): Argentina has required proof of travel/health insurance on entry since July 2025.",
+     "transport_to_next": "Overland via the Cancha Carrera border crossing straight to Torres del Paine (~2.5-3 hours) — no detour via Puerto Natales needed.",
+     "destinations": [
+      {
+       "name": "El Calafate",
+       "lat": -50.3379,
+       "lng": -72.2648
+      },
+      {
+       "name": "Perito Moreno Glacier",
+       "lat": -50.4967,
+       "lng": -73.1387
+      },
+      {
+       "name": "El Chaltén",
+       "lat": -49.3315,
+       "lng": -72.8862
+      },
+      {
+       "name": "Fitz Roy & Laguna de los Tres",
+       "lat": -49.2667,
+       "lng": -72.9667
+      },
+      {
+       "name": "Cerro Torre",
+       "lat": -49.2833,
+       "lng": -73.1167
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AR",
+     "country": "Argentina",
+     "days": 8,
+     "budget": 488,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Tierra del Fuego leg. Since July 2025, Argentina requires proof of travel/health insurance on entry.",
+     "transport_to_next": "End of this route — flight Ushuaia-Buenos Aires, then a return flight to Amsterdam (1 stopover).",
+     "destinations": [
+      {
+       "name": "Ushuaia",
+       "lat": -54.8019,
+       "lng": -68.303
+      },
+      {
+       "name": "Tierra del Fuego National Park",
+       "lat": -54.85,
+       "lng": -68.5833
+      },
+      {
+       "name": "Beagle Channel",
+       "lat": -54.87,
+       "lng": -67.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_chilean-patagonia",
+   "name": "Chilean Patagonia 🥾",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/trekking — refugios and camping in the national parks, local buses between the Patagonian towns.",
+   "description": "A trekking expedition through Chilean Patagonia: the Carretera Austral, Torres del Paine and Puerto Natales.",
+   "notes": "Split off from Patagonia Overland 🏔️ (itself already split off from Patagonia & Antarctica Expedition 🧊 — see ROUTE_BUILDER_MODULES.md, where this was already named as a vacation-scale candidate, 24 days \"with a slightly tighter schedule\") as part of the fourth batch of standalone countries (2026-08) — the Chilean part of Patagonia Overland 🏔️ as a standalone trip, without the Argentine part. Country, days and budget are carried over unchanged. Patagonia Overland 🏔️ and Patagonia & Antarctica Expedition 🧊 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_chilean-patagonia",
+    "name": "Chilean Patagonia 🥾",
+    "stops": 9,
+    "km_in_route": 2140,
+    "km_from_nl": 16670,
+    "km_back_to_nl": 17760,
+    "km_by_country": {
+     "CL": 2140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CL",
+     "country": "Chile",
+     "days": 15,
+     "budget": 930,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Santiago de Chile (KLM, technical stopover in Buenos Aires, ±17.5 hours), with a domestic connection to Puerto Montt (±19-21 hours total; from ±€1,000-1,700 return; best period November). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07), correct. Naviera Austral sails directly from Quellón (southern Chiloé) to Chaitén during high season (Jan-Mar) — outside that window you go back via Puerto Montt to start the Carretera Austral.",
+     "transport_to_next": "Overland via the Chile Chico-Los Antiguos border crossing (reachable from Puerto Río Tranquilo via the road along Lago General Carrera), then Ruta 40 south to El Calafate — necessary because the Carretera Austral at Cochrane/Villa O'Higgins has no road connection to Puerto Natales; the earlier Balmaceda-Punta Arenas flight was discontinued in October 2025.",
+     "destinations": [
+      {
+       "name": "Puerto Montt",
+       "lat": -41.4693,
+       "lng": -72.9424
+      },
+      {
+       "name": "Chiloé Island (day trip)",
+       "lat": -42.4827,
+       "lng": -73.7626
+      },
+      {
+       "name": "Parque Pumalín",
+       "lat": -42.6083,
+       "lng": -72.4886
+      },
+      {
+       "name": "Queulat National Park",
+       "lat": -44.4667,
+       "lng": -72.5667
+      },
+      {
+       "name": "Villa Cerro Castillo",
+       "lat": -45.85,
+       "lng": -72.15
+      },
+      {
+       "name": "Puerto Río Tranquilo & Marble Caves",
+       "lat": -46.6333,
+       "lng": -72.6667
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CL",
+     "country": "Chile",
+     "days": 9,
+     "budget": 621,
+     "dailyRate": 69,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Torres del Paine peak: refugio stays incl. meals run up to $100-150/night. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony.",
+     "transport_to_next": "End of this route — flight Punta Arenas-Santiago, then a return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Puerto Natales",
+       "lat": -51.7236,
+       "lng": -72.4875
+      },
+      {
+       "name": "Torres del Paine National Park",
+       "lat": -50.9423,
+       "lng": -73.0357
+      },
+      {
+       "name": "Punta Arenas (day trip to Isla Magdalena)",
+       "lat": -53.1638,
+       "lng": -70.9171
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_patagonia-overland",
+   "name": "Patagonia Overland 🏔️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/trekking — refugios and camping in the national parks, local buses between the Patagonian towns.",
+   "description": "Trekking expedition through Chilean and Argentine Patagonia: Torres del Paine, Fitz Roy and Ushuaia.",
+   "notes": "Split off from Patagonia & Antarctica Expedition 🧊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. 'Patagonia' is already a popular standalone travel theme worldwide — this block stands entirely on its own. Chile and Argentina here are deliberately only the southern (Patagonian) portion of those countries; the northern portion is in Pan-American Grand Tour 🌎's Andes Grand Traverse 🦙 and Southern Cone & Brazil Finale 🧉 — exactly the 'same country, different block' pattern from the modularization analysis. Patagonia & Antarctica Expedition 🧊 itself remains unchanged as a separate, complete expedition (including the connecting Antarctica Cruise 🐧).\n\nMajor route-logic overhaul (2026-08): same overhaul as Patagonia & Antarctica Expedition 🧊 itself — route expanded from 2 to 4 legs (Chile-North, Argentina-Calafate/El Chaltén, Chile-South, Argentina-Tierra del Fuego), so the country order follows the real border crossings (overland via Argentina to bridge the Carretera Austral-Puerto Natales gap, no more Punta Arenas return trip needed). See Patagonia & Antarctica Expedition 🧊's own notes for the full explanation. Countries/days/budget total unchanged: 42 days, €5,575 — only split into 4 legs.",
+   "distance": {
+    "id": "gt_seed_patagonia-overland",
+    "name": "Patagonia Overland 🏔️",
+    "stops": 17,
+    "km_in_route": 2980,
+    "km_from_nl": 16670,
+    "km_back_to_nl": 17750,
+    "km_by_country": {
+     "CL": 1760,
+     "AR": 1220
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CL",
+     "country": "Chile",
+     "days": 15,
+     "budget": 930,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Santiago de Chile, with a domestic connection to Puerto Montt (±14-16 hours total, from ±€700-1,050 return, best period early November). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07), correct. Naviera Austral sails directly from Quellón (southern Chiloé) to Chaitén during high season (Jan-Mar) — outside that window you go back via Puerto Montt to start the Carretera Austral.",
+     "transport_to_next": "Overland via the Chile Chico-Los Antiguos border crossing (reachable from Puerto Río Tranquilo via the road along Lago General Carrera), then Ruta 40 south to El Calafate — necessary because the Carretera Austral at Cochrane/Villa O'Higgins has no road connection to Puerto Natales; the earlier Balmaceda-Punta Arenas flight was discontinued in October 2025.",
+     "destinations": [
+      {
+       "name": "Puerto Montt",
+       "lat": -41.4693,
+       "lng": -72.9424
+      },
+      {
+       "name": "Chiloé Island (day trip)",
+       "lat": -42.4827,
+       "lng": -73.7626
+      },
+      {
+       "name": "Parque Pumalín",
+       "lat": -42.6083,
+       "lng": -72.4886
+      },
+      {
+       "name": "Queulat National Park",
+       "lat": -44.4667,
+       "lng": -72.5667
+      },
+      {
+       "name": "Villa Cerro Castillo",
+       "lat": -45.85,
+       "lng": -72.15
+      },
+      {
+       "name": "Puerto Río Tranquilo & Marble Caves",
+       "lat": -46.6333,
+       "lng": -72.6667
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AR",
+     "country": "Argentina",
+     "days": 10,
+     "budget": 650,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), correct. Wildfire season December-March in Patagonia (including around El Chaltén) — check the current situation shortly before departure. New (2026-08): Argentina has required proof of travel/health insurance on entry since July 2025.",
+     "transport_to_next": "Overland via the Cancha Carrera border crossing straight to Torres del Paine (~2.5-3 hours) — no detour via Puerto Natales needed.",
+     "destinations": [
+      {
+       "name": "El Calafate",
+       "lat": -50.3379,
+       "lng": -72.2648
+      },
+      {
+       "name": "Perito Moreno Glacier",
+       "lat": -50.4967,
+       "lng": -73.1387
+      },
+      {
+       "name": "El Chaltén",
+       "lat": -49.3315,
+       "lng": -72.8862
+      },
+      {
+       "name": "Fitz Roy & Laguna de los Tres",
+       "lat": -49.2667,
+       "lng": -72.9667
+      },
+      {
+       "name": "Cerro Torre",
+       "lat": -49.2833,
+       "lng": -73.1167
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "CL",
+     "country": "Chile",
+     "days": 9,
+     "budget": 621,
+     "dailyRate": 69,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), correct. Torres del Paine peak season: refugio stays including meals run up to $100-150/night — outside the park the daily rate remains manageable. Punta Arenas is a deliberate day trip for Isla Magdalena's penguin colony (only reachable from there, not from Puerto Natales) — the trip then continues straight on to Tierra del Fuego, no return trip to Puerto Natales needed (2026-08).",
+     "transport_to_next": "From Punta Arenas the ferry across the Strait of Magellan (Punta Delgada-Bahía Azul), then the San Sebastián border crossing and the road to Río Grande/Ushuaia — no detour via Puerto Natales needed anymore.",
+     "destinations": [
+      {
+       "name": "Puerto Natales",
+       "lat": -51.7236,
+       "lng": -72.4875
+      },
+      {
+       "name": "Torres del Paine National Park",
+       "lat": -50.9423,
+       "lng": -73.0357
+      },
+      {
+       "name": "Punta Arenas (day trip to Isla Magdalena)",
+       "lat": -53.1638,
+       "lng": -70.9171
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "AR",
+     "country": "Argentina",
+     "days": 8,
+     "budget": 488,
+     "dailyRate": 61,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Tierra del Fuego leg, decoupled from El Calafate/El Chaltén (2026-08) so the country order follows the real border crossings. Argentina has required proof of travel/health insurance on entry since July 2025.",
+     "transport_to_next": "Arrival in Ushuaia — endpoint of this standalone route (the Antarctica cruise is in the separate Antarctica Cruise 🐧 block, not here).",
+     "destinations": [
+      {
+       "name": "Ushuaia",
+       "lat": -54.8019,
+       "lng": -68.303
+      },
+      {
+       "name": "Tierra del Fuego National Park",
+       "lat": -54.85,
+       "lng": -68.5833
+      },
+      {
+       "name": "Beagle Channel",
+       "lat": -54.87,
+       "lng": -67.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_west-africa-overland",
+   "name": "West Africa Overland 🥁",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker, no hard time limit — hostels/simple guesthouses, bus/shared taxi overland (Senegal through Benin), flights only for Cape Verde-Senegal and Gambia-Ivory Coast.",
+   "description": "Atlantic island culture, old West African kingdoms and slavery history: Cape Verde, Senegal, Gambia, Ivory Coast, Ghana, Togo and Benin.",
+   "notes": "Split off from West & Central Africa Expedition 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged. Continuation of this route: Central Africa & Islands 🦛. West & Central Africa Expedition 🌍 itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): four fixes, same as West & Central Africa Expedition 🌍 itself — Cape Verde's Fogo-Praia-Dakar flight route explicitly named, Senegal's order reversed, Ghana's order reversed, Benin's order reversed. See that route's own notes for the full reasoning.",
+   "distance": {
+    "id": "gt_seed_west-africa-overland",
+    "name": "West Africa Overland 🥁",
+    "stops": 24,
+    "km_in_route": 5730,
+    "km_from_nl": 6100,
+    "km_back_to_nl": 6600,
+    "km_by_country": {
+     "CV": 340,
+     "SN": 1510,
+     "GM": 390,
+     "CI": 2180,
+     "GH": 790,
+     "TG": 200,
+     "BJ": 320
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CV",
+     "country": "Cape Verde",
+     "days": 13,
+     "budget": 624,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Sal (TUI fly, direct, ±6h40), with a domestic connection to São Vicente/Santo Antão (±7-8 hours total, from ±€350-600 return, best period November). Price indication from 2026-08 web research, a snapshot. Deliberately different islands from an earlier visit (not Sal again) — Santo Antão for the dramatic hiking valleys, São Vicente for Mindelo's music culture, Fogo for the volcano climb and vineyards on volcanic soil. Between islands by ferry (cheaper, less reliable schedule) or Binter Cabo Verde flight. Price verified (2026-07), holds up. Mandatory online EASE registration ≥5 days in advance.",
+     "transport_to_next": "Domestic flight Fogo-Praia, then international flight Praia-Dakar (route-logic fix 2026-08: Fogo has no broad international connections, all flights go via Praia).",
+     "destinations": [
+      {
+       "name": "Santo Antão (Ribeira Grande, Paúl Valley)",
+       "lat": 17.1833,
+       "lng": -25.0667
+      },
+      {
+       "name": "São Vicente (Mindelo)",
+       "lat": 16.8901,
+       "lng": -24.9825
+      },
+      {
+       "name": "Fogo (Pico do Fogo volcano, vineyards)",
+       "lat": 14.9481,
+       "lng": -24.3553
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "SN",
+     "country": "Senegal",
+     "days": 13,
+     "budget": 618,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Dakar→Gorée→Lompoul→Saint-Louis→Sine-Saloum) to avoid a triple north-south detour via Dakar — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+     "transport_to_next": "Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019, considerably smoother than the former ferry) — Sine-Saloum is already close to the border.",
+     "destinations": [
+      {
+       "name": "Dakar",
+       "lat": 14.7167,
+       "lng": -17.4677
+      },
+      {
+       "name": "Île de Gorée",
+       "lat": 14.6672,
+       "lng": -17.3984
+      },
+      {
+       "name": "Lompoul Desert",
+       "lat": 15.3833,
+       "lng": -16.75
+      },
+      {
+       "name": "Saint-Louis (UNESCO)",
+       "lat": 16.0179,
+       "lng": -16.4896
+      },
+      {
+       "name": "Sine-Saloum Delta",
+       "lat": 13.9333,
+       "lng": -16.5333
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GM",
+     "country": "Gambia",
+     "days": 6,
+     "budget": 198,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
+     "transport_to_next": "End of this route — return flight from Banjul (or flight to Abidjan to continue to Gulf of Guinea, below).",
+     "destinations": [
+      {
+       "name": "Banjul",
+       "lat": 13.4549,
+       "lng": -16.579
+      },
+      {
+       "name": "Gambia River (boat cruise)",
+       "lat": 13.45,
+       "lng": -15.5
+      },
+      {
+       "name": "Kunta Kinteh Island (UNESCO, slavery history)",
+       "lat": 13.2833,
+       "lng": -16.05
+      },
+      {
+       "name": "Makasutu Culture Forest",
+       "lat": 13.3667,
+       "lng": -16.6333
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "CI",
+     "country": "Ivory Coast",
+     "days": 7,
+     "budget": 333,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Taï National Park is deliberately left out — beautiful, but its remote location costs 3-4 extra days of travel time. Abidjan and Grand-Bassam keep this country compact and worthwhile. Price verified (2026-07), holds up.",
+     "transport_to_next": "Bus overland to Ghana via the Elubo border crossing — an established backpacker route.",
+     "destinations": [
+      {
+       "name": "Abidjan (Le Plateau)",
+       "lat": 5.36,
+       "lng": -4.0083
+      },
+      {
+       "name": "Grand-Bassam (UNESCO colonial town)",
+       "lat": 5.2107,
+       "lng": -3.738
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "GH",
+     "country": "Ghana",
+     "days": 15,
+     "budget": 615,
+     "dailyRate": 41,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Cape Coast and Elmina Castle are the heaviest, most important slavery history sites of the entire expedition. Ghana has by far the richest program, hence the most time. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Cape Coast/Elmina/Kakum first, then Accra, then Volta) — the Elubo border crossing sits right next to Cape Coast, not Accra, so the old order backtracked ≈330 km. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+     "transport_to_next": "Bus overland to Togo via the Aflao border crossing.",
+     "destinations": [
+      {
+       "name": "Cape Coast Castle",
+       "lat": 5.1053,
+       "lng": -1.2466
+      },
+      {
+       "name": "Elmina Castle",
+       "lat": 5.0844,
+       "lng": -1.3499
+      },
+      {
+       "name": "Kakum National Park (canopy walkway)",
+       "lat": 5.35,
+       "lng": -1.3833
+      },
+      {
+       "name": "Accra",
+       "lat": 5.6037,
+       "lng": -0.187
+      },
+      {
+       "name": "Volta Region (Wli Falls, Mount Afadjato)",
+       "lat": 6.8667,
+       "lng": 0.4667
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "TG",
+     "country": "Togo",
+     "days": 4,
+     "budget": 120,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Deliberately short — with its German colonial history, Togo does add a different angle than Ghana/Benin, but has few highlights. Price verified (2026-07), holds up.",
+     "transport_to_next": "Bus overland to Benin via the Hillacondji border crossing.",
+     "destinations": [
+      {
+       "name": "Lomé",
+       "lat": 6.1319,
+       "lng": 1.2228
+      },
+      {
+       "name": "Togoville (Vodun culture, Lac Togo)",
+       "lat": 6.2667,
+       "lng": 1.5333
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "BJ",
+     "country": "Benin",
+     "days": 9,
+     "budget": 306,
+     "dailyRate": 34,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Old kingdoms (Abomey, the former Dahomey), slavery history (Ouidah) and living Vodun culture. Price verified (2026-07), holds up. Route-logic fix (2026-08): order reversed (Abomey first, then Ouidah/Ganvié) so the leg ends right near Cotonou instead of at Abomey (≈135 km inland) — see West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+     "transport_to_next": "End of this route — flight home from Cotonou (or flight Cotonou-Douala to continue to Central Africa & Islands 🦛 — overland through Nigeria is not an option).",
+     "destinations": [
+      {
+       "name": "Abomey (royal palaces, UNESCO)",
+       "lat": 7.1833,
+       "lng": 1.9833
+      },
+      {
+       "name": "Ouidah (Route des Esclaves, Door of No Return)",
+       "lat": 6.3667,
+       "lng": 2.0833
+      },
+      {
+       "name": "Ganvié (stilt village on the lake)",
+       "lat": 6.4667,
+       "lng": 2.4167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_guyana",
+   "name": "Guyana 🦦",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Minibus around Georgetown, bush flights to reach Kaieteur Falls and the interior lodges (no road access).",
+   "description": "Kaieteur Falls by bush plane, giant otters in the Rupununi, and Georgetown's colonial seawall — the Guianas' wildest, least-visited corner.",
+   "notes": "New standalone route (2026-09) — first time Guyana appears in Route Builder as its own destination (distinct from the existing Suriname & Northern Brazil 🌴 combo route, which doesn't include Guyana). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering the coast/interior cost split, the yellow fever certificate exemption, and the current advisory's specific Georgetown crime hotspots. Re-verify all of these before booking.",
+   "distance": {
+    "id": "gt_seed_guyana",
+    "name": "Guyana 🦦",
+    "stops": 5,
+    "km_in_route": 600,
+    "km_from_nl": 9890,
+    "km_back_to_nl": 10350,
+    "km_by_country": {
+     "GY": 600
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GY",
+     "country": "Guyana",
+     "days": 9,
+     "budget": 558,
+     "dailyRate": 62,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: KLM Amsterdam-Georgetown, 2x/week (Wed/Sat) — outbound has a technical fuel stop in Sint Maarten with no aircraft/ticket change, return nonstop; roughly 9h20m; from ±€740-1,460 return; best period February-April or September-October, the driest windows for both the coast and interior roads/rivers. Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer applied — unlike this batch's other three routes, the outbound leg is a technical stop on the same aircraft (not a hub transfer/plane change) and total time is well under 24h, so the buffer's trigger conditions aren't clearly met here. Kaieteur Falls by bush plane, giant otters and jaguars in the Rupununi, and Georgetown's colonial seawall — the Guianas' wildest, least-visited corner. Pairs naturally with the existing Suriname 🛶 route's framing without being merged into it. Two very different cost regimes stitched together: Georgetown/coast runs a normal backpacker daily rate, but the interior (Iwokrama, Rupununi) is only reachable by bush flight and sold as all-inclusive lodge packages (~€230-370/day/person) — budget these as separate line items, not folded into the daily rate. Kaieteur Falls itself is a single day trip (bush flight + guided walk from Georgetown, ~€250-330pp all-in) — book 3-5 days ahead in dry season. Yellow Fever certificate only required if arriving from/transiting 4+ hours through a WHO yellow-fever-risk country (e.g. Brazil) — flying direct from Europe should be exempt, double-check against the actual booked routing. Dutch travel advisory (2026-09 snapshot): yellow — violent crime (armed robbery, mugging, pickpocketing) concentrated specifically around Georgetown's Stabroek/Bourda Markets and the Sophia/South Ruimsveldt/Tigerbay neighborhoods; same-sex acts are criminalized with severe penalties, a more serious LGBTQ+ safety flag than most other routes in this file.",
+     "transport_to_next": "End of this route — return flight from Georgetown to Amsterdam, nonstop.",
+     "destinations": [
+      {
+       "name": "Georgetown (Stabroek Market, seawall)",
+       "lat": 6.8,
+       "lng": -58.16
+      },
+      {
+       "name": "Kaieteur Falls",
+       "lat": 5.17,
+       "lng": -59.49
+      },
+      {
+       "name": "Iwokrama River Lodge",
+       "lat": 4.67,
+       "lng": -58.68
+      },
+      {
+       "name": "Atta Rainforest Lodge (canopy walkway)",
+       "lat": 4.62,
+       "lng": -58.73
+      },
+      {
+       "name": "Rupununi Savannah / Karanambu Lodge",
+       "lat": 3.75,
+       "lng": -59.32
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+   "name": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Domestic flight Lima-Cusco, train for Machu Picchu, buses between Cusco/Puno/Copacabana/La Paz, an organized jeep tour for Uyuni.",
+   "description": "Cusco, the Sacred Valley and Machu Picchu, Lake Titicaca on both the Peruvian (Puno) and Bolivian (Copacabana/Isla del Sol) sides, La Paz, and the Uyuni Salt Flats.",
+   "notes": "Built (2026-09) to replace a Trips-sheet wishlist entry ('Peru + Bolivia Andes & Salt Flats', 21 days/~€3,000/dry season Jun-Sep) that Youri decided belongs in Route Builder instead, as a someday-aspiration rather than a concretely planned trip. Researched via a WebSearch-backed research agent — a curated ~20-day version of Youri's own vision (Andes, Machu Picchu, Uyuni Salt Flats), not a mechanical concatenation of the full standalone Peru (35 days) and Bolivia (17 days) routes (which together would run 52 days). Deliberately cut from Peru's full itinerary: Máncora (north coast), Ica/Huacachina (south coast) and Huaraz — all multi-day detours away from the Cusco-Puno-Bolivia line; Arequipa was the closest cut geographically but still adds 3+ days with Colca Canyon. Deliberately cut from Bolivia's full itinerary: Sucre and Potosí, which would need a ~4-5 day additional loop south of Uyuni. The Amazon (Youri's own 'optional' note) was considered — a worthwhile Puerto Maldonado/Tambopata add-on needs 3-4 days minimum and would push the total to ~23-24 days — Youri's explicit call: leave it out, keep the tighter ~20-day version. Ground-cost budget (~€570 for 20 days) plus the international flight (~€800-950) and separate Machu Picchu/Uyuni tour costs (~€400-530 combined) comes to roughly €1,800-2,050 all-in — lower than Youri's original €3,000 estimate, since this repo's already-verified Peru/Bolivia daily rates (~€25-35/day) are cheaper than his rough guess assumed. Not yet checked against a specific travel date — re-verify Bolivia's state-of-emergency status (see the La Paz leg's notes) before actually booking.",
+   "distance": {
+    "id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+    "name": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+    "stops": 19,
+    "km_in_route": 3700,
+    "km_from_nl": 13700,
+    "km_back_to_nl": 13460,
+    "km_by_country": {
+     "PE": 1510,
+     "BO": 2190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 1,
+     "budget": 36,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Lima (with a connection, ±14-16 hours; from ±€800-950 return; best period June-August). Web-research price indication 2026-09, a snapshot. Deliberately just an overnight transit here, not a sightseeing stop — there's no direct international flight into Cusco (all arrivals route through Lima's Jorge Chávez airport, single-terminal since June 2026), but Lima itself is skippable as a destination: it's currently under a local state of emergency for rising violent crime (tourist zones Miraflores/San Isidro/Barranco are explicitly called low-risk even so, but there's no reason to linger). Fly onward to Cusco the same or next day (149 flights/week, ~1h20, earliest departs 04:40).",
+     "transport_to_next": "Domestic flight Lima-Cusco (~1h20, frequent).",
+     "destinations": [
+      {
+       "name": "Lima (arrival, transit only)",
+       "lat": -12.0464,
+       "lng": -77.0428
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 3,
+     "budget": 108,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Cusco (2 days on arrival + 1 buffer day later in the route) — altitude acclimatization matters here (3,400m), take the first day slow. Budget ~€25-35/day.",
+     "transport_to_next": "Car/bus to the Sacred Valley (~1h to Pisac).",
+     "destinations": [
+      {
+       "name": "Cusco (Sacsayhuamán, Qorikancha)",
+       "lat": -13.532,
+       "lng": -71.9675
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 2,
+     "budget": 72,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Pisac market, Ollantaytambo's ruins, and Chinchero/Moray/Salineras. Budget ~€25-35/day.",
+     "transport_to_next": "Train from Ollantaytambo to Aguas Calientes for Machu Picchu.",
+     "destinations": [
+      {
+       "name": "Pisac (market)",
+       "lat": -13.4271,
+       "lng": -71.8465
+      },
+      {
+       "name": "Ollantaytambo",
+       "lat": -13.2585,
+       "lng": -72.2632
+      },
+      {
+       "name": "Chinchero / Moray / Salineras",
+       "lat": -13.3833,
+       "lng": -72.05
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 2,
+     "budget": 72,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Web check (2026-09): entrance ticket ~S/163 (~$55, includes a new S/11 conservation fee added May 2026); train one-way ~$72 (Expedition) to ~$115 (Vistadome), cheaper departing from Ollantaytambo than Cusco/Poroy. A full self-organized 2-day trip (train + entrance + 1 night in Aguas Calientes) runs ~€150-250 all-in as a separate cost on top of the daily budget; a guided package with a mid-range hotel runs €230-350. Budget ~€25-35/day for the base daily rate.",
+     "transport_to_next": "Train back to Cusco (the buffer day happens here), then bus to Puno (~7h).",
+     "destinations": [
+      {
+       "name": "Machu Picchu",
+       "lat": -13.1631,
+       "lng": -72.545
+      },
+      {
+       "name": "Aguas Calientes",
+       "lat": -13.1547,
+       "lng": -72.5254
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 2,
+     "budget": 72,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Puno as the base for the Uros floating islands and Taquile Island on Lake Titicaca. Budget ~€20-30/day.",
+     "transport_to_next": "Bus to the border at Yunguyo/Kasani (~3-4h incl. border formalities), then on to Copacabana, Bolivia — Dutch passport holders are visa-free for both Peru and Bolivia (up to 90 days each), confirmed current, no e-visa needed for either.",
+     "destinations": [
+      {
+       "name": "Uros floating islands",
+       "lat": -15.82,
+       "lng": -69.98
+      },
+      {
+       "name": "Taquile Island",
+       "lat": -15.7833,
+       "lng": -69.6833
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 2,
+     "budget": 50,
+     "dailyRate": 25,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Copacabana on the Bolivian side of Lake Titicaca, with a day trip to Isla del Sol. Budget ~€20-30/day.",
+     "transport_to_next": "Bus to La Paz (~3-4h).",
+     "destinations": [
+      {
+       "name": "Copacabana",
+       "lat": -16.1667,
+       "lng": -69.0833
+      },
+      {
+       "name": "Isla del Sol (day trip)",
+       "lat": -16.0167,
+       "lng": -69.1667
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 2,
+     "budget": 54,
+     "dailyRate": 27,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "La Paz: Valle de la Luna, the Mi Teleférico cable-car network, the Witches' Market (Death Road cycling is a well-known optional add-on, not included here). Budget ~€25-40/day. ⚠️ Web check (2026-09): Bolivia's state of emergency (declared 20 June 2026 against road blockades) is due to expire ~18-20 September 2026 — an extension is politically contested (needs two-thirds approval in the Plurinational Legislative Assembly, unions publicly oppose it) and genuinely unresolved as of this writing. Current unrest is concentrated in Santa Cruz/Cochabamba departments, not on this La Paz-Oruro-Uyuni corridor, but re-check nederlandwereldwijd.nl close to departure — roads/airports/borders \"can temporarily and unexpectedly close for multiple days\" per that advisory's own wording.",
+     "transport_to_next": "Overnight bus or short flight La Paz-Uyuni.",
+     "destinations": [
+      {
+       "name": "Valle de la Luna",
+       "lat": -16.5667,
+       "lng": -68.0667
+      },
+      {
+       "name": "Mi Teleférico (cable car)",
+       "lat": -16.5,
+       "lng": -68.1193
+      },
+      {
+       "name": "Witches' Market",
+       "lat": -16.4958,
+       "lng": -68.1381
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 4,
+     "budget": 100,
+     "dailyRate": 25,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The classic 3-day/2-night jeep tour: the train cemetery, the salt flats themselves, Incahuasi Island, and the colored lagoons and geysers of Eduardo Avaroa NP. Web check (2026-09): tour prices have risen since the 2026-07 estimate — realistic Budget-Comfort range is now $150-280 (was quoted €140-180), a separate cost on top of the ~€25/day ground budget. Season note: the dry season (Jun-Aug, this route's own recommended window) gives the classic white salt crust, not the famous mirror-reflection photos — those need the wetter Dec-April shoulder season instead, a deliberate trade-off for aligning with Peru's own dry season.",
+     "transport_to_next": "Bus or flight back to La Paz to connect with the international flight home — build in a buffer day here given the blockade history above, rather than a tight same-day connection.",
+     "destinations": [
+      {
+       "name": "Uyuni Salt Flat",
+       "lat": -20.1338,
+       "lng": -67.4891
+      },
+      {
+       "name": "Train Cemetery",
+       "lat": -20.2167,
+       "lng": -66.85
+      },
+      {
+       "name": "Incahuasi Island",
+       "lat": -20.2667,
+       "lng": -67.6667
+      },
+      {
+       "name": "Colored lagoons & geysers (Eduardo Avaroa NP)",
+       "lat": -22.3333,
+       "lng": -67.7833
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 2,
+     "budget": 60,
+     "dailyRate": 30,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "A deliberate buffer before the international flight home, given Bolivia's history of unexpected road/airport closures during unrest — see the La Paz leg's notes above. Budget ~€25-35/day.",
+     "transport_to_next": "End of this route — return flight from La Paz to Amsterdam (with a connection).",
+     "destinations": [
+      {
+       "name": "La Paz (departure buffer)",
+       "lat": -16.5,
+       "lng": -68.1193
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_senegambia",
+   "name": "Senegambia 🦩",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bus/shared taxi overland between Senegal and Gambia.",
+   "description": "Dakar, Île de Gorée, the Lompoul Desert and Saint-Louis in Senegal, followed by the Gambia River and Kunta Kinteh Island in Gambia.",
+   "notes": "Split off from West & Central Africa Expedition 🌍 (via West Africa Overland 🥁) as part of the sixth batch of standalone countries (2026-08) — the Senegal/Gambia pairing from that block, without Ivory Coast/Ghana/Togo/Benin. Countries and daily budgets are carried over unchanged. West & Central Africa Expedition 🌍 and West Africa Overland 🥁 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_senegambia",
+    "name": "Senegambia 🦩",
+    "stops": 9,
+    "km_in_route": 930,
+    "km_from_nl": 6000,
+    "km_back_to_nl": 6140,
+    "km_by_country": {
+     "SN": 550,
+     "GM": 390
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SN",
+     "country": "Senegal",
+     "days": 13,
+     "budget": 618,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Dakar — TUI fly flies direct 2x/week in winter (October-mid-April); outside that 1 layover (e.g. via Brussels/Casablanca/Lisbon, ±10 hours total); from ±€500-900 return; best period December (dry season). Price indication from 2026-08 web research, a snapshot. Île de Gorée (slavery history, short boat ride from Dakar) and Saint-Louis (colonial capital) are the historical highlights; Sine-Saloum (mangroves, birds) and the Lompoul dunes give a completely different natural scenery within one country. Price verified (2026-07), holds up. Orange border strip along Gambia/Guinea-Bissau/Mali/Mauritania, incl. the Senegal-Gambia border zone itself — relevant for the crossing below.",
+     "transport_to_next": "Bus/shared taxi overland to Gambia via the Senegambia Bridge (opened 2019) — the border area itself is orange, stay on the usual route.",
+     "destinations": [
+      {
+       "name": "Dakar",
+       "lat": 14.7167,
+       "lng": -17.4677
+      },
+      {
+       "name": "Île de Gorée",
+       "lat": 14.6672,
+       "lng": -17.3984
+      },
+      {
+       "name": "Lompoul Desert",
+       "lat": 15.3833,
+       "lng": -16.75
+      },
+      {
+       "name": "Saint-Louis (UNESCO)",
+       "lat": 16.0179,
+       "lng": -16.4896
+      },
+      {
+       "name": "Sine-Saloum Delta",
+       "lat": 13.9333,
+       "lng": -16.5333
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GM",
+     "country": "Gambia",
+     "days": 6,
+     "budget": 198,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure. Mandatory cash airport security fee (~$20/1,000 GMD p.p.) on entry/exit via Banjul.",
+     "transport_to_next": "End of this route — return flight from Banjul to Amsterdam (winter season: TUI fly/Corendon nearly direct; outside that 1 layover, e.g. via Brussels/Casablanca/Lisbon).",
+     "destinations": [
+      {
+       "name": "Banjul",
+       "lat": 13.4549,
+       "lng": -16.579
+      },
+      {
+       "name": "Gambia River (boat cruise)",
+       "lat": 13.45,
+       "lng": -15.5
+      },
+      {
+       "name": "Kunta Kinteh Island (UNESCO, slavery history)",
+       "lat": 13.2833,
+       "lng": -16.05
+      },
+      {
+       "name": "Makasutu Culture Forest",
+       "lat": 13.3667,
+       "lng": -16.6333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_central-africa-islands",
+   "name": "Central Africa & Islands 🦛",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — flights between Cameroon, São Tomé and Gabon (no overland alternative).",
+   "description": "Central African rainforest and wildlife: Cameroon, the island nation São Tomé & Príncipe and Gabon.",
+   "notes": "Split off from West & Central Africa Expedition 🌍 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged (incl. the warning about Cameroon's Southwest Region and Gabon's tight Loango budget). Small but unique: only do this if there's time/budget for Central African rainforest specifically, separate from the West African history route before it. Continuation of West Africa Overland 🥁. West & Central Africa Expedition 🌍 itself remains unchanged as a separate, full expedition.\n\nRoute-logic revision (2026-08): Cameroon's order reversed (shorter return trip to Douala) and Gabon's unnamed 'rainforest' destination filled in as Pongara National Park. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+   "distance": {
+    "id": "gt_seed_central-africa-islands",
+    "name": "Central Africa & Islands 🦛",
+    "stops": 8,
+    "km_in_route": 2400,
+    "km_from_nl": 6970,
+    "km_back_to_nl": 7490,
+    "km_by_country": {
+     "CM": 520,
+     "ST": 800,
+     "GA": 1070
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CM",
+     "country": "Cameroon",
+     "days": 8,
+     "budget": 280,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Douala, via Paris or Brussels (no direct connection from the Netherlands, ±9-11 hours total, from ±€700-1,150 return, best period January-February). Price indication from 2026-08 web research, a snapshot. Mount Cameroon and Limbe (Southwest Region) deliberately avoided due to the \"Anglophone Crisis\" active since 2016 — instead Douala, Kribi and Yaoundé in the more stable Francophone regions. Confirmed (2026-07): conflict still active. Mandatory e-visa in advance (~€150-230), a separate cost item. Route-logic fix (2026-08): order reversed (Douala→Yaoundé→Kribi) so the return trip to Douala from Kribi (≈175 km) is shorter than from Yaoundé (≈240 km) — now also explicitly named instead of hidden. See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+     "transport_to_next": "Back to Douala (≈175 km from Kribi, ≈2.5-3 hours), then flight Douala-São Tomé (regional connection).",
+     "destinations": [
+      {
+       "name": "Douala",
+       "lat": 4.0511,
+       "lng": 9.7679
+      },
+      {
+       "name": "Yaoundé",
+       "lat": 3.848,
+       "lng": 11.5021
+      },
+      {
+       "name": "Kribi (Chutes de la Lobé, black beaches)",
+       "lat": 2.9333,
+       "lng": 9.9167
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "ST",
+     "country": "São Tomé and Príncipe",
+     "days": 9,
+     "budget": 378,
+     "dailyRate": 42,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Portuguese colonial plantation history on a small, calm tropical island. Falls within the rainy season (October-May) on this route — mainly afternoon showers. Price verified (2026-07), holds up. Presidential election July 19, 2026 — check local news shortly before departure.",
+     "transport_to_next": "Flight São Tomé-Libreville (regional connection).",
+     "destinations": [
+      {
+       "name": "São Tomé (roças/plantations, rainforest)",
+       "lat": 0.3365,
+       "lng": 6.7273
+      },
+      {
+       "name": "Príncipe (remote, less visited)",
+       "lat": 1.6167,
+       "lng": 7.4167
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "GA",
+     "country": "Gabon",
+     "days": 9,
+     "budget": 657,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "One of the few places in the world where you see elephants and hippos on the beach. ⚠️ Price check (2026-07): the tightest/riskiest budget of the route — Loango logistics can run up to $100-300+/day. Route-logic fix (2026-08): 'rainforest' was an unnamed destination — filled in as Pongara National Park (close to Libreville, no backtrack risk). See West & Central Africa Expedition 🌍's own notes for the full reasoning.",
+     "transport_to_next": "End of the expedition — return flight from Libreville to the Netherlands (usually with a layover).",
+     "destinations": [
+      {
+       "name": "Loango National Park (surfing hippos, forest elephants on the beach)",
+       "lat": -2.3667,
+       "lng": 9.5667
+      },
+      {
+       "name": "Libreville",
+       "lat": 0.4162,
+       "lng": 9.4673
+      },
+      {
+       "name": "Pongara National Park (mangroves/rainforest, ≈45 min boat from Libreville)",
+       "lat": 0.3833,
+       "lng": 9.35
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_uruguay",
+   "name": "Uruguay 🧉",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Long-distance bus between towns, the official 4x4 transfer for Cabo Polonio.",
+   "description": "Colonia's cobblestones, Cabo Polonio's off-grid sea lions, and Punta del Diablo's surf — Uruguay's quiet, uncrowded answer to its bigger neighbors.",
+   "notes": "New standalone route (2026-09) — first time Uruguay appears in Route Builder, not split off from an existing expedition (Argentina and Brazil already appear elsewhere in this app, but as their own separate routes/expeditions). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, visa and the current advisory. Re-verify all of these before booking.",
+   "distance": {
+    "id": "gt_seed_uruguay",
+    "name": "Uruguay 🧉",
+    "stops": 5,
+    "km_in_route": 780,
+    "km_from_nl": 14760,
+    "km_back_to_nl": 14480,
+    "km_by_country": {
+     "UY": 780
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "UY",
+     "country": "Uruguay",
+     "days": 10,
+     "budget": 570,
+     "dailyRate": 57,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Montevideo, one stop (via Madrid with Air Europa, or via São Paulo/Buenos Aires with KLM; roughly 16h20m minimum; from ±€850-1,100 return; best period November-early December or March-April, shoulder season — avoid December-February full summer, when Punta del Este prices roughly triple and Cabo Polonio gets crowded). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 8-day base recommendation (10 total) — a connecting flight on a trip at the edge of the 10-day threshold. Colonia's cobblestones, Cabo Polonio's off-grid sea lions, and Punta del Diablo's surf — Uruguay's quiet, uncrowded answer to its bigger neighbors (Argentina/Brazil, both already covered elsewhere in this app). Getting into Cabo Polonio requires the official 4x4 truck transfer (small extra fee) — no regular road access. Optional splurges beyond the daily rate: an estancia (working ranch) stay (~€130-215/night all-inclusive), a Carmelo/Canelones wine tour (~€45-90). Dutch travel advisory (2026-09 snapshot): yellow — avoid walking alone through Montevideo's Ciudad Vieja after dark and avoid remote streets; don't resist if robbed. No Dutch embassy in-country, covered from Buenos Aires.",
+     "transport_to_next": "End of this route — return flight from Montevideo to Amsterdam, one stop.",
+     "destinations": [
+      {
+       "name": "Montevideo (Ciudad Vieja, Mercado del Puerto)",
+       "lat": -34.91,
+       "lng": -56.19
+      },
+      {
+       "name": "Colonia del Sacramento (UNESCO old town)",
+       "lat": -34.46,
+       "lng": -57.84
+      },
+      {
+       "name": "Punta del Este",
+       "lat": -34.97,
+       "lng": -54.95
+      },
+      {
+       "name": "Cabo Polonio (off-grid, 4x4-only)",
+       "lat": -34.38,
+       "lng": -53.78
+      },
+      {
+       "name": "Punta del Diablo (incl. Santa Teresa National Park)",
+       "lat": -34.03,
+       "lng": -53.55
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

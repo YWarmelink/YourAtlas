@@ -1,0 +1,2265 @@
+{
+ "batch": 23,
+ "group": "Caribbean, Amazon & Pan-American",
+ "routes": [
+  {
+   "id": "gt_seed_bolivia",
+   "name": "Bolivia 🧂",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bus/shared taxi between cities, organized jeep tour for the Uyuni Salt Flat.",
+   "description": "Copacabana, La Paz, the Uyuni Salt Flat, Sucre and Potosí.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 (via Andes Grand Traverse 🦙) as part of the sixth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix that dropped Santa Cruz, 21→17 days). ⚠️ Bolivia has had a state of emergency since June 20, 2026 (~90 days, against road blockades) — when actually planning this trip, check whether it has since ended and the current situation on nederlandwereldwijd.nl. Pan-American Grand Tour 🌎 and Andes Grand Traverse 🦙 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_bolivia",
+    "name": "Bolivia 🧂",
+    "stops": 5,
+    "km_in_route": 1120,
+    "km_from_nl": 13500,
+    "km_back_to_nl": 13630,
+    "km_by_country": {
+     "BO": 1120
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 17,
+     "budget": 459,
+     "dailyRate": 27,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-La Paz, with a stopover (e.g. via Madrid/Bogotá/Santa Cruz, ±20-24 hours total; from ±€700-1,300 return; best period June/November). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out. State of emergency active since June 20, 2026 (~90 days) against road blockades — check the current situation, flights/roads can close unexpectedly. Uyuni tour (~€140-180 all-in) is a separate cost. Route-logic fix (2026-08, search-confirmed, Youri's own call): Santa Cruz dropped — it sits in the eastern lowlands, ≈638 km from Potosí, and would then require another ≈850 km back towards Uyuni/Chile (a dead end with no continuation towards San Pedro de Atacama). The existing transport_to_next above ('via the Uyuni Salt Flat tour') already implicitly assumed departure from Uyuni, not Santa Cruz — an unspoken clue in itself that Santa Cruz didn't fit the route. Days/budget scaled down proportionally (21→17 days, €425→€344, same daily rate).",
+     "transport_to_next": "End of this route — return flight from La Paz to Amsterdam (1 stopover).",
+     "destinations": [
+      {
+       "name": "Copacabana",
+       "lat": -16.1667,
+       "lng": -69.0833
+      },
+      {
+       "name": "La Paz",
+       "lat": -16.5,
+       "lng": -68.1193
+      },
+      {
+       "name": "Uyuni Salt Flat",
+       "lat": -20.1338,
+       "lng": -67.4891
+      },
+      {
+       "name": "Sucre",
+       "lat": -19.0333,
+       "lng": -65.2627
+      },
+      {
+       "name": "Potosí",
+       "lat": -19.5836,
+       "lng": -65.7531
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_northern-brazil",
+   "name": "Northern Brazil 🪁",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Domestic flights/bus along the coast — the distances between the highlights are bigger than they look on the map.",
+   "description": "The Amazon river mouth at Belém and Ilha do Marajó, followed by the sand-dune coast of Lençóis Maranhenses and Jericoacoara to Fortaleza.",
+   "notes": "Split off from Caribbean & Amazon Expedition 🌴 (via Suriname & Northern Brazil 🌴) as part of the seventh combo batch (2026-08) — the Northern Brazilian part of that block as its own, shorter trip, without Suriname (which already exists as its own standalone Suriname 🛶 route). Country, days and budget are carried over unchanged. Caribbean & Amazon Expedition 🌴 and Suriname & Northern Brazil 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_northern-brazil",
+    "name": "Northern Brazil 🪁",
+    "stops": 5,
+    "km_in_route": 1620,
+    "km_from_nl": 10100,
+    "km_back_to_nl": 9670,
+    "km_by_country": {
+     "BR": 1620
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BR",
+     "country": "Brazil",
+     "days": 14,
+     "budget": 658,
+     "dailyRate": 47,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Belém via Lisbon (TAP, ±12-13 hours total; from ±€650-950 return; best period April-June/September-October, outside the Brazilian summer holidays December-February and Carnival). Price indication from 2026-08 web research, a snapshot. The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of this route — return flight from Fortaleza (via Paris with Air France, or via Lisbon with TAP) to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Belém",
+       "lat": -1.4558,
+       "lng": -48.5039
+      },
+      {
+       "name": "Ilha do Marajó",
+       "lat": -0.7167,
+       "lng": -48.5167
+      },
+      {
+       "name": "Lençóis Maranhenses",
+       "lat": -2.5,
+       "lng": -43
+      },
+      {
+       "name": "Jericoacoara",
+       "lat": -2.7975,
+       "lng": -40.5137
+      },
+      {
+       "name": "Fortaleza",
+       "lat": -3.7172,
+       "lng": -38.5433
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_southern-cone-brazil-finale",
+   "name": "Southern Cone & Brazil Finale 🧉",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses, one domestic flight from Salta to Foz do Iguaçu/Southern Brazil (the distance justifies it).",
+   "description": "From the Atacama Desert via Northern Argentina to the wintry southern coast of Brazil.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Pan-American Grand Tour 🌎; only the expedition boundary is new. 'Northern Chile' and 'Northern Argentina' here are literally just the northern part of those countries — Patagonia (the southern part) already lives in the separate Patagonia & Antarctica Expedition 🧊, exactly the 'same country, different block' pattern from the modularization analysis. Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): no errors found in Chile/Argentina/Brazil — no change needed, only coordinates added per destination. See Pan-American Grand Tour 🌎's own notes.",
+   "distance": {
+    "id": "gt_seed_southern-cone-brazil-finale",
+    "name": "Southern Cone & Brazil Finale 🧉",
+    "stops": 18,
+    "km_in_route": 6300,
+    "km_from_nl": 14210,
+    "km_back_to_nl": 12430,
+    "km_by_country": {
+     "CL": 840,
+     "AR": 1780,
+     "BR": 3680
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CL",
+     "country": "Chile",
+     "days": 10,
+     "budget": 520,
+     "dailyRate": 52,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: KLM flight Amsterdam-Santiago de Chile (direct, ±13-14 hours) plus a domestic connection to Calama (±2 hours) for San Pedro de Atacama; from ±€800-900 return total; best period June. Web-research price indication 2026-08, a snapshot. Price correction (2026-07): €40→€52/day — San Pedro is one of the most expensive places in Chile. Armed street robbery reported in San Pedro/Antofagasta/Iquique/Calama/Arica, plus fake taxis at airports.",
+     "transport_to_next": "Overland bus via the Paso de Jama border crossing to Salta/Jujuy, Argentina.",
+     "destinations": [
+      {
+       "name": "San Pedro de Atacama",
+       "lat": -22.9098,
+       "lng": -68.1997
+      },
+      {
+       "name": "Valle de la Luna",
+       "lat": -22.9167,
+       "lng": -68.3
+      },
+      {
+       "name": "Valle del Arcoíris",
+       "lat": -23.1667,
+       "lng": -68.2833
+      },
+      {
+       "name": "Antofagasta",
+       "lat": -23.6509,
+       "lng": -70.3975
+      },
+      {
+       "name": "Iquique",
+       "lat": -20.2141,
+       "lng": -70.1522
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AR",
+     "country": "Argentina",
+     "days": 10,
+     "budget": 480,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out.",
+     "transport_to_next": "Flight from Salta (via Buenos Aires) to Foz do Iguaçu or São Paulo, Brazil — overland this is a journey of several days.",
+     "destinations": [
+      {
+       "name": "Salta",
+       "lat": -24.7859,
+       "lng": -65.4117
+      },
+      {
+       "name": "Cafayate",
+       "lat": -26.0725,
+       "lng": -65.9761
+      },
+      {
+       "name": "Purmamarca",
+       "lat": -23.7461,
+       "lng": -65.4972
+      },
+      {
+       "name": "Salinas Grandes",
+       "lat": -23.5667,
+       "lng": -66.45
+      },
+      {
+       "name": "Tilcara",
+       "lat": -23.5833,
+       "lng": -65.3833
+      },
+      {
+       "name": "Humahuaca",
+       "lat": -23.2058,
+       "lng": -65.35
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "BR",
+     "country": "Brazil",
+     "days": 22,
+     "budget": 1166,
+     "dailyRate": 53,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price correction (2026-07): €45.45→€53/day, mainly due to Rio/São Paulo. Rio: avoid favelas and deserted beaches/streets at night, extra caution during Carnival.",
+     "transport_to_next": "End of the expedition — flight back from Rio de Janeiro (Galeão) or São Paulo (Guarulhos).",
+     "destinations": [
+      {
+       "name": "Foz do Iguaçu (Iguazu Falls)",
+       "lat": -25.5478,
+       "lng": -54.5882
+      },
+      {
+       "name": "Curitiba",
+       "lat": -25.4284,
+       "lng": -49.2733
+      },
+      {
+       "name": "Ilha do Mel",
+       "lat": -25.5333,
+       "lng": -48.3167
+      },
+      {
+       "name": "Florianópolis",
+       "lat": -27.5954,
+       "lng": -48.548
+      },
+      {
+       "name": "São Paulo",
+       "lat": -23.5505,
+       "lng": -46.6333
+      },
+      {
+       "name": "Paraty",
+       "lat": -23.2178,
+       "lng": -44.7131
+      },
+      {
+       "name": "Rio de Janeiro",
+       "lat": -22.9068,
+       "lng": -43.1729
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_suriname-northern-brazil",
+   "name": "Suriname & Northern Brazil 🌴",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker between cheap and normal — river boats in Suriname, coastal buses in Northern Brazil.",
+   "description": "Dutch colonial history and Maroon culture in Suriname, followed by the Amazon river mouth and the dune coast of Northern Brazil.",
+   "notes": "Split off from Caribbean & Amazon Expedition 🌴 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days and budgets are carried over unchanged. This block was deliberately split off despite the original route notes arguing the opposite (\"none of the ten components was cut\", Suriname/Brazil framed as \"complementary\") — the Grenada-Suriname flight is already flagged in those same notes as \"probably the hardest/most expensive single connection\", and the travel style shifts entirely here (island-hopping → river/rainforest on the mainland). Extra relevant for a Dutch traveler given Suriname's colonial ties. Continues on from Caribbean Islands Hop 🏝️. Caribbean & Amazon Expedition 🌴 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): no geographic errors in Suriname/Brazil itself — coordinates added per destination for the 'Detailed' map view. See Caribbean & Amazon Expedition 🌴's own notes for the fixes in Cuba/Jamaica (not part of this block).",
+   "distance": {
+    "id": "gt_seed_suriname-northern-brazil",
+    "name": "Suriname & Northern Brazil 🌴",
+    "stops": 8,
+    "km_in_route": 3250,
+    "km_from_nl": 9750,
+    "km_back_to_nl": 9670,
+    "km_by_country": {
+     "SR": 290,
+     "BR": 2960
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SR",
+     "country": "Suriname",
+     "days": 11,
+     "budget": 605,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: \"visa-free\" isn't entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.",
+     "transport_to_next": "Flight Paramaribo-Belém (scarce direct connections; likely with a stopover via Cayenne, Georgetown or a Brazilian hub — check carefully in advance)",
+     "destinations": [
+      {
+       "name": "Paramaribo (UNESCO)",
+       "lat": 5.852,
+       "lng": -55.2038
+      },
+      {
+       "name": "Maroon villages along the river",
+       "lat": 4.4,
+       "lng": -55
+      },
+      {
+       "name": "Brownsberg Nature Park",
+       "lat": 4.95,
+       "lng": -55.1667
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BR",
+     "country": "Brazil",
+     "days": 14,
+     "budget": 658,
+     "dailyRate": 47,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The transition from the Amazon river mouth (Belém, Marajó — water buffalo, an unspoiled river-delta island) to the completely different sand-dune coast (Lençóis Maranhenses, Jericoacoara) as a breathtaking finale. The distances along the coast are often underestimated. Price verified (2026-07), holds up — the generic Rio/São Paulo safety warnings aren't relevant to this northeastern stretch.",
+     "transport_to_next": "End of the expedition — return flight from Fortaleza (or via São Paulo) to the Netherlands",
+     "destinations": [
+      {
+       "name": "Belém",
+       "lat": -1.4558,
+       "lng": -48.5039
+      },
+      {
+       "name": "Ilha do Marajó",
+       "lat": -0.7167,
+       "lng": -48.5167
+      },
+      {
+       "name": "Lençóis Maranhenses",
+       "lat": -2.5,
+       "lng": -43
+      },
+      {
+       "name": "Jericoacoara",
+       "lat": -2.7975,
+       "lng": -40.5137
+      },
+      {
+       "name": "Fortaleza",
+       "lat": -3.7172,
+       "lng": -38.5433
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_andes-grand-traverse",
+   "name": "Andes Grand Traverse 🦙",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses through the Andes, no flights needed at all between these four countries (uninterrupted overland corridor).",
+   "description": "Uninterrupted overland through the Andes: from Colombia's Caribbean coast via Ecuador and Peru to the Bolivian salt flats.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Pan-American Grand Tour 🌎 (including the price correction on Ecuador for Galápagos costs); only the expedition boundary is new. Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Bolivia's Santa Cruz dropped (a dead-end detour towards the lowlands, ≈850 km back towards Chile would have been needed) — days/budget reduced (21→17, €425→€344). Colombia and Ecuador verified, already optimal. Coordinates added per destination. See Pan-American Grand Tour 🌎's own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_andes-grand-traverse",
+    "name": "Andes Grand Traverse 🦙",
+    "stops": 25,
+    "km_in_route": 10690,
+    "km_from_nl": 10990,
+    "km_back_to_nl": 13630,
+    "km_by_country": {
+     "CO": 1980,
+     "EC": 2780,
+     "PE": 4680,
+     "BO": 1260
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CO",
+     "country": "Colombia",
+     "days": 35,
+     "budget": 1260,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Cartagena (±14-16 hours, 1 stopover, e.g. via Madrid/Bogotá/Panama City — no direct connection; from ±€650-900 return; best period February). Web-research price indication 2026-08, a snapshot. Price correction (2026-07): €28.57→€36/day, about 18% too tight for 35 days incl. pricier cities (Cartagena, Bogotá). Route stays outside the red/orange border zones. San Blas-Cartagena sailboat: same operator check as for Panama. Route-logic check (2026-08, search-confirmed): Medellín→Salento→Bogotá→San Agustín checked against the alternative (Medellín→Bogotá→Salento→San Agustín, ≈125 km more) — the current order minimizes Bogotá's unavoidable detour (it doesn't sit on the main Medellín-Armenia-Ibagué-Neiva-San Agustín route), no change needed.",
+     "transport_to_next": "Overland bus via Pasto to the Ipiales–Tulcán border crossing, on to Quito, Ecuador.",
+     "destinations": [
+      {
+       "name": "Cartagena",
+       "lat": 10.391,
+       "lng": -75.4794
+      },
+      {
+       "name": "Santa Marta",
+       "lat": 11.2408,
+       "lng": -74.199
+      },
+      {
+       "name": "Parque Tayrona",
+       "lat": 11.3125,
+       "lng": -74.0361
+      },
+      {
+       "name": "Medellín",
+       "lat": 6.2442,
+       "lng": -75.5812
+      },
+      {
+       "name": "Salento & Coffee Zone",
+       "lat": 4.6374,
+       "lng": -75.5701
+      },
+      {
+       "name": "Bogotá",
+       "lat": 4.711,
+       "lng": -74.0721
+      },
+      {
+       "name": "San Agustín",
+       "lat": 1.8792,
+       "lng": -76.2661
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "EC",
+     "country": "Ecuador",
+     "days": 24,
+     "budget": 1650,
+     "dailyRate": 69,
+     "carInDailyRate": false,
+     "inDailyRate": "Galápagos park fee + boat/land tour are in this rate",
+     "notes": "⚠️ Price correction (2026-07): €1,025→€1,650 total, ~55-80% too low. Galápagos alone has cost $200 park entrance + $20 transit card p.p. since Aug. 2024, plus $150-235/day for a budget boat/land tour — already €800-950 for 4-5 days. Quito: watch out for scopolamine drugging in bars/taxis and fake taxis. Route-logic check (2026-08, search-confirmed): Otavalo (north) and Mindo (west) are both dead-end side trips from Quito with no good connection between them — nearly all traffic returns via Quito between the two anyway. This is normal hub-and-spoke travel logic, not a zigzag; no change needed.",
+     "transport_to_next": "Overland bus via the Huaquillas/Tumbes border crossing to northern Peru, towards Máncora.",
+     "destinations": [
+      {
+       "name": "Quito",
+       "lat": -0.1807,
+       "lng": -78.4678
+      },
+      {
+       "name": "Otavalo",
+       "lat": 0.2345,
+       "lng": -78.2617
+      },
+      {
+       "name": "Mindo",
+       "lat": 0.05,
+       "lng": -78.7667
+      },
+      {
+       "name": "Baños",
+       "lat": -1.3928,
+       "lng": -78.4247
+      },
+      {
+       "name": "Cuenca",
+       "lat": -2.9006,
+       "lng": -79.0045
+      },
+      {
+       "name": "Galápagos Islands",
+       "lat": -0.9538,
+       "lng": -90.9656
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 35,
+     "budget": 1260,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out (tight). Lima under a state of emergency (criminal violence); regular strikes/road blockades nationwide. Machu Picchu (train+entrance, ~€150-250) is a separate cost.",
+     "transport_to_next": "Bus/boat from Puno via the Yunguyo or Desaguadero border crossing to Copacabana and La Paz, Bolivia.",
+     "destinations": [
+      {
+       "name": "Máncora",
+       "lat": -4.1075,
+       "lng": -81.05
+      },
+      {
+       "name": "Huaraz",
+       "lat": -9.5278,
+       "lng": -77.5278
+      },
+      {
+       "name": "Lima",
+       "lat": -12.0464,
+       "lng": -77.0428
+      },
+      {
+       "name": "Ica & Huacachina",
+       "lat": -14.0678,
+       "lng": -75.7286
+      },
+      {
+       "name": "Arequipa",
+       "lat": -16.409,
+       "lng": -71.5375
+      },
+      {
+       "name": "Cusco & Sacred Valley",
+       "lat": -13.532,
+       "lng": -71.9675
+      },
+      {
+       "name": "Puno (Lake Titicaca)",
+       "lat": -15.8402,
+       "lng": -70.0219
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "BO",
+     "country": "Bolivia",
+     "days": 17,
+     "budget": 459,
+     "dailyRate": 27,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out. State of emergency active since June 20, 2026 (~90 days) against road blockades — check the current situation, flights/roads can close unexpectedly. Uyuni tour (~€140-180 all-in) is a separate cost. Route-logic fix (2026-08, search-confirmed, Youri's own call): Santa Cruz dropped — it sits in the eastern lowlands, ≈638 km from Potosí, and would then require another ≈850 km back towards Uyuni/Chile (a dead end with no continuation towards San Pedro de Atacama). The existing transport_to_next above ('via the Uyuni Salt Flat tour') already implicitly assumed departure from Uyuni, not Santa Cruz — an unspoken clue in itself that Santa Cruz didn't fit the route. Days/budget scaled down proportionally (21→17 days, €425→€344, same daily rate).",
+     "transport_to_next": "Jeep trip via the 3-day Uyuni Salt Flat tour overland to San Pedro de Atacama, Chile.",
+     "destinations": [
+      {
+       "name": "Copacabana",
+       "lat": -16.1667,
+       "lng": -69.0833
+      },
+      {
+       "name": "La Paz",
+       "lat": -16.5,
+       "lng": -68.1193
+      },
+      {
+       "name": "Uyuni Salt Flat",
+       "lat": -20.1338,
+       "lng": -67.4891
+      },
+      {
+       "name": "Sucre",
+       "lat": -19.0333,
+       "lng": -65.2627
+      },
+      {
+       "name": "Potosí",
+       "lat": -19.5836,
+       "lng": -65.7531
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_colombia",
+   "name": "Colombia ☕",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — local buses between cities, domestic flight for the longer distances.",
+   "description": "From Cartagena's Caribbean coast via the coffee zone and Medellín to Bogotá and San Agustín.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md) — already flagged there as Strong, 'already trendy as a standalone'. Country, days and budget are carried over unchanged (incl. the 2026-07 price correction). Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.",
+   "distance": {
+    "id": "gt_seed_colombia",
+    "name": "Colombia ☕",
+    "stops": 7,
+    "km_in_route": 1980,
+    "km_from_nl": 10990,
+    "km_back_to_nl": 12030,
+    "km_by_country": {
+     "CO": 1980
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CO",
+     "country": "Colombia",
+     "days": 35,
+     "budget": 1260,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Cartagena (±14-16 hours, 1 stopover, e.g. via Madrid/Bogotá/Panama City — no direct connection; from ±€650-900 return; best period February). Web-research price indication 2026-08, a snapshot. Price correction (2026-07): €28.57→€36/day, about 18% too tight for 35 days incl. pricier cities (Cartagena, Bogotá). Route stays outside the red/orange border zones. San Blas-Cartagena sailboat: same operator check as for Panama. Route-logic check (2026-08, search-confirmed): Medellín→Salento→Bogotá→San Agustín checked against the alternative (Medellín→Bogotá→Salento→San Agustín, ≈125 km more) — the current order minimizes Bogotá's unavoidable detour (it doesn't sit on the main Medellín-Armenia-Ibagué-Neiva-San Agustín route), no change needed.",
+     "transport_to_next": "End of this route — back to Bogotá (nearest international airport from San Agustín), then return flight to Amsterdam (1 stopover, no direct connection).",
+     "destinations": [
+      {
+       "name": "Cartagena",
+       "lat": 10.391,
+       "lng": -75.4794
+      },
+      {
+       "name": "Santa Marta",
+       "lat": 11.2408,
+       "lng": -74.199
+      },
+      {
+       "name": "Parque Tayrona",
+       "lat": 11.3125,
+       "lng": -74.0361
+      },
+      {
+       "name": "Medellín",
+       "lat": 6.2442,
+       "lng": -75.5812
+      },
+      {
+       "name": "Salento & Coffee Zone",
+       "lat": 4.6374,
+       "lng": -75.5701
+      },
+      {
+       "name": "Bogotá",
+       "lat": 4.711,
+       "lng": -74.0721
+      },
+      {
+       "name": "San Agustín",
+       "lat": 1.8792,
+       "lng": -76.2661
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_central-america-loop",
+   "name": "Central America Loop 🌋",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses (chicken bus to fancier overland bus), sailboat through the San Blas Islands instead of flying over the Darién Gap.",
+   "description": "From Guatemala's Maya highlands via Belize, Honduras and El Salvador to the Pacific coast of Costa Rica and Panama.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Pan-American Grand Tour 🌎; only the expedition boundary is new. Note: this block contains the full CA-4 visa zone (Guatemala/Honduras/El Salvador/Nicaragua share one combined 90-day limit, even though they fall across the two regions above here) — this route stays well under that limit, but keep it in mind if you were ever to plan the regions apart from each other. Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Belize-Honduras ferry text corrected (direct, no Livingston stopover) and Honduras' order reversed (north coast before Tegucigalpa). Coordinates added per destination. See Pan-American Grand Tour 🌎's own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_central-america-loop",
+    "name": "Central America Loop 🌋",
+    "stops": 42,
+    "km_in_route": 4960,
+    "km_from_nl": 11900,
+    "km_back_to_nl": 11400,
+    "km_by_country": {
+     "GT": 510,
+     "BZ": 520,
+     "HN": 1130,
+     "SV": 550,
+     "NI": 790,
+     "CR": 720,
+     "PA": 750
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GT",
+     "country": "Guatemala",
+     "days": 16,
+     "budget": 544,
+     "dailyRate": 34,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Guatemala City (±14-17 hours, 1-2 stopovers, e.g. via Madrid/Houston/Miami; from ±€600-900 return; best period December). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out — cheapest country on the route. Use boats rather than the Godínez-Panajachel road at Atitlán; Cerro de la Cruz in Antigua only guided/during the day. Route-logic check (2026-08, search-confirmed): the order (Xela→Atitlán→Antigua→Guatemala City→Semuc Champey→Flores) is a consistent southwest-northeast line, no zigzag — Flores already sits close to the Belize border.",
+     "transport_to_next": "Overland bus from Flores to the border crossing at Melchor de Menchos, on to San Ignacio, Belize.",
+     "destinations": [
+      {
+       "name": "Quetzaltenango (Xela)",
+       "lat": 14.8347,
+       "lng": -91.5225
+      },
+      {
+       "name": "Lake Atitlán",
+       "lat": 14.6862,
+       "lng": -91.1954
+      },
+      {
+       "name": "Antigua",
+       "lat": 14.5586,
+       "lng": -90.7295
+      },
+      {
+       "name": "Guatemala City",
+       "lat": 14.6349,
+       "lng": -90.5069
+      },
+      {
+       "name": "Semuc Champey",
+       "lat": 15.5333,
+       "lng": -89.9333
+      },
+      {
+       "name": "Flores & Tikal",
+       "lat": 16.9268,
+       "lng": -89.8903
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BZ",
+     "country": "Belize",
+     "days": 10,
+     "budget": 550,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price correction (2026-07): €57.50→€72/day — the many water taxis between islands ($15-45 p.p. one-way) weren't accounted for.",
+     "transport_to_next": "Ferry direct from Placencia/Dangriga to Puerto Cortés, Honduras (D-Express/Pride of Belize/Hokey Pokey from Placencia, or Nesymein Neydy from Dangriga — route-logic fix 2026-08, search-confirmed: this is a direct connection, no stopover at Livingston/Guatemala as previously noted; that described a different, unconnected boat route).",
+     "destinations": [
+      {
+       "name": "San Ignacio",
+       "lat": 17.1594,
+       "lng": -89.0685
+      },
+      {
+       "name": "Belize City",
+       "lat": 17.5046,
+       "lng": -88.1962
+      },
+      {
+       "name": "Caye Caulker",
+       "lat": 17.7414,
+       "lng": -88.0275
+      },
+      {
+       "name": "Ambergris Caye (San Pedro)",
+       "lat": 17.9086,
+       "lng": -87.9613
+      },
+      {
+       "name": "Hopkins/Dangriga",
+       "lat": 16.9833,
+       "lng": -88.2333
+      },
+      {
+       "name": "Placencia",
+       "lat": 16.5167,
+       "lng": -88.3667
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "HN",
+     "country": "Honduras",
+     "days": 14,
+     "budget": 462,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out. ⚠️ Tegucigalpa/La Ceiba/Puerto Cortés lie in orange provinces (gang-/drug-related crime) — Roatán is the yellow exception. Route-logic fix (2026-08, search-confirmed): order reversed — Tegucigalpa used to come before La Ceiba/Roatán (north coast), while the border crossing to El Salvador (El Amatillo) actually lies to the south, reached via Tegucigalpa — that meant a drive north and then back south again. Now Puerto Cortés→Copán Ruinas→Lago de Yojoa→La Ceiba→Roatán (north coast first) →Tegucigalpa (south, last, straight on to El Salvador).",
+     "transport_to_next": "Overland bus via the El Amatillo border crossing to El Salvador.",
+     "destinations": [
+      {
+       "name": "Puerto Cortés",
+       "lat": 15.8333,
+       "lng": -87.95
+      },
+      {
+       "name": "Copán Ruinas",
+       "lat": 14.8396,
+       "lng": -89.1428
+      },
+      {
+       "name": "Lago de Yojoa",
+       "lat": 14.8833,
+       "lng": -88.0333
+      },
+      {
+       "name": "La Ceiba",
+       "lat": 15.7597,
+       "lng": -86.7822
+      },
+      {
+       "name": "Roatán",
+       "lat": 16.325,
+       "lng": -86.5417
+      },
+      {
+       "name": "Tegucigalpa",
+       "lat": 14.0723,
+       "lng": -87.1921
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "SV",
+     "country": "El Salvador",
+     "days": 10,
+     "budget": 370,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out. Security situation has improved significantly since the 2022 state of emergency against gangs, now yellow — note: arrest without charge remains possible, no Dutch embassy on the ground.",
+     "transport_to_next": "Overland bus via Honduras (transit) to the El Espino/Guasaule border crossing, towards León, Nicaragua.",
+     "destinations": [
+      {
+       "name": "San Salvador",
+       "lat": 13.6929,
+       "lng": -89.2182
+      },
+      {
+       "name": "Santa Ana",
+       "lat": 13.9942,
+       "lng": -89.5597
+      },
+      {
+       "name": "Cerro Verde & volcanoes",
+       "lat": 13.8333,
+       "lng": -89.6333
+      },
+      {
+       "name": "Ruta de las Flores (Juayúa, Ataco)",
+       "lat": 13.8333,
+       "lng": -89.75
+      },
+      {
+       "name": "El Tunco",
+       "lat": 13.4917,
+       "lng": -89.3833
+      },
+      {
+       "name": "Suchitoto",
+       "lat": 13.9333,
+       "lng": -89.0333
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "NI",
+     "country": "Nicaragua",
+     "days": 15,
+     "budget": 465,
+     "dailyRate": 31,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out. Regular demonstrations can block roads to the capital/airport; no Dutch embassy on the ground. The CA-4 countries (Guatemala/Honduras/El Salvador/Nicaragua) count as one visa zone, max. 90 days combined — this route stays well under that.",
+     "transport_to_next": "Overland bus via the Peñas Blancas border crossing to Costa Rica.",
+     "destinations": [
+      {
+       "name": "León",
+       "lat": 12.434,
+       "lng": -86.878
+      },
+      {
+       "name": "Managua",
+       "lat": 12.115,
+       "lng": -86.2362
+      },
+      {
+       "name": "Granada",
+       "lat": 11.9344,
+       "lng": -85.956
+      },
+      {
+       "name": "Isla de Ometepe",
+       "lat": 11.5167,
+       "lng": -85.5833
+      },
+      {
+       "name": "Laguna de Apoyo",
+       "lat": 11.9333,
+       "lng": -86.0333
+      },
+      {
+       "name": "San Juan del Sur",
+       "lat": 11.2529,
+       "lng": -85.8703
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "CR",
+     "country": "Costa Rica",
+     "days": 21,
+     "budget": 1000,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out but tight — national parks/tours ($15-22 entrance) are a separate cost on top of this daily rate.",
+     "transport_to_next": "Overland bus via the Sixaola/Guabito border crossing to Bocas del Toro, Panama.",
+     "destinations": [
+      {
+       "name": "Liberia",
+       "lat": 10.6346,
+       "lng": -85.437
+      },
+      {
+       "name": "La Fortuna/Arenal",
+       "lat": 10.4667,
+       "lng": -84.6431
+      },
+      {
+       "name": "Monteverde",
+       "lat": 10.3009,
+       "lng": -84.8246
+      },
+      {
+       "name": "Santa Teresa",
+       "lat": 9.6461,
+       "lng": -85.167
+      },
+      {
+       "name": "Manuel Antonio",
+       "lat": 9.3925,
+       "lng": -84.1425
+      },
+      {
+       "name": "Puerto Viejo de Talamanca",
+       "lat": 9.6558,
+       "lng": -82.7553
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "PA",
+     "country": "Panama",
+     "days": 15,
+     "budget": 625,
+     "dailyRate": 42,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Price verified (2026-07), checks out. Darién region (not on the route) is orange. San Blas boat: check for life jackets/two outboard motors with the operator beforehand.",
+     "transport_to_next": "Sailboat (4-5 days) via the San Blas Islands to Cartagena, Colombia — no road connection through the Darién Gap.",
+     "destinations": [
+      {
+       "name": "Bocas del Toro",
+       "lat": 9.34,
+       "lng": -82.24
+      },
+      {
+       "name": "Boquete",
+       "lat": 8.7833,
+       "lng": -82.4333
+      },
+      {
+       "name": "Panama City",
+       "lat": 8.9824,
+       "lng": -79.5199
+      },
+      {
+       "name": "Casco Viejo",
+       "lat": 8.9515,
+       "lng": -79.5346
+      },
+      {
+       "name": "Panama Canal",
+       "lat": 9.08,
+       "lng": -79.68
+      },
+      {
+       "name": "San Blas Islands",
+       "lat": 9.5667,
+       "lng": -78.95
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_costa-rica",
+   "name": "Costa Rica 🦥",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — local buses, rental car optional for the more remote national parks.",
+   "description": "Volcanoes, rainforest and two coastlines: Arenal, Monteverde and the Pacific/Caribbean beaches.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md) — already flagged there as 'probably your most classic standalone vacation candidate' from that whole expedition. Country, days and budget are carried over unchanged. Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.",
+   "distance": {
+    "id": "gt_seed_costa-rica",
+    "name": "Costa Rica 🦥",
+    "stops": 6,
+    "km_in_route": 610,
+    "km_from_nl": 11850,
+    "km_back_to_nl": 11720,
+    "km_by_country": {
+     "CR": 610
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CR",
+     "country": "Costa Rica",
+     "days": 21,
+     "budget": 1000,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-San José (the only airline with a direct connection; ±11-12 hours; from ±€730-850 return; best period January). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out but tight — national parks/tours ($15-22 entrance) are a separate cost on top of this daily rate.",
+     "transport_to_next": "End of this route — direct KLM return flight from San José to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Liberia",
+       "lat": 10.6346,
+       "lng": -85.437
+      },
+      {
+       "name": "La Fortuna/Arenal",
+       "lat": 10.4667,
+       "lng": -84.6431
+      },
+      {
+       "name": "Monteverde",
+       "lat": 10.3009,
+       "lng": -84.8246
+      },
+      {
+       "name": "Santa Teresa",
+       "lat": 9.6461,
+       "lng": -85.167
+      },
+      {
+       "name": "Manuel Antonio",
+       "lat": 9.3925,
+       "lng": -84.1425
+      },
+      {
+       "name": "Puerto Viejo de Talamanca",
+       "lat": 9.6558,
+       "lng": -82.7553
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_caribbean-islands-hop",
+   "name": "Caribbean Islands Hop 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker between cheap and normal — hostels and casas particulares alternated with an occasional private room, the L'Express des Îles ferry where possible (Guadeloupe-Dominica-St Lucia), flights for the rest of the island hops.",
+   "description": "Caribbean colonial history, volcanic nature and island cultures: Cuba and Jamaica, the Dutch ABC islands, and the Lesser Antilles.",
+   "notes": "Split off from Caribbean & Amazon Expedition 🌴 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the 2026-07 price corrections on Jamaica/Bonaire/Dominica). Continues into: Suriname & Northern Brazil 🌴. Caribbean & Amazon Expedition 🌴 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): same round as Caribbean & Amazon Expedition 🌴 itself — Cuba's and Jamaica's order reversed (no more double detour via Viñales resp. the Blue Mountains), coordinates added per destination. See Caribbean & Amazon Expedition 🌴's own notes for the full explanation. Countries/days/budget total unchanged.",
+   "distance": {
+    "id": "gt_seed_caribbean-islands-hop",
+    "name": "Caribbean Islands Hop 🏝️",
+    "stops": 25,
+    "km_in_route": 4960,
+    "km_from_nl": 10190,
+    "km_back_to_nl": 9590,
+    "km_by_country": {
+     "CU": 710,
+     "JM": 910,
+     "CW": 1450,
+     "BQ": 140,
+     "GP": 1120,
+     "DM": 110,
+     "LC": 220,
+     "GD": 300
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CU",
+     "country": "Cuba",
+     "days": 18,
+     "budget": 774,
+     "dailyRate": 43,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival). Route logic (2026-08, search-confirmed): order reversed — Viñales used to be the last stop (a double detour: past Cienfuegos to Trinidad first, then back to Cienfuegos, then a 4.5h crossing to Viñales right next to Havana); now a return trip from Havana right at the start, followed by Cienfuegos-Trinidad without crossing routes.",
+     "transport_to_next": "Back to Havana (~4h15 driving from Trinidad — the only realistic international gateway, Santiago de Cuba would make the detour worse), then a flight Havana-Kingston (usually with a stopover via Panama City or Miami)",
+     "destinations": [
+      {
+       "name": "Havana (Habana Vieja)",
+       "lat": 23.1136,
+       "lng": -82.3666
+      },
+      {
+       "name": "Viñales Valley",
+       "lat": 22.6167,
+       "lng": -83.7097
+      },
+      {
+       "name": "Cienfuegos",
+       "lat": 22.1496,
+       "lng": -80.4394
+      },
+      {
+       "name": "Trinidad",
+       "lat": 21.8047,
+       "lng": -79.9825
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "JM",
+     "country": "Jamaica",
+     "days": 12,
+     "budget": 780,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees). Route logic (2026-08, search-confirmed): order reversed — Blue Mountains used to be a separate out-and-back trip right after Kingston (the coastal road to Ocho Rios doesn't run through it); now a mountain-route return leg (Hardwar Gap, coffee plantations/Newcastle) from Port Antonio to Kingston, instead of a separate side trip at the start.",
+     "transport_to_next": "Short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a flight Kingston-Curaçao (usually with a stopover via Panama City or Miami)",
+     "destinations": [
+      {
+       "name": "Kingston",
+       "lat": 17.9714,
+       "lng": -76.7936
+      },
+      {
+       "name": "Dunn's River Falls (Ocho Rios)",
+       "lat": 18.4108,
+       "lng": -77.1296
+      },
+      {
+       "name": "Port Antonio",
+       "lat": 18.1811,
+       "lng": -76.4513
+      },
+      {
+       "name": "Blue Mountains (Hardwar Gap)",
+       "lat": 18.0747,
+       "lng": -76.6597
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "CW",
+     "country": "Curaçao",
+     "days": 7,
+     "budget": 665,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).",
+     "transport_to_next": "Short flight Curaçao-Bonaire",
+     "destinations": [
+      {
+       "name": "Willemstad (UNESCO)",
+       "lat": 12.1091,
+       "lng": -68.9316
+      },
+      {
+       "name": "Shete Boka National Park",
+       "lat": 12.3667,
+       "lng": -69.15
+      },
+      {
+       "name": "beaches (Grote Knip)",
+       "lat": 12.2167,
+       "lng": -69.15
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "BQ",
+     "country": "Bonaire",
+     "days": 6,
+     "budget": 660,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
+     "transport_to_next": "Flight Bonaire-Guadeloupe (usually with a stopover via Aruba, Panama City or San Juan)",
+     "destinations": [
+      {
+       "name": "Washington Slagbaai National Park",
+       "lat": 12.3167,
+       "lng": -68.4167
+      },
+      {
+       "name": "diving/snorkeling (marine park)",
+       "lat": 12.15,
+       "lng": -68.2833
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "GP",
+     "country": "Guadeloupe",
+     "days": 7,
+     "budget": 615,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up.",
+     "transport_to_next": "L'Express des Îles ferry to Dominica (via Martinique)",
+     "destinations": [
+      {
+       "name": "La Soufrière (volcano)",
+       "lat": 16.0456,
+       "lng": -61.6654
+      },
+      {
+       "name": "Carbet Falls",
+       "lat": 16.0472,
+       "lng": -61.6167
+      },
+      {
+       "name": "Îles des Saintes",
+       "lat": 15.8667,
+       "lng": -61.5833
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "DM",
+     "country": "Dominica",
+     "days": 8,
+     "budget": 760,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "\"Nature Island\" — the least developed and most unspoiled of the four islands. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day (hardly any hostels, guesthouses from ~€60-70/night, mandatory guide for Boiling Lake ~€55-70).",
+     "transport_to_next": "L'Express des Îles ferry to St Lucia",
+     "destinations": [
+      {
+       "name": "Boiling Lake Trek",
+       "lat": 15.3167,
+       "lng": -61.2667
+      },
+      {
+       "name": "Trafalgar Falls",
+       "lat": 15.3181,
+       "lng": -61.3331
+      },
+      {
+       "name": "Champagne Reef",
+       "lat": 15.2833,
+       "lng": -61.3833
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "LC",
+     "country": "Saint Lucia",
+     "days": 7,
+     "budget": 560,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The iconic Pitons, more tourist-developed than the other three. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.",
+     "transport_to_next": "Flight St Lucia-Grenada (not on the ferry line)",
+     "destinations": [
+      {
+       "name": "The Pitons",
+       "lat": 13.8167,
+       "lng": -61.0667
+      },
+      {
+       "name": "Sulphur Springs (drive-in volcano)",
+       "lat": 13.8347,
+       "lng": -61.0552
+      },
+      {
+       "name": "Tet Paul Nature Trail",
+       "lat": 13.8333,
+       "lng": -61.05
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "GD",
+     "country": "Grenada",
+     "days": 7,
+     "budget": 510,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The least touristy of the four islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of this route — return flight from Grenada (or a flight Grenada-Suriname to continue on to Suriname & Northern Brazil 🌴)",
+     "destinations": [
+      {
+       "name": "Underwater Sculpture Park",
+       "lat": 12.0742,
+       "lng": -61.7325
+      },
+      {
+       "name": "spice plantations (nutmeg)",
+       "lat": 12.1667,
+       "lng": -61.7333
+      },
+      {
+       "name": "Grand Etang National Park",
+       "lat": 12.0833,
+       "lng": -61.6833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_cuba",
+   "name": "Cuba 🎷",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker between cheap and normal — casas particulares, local buses/collectivos.",
+   "description": "Havana, colonial Trinidad and the karst valley of Viñales.",
+   "notes": "Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged there as Strong, \"world-famous standalone\". Country, days and budget are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_cuba",
+    "name": "Cuba 🎷",
+    "stops": 4,
+    "km_in_route": 710,
+    "km_from_nl": 10190,
+    "km_back_to_nl": 10120,
+    "km_by_country": {
+     "CU": 710
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CU",
+     "country": "Cuba",
+     "days": 18,
+     "budget": 774,
+     "dailyRate": 43,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Havana, with a stopover (±15h30, from ±€600-1,100 return, December falls right after the cheapest month November). Price indication from 2026-08 web research, a snapshot. Havana and UNESCO-listed colonial Trinidad are the highlights; the quiet Viñales Valley (tobacco, karst landscape) is the hidden gem. Casas particulares (private rooms) are the standard backpacker accommodation. Price verified (2026-07), holds up. ⚠️ Travel advisory orange (confirmed valid, last updated June 23, 2026): major shortages of power/fuel/food/medicine, rising safety risks — the sixth nationwide power outage of 2026 hit on August 2. Cards don't work at ATMs (bring cash). Since July 1, 2025 the paper tourist card has been replaced by an e-Visa (~$50), tied to the mandatory free D'Viajeros form (to be filled in within 72h before arrival).",
+     "transport_to_next": "End of this route — back to Havana (~4h15 driving from Trinidad), then a return flight Havana-Amsterdam (usually with a stopover via Panama City or Miami).",
+     "destinations": [
+      {
+       "name": "Havana (Habana Vieja)",
+       "lat": 23.1136,
+       "lng": -82.3666
+      },
+      {
+       "name": "Viñales Valley",
+       "lat": 22.6167,
+       "lng": -83.7097
+      },
+      {
+       "name": "Cienfuegos",
+       "lat": 22.1496,
+       "lng": -80.4394
+      },
+      {
+       "name": "Trinidad",
+       "lat": 21.8047,
+       "lng": -79.9825
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_abc-islands",
+   "name": "ABC Islands 🦩",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct KLM flight into Aruba, short regional inter-island flights Aruba-Curaçao and Curaçao-Bonaire, direct KLM flight home from Curaçao.",
+   "description": "White-sand Aruba, colonial Curaçao and diving-paradise Bonaire — the full Dutch Caribbean archipelago in one direct-flight-in, short-hop-between trip.",
+   "notes": "New combo route (2026-09-16) — first time Aruba appears in Route Builder. Built by adding freshly-researched Aruba content (route-price-checker style, 2026-09-16) as a new first leg ahead of the existing, unmodified Curaçao & Bonaire 🤿 content (verified 2026-07/2026-08) — that 2-island route continues to exist unchanged; this is deliberate overlap, not a replacement, same pattern as Fiji 🌊/Fiji & Vanuatu 🐚 elsewhere in this file. Day counts (Aruba 5 / Curaçao 7 / Bonaire 6, 18 total) are a first-cut allocation based on relative island size and how \"single-note\" each stop is — open to adjustment, not pulled from an existing repo convention. Re-verify Aruba's advisory/ED-card fee before booking.",
+   "distance": {
+    "id": "gt_seed_abc-islands",
+    "name": "ABC Islands 🦩",
+    "stops": 10,
+    "km_in_route": 450,
+    "km_from_nl": 10270,
+    "km_back_to_nl": 10160,
+    "km_by_country": {
+     "AW": 80,
+     "CW": 240,
+     "BQ": 140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AW",
+     "country": "Aruba",
+     "days": 5,
+     "budget": 425,
+     "dailyRate": 85,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry point of this loop: direct KLM flight Amsterdam-Aruba (±10h20-30, ~7x/week; from ±€740-820 return; best period December-January to match Curaçao/Bonaire below, though Aruba's own dry season is broader (Feb-Aug) and more forgiving if the trip drifts into Sept-Nov). Web-research price/timing indication 2026-09, a snapshot. Eagle Beach's fofoti trees, the volcanic-rock Arikok NP with its Natural Pool, laid-back Baby Beach near old-Aruba town San Nicolas, and the sunset viewpoint at the California Lighthouse. Mandatory: the ED Card digital immigration form (free to file, but bundles a $20pp Sustainability Fee, ages 8+) — file within 7 days of travel at edcardaruba.aw; this is a separate step from Curaçao/Bonaire's own entry requirements, don't assume one covers all three. Avoid Aruba Carnival season (~Jan 9-Feb 8, 2027, season opens Nov 11 2026) if cost matters — hotel rates spike 40-60%. Dutch travel advisory (2026-09 snapshot): green.",
+     "transport_to_next": "Inter-island flight Aruba-Curaçao (~30-40 min, Divi Divi Air/EZ Air/Winair, no ferry exists — the open-water crossing is too rough; roughly $100-115 one-way).",
+     "destinations": [
+      {
+       "name": "Eagle Beach",
+       "lat": 12.575,
+       "lng": -70.0472
+      },
+      {
+       "name": "Arikok National Park & the Natural Pool (Conchi)",
+       "lat": 12.4964,
+       "lng": -69.9553
+      },
+      {
+       "name": "Baby Beach & San Nicolas",
+       "lat": 12.4306,
+       "lng": -69.8975
+      },
+      {
+       "name": "California Lighthouse",
+       "lat": 12.6206,
+       "lng": -70.0511
+      },
+      {
+       "name": "Oranjestad",
+       "lat": 12.5246,
+       "lng": -70.027
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CW",
+     "country": "Curaçao",
+     "days": 7,
+     "budget": 665,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire and breezy Aruba. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Digital Immigration Card mandatory to fill in in advance (free) — a separate step from Aruba's ED Card, don't conflate the two. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08) — this route doesn't re-verify Curaçao's own numbers, only adds Aruba as a new first leg.",
+     "transport_to_next": "Short flight Curaçao-Bonaire.",
+     "destinations": [
+      {
+       "name": "Willemstad (UNESCO)",
+       "lat": 12.1091,
+       "lng": -68.9316
+      },
+      {
+       "name": "Shete Boka National Park",
+       "lat": 12.3667,
+       "lng": -69.15
+      },
+      {
+       "name": "beaches (Grote Knip)",
+       "lat": 12.2167,
+       "lng": -69.15
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "BQ",
+     "country": "Bonaire",
+     "days": 6,
+     "budget": 660,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. The mandatory entry tax of ~€70pp is a separate cost item, not included in the daily rate. Content and pricing reused unchanged from the existing Curaçao & Bonaire 🤿 route (verified 2026-07/2026-08).",
+     "transport_to_next": "End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Washington Slagbaai National Park",
+       "lat": 12.3167,
+       "lng": -68.4167
+      },
+      {
+       "name": "diving/snorkeling (marine park)",
+       "lat": 12.15,
+       "lng": -68.2833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_curacao-bonaire",
+   "name": "Curaçao & Bonaire 🤿",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct KLM flight to Curaçao, short regional flight onward to Bonaire.",
+   "description": "The Dutch Caribbean: colonial Willemstad and the diving/snorkeling paradise of Bonaire.",
+   "notes": "Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged as \"extra relevant with direct KLM flights\". Countries, days and budgets are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_curacao-bonaire",
+    "name": "Curaçao & Bonaire 🤿",
+    "stops": 5,
+    "km_in_route": 210,
+    "km_from_nl": 10220,
+    "km_back_to_nl": 10160,
+    "km_by_country": {
+     "CW": 70,
+     "BQ": 140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CW",
+     "country": "Curaçao",
+     "days": 7,
+     "budget": 665,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Curaçao (±9h45; from ±€650-750 return, about €100 pricier since April 2026 than before due to higher fuel costs; best period December-January). Price indication from 2026-08 web research, a snapshot. Willemstad with its Dutch colonial architecture is the urban counterpart to laid-back Bonaire. Shete Boka (rugged north coast) is the hidden gem, much quieter than the beaches. Price verified (2026-07), holds up. Digital Immigration Card mandatory to fill in in advance (free).",
+     "transport_to_next": "Short flight Curaçao-Bonaire",
+     "destinations": [
+      {
+       "name": "Willemstad (UNESCO)",
+       "lat": 12.1091,
+       "lng": -68.9316
+      },
+      {
+       "name": "Shete Boka National Park",
+       "lat": 12.3667,
+       "lng": -69.15
+      },
+      {
+       "name": "beaches (Grote Knip)",
+       "lat": 12.2167,
+       "lng": -69.15
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BQ",
+     "country": "Bonaire",
+     "days": 6,
+     "budget": 660,
+     "dailyRate": 110,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "World-class diving/snorkeling right off the coast. Washington Slagbaai NP (flamingos, rugged nature) is the hidden gem, barely visited. Price correction (2026-07): €87.50→€110/day (little budget accommodation, dive trips are expensive). The mandatory entry tax of ~€70 p.p. is a separate cost item, not included in the daily rate.",
+     "transport_to_next": "End of this route — flight Bonaire-Curaçao (short regional connection), then a direct KLM return flight Curaçao-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Washington Slagbaai National Park",
+       "lat": 12.3167,
+       "lng": -68.4167
+      },
+      {
+       "name": "diving/snorkeling (marine park)",
+       "lat": 12.15,
+       "lng": -68.2833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_guadeloupe-dominica",
+   "name": "Guadeloupe & Dominica 🍃",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "L'Express des Îles ferry between the two islands.",
+   "description": "The La Soufrière volcano and Carbet Falls on Guadeloupe, followed by the Boiling Lake Trek and Trafalgar Falls on Dominica.",
+   "notes": "Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴) as part of the fifth batch of standalone countries (2026-08) — the Guadeloupe/Dominica duo from that block, without Cuba/Jamaica/Curaçao&Bonaire/Saint Lucia/Grenada. Countries, days and budgets are carried over unchanged. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_guadeloupe-dominica",
+    "name": "Guadeloupe & Dominica 🍃",
+    "stops": 6,
+    "km_in_route": 140,
+    "km_from_nl": 9140,
+    "km_back_to_nl": 9200,
+    "km_by_country": {
+     "GP": 30,
+     "DM": 110
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GP",
+     "country": "Guadeloupe",
+     "days": 7,
+     "budget": 615,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Pointe-à-Pitre, with a stopover via Paris (Air France/KLM, ±10h45; from ±€650-1,700 return; best period February). Price indication from 2026-08 web research, a snapshot. French Caribbean culture combined with an active volcano. Îles des Saintes (small islets off the coast) is much quieter than the main island. Price verified (2026-07), holds up. Guadeloupe is French/EU (not Schengen) — no visa needed, just a passport/ID.",
+     "transport_to_next": "L'Express des Îles ferry to Dominica.",
+     "destinations": [
+      {
+       "name": "La Soufrière (volcano)",
+       "lat": 16.0456,
+       "lng": -61.6654
+      },
+      {
+       "name": "Carbet Falls",
+       "lat": 16.0472,
+       "lng": -61.6167
+      },
+      {
+       "name": "Îles des Saintes",
+       "lat": 15.8667,
+       "lng": -61.5833
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "DM",
+     "country": "Dominica",
+     "days": 8,
+     "budget": 760,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "\"Nature Island\" — the least developed and most unspoiled of the four islands from the original expedition. The Boiling Lake trek is a tough full day on its own; plan a rest day before or after it. Champagne Reef (volcanic bubbles while snorkeling) is unique. Price correction (2026-07): €72.50→€95/day. Visa-free, up to 90 days.",
+     "transport_to_next": "End of this route — return flight from Dominica to Amsterdam (1-2 stopovers, no direct connection).",
+     "destinations": [
+      {
+       "name": "Boiling Lake Trek",
+       "lat": 15.3167,
+       "lng": -61.2667
+      },
+      {
+       "name": "Trafalgar Falls",
+       "lat": 15.3181,
+       "lng": -61.3331
+      },
+      {
+       "name": "Champagne Reef",
+       "lat": 15.2833,
+       "lng": -61.3833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_ecuador",
+   "name": "Ecuador 🐢",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — local buses, organized boat/land tour for the Galápagos.",
+   "description": "Quito, Otavalo and Baños, with the Galápagos Islands as the highlight.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — \"Galápagos alone carries it\". Country, days and budget are carried over unchanged (incl. the 2026-07 price correction for the sharply risen Galápagos costs). Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.",
+   "distance": {
+    "id": "gt_seed_ecuador",
+    "name": "Ecuador 🐢",
+    "stops": 6,
+    "km_in_route": 2340,
+    "km_from_nl": 12460,
+    "km_back_to_nl": 13660,
+    "km_by_country": {
+     "EC": 2340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "EC",
+     "country": "Ecuador",
+     "days": 24,
+     "budget": 1650,
+     "dailyRate": 69,
+     "carInDailyRate": false,
+     "inDailyRate": "Galápagos park fee + boat/land tour are in this rate",
+     "notes": "Entry: flight Amsterdam-Quito (Iberia, ±11h40, usually 1 stopover via Madrid; from ±€800-1,000 return; best period March). Web-research price indication 2026-08, a snapshot. ⚠️ Price correction (2026-07): €1,025→€1,650 total, ~55-80% too low. Galápagos alone has cost $200 park entrance + $20 transit card p.p. since Aug. 2024, plus $150-235/day for a budget boat/land tour — already €800-950 for 4-5 days. Quito: watch out for scopolamine drugging in bars/taxis and fake taxis. Route-logic check (2026-08, search-confirmed): Otavalo (north) and Mindo (west) are both dead-end side trips from Quito with no good connection between them — nearly all traffic returns via Quito between the two anyway. This is normal hub-and-spoke travel logic, not a zigzag; no change needed.",
+     "transport_to_next": "End of this route — back to Quito (flight from the Galápagos Islands), then return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Quito",
+       "lat": -0.1807,
+       "lng": -78.4678
+      },
+      {
+       "name": "Otavalo",
+       "lat": 0.2345,
+       "lng": -78.2617
+      },
+      {
+       "name": "Mindo",
+       "lat": 0.05,
+       "lng": -78.7667
+      },
+      {
+       "name": "Baños",
+       "lat": -1.3928,
+       "lng": -78.4247
+      },
+      {
+       "name": "Cuenca",
+       "lat": -2.9006,
+       "lng": -79.0045
+      },
+      {
+       "name": "Galápagos Islands",
+       "lat": -0.9538,
+       "lng": -90.9656
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_guatemala",
+   "name": "Guatemala 🦜",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Intercity buses/hotel taxis between the cities — the local \"chicken bus\" is advised against by the travel advisory.",
+   "description": "Quetzaltenango, Lake Atitlán, Antigua and Semuc Champey, finishing with Tikal.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 (via Central America Loop 🌋) as part of the fifth batch of standalone countries (2026-08) — the cheapest country in the whole expedition. Country, days and budget are carried over unchanged. Pan-American Grand Tour 🌎 and Central America Loop 🌋 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_guatemala",
+    "name": "Guatemala 🦜",
+    "stops": 6,
+    "km_in_route": 510,
+    "km_from_nl": 11900,
+    "km_back_to_nl": 11520,
+    "km_by_country": {
+     "GT": 510
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GT",
+     "country": "Guatemala",
+     "days": 16,
+     "budget": 544,
+     "dailyRate": 34,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Guatemala City, with a stopover via Madrid or a US hub (Houston/Atlanta/Miami) (±16-20 hours total; from ±€700-1,300 return; best period October). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out — cheapest country on the route. Use boats rather than the Godínez-Panajachel road at Atitlán; Cerro de la Cruz in Antigua only guided/during the day. Route-logic check (2026-08, search-confirmed): the order (Xela→Atitlán→Antigua→Guatemala City→Semuc Champey→Flores) is a consistent southwest-northeast line, no zigzag — Flores already sits close to the Belize border.",
+     "transport_to_next": "End of this route — return flight from Flores/Guatemala City to Amsterdam (1 stopover).",
+     "destinations": [
+      {
+       "name": "Quetzaltenango (Xela)",
+       "lat": 14.8347,
+       "lng": -91.5225
+      },
+      {
+       "name": "Lake Atitlán",
+       "lat": 14.6862,
+       "lng": -91.1954
+      },
+      {
+       "name": "Antigua",
+       "lat": 14.5586,
+       "lng": -90.7295
+      },
+      {
+       "name": "Guatemala City",
+       "lat": 14.6349,
+       "lng": -90.5069
+      },
+      {
+       "name": "Semuc Champey",
+       "lat": 15.5333,
+       "lng": -89.9333
+      },
+      {
+       "name": "Flores & Tikal",
+       "lat": 16.9268,
+       "lng": -89.8903
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_jamaica",
+   "name": "Jamaica 🎵",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker between cheap and normal — local buses/taxis.",
+   "description": "Kingston, Dunn's River Falls, Port Antonio and the coffee-/hiking region of the Blue Mountains.",
+   "notes": "Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country, days and budget are carried over unchanged (incl. the 2026-08 route-logic fix for the Blue Mountains order). Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_jamaica",
+    "name": "Jamaica 🎵",
+    "stops": 4,
+    "km_in_route": 210,
+    "km_from_nl": 10260,
+    "km_back_to_nl": 10240,
+    "km_by_country": {
+     "JM": 210
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "JM",
+     "country": "Jamaica",
+     "days": 12,
+     "budget": 780,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Kingston, with a stopover (no direct connection, ±13-16 hours incl. stopover; from ±€750-900 return; best period December — May is usually cheaper on flight price but falls outside the dry season). Price indication from 2026-08 web research, a snapshot. Blue Mountains (coffee, hiking) and Port Antonio (rafting, waterfalls, hardly any tourists compared to Negril/Ocho Rios) are the strongest match for nature over luxury. Price correction (2026-07): €75→€90/day, Jamaica is pricier than assumed (guesthouses + entrance fees).",
+     "transport_to_next": "End of this route — short final stretch Blue Mountains-Kingston (Hardwar Gap mountain route), then a return flight Kingston-Amsterdam (usually with a stopover via Panama City or Miami).",
+     "destinations": [
+      {
+       "name": "Kingston",
+       "lat": 17.9714,
+       "lng": -76.7936
+      },
+      {
+       "name": "Dunn's River Falls (Ocho Rios)",
+       "lat": 18.4108,
+       "lng": -77.1296
+      },
+      {
+       "name": "Port Antonio",
+       "lat": 18.1811,
+       "lng": -76.4513
+      },
+      {
+       "name": "Blue Mountains (Hardwar Gap)",
+       "lat": 18.0747,
+       "lng": -76.6597
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_saint-lucia-grenada",
+   "name": "Saint Lucia & Grenada 🌰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Short regional flight between the two islands.",
+   "description": "The Pitons and Sulphur Springs on Saint Lucia, followed by the Underwater Sculpture Park and Grand Etang NP on Grenada.",
+   "notes": "Split off from Caribbean Islands Hop 🏝️ (itself already split off from Caribbean & Amazon Expedition 🌴) as part of the sixth batch of standalone countries (2026-08) — the Saint Lucia/Grenada duo from that block, without Cuba/Jamaica/Curaçao&Bonaire/Guadeloupe/Dominica. Countries and daily budgets are carried over unchanged. No Dutch embassy on either island. Caribbean Islands Hop 🏝️ and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_saint-lucia-grenada",
+    "name": "Saint Lucia & Grenada 🌰",
+    "stops": 6,
+    "km_in_route": 300,
+    "km_from_nl": 9330,
+    "km_back_to_nl": 9590,
+    "km_by_country": {
+     "LC": 0,
+     "GD": 300
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "LC",
+     "country": "Saint Lucia",
+     "days": 7,
+     "budget": 560,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Saint Lucia, with a stopover (e.g. via the US, ±19 hours total; from ±€700-1,000 return; best period August-September — note, that falls right in the middle of hurricane season June-November; consider December-April for more certainty at a higher price). Price indication from 2026-08 web research, a snapshot. The iconic Pitons, more tourist-developed than Grenada. Tet Paul Nature Trail gives the same view of the Pitons, much quieter than the busy hiking trails. Price verified (2026-07), holds up.",
+     "transport_to_next": "Flight St Lucia-Grenada (regional connection, ±1 hour).",
+     "destinations": [
+      {
+       "name": "The Pitons",
+       "lat": 13.8167,
+       "lng": -61.0667
+      },
+      {
+       "name": "Sulphur Springs (drive-in volcano)",
+       "lat": 13.8347,
+       "lng": -61.0552
+      },
+      {
+       "name": "Tet Paul Nature Trail",
+       "lat": 13.8333,
+       "lng": -61.05
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "GD",
+     "country": "Grenada",
+     "days": 7,
+     "budget": 510,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The least touristy of the two islands. Grand Etang NP (rainforest, crater lake) is the hidden gem. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of this route — return flight from Grenada to Amsterdam (1 stopover, open-jaw).",
+     "destinations": [
+      {
+       "name": "Underwater Sculpture Park",
+       "lat": 12.0742,
+       "lng": -61.7325
+      },
+      {
+       "name": "spice plantations (nutmeg)",
+       "lat": 12.1667,
+       "lng": -61.7333
+      },
+      {
+       "name": "Grand Etang National Park",
+       "lat": 12.0833,
+       "lng": -61.6833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_mexico",
+   "name": "Mexico 🌵",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses and colectivos.",
+   "description": "From Mexico City via Oaxaca to the Maya ruins of Palenque.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged from Pan-American Grand Tour 🌎 (including all price/visa/travel-advisory verifications, such as the Route 199 warning). Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): San Cristóbal de las Casas moved (now between Oaxaca and Palenque instead of after Bacalar) to avoid a ≈700 km backtrack. Coordinates added per destination. See Pan-American Grand Tour 🌎's own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_mexico",
+    "name": "Mexico 🌵",
+    "stops": 7,
+    "km_in_route": 2350,
+    "km_from_nl": 12010,
+    "km_back_to_nl": 11200,
+    "km_by_country": {
+     "MX": 2350
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MX",
+     "country": "Mexico",
+     "days": 28,
+     "budget": 1316,
+     "dailyRate": 47,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Mexico City (±11 hours; from ±€800-950 return; best period November). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out. Route 199 between San Cristóbal and Palenque: road banditry (not political), don't drive at night. Route-logic fix (2026-08, search-confirmed): San Cristóbal de las Casas previously came after Bacalar — Bacalar-San Cristóbal is ≈700 km/10h and backtracks past Palenque, ground the trip had already covered. Now between Oaxaca and Palenque (the standard 'Ruta Maya' order), so Bacalar stays the real endpoint right before the border crossing into Guatemala.",
+     "transport_to_next": "Overland bus via the La Mesilla/El Carmen border crossing to Huehuetenango, Guatemala.",
+     "destinations": [
+      {
+       "name": "Ciudad de México",
+       "lat": 19.4326,
+       "lng": -99.1332
+      },
+      {
+       "name": "Oaxaca",
+       "lat": 17.0732,
+       "lng": -96.7266
+      },
+      {
+       "name": "San Cristóbal de las Casas",
+       "lat": 16.737,
+       "lng": -92.6376
+      },
+      {
+       "name": "Palenque",
+       "lat": 17.489,
+       "lng": -91.9792
+      },
+      {
+       "name": "Mérida",
+       "lat": 20.9674,
+       "lng": -89.5926
+      },
+      {
+       "name": "Tulum",
+       "lat": 20.2114,
+       "lng": -87.4654
+      },
+      {
+       "name": "Bacalar",
+       "lat": 18.6767,
+       "lng": -88.3958
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_nicaragua",
+   "name": "Nicaragua 🌅",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bus between cities, boat for Isla de Ometepe.",
+   "description": "León, Managua, Granada, Isla de Ometepe and San Juan del Sur.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 (via Central America Loop 🌋) as part of the sixth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. No Dutch embassy on the ground. Pan-American Grand Tour 🌎 and Central America Loop 🌋 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_nicaragua",
+    "name": "Nicaragua 🌅",
+    "stops": 6,
+    "km_in_route": 420,
+    "km_from_nl": 11770,
+    "km_back_to_nl": 11820,
+    "km_by_country": {
+     "NI": 420
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NI",
+     "country": "Nicaragua",
+     "days": 15,
+     "budget": 465,
+     "dailyRate": 31,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Managua, with a stopover via Panama City (Copa, ±18 hours total — via Madrid/Houston/Miami this can run to 24+ hours, deliberately choose the Panama route; from ±€520-900 return; best period September/October). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out. Regular demonstrations can block roads to the capital/airport; no Dutch embassy on the ground. The CA-4 countries (Guatemala/Honduras/El Salvador/Nicaragua) count as one visa zone, max. 90 days combined — this route stays well under that.",
+     "transport_to_next": "End of this route — return flight from Managua to Amsterdam (1 stopover, via Panama City).",
+     "destinations": [
+      {
+       "name": "León",
+       "lat": 12.434,
+       "lng": -86.878
+      },
+      {
+       "name": "Managua",
+       "lat": 12.115,
+       "lng": -86.2362
+      },
+      {
+       "name": "Granada",
+       "lat": 11.9344,
+       "lng": -85.956
+      },
+      {
+       "name": "Isla de Ometepe",
+       "lat": 11.5167,
+       "lng": -85.5833
+      },
+      {
+       "name": "Laguna de Apoyo",
+       "lat": 11.9333,
+       "lng": -86.0333
+      },
+      {
+       "name": "San Juan del Sur",
+       "lat": 11.2529,
+       "lng": -85.8703
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_panama",
+   "name": "Panama 🚢",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Bus between cities, boat for the San Blas Islands.",
+   "description": "Bocas del Toro, Boquete, the Panama Canal and the San Blas Islands.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 (via Central America Loop 🌋) as part of the fifth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Pan-American Grand Tour 🌎 and Central America Loop 🌋 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_panama",
+    "name": "Panama 🚢",
+    "stops": 6,
+    "km_in_route": 660,
+    "km_from_nl": 11710,
+    "km_back_to_nl": 11400,
+    "km_by_country": {
+     "PA": 660
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PA",
+     "country": "Panama",
+     "days": 15,
+     "budget": 625,
+     "dailyRate": 42,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Panama City (±10h55; from ±€700-900 return; best period August/November). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out. Darién region (not on the route) is orange. San Blas boat: check for life jackets/two outboard motors with the operator beforehand.",
+     "transport_to_next": "End of this route — direct KLM return flight Panama City-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Bocas del Toro",
+       "lat": 9.34,
+       "lng": -82.24
+      },
+      {
+       "name": "Boquete",
+       "lat": 8.7833,
+       "lng": -82.4333
+      },
+      {
+       "name": "Panama City",
+       "lat": 8.9824,
+       "lng": -79.5199
+      },
+      {
+       "name": "Casco Viejo",
+       "lat": 8.9515,
+       "lng": -79.5346
+      },
+      {
+       "name": "Panama Canal",
+       "lat": 9.08,
+       "lng": -79.68
+      },
+      {
+       "name": "San Blas Islands",
+       "lat": 9.5667,
+       "lng": -78.95
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_peru",
+   "name": "Peru 🦙",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — local buses along the coast and through the Andes, train for Machu Picchu.",
+   "description": "From the north coast at Máncora via Huaraz and Lima to Cusco, the Sacred Valley and Lake Titicaca.",
+   "notes": "Split off from Pan-American Grand Tour 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md) — already flagged there as Strong, 'Machu Picchu alone carries it'. Country, days and budget are carried over unchanged. Pan-American Grand Tour 🌎 itself remains unchanged as a separate, complete expedition.",
+   "distance": {
+    "id": "gt_seed_peru",
+    "name": "Peru 🦙",
+    "stops": 7,
+    "km_in_route": 3170,
+    "km_from_nl": 13140,
+    "km_back_to_nl": 13540,
+    "km_by_country": {
+     "PE": 3170
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PE",
+     "country": "Peru",
+     "days": 35,
+     "budget": 1260,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Lima (±12-13 hours; from ±€800-950 return; best period April). Web-research price indication 2026-08, a snapshot. Price verified (2026-07), checks out (tight). Lima under a state of emergency (criminal violence); regular strikes/road blockades nationwide. Machu Picchu (train+entrance, ~€150-250) is a separate cost.",
+     "transport_to_next": "End of this route — domestic flight Juliaca (Puno)-Lima, then direct KLM return flight Lima-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Máncora",
+       "lat": -4.1075,
+       "lng": -81.05
+      },
+      {
+       "name": "Huaraz",
+       "lat": -9.5278,
+       "lng": -77.5278
+      },
+      {
+       "name": "Lima",
+       "lat": -12.0464,
+       "lng": -77.0428
+      },
+      {
+       "name": "Ica & Huacachina",
+       "lat": -14.0678,
+       "lng": -75.7286
+      },
+      {
+       "name": "Arequipa",
+       "lat": -16.409,
+       "lng": -71.5375
+      },
+      {
+       "name": "Cusco & Sacred Valley",
+       "lat": -13.532,
+       "lng": -71.9675
+      },
+      {
+       "name": "Puno (Lake Titicaca)",
+       "lat": -15.8402,
+       "lng": -70.0219
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_suriname",
+   "name": "Suriname 🛶",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct KLM flight, river boats for the Maroon villages in the interior.",
+   "description": "Dutch colonial history in Paramaribo and a river trip to the Maroon villages.",
+   "notes": "Split off from Suriname & Northern Brazil 🌴 (itself already split off from Caribbean & Amazon Expedition 🌴 — see ROUTE_BUILDER_MODULES.md) as part of this first batch of standalone countries (2026-08) — already flagged as \"extra relevant given the Dutch ties\". Country, days and budget are carried over unchanged. Suriname & Northern Brazil 🌴 and Caribbean & Amazon Expedition 🌴 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_suriname",
+    "name": "Suriname 🛶",
+    "stops": 3,
+    "km_in_route": 290,
+    "km_from_nl": 9750,
+    "km_back_to_nl": 9860,
+    "km_by_country": {
+     "SR": 290
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "SR",
+     "country": "Suriname",
+     "days": 11,
+     "budget": 605,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Paramaribo (±9h20, from ±€1,100-1,800 return) — note: February is one of the pricier flight months on this route, despite being the climatologically best period. Price indication from 2026-08 web research, a snapshot. Dutch colonial history in Paramaribo, combined with a river trip to Maroon villages in the interior — plan on 3-5 days for a decent jungle trip alongside the city. Brownsberg (view over the Brokopondo reservoir) is the hidden gem. Price verified (2026-07): probably just enough, Brownsberg/Maroon-village tours ($70-120/day) push the average up. Note: \"visa-free\" isn't entirely accurate — a mandatory online ICF immigration form + yellow fever certificate is needed in advance.",
+     "transport_to_next": "End of this route — direct KLM return flight Paramaribo-Amsterdam (±9h20).",
+     "destinations": [
+      {
+       "name": "Paramaribo (UNESCO)",
+       "lat": 5.852,
+       "lng": -55.2038
+      },
+      {
+       "name": "Maroon villages along the river",
+       "lat": 4.4,
+       "lng": -55
+      },
+      {
+       "name": "Brownsberg Nature Park",
+       "lat": 4.95,
+       "lng": -55.1667
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+CNS,Cairns,AU,out,1050,2+ stops via Gulf/Singapore,estimate from route notes (return EUR 1600-2500 halved; no WebSearch),2026-10-29,low,est
+CNS,Cairns,AU,back,1050,2+ stops via Gulf/Singapore,same as out,2026-10-29,low,est
+SYD,Sydney,AU,out,900,1 stop via Gulf/Singapore,estimate from route notes (return EUR 1100-1900),2026-10-29,low,est
+MEL,Melbourne,AU,back,850,1 stop via Gulf/Singapore,estimate from route notes,2026-10-29,low,est
+ADL,Adelaide,AU,back,850,1-2 stops,estimate (Sydney-level fare),2026-10-29,low,est
+HBA,Hobart,AU,out,1100,2 stops via hub + Melbourne/Sydney,estimate from route notes (return EUR 1300-1800),2026-10-29,low,est
+HBA,Hobart,AU,back,1100,2 stops,same as out,2026-10-29,low,est
+PER,Perth,AU,out,800,1 stop via Gulf/Singapore,estimate from route notes (return EUR 910-1500),2026-10-29,low,est
+YYC,Calgary,CA,out,450,1 stop (KLM/Air Canada/WestJet),estimate from route notes (return EUR 650-950),2026-10-29,low,est
+YYZ,Toronto,CA,back,380,KLM/Air Canada direct,estimate (similar to SFO/YHZ rows),2026-10-29,low,est
+ANC,Anchorage,US,back,650,via Seattle/Vancouver (no direct),estimate,2026-10-29,low,est
+NAN,Nadi,FJ,out,950,multiple stops via Asia/Gulf,estimate from route notes (return EUR 1150-1500),2026-10-29,low,est
+NAN,Nadi,FJ,back,950,multiple stops,same as out,2026-10-29,low,est
+RAR,Rarotonga,CK,back,1400,via Auckland/Los Angeles,estimate,2026-10-29,low,est
+CHC,Christchurch,NZ,out,1200,2+ stops,estimate from route notes (return EUR 1300-2000),2026-10-29,low,est
+WLG,Wellington,NZ,out,1200,2-3 stops,estimate from route notes (return EUR 1400-1800),2026-10-29,low,est

@@ -1,0 +1,17 @@
+airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,date_checked,confidence,notes
+CHC,Christchurch,NZ,out,1150,1-2 stops via Asia/Gulf/US,"Estimate from AKL back 1100 in reference file; no web search; notes: return EUR 1300-2000",2026-10-29,low,"27-38 h total"
+CHC,Christchurch,NZ,back,1100,1-2 stops via Asia/Gulf/US,"Estimate from AKL back 1100; no web search",2026-10-29,low,
+POM,Port Moresby,PG,out,1000,Singapore/Australia + Air Niugini (2 stops),"Estimate; notes: return EUR 1470-2020; no web search",2026-10-29,low,
+POM,Port Moresby,PG,back,950,Air Niugini/Singapore/Australia (2 stops),"Estimate; no web search",2026-10-29,low,
+ROR,Koror,PW,out,900,Manila/Seoul/Taipei (2 stops),"Estimate; notes: return EUR 1300-1750; no web search",2026-10-29,low,"fare includes USD 100 Pristine Paradise fee"
+ROR,Koror,PW,back,850,Manila/Seoul/Taipei (2 stops),"Estimate; no web search",2026-10-29,low,
+SFO,San Francisco,US,out,450,KLM/United direct,"Estimate from SFO back 380 in reference file; no web search",2026-10-29,low,"summer out typically above back"
+SEA,Seattle,US,out,420,KLM direct,"Estimate; notes: return EUR 880-1090; no web search",2026-10-29,low,
+MIA,Miami,US,out,380,KLM direct,"Estimate; no web search",2026-10-29,low,
+MIA,Miami,US,back,360,KLM direct,"Estimate; no web search",2026-10-29,low,
+HNL,Honolulu,US,out,750,1 stop via US hub,"Estimate; no web search",2026-10-29,low,
+LIH,Lihue,US,back,800,via Honolulu/US hub,"Estimate; no web search",2026-10-29,low,
+IAD,Washington Dulles,US,out,400,KLM direct,"Estimate; no web search",2026-10-29,low,
+BOS,Boston,US,back,380,KLM direct,"Estimate; no web search",2026-10-29,low,
+LAS,Las Vegas,US,out,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
+PHX,Phoenix,US,back,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,

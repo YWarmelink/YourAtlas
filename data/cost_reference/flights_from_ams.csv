@@ -218,3 +218,146 @@ TPE,Taipei,TW,back,450,EVA/China Airlines direct or 1 stop,WebSearch 2026-10-28 
 TAS,Tashkent,UZ,back,320,Turkish/Qatar 1 stop (no nonstop),WebSearch 2026-10-28 (Expedia USD 335; Skyscanner EUR 198-493),2026-10-28,low,
 MRS,Marseille,FR,back,120,Transavia/KLM/Air France,estimate (no search),2026-10-28,low,est
 ADB,Izmir,TR,out,170,Transavia/Pegasus/KLM,estimate (no search),2026-10-28,low,est
+DXB,Dubai,AE,out,300,KLM/Emirates direct,WebSearch 2026-10-29 (Kayak EUR 175 / Expedia EUR 182 floors; Emirates USD 739),2026-10-29,medium,typical above floors
+DXB,Dubai,AE,back,280,KLM/Emirates direct,estimate from out fare,2026-10-29,low,est
+PBH,Paro,BT,out,900,via Delhi/Bangkok (Drukair),mirror of PBH back (batch 21),2026-10-29,low,est
+TBS,Tbilisi,GE,out,260,1 stop (Istanbul/Frankfurt/Zurich etc.),route notes EUR 250-400 return; est,2026-10-29,low,est
+GYD,Baku,AZ,back,280,1 stop,estimate (no search),2026-10-29,low,est
+DEL,Delhi,IN,back,550,KLM direct / connecting,notes EUR 350-550 return; est,2026-10-29,low,est
+AMM,Amman,JO,out,260,1 stop (Austrian/Turkish/Royal Jordanian),route notes EUR 300-700 return; est,2026-10-29,low,est
+AMM,Amman,JO,back,240,1 stop,estimate from out fare,2026-10-29,low,est
+TYO,Tokyo (HND/NRT),JP,out,520,KLM/Air France/SAS direct or 1 stop,WebSearch 2026-10-29 (Skyscanner EUR 361 / Expedia USD 420-432 floors; route notes EUR 900-1300 return),2026-10-29,medium,typical above floors
+ALA,Almaty,KZ,out,300,via Istanbul (Turkish) / Frankfurt,route notes EUR 250-650 return; est,2026-10-29,low,est
+FRU,Bishkek,KG,out,330,via Istanbul (Turkish/Pegasus),route notes EUR 450-700 return; est,2026-10-29,low,est
+FRU,Bishkek,KG,back,320,via Istanbul,estimate from out fare,2026-10-29,low,est
+ICN,Seoul Incheon,KR,out,480,KLM/Korean Air direct,WebSearch 2026-10-29 (Expedia EUR 314 / Skyscanner EUR 370 / Cheapflights USD 406-458 floors; route notes EUR 700-1100 return),2026-10-29,medium,typical above floors
+ICN,Seoul Incheon,KR,back,450,KLM/Korean Air direct,WebSearch 2026-10-29 (Skyscanner EUR 426 floor),2026-10-29,medium,
+CMB,Colombo,LK,out,500,1 stop via Gulf hub,estimate (no search),2026-10-29,low,est
+CMB,Colombo,LK,back,470,1 stop via Gulf hub,estimate from out fare,2026-10-29,low,est
+ULN,Ulaanbaatar,MN,out,450,via Istanbul (Turkish),route notes EUR 600-800 return; est,2026-10-29,low,est
+ULN,Ulaanbaatar,MN,back,420,via Istanbul,estimate from out fare,2026-10-29,low,est
+MLE,Male,MV,out,520,1 stop (Qatar/Emirates/Turkish/Austrian),estimate (no search),2026-10-29,low,est
+MLE,Male,MV,back,480,1 stop,estimate from out fare,2026-10-29,low,est
+KUL,Kuala Lumpur,MY,out,450,KLM direct (~4x/week),route notes EUR 650-950 return; est,2026-10-29,low,est
+KUL,Kuala Lumpur,MY,back,420,KLM direct,estimate from out fare,2026-10-29,low,est
+KTM,Kathmandu,NP,out,480,1 stop (Qatar/Turkish/Emirates),route notes EUR 550-950 return (Nov peak); est,2026-10-29,low,est
+KTM,Kathmandu,NP,back,420,1 stop,estimate from out fare,2026-10-29,low,est
+MCT,Muscat,OM,out,500,KLM direct,route notes EUR 1190-1300 return (raised by regional tensions); est,2026-10-29,low,volatile
+MNL,Manila,PH,out,480,KLM direct,route notes EUR 700-900 return; est,2026-10-29,low,est
+MNL,Manila,PH,back,450,KLM direct,estimate from out fare,2026-10-29,low,est
+BKK,Bangkok,TH,out,420,KLM/Thai/Qatar/Etihad direct or 1 stop,WebSearch 2026-10-29 (Kayak EUR 344 / Expedia EUR 364 / Travelocity USD 394 floors),2026-10-29,medium,typical above floors
+BKK,Bangkok,TH,back,400,KLM/Thai direct or 1 stop,estimate from out fare,2026-10-29,low,est
+DYU,Dushanbe,TJ,back,350,1 stop via Istanbul,estimate (no search),2026-10-29,low,est
+BJV,Bodrum,TR,out,170,seasonal direct/1 stop,estimate (no search),2026-10-29,low,est
+BJV,Bodrum,TR,back,160,seasonal direct/1 stop,estimate from out fare,2026-10-29,low,est
+ADB,Izmir,TR,back,160,Transavia/Pegasus/KLM,estimate from ADB out fare,2026-10-29,low,est
+TAS,Tashkent,UZ,out,330,via Istanbul (Turkish),route notes EUR 500-700 return; est,2026-10-29,low,est
+SGN,Ho Chi Minh City,VN,back,480,1 stop,estimate (HAN out 520 reused as benchmark),2026-10-29,low,est
+PNH,Phnom Penh,KH,back,520,1-2 stops via Bangkok/Singapore/Doha,estimate (no search),2026-10-29,low,est
+BBK,Kasane,BW,out,800,via Johannesburg (KLM + Airlink/Air Botswana),route notes (return ±EUR 900-1300) one-way estimate; no web search,2026-10-29,low,est
+MUB,Maun,BW,back,750,Maun-JNB (~EUR 170) + KLM JNB-AMS ~EUR 580,estimate from route notes + typical JNB fare,2026-10-29,low,est
+RAI,Praia,CV,back,240,TAP via Lisbon,estimate from VXE out fare 250,2026-10-29,low,est
+ADD,Addis Ababa,ET,out,450,Ethiopian direct / 1 connection,route notes (return ±EUR 500-900) one-way estimate; no web search,2026-10-29,low,est
+ADD,Addis Ababa,ET,back,450,Ethiopian direct / 1 connection,same as out,2026-10-29,low,est
+LBV,Libreville,GA,out,700,via Paris or Addis,reuse LBV back fare,2026-10-29,low,est
+ACC,Accra,GH,out,450,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
+ACC,Accra,GH,back,420,KLM direct,same as out,2026-10-29,low,est
+NBO,Nairobi,KE,out,480,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
+NBO,Nairobi,KE,back,450,KLM direct,same as out,2026-10-29,low,est
+TNG,Tangier,MA,out,120,Transavia/Ryanair direct (seasonal),estimate; no web search,2026-10-29,low,est
+RAK,Marrakech,MA,back,120,Transavia/easyJet direct,route notes (return ±EUR 100-280),2026-10-29,medium,est
+TNR,Antananarivo,MG,out,650,1 stop via Paris/Nairobi,route notes (return ±EUR 650-1100),2026-10-29,low,est
+TNR,Antananarivo,MG,back,650,1 stop via Paris/Nairobi,same as out,2026-10-29,low,est
+MRU,Mauritius,MU,out,600,1 stop via Paris/Dubai/Istanbul,route notes (return ±EUR 600-1500),2026-10-29,low,est
+MRU,Mauritius,MU,back,600,1 stop,same as out,2026-10-29,low,est
+MPM,Maputo,MZ,out,600,via Doha or Lisbon,route notes (return ±EUR 610-1200),2026-10-29,low,est
+MPM,Maputo,MZ,back,600,via Doha,same as out,2026-10-29,low,est
+WDH,Windhoek,NA,out,650,1 connection (FRA/ZRH/JNB),route notes (return ±EUR 700-1200),2026-10-29,low,est
+WDH,Windhoek,NA,back,620,1 connection,same as out,2026-10-29,low,est
+KGL,Kigali,RW,out,500,KLM direct,route notes (return ±EUR 800-1000),2026-10-29,low,est
+KGL,Kigali,RW,back,470,KLM direct,same as out,2026-10-29,low,est
+SEZ,Mahe,SC,out,600,1 stop via Doha/Abu Dhabi/Nairobi,route notes (return ±EUR 680-900),2026-10-29,low,est
+SEZ,Mahe,SC,back,580,1 stop,same as out,2026-10-29,low,est
+TMS,Sao Tome,ST,out,550,TAP via Lisbon,route notes (return ±EUR 700-2500 volatile),2026-10-29,low,est
+TMS,Sao Tome,ST,back,550,TAP via Lisbon,same as out,2026-10-29,low,est
+JRO,Kilimanjaro,TZ,out,600,KLM direct,route notes (return ±EUR 1050-1500),2026-10-29,low,est
+DAR,Dar es Salaam,TZ,back,600,1 stop (Doha/Addis/Nairobi),estimate; JRO direct would need an extra domestic flight,2026-10-29,low,est
+JNB,Johannesburg,ZA,back,560,KLM direct,estimate; no web search,2026-10-29,low,est
+MTS,Manzini,SZ,back,680,Airlink to JNB (~EUR 120) + KLM JNB-AMS (~EUR 560),estimate,2026-10-29,low,est
+HRE,Harare,ZW,out,650,via Addis (Ethiopian),route notes (return ±EUR 700-1000),2026-10-29,low,est
+VFA,Victoria Falls,ZW,back,600,via Addis (Ethiopian),route notes,2026-10-29,low,est
+LUN,Lusaka,ZM,out,600,1 connection (Nairobi/Doha/Addis),route notes (return ±EUR 600-1250),2026-10-29,low,est
+LLW,Lilongwe,MW,back,600,1 connection,route notes,2026-10-29,low,est
+LPB,La Paz,BO,out,600,via Madrid/Bogota/Santa Cruz,estimate from route notes (700-1300 return),2026-10-29,low,no search
+LPB,La Paz,BO,back,580,via hub,estimate,2026-10-29,low,
+BEL,Belem,BR,out,480,TAP via Lisbon,estimate from route notes (650-950 return),2026-10-29,low,
+CJC,Calama,CL,out,520,KLM AMS-Santiago + domestic to Calama,estimate from route notes (800-900 return incl. domestic),2026-10-29,low,
+PBM,Paramaribo,SR,out,750,KLM direct,estimate from route notes (1100-1800 return),2026-10-29,low,
+PBM,Paramaribo,SR,back,700,KLM direct,estimate,2026-10-29,low,
+CTG,Cartagena,CO,out,460,1 stop via Madrid/Bogota/Panama,estimate from route notes (650-900 return),2026-10-29,low,
+BOG,Bogota,CO,back,450,KLM/Avianca direct or 1 stop,estimate,2026-10-29,low,
+GUA,Guatemala City,GT,out,500,1-2 stops via Madrid/US hub,estimate from route notes (600-1300 return),2026-10-29,low,
+GUA,Guatemala City,GT,back,480,1-2 stops,estimate,2026-10-29,low,
+PTY,Panama City,PA,out,450,KLM direct,estimate from route notes (700-900 return),2026-10-29,low,
+PTY,Panama City,PA,back,450,KLM direct,estimate,2026-10-29,low,
+SJO,San Jose,CR,out,470,KLM direct,estimate from route notes (730-850 return),2026-10-29,low,
+SJO,San Jose,CR,back,450,KLM direct,estimate,2026-10-29,low,
+HAV,Havana,CU,back,500,Connection (Air Europa/Air France/Turkish),estimate (mirror of HAV out 520),2026-10-29,low,
+KIN,Kingston,JM,out,480,stopover via Panama City/Miami/Madrid,estimate from route notes (750-900 return),2026-10-29,low,
+KIN,Kingston,JM,back,460,stopover,estimate,2026-10-29,low,
+CUR,Curacao,CW,out,440,KLM direct,estimate from route notes (650-750 return),2026-10-29,low,
+CUR,Curacao,CW,back,420,KLM direct,estimate,2026-10-29,low,
+AUA,Aruba,AW,out,450,KLM direct,estimate from route notes (740-820 return),2026-10-29,low,
+PTP,Pointe-a-Pitre,GP,out,420,Air France/KLM via Paris,estimate from route notes (650-1700 return),2026-10-29,low,
+DOM,Dominica,DM,back,650,1-2 stops,estimate,2026-10-29,low,
+UVF,Saint Lucia,LC,out,500,via US hub,estimate from route notes (700-1000 return),2026-10-29,low,
+GND,Grenada,GD,back,600,1 stop (open-jaw),estimate,2026-10-29,low,
+UIO,Quito,EC,out,520,Iberia via Madrid,estimate from route notes (800-1000 return),2026-10-29,low,
+UIO,Quito,EC,back,500,Iberia via Madrid,estimate,2026-10-29,low,
+CUN,Cancun,MX,back,450,KLM/TUI/Transavia direct or 1 stop,estimate,2026-10-29,low,
+MGA,Managua,NI,out,430,Copa via Panama City,estimate from route notes (520-900 return),2026-10-29,low,
+MGA,Managua,NI,back,430,Copa via Panama City,estimate,2026-10-29,low,
+LIM,Lima,PE,out,500,KLM direct,estimate from route notes (800-950 return),2026-10-29,low,
+LIM,Lima,PE,back,480,KLM direct,estimate,2026-10-29,low,
+CNS,Cairns,AU,out,1050,2+ stops via Gulf/Singapore,estimate from route notes (return EUR 1600-2500 halved; no WebSearch),2026-10-29,low,est
+CNS,Cairns,AU,back,1050,2+ stops via Gulf/Singapore,same as out,2026-10-29,low,est
+SYD,Sydney,AU,out,900,1 stop via Gulf/Singapore,estimate from route notes (return EUR 1100-1900),2026-10-29,low,est
+MEL,Melbourne,AU,back,850,1 stop via Gulf/Singapore,estimate from route notes,2026-10-29,low,est
+ADL,Adelaide,AU,back,850,1-2 stops,estimate (Sydney-level fare),2026-10-29,low,est
+HBA,Hobart,AU,out,1100,2 stops via hub + Melbourne/Sydney,estimate from route notes (return EUR 1300-1800),2026-10-29,low,est
+HBA,Hobart,AU,back,1100,2 stops,same as out,2026-10-29,low,est
+PER,Perth,AU,out,800,1 stop via Gulf/Singapore,estimate from route notes (return EUR 910-1500),2026-10-29,low,est
+YYC,Calgary,CA,out,450,1 stop (KLM/Air Canada/WestJet),estimate from route notes (return EUR 650-950),2026-10-29,low,est
+YYZ,Toronto,CA,back,380,KLM/Air Canada direct,estimate (similar to SFO/YHZ rows),2026-10-29,low,est
+ANC,Anchorage,US,back,650,via Seattle/Vancouver (no direct),estimate,2026-10-29,low,est
+NAN,Nadi,FJ,out,950,multiple stops via Asia/Gulf,estimate from route notes (return EUR 1150-1500),2026-10-29,low,est
+NAN,Nadi,FJ,back,950,multiple stops,same as out,2026-10-29,low,est
+RAR,Rarotonga,CK,back,1400,via Auckland/Los Angeles,estimate,2026-10-29,low,est
+CHC,Christchurch,NZ,out,1200,2+ stops,estimate from route notes (return EUR 1300-2000),2026-10-29,low,est
+WLG,Wellington,NZ,out,1200,2-3 stops,estimate from route notes (return EUR 1400-1800),2026-10-29,low,est
+CHC,Christchurch,NZ,back,1100,1-2 stops via Asia/Gulf/US,"Estimate from AKL back 1100; no web search",2026-10-29,low,
+POM,Port Moresby,PG,out,1000,Singapore/Australia + Air Niugini (2 stops),"Estimate; notes: return EUR 1470-2020; no web search",2026-10-29,low,
+POM,Port Moresby,PG,back,950,Air Niugini/Singapore/Australia (2 stops),"Estimate; no web search",2026-10-29,low,
+ROR,Koror,PW,out,900,Manila/Seoul/Taipei (2 stops),"Estimate; notes: return EUR 1300-1750; no web search",2026-10-29,low,"fare includes USD 100 Pristine Paradise fee"
+ROR,Koror,PW,back,850,Manila/Seoul/Taipei (2 stops),"Estimate; no web search",2026-10-29,low,
+SFO,San Francisco,US,out,450,KLM/United direct,"Estimate from SFO back 380 in reference file; no web search",2026-10-29,low,"summer out typically above back"
+SEA,Seattle,US,out,420,KLM direct,"Estimate; notes: return EUR 880-1090; no web search",2026-10-29,low,
+MIA,Miami,US,out,380,KLM direct,"Estimate; no web search",2026-10-29,low,
+MIA,Miami,US,back,360,KLM direct,"Estimate; no web search",2026-10-29,low,
+HNL,Honolulu,US,out,750,1 stop via US hub,"Estimate; no web search",2026-10-29,low,
+LIH,Lihue,US,back,800,via Honolulu/US hub,"Estimate; no web search",2026-10-29,low,
+IAD,Washington Dulles,US,out,400,KLM direct,"Estimate; no web search",2026-10-29,low,
+BOS,Boston,US,back,380,KLM direct,"Estimate; no web search",2026-10-29,low,
+LAS,Las Vegas,US,out,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
+PHX,Phoenix,US,back,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
+USH,Ushuaia,AR,out,1100,via Buenos Aires (Aerolineas/KLM + domestic),mirror of USH back; no search,2026-10-29,low,Dec high season
+FTE,El Calafate,AR,out,1000,via Buenos Aires + domestic,notes return EUR 1200-1800 halved plus premium; est,2026-10-29,low,
+PUQ,Punta Arenas,CL,back,900,via Santiago (LATAM/KLM),estimate (no search),2026-10-29,low,
+COO,Cotonou,BJ,back,550,via hub (Air France/Brussels/Royal Air Maroc/Turkish),estimate (no search),2026-10-29,low,
+GEO,Georgetown,GY,out,650,KLM (technical stop Sint Maarten),notes return EUR 740-1460; est,2026-10-29,low,2x/week
+GEO,Georgetown,GY,back,600,KLM nonstop,estimate (no search),2026-10-29,low,2x/week
+DSS,Dakar,SN,out,350,TUI fly direct winter / via hub otherwise,notes return EUR 500-900; est,2026-10-29,low,
+BJL,Banjul,GM,back,320,TUI fly/Corendon winter / via hub,estimate (no search),2026-10-29,low,
+DLA,Douala,CM,out,480,via Paris/Brussels,notes return EUR 700-1150; est,2026-10-29,low,
+MVD,Montevideo,UY,out,560,via Madrid or Sao Paulo/Buenos Aires,notes return EUR 850-1100; est,2026-10-29,low,
+MVD,Montevideo,UY,back,520,one stop,estimate (no search),2026-10-29,low,

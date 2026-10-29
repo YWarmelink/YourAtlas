@@ -1,0 +1,982 @@
+{
+ "batch": 25,
+ "group": "North America & Oceania",
+ "routes": [
+  {
+   "id": "gt_seed_new-zealand-south-island",
+   "name": "New Zealand South Island 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — rental car, at least one Great Walk.",
+   "description": "Milford Sound, glaciers, Queenstown and the Catlins — the South Island on its own.",
+   "notes": "Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — \"one of the most booked standalone trips worldwide\". Country and budget (daily rate) are carried over unchanged (incl. the 2026-08 route-logic fix for the Kaikoura/Abel Tasman order); days increased from 21 to 23 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_new-zealand-south-island",
+    "name": "New Zealand South Island 🏔️",
+    "stops": 7,
+    "km_in_route": 1770,
+    "km_from_nl": 24290,
+    "km_back_to_nl": 24010,
+    "km_by_country": {
+     "NZ": 1770
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NZ",
+     "country": "New Zealand",
+     "days": 23,
+     "budget": 1863,
+     "dailyRate": 81,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Christchurch, with multiple connections (no direct connection, ±27-38 hours total, from ±€1,300-2,000 return, best period September-November). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 27-38 hours of travel time with multiple connections is enough that an arrival day with no plans and a margin before the return flight are wiser here than planning straight through it. Concentrates most of the iconic New Zealand scenery. Consider at least one Great Walk (Milford Track, Routeburn or Kepler) as a multi-day hut-to-hut trek — book well in advance. Price correction (2026-07): €80→€108/day.",
+     "transport_to_next": "End of this route — back to Christchurch (or flight from Picton/Blenheim), then flight home to Amsterdam (multiple connections, no direct connection).",
+     "destinations": [
+      {
+       "name": "Christchurch",
+       "lat": -43.5321,
+       "lng": 172.6362
+      },
+      {
+       "name": "Franz Josef & Fox Glaciers",
+       "lat": -43.4667,
+       "lng": 170.1667
+      },
+      {
+       "name": "Queenstown",
+       "lat": -45.0312,
+       "lng": 168.6626
+      },
+      {
+       "name": "Milford Sound & Fiordland",
+       "lat": -44.6714,
+       "lng": 167.925
+      },
+      {
+       "name": "Dunedin & Catlins",
+       "lat": -45.8788,
+       "lng": 170.5028
+      },
+      {
+       "name": "Kaikoura",
+       "lat": -42.4,
+       "lng": 173.6817
+      },
+      {
+       "name": "Abel Tasman",
+       "lat": -40.9333,
+       "lng": 173
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_papua-new-guinea",
+   "name": "Papua New Guinea 🎭",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Domestic flights between regions (roads don't reliably connect them), guided vehicle/boat charters for highlands and Sepik River visits.",
+   "description": "Sepik River spirit houses, Tufi's fjord-diving, and Rabaul's smoking volcanoes — PNG's rugged edge, routed around the highlands' real risk zones.",
+   "notes": "New standalone route (2026-09) — first time Papua New Guinea appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) that flagged this country's advisory as genuinely tiered rather than a single color — the itinerary deliberately excludes the orange-zone highlands (Mount Hagen, Tari/Hela) rather than including them with a warning, unlike how some other routes in this file handle a partial-orange country. Re-verify the advisory tiers before booking — PNG's tribal/political conflict zones shift.",
+   "distance": {
+    "id": "gt_seed_papua-new-guinea",
+    "name": "Papua New Guinea 🎭",
+    "stops": 6,
+    "km_in_route": 4180,
+    "km_from_nl": 18420,
+    "km_back_to_nl": 17870,
+    "km_by_country": {
+     "PG": 4180
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PG",
+     "country": "Papua New Guinea",
+     "days": 13,
+     "budget": 1014,
+     "dailyRate": 78,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Port Moresby, 2 stops (via Singapore, connecting to Air Niugini, or via Australia; roughly 24-30+ hours total; from ±€1,470-2,020 return; best period May-October dry season for trekking/diving conditions, with July-September doubling as festival season at the yellow-zone-safe Kokopo Mask Festival (July) and Goroka Show (around September) — book festival-town accommodation months ahead). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 11-day base recommendation (13 total) — a genuinely long, multi-stop connecting flight to a logistically hard country. Sepik River spirit houses, Tufi's fjord-diving, and Rabaul's smoking volcanoes — PNG's rugged edge, deliberately routed around the highlands' real risk zones (see the route-level note on why Mount Hagen/Tari were left out entirely, not just flagged). Domestic flights are close to mandatory here — roads barely connect regions — budget roughly €140-200 each for the Port Moresby-Lae/Goroka/Wewak legs, separate from the daily rate. Highlands/village visits are usually guided (vehicle+guide+village fee bundled, ~€95-235/day); Sepik River canoe/village-stay trips run as multi-day boat charters (~€140-280/day). Goroka Show (around Independence Day/September) is a safer yellow-zone alternative to the orange-zone Mount Hagen Show for the 'cultural festival' draw. Dutch travel advisory (2026-09 snapshot, tiered): RED for Bougainville Island/the Panguna mine area (do not travel, entry prohibited by local authorities) — not part of this route; ORANGE for Enga, Hela, Southern Highlands and Mount Hagen/Western Highlands provinces (only essential travel — deliberately excluded from this itinerary, including Mount Hagen and Tari/Hela despite being classic highlands highlights); YELLOW for the rest of the country, including every stop actually on this route (Port Moresby, Tufi, Milne Bay, Sepik, Rabaul/Kokopo, Goroka). Also flagged: maritime piracy, natural disasters (cyclones, earthquakes, active volcanoes, tsunamis), unexploded WWII ordnance, and weak infrastructure/emergency services.",
+     "transport_to_next": "End of this route — return flight from Port Moresby to Amsterdam, 2 stops.",
+     "destinations": [
+      {
+       "name": "Port Moresby",
+       "lat": -9.4438,
+       "lng": 147.1803
+      },
+      {
+       "name": "Tufi (fjords, diving)",
+       "lat": -9.08,
+       "lng": 149.32
+      },
+      {
+       "name": "Alotau / Milne Bay (diving)",
+       "lat": -10.32,
+       "lng": 150.45
+      },
+      {
+       "name": "Sepik River (Wewak) — spirit houses, canoe villages",
+       "lat": -3.57,
+       "lng": 143.63
+      },
+      {
+       "name": "Rabaul / Kokopo, East New Britain — volcanoes, WWII wrecks",
+       "lat": -4.2,
+       "lng": 152.17
+      },
+      {
+       "name": "Goroka, Eastern Highlands",
+       "lat": -6.08,
+       "lng": 145.39
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_palau",
+   "name": "Palau 🦈",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Boat charters for the Rock Islands/dive sites, scooter or taxi around Koror/Babeldaob.",
+   "description": "Blue Corner's sharks, Jellyfish Lake, and Rock Islands lagoon views — world-class diving wrapped around the Pacific's most photogenic islands.",
+   "notes": "New standalone route (2026-09) — first time Palau appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, the environmental fee/permit system, and the current advisory. Re-verify all of these before booking.",
+   "distance": {
+    "id": "gt_seed_palau",
+    "name": "Palau 🦈",
+    "stops": 5,
+    "km_in_route": 170,
+    "km_from_nl": 15410,
+    "km_back_to_nl": 15390,
+    "km_by_country": {
+     "PW": 170
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PW",
+     "country": "Palau",
+     "days": 10,
+     "budget": 1000,
+     "dailyRate": 100,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Koror, 2 stops (via Manila/Philippine Airlines or United, or via Seoul/Korean Air or Asiana, or via Taipei/China Airlines; roughly 20-26 hours total; from ±€1,300-1,750 return; best period December-April for dry-season visibility, or late October/November as a quieter shoulder-season pick). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of an 8-day base recommendation (10 total) — a short trip combined with a multi-stop connecting flight. Blue Corner's sharks, Jellyfish Lake and the Rock Islands lagoon, Peleliu's WWII history, and Babeldaob's waterfalls — world-class diving wrapped around the Pacific's most photogenic islands. The $100 Pristine Paradise Environmental Fee is built directly into every international air ticket (not a separate payment). A Rock Islands Permit is mandatory for the Southern Lagoon area: $50 (10 days, no Jellyfish Lake) or $100 (5 days, includes Jellyfish Lake). Diving is the reason to visit and isn't in the daily rate — budget ~€140-165/day for 2-tank boat dives on top. Non-reef-safe sunscreen is illegal to import, possess or sell — bring reef-safe only. Dutch travel advisory (2026-09 snapshot): green — notable flags are unusually strict drug laws (min. 25 years + $50,000 fine, including soft drugs) and typhoon/tropical storm season June-November.",
+     "transport_to_next": "End of this route — return flight from Koror to Amsterdam, 2 stops.",
+     "destinations": [
+      {
+       "name": "Koror",
+       "lat": 7.34,
+       "lng": 134.48
+      },
+      {
+       "name": "Rock Islands Southern Lagoon & Jellyfish Lake",
+       "lat": 7.15,
+       "lng": 134.37
+      },
+      {
+       "name": "Blue Corner (dive site)",
+       "lat": 7.12,
+       "lng": 134.22
+      },
+      {
+       "name": "Peleliu Island (WWII battle sites)",
+       "lat": 7,
+       "lng": 134.24
+      },
+      {
+       "name": "Ngardmau Waterfall, Babeldaob",
+       "lat": 7.58,
+       "lng": 134.62
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_california",
+   "name": "California 🌲",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "City + day trips/short rental car — no continuous roadtrip needed for this part.",
+   "description": "San Francisco, followed by Yosemite Valley and the sequoias of Sequoia/Kings Canyon.",
+   "notes": "Split off from US West Coast Roadtrip 🌉 (itself already split off from North America Grand Traverse 🌎 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — the classic American West Coast combination. Country, days and budget are carried over unchanged. US West Coast Roadtrip 🌉 and North America Grand Traverse 🌎 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_california",
+    "name": "California 🌲",
+    "stops": 3,
+    "km_in_route": 540,
+    "km_from_nl": 11450,
+    "km_back_to_nl": 11380,
+    "km_by_country": {
+     "US": 540
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 14,
+     "budget": 1428,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-San Francisco (±11 hours; from ±€850-1,150 return; best period July). Price indication from 2026-08 web research, a snapshot. Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
+     "transport_to_next": "End of this route — car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon, count this drive as its own travel day), then direct KLM return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.",
+     "destinations": [
+      {
+       "name": "San Francisco (Golden Gate Bridge, Alcatraz, Mission District)",
+       "lat": 37.7749,
+       "lng": -122.4194
+      },
+      {
+       "name": "Yosemite Valley",
+       "lat": 37.7459,
+       "lng": -119.5936
+      },
+      {
+       "name": "Sequoia & Kings Canyon National Parks",
+       "lat": 36.4864,
+       "lng": -118.5658
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_florida",
+   "name": "Florida 🐊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "A rental car is required (Miami's public transit doesn't reach the Everglades/Keys) — only Key West's Old Town itself is easily walkable/bikeable.",
+   "description": "Miami, the Everglades and the Florida Keys down to Key West — South Florida via the Overseas Highway.",
+   "notes": "Built (2026-08) at Youri's own request — he specifically called out Florida as \"a bit of an outlier environment,\" separate from the Northeast and Southwest trips. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — this route's content was also translated from an earlier Dutch draft as part of that same verification pass). Deliberately a focused South Florida route: Orlando/theme parks left out (see above), and St. Augustine/the Gulf Coast (Naples/Sarasota)/the Panhandle too — these dilute the focus or are simply too far (St. Augustine is already ~5-5.5 hours one-way from Miami). 10 days, €1,360 ground costs.",
+   "distance": {
+    "id": "gt_seed_florida",
+    "name": "Florida 🐊",
+    "stops": 12,
+    "km_in_route": 520,
+    "km_from_nl": 9700,
+    "km_back_to_nl": 9980,
+    "km_by_country": {
+     "US": 520
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 3,
+     "budget": 306,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct flight Amsterdam-Miami (KLM, ±9-10 hours; best period December-April, dry season). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Stay around South Beach (5th-25th St)/Brickell/Coral Gables/Coconut Grove/Wynwood by day; be careful in Overtown/Liberty City/Little Haiti and in Little Havana beyond 8th St/22nd Ave, especially at night. Deliberately no Orlando/theme parks — $150-200+/day on tickets alone, and doesn't fit a travel style that favors nature/culture over generic tourist attractions. Daily budget confirmed reasonable for this style (budget travelers run $75-170/day; hostel dorms $30-65/night).",
+     "transport_to_next": "Car, ≈45-90 minutes to the Everglades (Homestead/Flamingo side).",
+     "destinations": [
+      {
+       "name": "South Beach (Art Deco District)",
+       "lat": 25.7826,
+       "lng": -80.1341
+      },
+      {
+       "name": "Little Havana",
+       "lat": 25.7658,
+       "lng": -80.2192
+      },
+      {
+       "name": "Wynwood Walls",
+       "lat": 25.801,
+       "lng": -80.1994
+      },
+      {
+       "name": "Coral Gables & Coconut Grove",
+       "lat": 25.7215,
+       "lng": -80.2684
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 200,
+     "dailyRate": 100,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Alligator safety: stay at least 15m away, never feed them, and — Web check (2026-09) — avoid swimming/wading in any natural Florida waterway during the current drought, not just at dusk/dawn: 2026 has seen a real, confirmed spike in incidents (at least 4 attacks including one fatality between 21 June-3 July 2026 alone, drought pushing alligators toward populated areas statewide, all 67 counties) — still an active, current risk as of September 2026, not something that's eased. Choose a guided airboat/walking tour (Anhinga Trail) over wading independently through shallow water.",
+     "transport_to_next": "Car, ≈1-1.5 hours to Key Largo.",
+     "destinations": [
+      {
+       "name": "Anhinga Trail",
+       "lat": 25.3861,
+       "lng": -80.6114
+      },
+      {
+       "name": "Guided airboat tour",
+       "lat": 25.7617,
+       "lng": -80.6081
+      },
+      {
+       "name": "Flamingo",
+       "lat": 25.1398,
+       "lng": -80.9231
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Snorkeling/diving on the reef — reef-safe sunscreen (still a current Florida Keys ordinance), shuffle your feet through the sand (stingrays), don't touch the reef (fire coral, sea urchins).",
+     "transport_to_next": "Car via the Overseas Highway (US-1), ≈2-2.5 hours to Key West (optional stop in Marathon at the Seven Mile Bridge).",
+     "destinations": [
+      {
+       "name": "John Pennekamp Coral Reef State Park",
+       "lat": 25.1276,
+       "lng": -80.4062
+      },
+      {
+       "name": "Islamorada",
+       "lat": 24.9391,
+       "lng": -80.6276
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "US",
+     "country": "United States",
+     "days": 3,
+     "budget": 306,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The Overseas Highway crosses 42 bridges (incl. the Seven Mile Bridge) — an All-American Road, no toll on US-1 itself. Book travel insurance right after booking the trip, not right before departure: once a storm gets a name, insurers exclude it from policies bought afterward — confirmed (2026-09) still exactly how named-storm exclusions work. Old Town itself is easily walkable/bikeable, no car needed. Web check (2026-09): budget-style Key West typically runs €150-170/day rather than a flat €150 once lodging is booked late — treat €150/day as the floor of a realistic range, not a ceiling.",
+     "transport_to_next": "End of this route — drive back to Miami (≈3-4 hours) for a direct return flight to Amsterdam (Key West's own airport is small, almost always with a Miami connection).",
+     "destinations": [
+      {
+       "name": "Old Town Key West",
+       "lat": 24.5551,
+       "lng": -81.78
+      },
+      {
+       "name": "Mallory Square (sunset)",
+       "lat": 24.561,
+       "lng": -81.808
+      },
+      {
+       "name": "Hemingway House",
+       "lat": 24.5545,
+       "lng": -81.8017
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_hawaii",
+   "name": "Hawaii 🐢",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Inter-island flights (Hawaiian Airlines/Southwest, every 30-60 min on the busy routes — confirmed still healthy service, three carriers including Mokulele, no capacity issues) plus a rental car per island.",
+   "description": "Oahu, Maui and Kauai — three islands, from city and culture (Oahu) to the Road to Hana (Maui) to the strongest nature of the three (Kauai).",
+   "notes": "Built (2026-08) after an audit that found Hawaii completely missing from Route Builder. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — this route's content was also translated from an earlier Dutch draft as part of that same verification pass). Big Island (volcanoes) deliberately excluded — valuable, but +€150-250 in flights/rental car and 4-5 extra days, only justified if volcanoes are a hard want; kept as a possible future 4th-island expansion. Web check (2026-09): Kīlauea has been erupting intermittently since December 2024 in discrete episodes (each under 12 hours) separated by 2+ week pauses — currently paused (Episode 54 was 25 August 2026), Alert Level ADVISORY/Aviation color YELLOW, with USGS/HVO forecasting a possible Episode 55 window of 7-12 September 2026; a recent tourist fatality near the park after ignoring safety barriers reinforces that any future Big Island addition would need a 'check HVO within days of departure, stay behind barriers' caveat. 14 days, €2,240 ground costs.",
+   "distance": {
+    "id": "gt_seed_hawaii",
+    "name": "Hawaii 🐢",
+    "stops": 11,
+    "km_in_route": 870,
+    "km_from_nl": 15200,
+    "km_back_to_nl": 15120,
+    "km_by_country": {
+     "US": 870
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 4,
+     "budget": 408,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Honolulu (with a connection, usually via a US west-coast hub; ±18-20 hours total; best period April-May or September-October). Price indication from 2026-08 web research, a snapshot. Web check (2026-09): ESTA now costs ~$40 (up from $21, raised Sept 2025 plus a further Jan 2026 cost-of-living bump) — a per-person fixed cost, not part of the daily budget. Only island with a real public-transit alternative (TheBus) — a rental car is optional here, unlike Maui/Kauai. Daily budget confirmed reasonable for Budget/Comfort-Backpacker style (hostel dorms $60-80/night, meals $25-90/day).",
+     "transport_to_next": "Flight Honolulu-Kahului (Maui), Hawaiian Airlines/Southwest, frequent, ±35-45 minutes.",
+     "destinations": [
+      {
+       "name": "Diamond Head",
+       "lat": 21.262,
+       "lng": -157.8053
+      },
+      {
+       "name": "Waikiki",
+       "lat": 21.2793,
+       "lng": -157.8293
+      },
+      {
+       "name": "Koko Crater Trail",
+       "lat": 21.281,
+       "lng": -157.6987
+      },
+      {
+       "name": "Chinatown Honolulu",
+       "lat": 21.3097,
+       "lng": -157.8626
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "US",
+     "country": "United States",
+     "days": 5,
+     "budget": 510,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "A rental car is needed here (Road to Hana). Web check (2026-09): Maui's 2026 rental-car scarcity is real but volatile, not a stable fact — repeated fleet recalls (Jeep Wrangler, Ford SUVs, Chrysler Pacifica, Chevy Malibu) spiked weekly rates to an all-time record ~$2,015 in February 2026, then eased back to ~$1,154 by March, swinging since. Book 6-8+ weeks ahead and recheck close to departure rather than trusting any single quoted price.",
+     "transport_to_next": "Flight Kahului-Lihue (Kauai), ±30-40 minutes.",
+     "destinations": [
+      {
+       "name": "Road to Hana",
+       "lat": 20.7581,
+       "lng": -156.0356
+      },
+      {
+       "name": "Haleakalā National Park",
+       "lat": 20.7204,
+       "lng": -156.1552
+      },
+      {
+       "name": "Lahaina",
+       "lat": 20.8783,
+       "lng": -156.6825
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "US",
+     "country": "United States",
+     "days": 5,
+     "budget": 510,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The strongest nature of the three islands — the same recall-driven rental-car volatility applies here too (rates have swung both up and down through 2026, book well ahead). ⚠️ The full Kalalau Trail (11 miles) is genuinely dangerous (18+ deaths excluding drownings) — this route only does the Hanakāpī'ai Falls day-hike (3.2km, no wilderness permit needed for that stretch), not the full trail. Web check (2026-09): Hāʻena State Park (the Kēʻē Beach trailhead) requires an advance parking or shuttle reservation via gohaena.com, bookable 1-30 days ahead — capped at 900 visitors/day, passes sell out within minutes to hours in peak season (May-September); check DLNR's live trail-status page shortly before departure too, since sections beyond the day-hike have had closures this year. Respectful tourism: real overtourism tension in Hawaii (pressure on water/land, sacred sites, plus Honolulu's Bill 47 phasing out vacation rentals from July 2026) — stay on marked trails, respect reservation limits, no uninvited detours to sacred sites.",
+     "transport_to_next": "End of this route — return flight from Lihue via Honolulu to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Waimea Canyon",
+       "lat": 22.0808,
+       "lng": -159.6653
+      },
+      {
+       "name": "Nā Pali Coast",
+       "lat": 22.1883,
+       "lng": -159.5896
+      },
+      {
+       "name": "Hanakāpī'ai Falls (day-hike)",
+       "lat": 22.2166,
+       "lng": -159.5921
+      },
+      {
+       "name": "Kōke'e State Park",
+       "lat": 22.1319,
+       "lng": -159.6394
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_pacific-northwest",
+   "name": "Pacific Northwest 🦫",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car — coastal route along the US-101, relaxed pace with multi-day stops at the parks.",
+   "description": "Seattle, Mount Rainier, Olympic National Park, the Oregon coast and the Redwoods.",
+   "notes": "Split off from North America Grand Traverse 🌎 (via US West Coast Roadtrip 🌉) as part of the sixth batch of standalone countries (2026-08). Country, days and daily budget are carried over unchanged. North America Grand Traverse 🌎 and US West Coast Roadtrip 🌉 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_pacific-northwest",
+    "name": "Pacific Northwest 🦫",
+    "stops": 5,
+    "km_in_route": 1340,
+    "km_from_nl": 10220,
+    "km_back_to_nl": 11100,
+    "km_by_country": {
+     "US": 1340
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 15,
+     "budget": 1530,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Seattle (±9-10 hours; from ±€880-1,090 return, January is cheaper but falls outside the best hiking season; best period July-August). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years.",
+     "transport_to_next": "End of this route — return flight from San Francisco or Portland to Amsterdam (return the rental car at the end of the coastal route).",
+     "destinations": [
+      {
+       "name": "Seattle (Pike Place Market, Space Needle)",
+       "lat": 47.6062,
+       "lng": -122.3321
+      },
+      {
+       "name": "Mount Rainier National Park",
+       "lat": 46.8523,
+       "lng": -121.7603
+      },
+      {
+       "name": "Olympic National Park (Hurricane Ridge & Hoh Rainforest)",
+       "lat": 47.9709,
+       "lng": -123.4995
+      },
+      {
+       "name": "Oregon Coast (Cannon Beach, Astoria)",
+       "lat": 45.8918,
+       "lng": -123.9615
+      },
+      {
+       "name": "Redwood National & State Parks",
+       "lat": 41.2132,
+       "lng": -124.0046
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_us-northeast",
+   "name": "US Northeast 🗽",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Train (Northeast Corridor) between all four cities — no rental car needed, 15-20+ trains a day per route.",
+   "description": "Washington DC, Philadelphia, New York and Boston via the Northeast Corridor train — four classic American cities on one straight line.",
+   "notes": "Built (2026-08) after an audit that found the entire US East Coast completely missing from Route Builder — not a deliberate choice, just never built. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎 (which continues to exist unchanged). Researched via a WebSearch-backed research agent: route/days/budget/season/transport/safety (2026-08 first pass; price/visa/advisory fully verified 2026-09, see each leg's own notes for what was confirmed vs. corrected — DC and Boston's daily budgets were nudged up slightly). Deliberately no extension south (Charleston/Savannah/Miami/New Orleans) — south of DC there's only ~1 train a day, hurricane season overlaps the best NEC season, and Miami/the south deserve their own approach (see Florida 🐊, built separately). 12 days, ~€1,440 ground costs (updated from €1,365 after the DC/Boston budget corrections).",
+   "distance": {
+    "id": "gt_seed_us-northeast",
+    "name": "US Northeast 🗽",
+    "stops": 13,
+    "km_in_route": 870,
+    "km_from_nl": 8080,
+    "km_back_to_nl": 7260,
+    "km_by_country": {
+     "US": 870
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 3,
+     "budget": 315,
+     "dailyRate": 105,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct flight Amsterdam-Washington DC (KLM, ±8-9 hours; best period mid-September-late October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025 — apply well in advance, passport valid 6+ months; ESTA/visa-waiver travelers are exempt from the separate new $250 Visa Integrity Fee, that only applies to actual visa applicants. Note: US ESTA/visa forms now only accept M/F gender markers, relevant for some travelers). The Smithsonian museums and most monuments are free — deliberately a cheaper stop than the other three cities. Web check (2026-09): €90/day was slightly low for a Budget/Comfort-Backpacker blend even leaning on the free museums — bumped to ~€105/day.",
+     "transport_to_next": "Train (Amtrak Northeast Regional), ≈2 hours to Philadelphia — book 2-4 weeks ahead and travel Tuesday-Thursday for the best \"Saver\" fares.",
+     "destinations": [
+      {
+       "name": "National Mall & Smithsonians",
+       "lat": 38.8899,
+       "lng": -77.0091
+      },
+      {
+       "name": "Lincoln Memorial",
+       "lat": 38.8893,
+       "lng": -77.0502
+      },
+      {
+       "name": "Capitol Hill",
+       "lat": 38.8899,
+       "lng": -77.0091
+      },
+      {
+       "name": "Georgetown",
+       "lat": 38.9097,
+       "lng": -77.0654
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 190,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Clearly cheaper than New York/Boston — stay around Center City/Old City/Society Hill in the evening, not in unfamiliar outer neighbourhoods.",
+     "transport_to_next": "Train, ≈1.5 hours to New York.",
+     "destinations": [
+      {
+       "name": "Independence Hall & Liberty Bell",
+       "lat": 39.9496,
+       "lng": -75.1503
+      },
+      {
+       "name": "Old City & Society Hill",
+       "lat": 39.9476,
+       "lng": -75.1449
+      },
+      {
+       "name": "Reading Terminal Market",
+       "lat": 39.9532,
+       "lng": -75.159
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "US",
+     "country": "United States",
+     "days": 4,
+     "budget": 408,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The most expensive stop on the route — a private room/small Airbnb, not a dorm, still fits within the between-budget-and-comfort style.",
+     "transport_to_next": "Train, ≈4 hours to Boston (or the direct DC-Boston route, ≈7.5-8 hours, if you had skipped Philadelphia/New York).",
+     "destinations": [
+      {
+       "name": "Manhattan (Times Square, Central Park)",
+       "lat": 40.758,
+       "lng": -73.9855
+      },
+      {
+       "name": "MoMA / The Met",
+       "lat": 40.7794,
+       "lng": -73.9632
+      },
+      {
+       "name": "Brooklyn (Williamsburg, DUMBO)",
+       "lat": 40.7081,
+       "lng": -73.9571
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "US",
+     "country": "United States",
+     "days": 3,
+     "budget": 306,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Travel advisory: the US is still green (Web check 2026-09) — normal caution, no special restrictions. All four cities' safety improvement is confirmed and even stronger than assumed: NYC is on track for its safest year on record (violent crime down ~13%, murders 9.8% below the prior record low), Washington DC homicides down ~41-44% year-over-year in H1 2026, Philadelphia homicide down 54% in Q1 2026 vs. Q1 2025. Web check (2026-09): €115/day was slightly conservative for Boston specifically (pricier lodging than Philly/DC) — bumped to ~€125/day. Season note: early-to-mid October is also New England's peak leaf-peeping season, pushing Boston-area weekend lodging prices up — late September or the tail end of October can be cheaper than the fall-foliage peak weeks.",
+     "transport_to_next": "End of this route — direct return flight from Boston to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Freedom Trail",
+       "lat": 42.3601,
+       "lng": -71.0589
+      },
+      {
+       "name": "Harvard & Cambridge",
+       "lat": 42.377,
+       "lng": -71.1167
+      },
+      {
+       "name": "Fenway",
+       "lat": 42.3467,
+       "lng": -71.0972
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_us-southwest",
+   "name": "US Southwest 🏜️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car, one-way Las Vegas-Phoenix — a straight eastward sweep with no backtracking.",
+   "description": "Zion, Bryce Canyon, Antelope Canyon, Monument Valley, Grand Canyon and Sedona — a desert road trip by rental car from Las Vegas to Phoenix.",
+   "notes": "Built (2026-08) after an audit that found the entire American southwestern desert completely missing from Route Builder. At Youri's request a standalone, self-contained trip, not merged into North America Grand Traverse 🌎. Researched via a WebSearch-backed research agent (2026-08 first pass; price/visa/advisory fully verified 2026-09 — the big finding was a brand-new $100pp non-resident park surcharge at Zion/Bryce/Grand Canyon effective 1 January 2026, plus a corrected, cheaper Monument Valley entry fee; see each leg's own notes for the full detail). Deliberate choice for one-way to Phoenix instead of a loop back to Vegas: costs a rental-car drop-off fee, but keeps Sedona in, and Phoenix is a more logical hub (Southwest Airlines hub, right on the I-10 toward Texas) than the dead-end direction Vegas represents. 12 days, €1,500 ground costs (unchanged — the park-fee correction is a separate cost on top of ground costs, not a change to the daily budgets themselves) plus ~€230 for the non-resident annual park pass and a variable one-way rental car drop-off fee.",
+   "distance": {
+    "id": "gt_seed_us-southwest",
+    "name": "US Southwest 🏜️",
+    "stops": 12,
+    "km_in_route": 900,
+    "km_from_nl": 10940,
+    "km_back_to_nl": 11160,
+    "km_by_country": {
+     "US": 900
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 3,
+     "budget": 306,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Las Vegas (with a connection, usually via a US hub, ±13-15 hours; best period mid-September-mid-October). Price indication from 2026-08 web research, a snapshot. ESTA required (Web check 2026-09: now $40.27, up from $21 pre-2025). Pick up the rental car in Vegas — an overnight stay there is optional, not needed for the route itself. Daily budget confirmed reasonable (2026-09).",
+     "transport_to_next": "Car, ≈1h50 to Bryce Canyon.",
+     "destinations": [
+      {
+       "name": "Angels Landing",
+       "lat": 37.269,
+       "lng": -112.9496
+      },
+      {
+       "name": "The Narrows",
+       "lat": 37.2999,
+       "lng": -112.9484
+      },
+      {
+       "name": "Emerald Pools",
+       "lat": 37.2586,
+       "lng": -112.9723
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "",
+     "transport_to_next": "Car, ≈3 hours to Page.",
+     "destinations": [
+      {
+       "name": "Bryce Amphitheater",
+       "lat": 37.593,
+       "lng": -112.1871
+      },
+      {
+       "name": "Navajo Loop / Queen's Garden Trail",
+       "lat": 37.6283,
+       "lng": -112.166
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Antelope Canyon can only be visited with a mandatory Navajo guide (since a 1997 flood) — budget ~$80 p.p. all-in with a licensed operator (Ken's Tours/Dixie Ellis'), a separate cost on top of the daily budget. Confirmed accurate (Web check 2026-09): both operators still price their standard tour at ~$80.50 p.p., permit/fees bundled in.",
+     "transport_to_next": "Car, ≈2-2.5 hours to Monument Valley.",
+     "destinations": [
+      {
+       "name": "Antelope Canyon",
+       "lat": 36.8619,
+       "lng": -111.4103
+      },
+      {
+       "name": "Horseshoe Bend",
+       "lat": 36.8791,
+       "lng": -111.5104
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "US",
+     "country": "United States",
+     "days": 1,
+     "budget": 102,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Navajo Nation entry fee — Web check (2026-09), correction: fees were raised 1 January 2026 but landed lower than previously listed, roughly $8-10 p.p. + $15/vehicle (was overstated at $15pp+$20/car); also the gate reportedly no longer reliably accepts cash and requires a card — bring a card as primary, cash as backup. Still not covered by the America the Beautiful pass (Navajo Nation explicitly doesn't accept NPS passes — this is tribal land, not an NPS park).",
+     "transport_to_next": "Car (via Cameron), ≈2.5-3 hours to Grand Canyon South Rim.",
+     "destinations": [
+      {
+       "name": "17-mile scenic loop",
+       "lat": 36.9989,
+       "lng": -110.1007
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Web check (2026-09), significant correction: since 1 January 2026 all non-US-residents aged 16+ pay a new $100 p.p. surcharge on top of the standard $35/vehicle (7-day) entrance fee at Zion, Bryce AND Grand Canyon — without a pass, that's up to ~$405 in park fees alone across the three. The old ~€75 'America the Beautiful' annual pass is now the US-resident price ($80) only; non-residents need the new 'America the Beautiful Non-Resident Annual Pass' at $250 (~€230) instead, which covers the pass-holder's vehicle (all occupants) at every fee park AND waives the new $100 surcharge — still clearly worth buying for this route, just budget €230 rather than €75.",
+     "transport_to_next": "Car, ≈3.5-4 hours to Sedona.",
+     "destinations": [
+      {
+       "name": "Rim Trail",
+       "lat": 36.0544,
+       "lng": -112.1401
+      },
+      {
+       "name": "Bright Angel Trailhead",
+       "lat": 36.0572,
+       "lng": -112.1445
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Travel advisory: the US is still green (Web check 2026-09). Summer is dangerously hot here (Page/Monument Valley/the canyon floor regularly 38°C+) — hence the autumn season, not May-June; even mid-September can still hit high-30s°C at these low-elevation stops, so leaning toward a late-September start gives more safety margin than mid-September. Minor addition: a small Red Rock Pass ($5/day or $20/year) covers trailhead parking around Sedona, not previously listed.",
+     "transport_to_next": "End of this route — drive to Phoenix (≈2 hours), return the rental car (one-way drop-off fee — no fixed number exists, reports range from $0 on occasional relocation deals up to $200-600 depending on company/season/how far ahead it's booked; budget a placeholder ~$150-250 and shop multiple companies close to departure), return flight to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Cathedral Rock",
+       "lat": 34.8214,
+       "lng": -111.7897
+      },
+      {
+       "name": "Red Rock State Park",
+       "lat": 34.8236,
+       "lng": -111.8302
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_us-west-coast-roadtrip",
+   "name": "US West Coast Roadtrip 🌉",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — rental car Seattle-San Francisco, relaxed pace with longer stops at beautiful places instead of moving every day.",
+   "description": "Classic American West Coast roadtrip: Seattle, Olympic and Mount Rainier National Park, the Oregon coast and the Redwoods, with San Francisco, Yosemite and Sequoia/Kings Canyon as the finale.",
+   "notes": "Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the ESTA price increase and the warning about wildfire risk in August). Follow-up to Western Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition. Route-logic revision (2026-08): same two fixes as North America Grand Traverse 🌎 itself — Pacific Northwest order reversed, Sequoia-San Francisco return drive explicitly called out. See that route's own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_us-west-coast-roadtrip",
+    "name": "US West Coast Roadtrip 🌉",
+    "stops": 8,
+    "km_in_route": 2410,
+    "km_from_nl": 10220,
+    "km_back_to_nl": 11380,
+    "km_by_country": {
+     "US": 2410
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "US",
+     "country": "United States",
+     "days": 15,
+     "budget": 1530,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Seattle (KLM, direct, ±10 hours, from ±€650-1,100 return, July-August is high season so prices are on the higher side). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. Rental car is picked up here in Seattle. Price verified (2026-07), holds up. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years. Route-logic fix (2026-08, search-confirmed): order reversed (was Seattle→Olympic NP→Mount Rainier→Oregon Coast) — that crossed the region east-west three times. Now Seattle→Mount Rainier→Olympic NP (Hurricane Ridge then Hoh Rainforest)→south via the US-101 along the Washington coast to Oregon. See North America Grand Traverse 🌎's own notes for the full writeup.",
+     "transport_to_next": "Continue by car to San Francisco (~5-6 hours from the Redwoods), return the rental car in San Francisco",
+     "destinations": [
+      {
+       "name": "Seattle (Pike Place Market, Space Needle)",
+       "lat": 47.6062,
+       "lng": -122.3321
+      },
+      {
+       "name": "Mount Rainier National Park",
+       "lat": 46.8523,
+       "lng": -121.7603
+      },
+      {
+       "name": "Olympic National Park (Hurricane Ridge & Hoh Rainforest)",
+       "lat": 47.9709,
+       "lng": -123.4995
+      },
+      {
+       "name": "Oregon Coast (Cannon Beach, Astoria)",
+       "lat": 45.8918,
+       "lng": -123.9615
+      },
+      {
+       "name": "Redwood National & State Parks",
+       "lat": 41.2132,
+       "lng": -124.0046
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "US",
+     "country": "United States",
+     "days": 14,
+     "budget": 1428,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Straight from the city into the mountains: Yosemite's granite walls and waterfalls, followed by the giant sequoias of Sequoia/Kings Canyon. No new rental car needed — day trips or a short rental period suffice from San Francisco.",
+     "transport_to_next": "Car back to San Francisco (≈270 miles/≈5 hours from Sequoia & Kings Canyon — route-logic fix 2026-08: count this drive as its own travel day) before the return flight from SFO. Fresno (FAT) is closer but has no direct flight to Amsterdam — SFO remains the better choice.",
+     "destinations": [
+      {
+       "name": "San Francisco (Golden Gate Bridge, Alcatraz, Mission District)",
+       "lat": 37.7749,
+       "lng": -122.4194
+      },
+      {
+       "name": "Yosemite Valley",
+       "lat": 37.7459,
+       "lng": -119.5936
+      },
+      {
+       "name": "Sequoia & Kings Canyon National Parks",
+       "lat": 36.4864,
+       "lng": -118.5658
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

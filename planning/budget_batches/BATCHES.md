@@ -1,4 +1,4 @@
-# Phase 4: route batches (standalone routes)
+# Phase 4: route batches (standalone (real: agent 168k) | done 2026-10-29, in the Sheet (6 in parallel) (real: agent 156k) | done 2026-10-29, in the Sheet (6 in parallel) (real: agent 150k) | done 2026-10-29, in the Sheet (6 in parallel) (real: agent 111k) | done 2026-10-29, in the Sheet (6 in parallel) (real: agent 100k) | done 2026-10-29, in the Sheet (6 in parallel) (real: agent 101k) | done 2026-10-29, in the Sheet (6 in parallel) ||||||routes)
 
 Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13 Grand Expeditions, done). Each batch is sized to roughly **200k tokens**. The estimate per route is 3k + 2.5k per new block + 0.5k per block identical to a batch-1 block, plus ~35k of orchestration per batch (review list, entries, Sheet push). These are guesses: the real cost of each batch is logged below and corrects the estimate for the next one. Neighbouring countries stay together so car-cost and flight lookups are reused. Youri says go per batch.
 
@@ -24,18 +24,18 @@ Made 2026-10-28 for the 439 routes not yet in `RB_ROUTE_COSTS` (batch 1 = the 13
 | 18 | Nordics (2/2) | 16 | 27 | 8 | ~147k (real ≈130k: agent 119k) | done 2026-10-28, in the Sheet (8 in parallel) |
 | 19 | British Isles | 23 | 38 | 21 | ~199k (real ≈145k: agent 132k) | done 2026-10-28, in the Sheet (8 in parallel) |
 | 20 | Mediterranean, Eurasia & Europe-Asia | 20 | 67 | 6 | ~185k (real ≈165k: agent 153k) | done 2026-10-28, in the Sheet (8 in parallel) |
-| 21 | Asia & Himalaya | 25 | 43 | 3 | ~200k | |
-| 22 | Africa | 25 | 44 | 9 | ~182k | |
-| 23 | Caribbean, Amazon & Pan-American | 22 | 46 | 1 | ~176k | |
-| 24 | North America & Oceania (1/2) | 12 | 29 | 9 | ~136k | |
-| 25 | North America & Oceania (2/2) | 10 | 24 | 8 | ~123k | |
-| 26 | South America, Patagonia & West/Central Africa | 10 | 32 | 0 | ~137k | |
+| 21 | Asia & Himalaya | 25 | 43 | 3 | ~200k (real: agent 168k) | done 2026-10-29, in the Sheet (6 in parallel) |
+| 22 | Africa | 25 | 44 | 9 | ~182k (real: agent 156k) | done 2026-10-29, in the Sheet (6 in parallel) |
+| 23 | Caribbean, Amazon & Pan-American | 22 | 46 | 1 | ~176k (real: agent 150k) | done 2026-10-29, in the Sheet (6 in parallel) |
+| 24 | North America & Oceania (1/2) | 12 | 29 | 9 | ~136k (real: agent 111k) | done 2026-10-29, in the Sheet (6 in parallel) |
+| 25 | North America & Oceania (2/2) | 10 | 24 | 8 | ~123k (real: agent 100k) | done 2026-10-29, in the Sheet (6 in parallel) |
+| 26 | South America, Patagonia & West/Central Africa | 10 | 32 | 0 | ~137k (real: agent 101k) | done 2026-10-29, in the Sheet (6 in parallel) |
 
 Total ≈ 4236k tokens over 25 batches. Route lists per batch are in `batches.json`.
 
 ## Where we are / how to continue (updated 2026-10-28)
 
-**Done: batches 1-20** (all costs in `RB_ROUTE_COSTS` in `js/pages/routeBuilderContent.js` + live in the Sheet). **Next: batches 21-26** (≈119 routes: Asia, Africa, Americas, Oceania). Real cost ≈ 110-165k per batch (agent ≈ 90-150k + ~10-20k orchestration); running them in parallel (up to 8 tested fine) saves time, not tokens. Youri said he wants to run the rest later; ask how many at once.
+**Done: batches 1-26 — Phase 4 is COMPLETE (2026-10-29).** All 452 routes have costs in `RB_ROUTE_COSTS` and in the Sheet. Batches 21-26 (104 routes) cost ≈786k agent tokens + ≈100k orchestration, 6 in parallel. The recipe below stays for re-pricing later.
 
 Per round:
 1. `node scripts/budget_batch_input.js N` for each batch (writes `planning/budget_batchN/input.json`; it carries `carInDailyRate` and `inDailyRate`, the R2d "already in the rate" reasons).

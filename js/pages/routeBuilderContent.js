@@ -102,7 +102,7 @@ const RB_EXPEDITION_CONTENT = {
     GE: { days: 13, budget: 650, lat: 41.7151, lng: 44.8271, destinations: [{name:"Tbilisi",lat:41.7151,lng:44.8271,notes:"The Abanotubani sulfur bathhouse district is worth budgeting a couple hours and some extra cash for a private room with a scrub/massage — a distinct experience from just walking the Old Town."}, {name:"Kazbegi",lat:42.6572,lng:44.6461,notes:"The hike up to Gergeti Trinity Church (2,170m) takes about 2-3 hours on foot, or a shared 4x4 taxi from town covers it in 20 minutes if you skip the walk."}, {name:"Sighnaghi",lat:41.6206,lng:45.9184,notes:"Small walled hilltop town in the Kakheti wine region; pair it with a stop at nearby Bodbe Monastery, and it's an easy base for visiting family wineries in the surrounding villages."}, {name:"Kutaisi",lat:42.2679,lng:42.6946,notes:"Gelati Monastery and Prometheus Cave are the two big day-trip draws; Okatse Canyon's cliffside walkway is also within reach if you have a car."}, {name:"Mestia (Svaneti)",lat:43.0454,lng:42.7276,notes:"The multi-day trek to Ushguli (one of the highest continuously inhabited villages in Europe) passing the medieval defensive towers is the signature activity here, not just the town itself."}, {name:"Batumi",lat:41.6168,lng:41.6367,notes:"Black Sea beach resort feel with a Vegas-lite skyline (casinos, Alphabet Tower); also the place to try Ajarian khachapuri (boat-shaped, with a raw egg and butter stirred in)."}], transport_to_next: "Back to Tbilisi (train or marshrutka from Batumi, ~5-6h, busy but good connection), then marshrutka Tbilisi-Yerevan, overland, easy border crossing, no visa needed", notes: "Mestia/Svaneti sits above the rest of the route price-wise (guesthouse with half-board plus a pricier marshrutka to/from Mestia, ~€17) — the daily budget only works as a trip-wide average combined with the cheaper days elsewhere (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistically €35-45/day)." },
     AM: { days: 8, budget: 400, lat: 40.1792, lng: 44.4991, destinations: [{name:"Yerevan",lat:40.1792,lng:44.4991,notes:"The Cascade complex doubles as an open-air modern art museum and gives a good Mount Ararat view from the top on clear days."}, {name:"Khor Virap",lat:39.8817,lng:44.4453,notes:"The single best up-close view of Mount Ararat in the country, plus the underground pit where Gregory the Illuminator was reportedly imprisoned."}, {name:"Tatev",lat:39.3789,lng:46.2506,notes:"Reach the monastery via the \"Wings of Tatev\" cable car, one of the longest reversible aerial tramways in the world (~5.7km) — a highlight in itself, not just transport."}, {name:"Lake Sevan",lat:40.3667,lng:45.3333,notes:"High-altitude lake with swimmable beaches in summer and the Sevanavank monastery on a small peninsula overlooking the water."}, {name:"Dilijan",lat:40.7431,lng:44.8650,notes:"Nicknamed \"Little Switzerland\" for its forested hills; Haghartsin and Goshavank monasteries plus Parz Lake are easy nearby stops."}], transport_to_next: "No direct border (closed due to conflict) — travel back via Georgia (Tbilisi) to Baku, overland plus a short flight or bus", notes: "Stay away from the border strip with Azerbaijan: roads H53/H26 near Ijevan, the M14 along the northeastern shore of Lake Sevan, and the M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmines) are orange/red (2026-07). Tatev (via Goris/Kapan) lies close to the Syunik border region — the standard route is reported as open/safe, stay on the usual tourist route." },
     AZ: { days: 7, budget: 425, lat: 40.4093, lng: 49.8671, destinations: [{name:"Baku",lat:40.4093,lng:49.8671,notes:"Icherisheher (walled Old City) contrasts sharply with the futuristic Flame Towers right next to it; the Ateshgah fire temple is a worthwhile half-day trip outside the city."}, {name:"Gobustan",lat:40.1064,lng:49.3969,notes:"Open-air museum of prehistoric petroglyphs (UNESCO-listed); the nearby mud volcanoes are a quirky add-on if you have transport."}, {name:"Sheki",lat:41.1970,lng:47.1706,notes:"The Khan's Palace has vivid stained-glass (shebeke) work made without glue or nails; try local sheki halva, a distinct layered walnut sweet."}, {name:"Qabala",lat:40.9800,lng:47.8500,notes:"Mountain resort town with a cable car up to Tufandag; quieter and more nature-focused than the other Azerbaijani stops."}], transport_to_next: "Back to Baku (bus/shared taxi from Qabala/Sheki, ~3h), then flight Baku-Almaty (the ferry across the Caspian Sea Baku-Aktau has no fixed schedule and is unreliable)" },
-    KZ: { days: 8, budget: 500, lat: 43.2567, lng: 76.9286, destinations: [{name:"Almaty",lat:43.2567,lng:76.9286,notes:"Kok-Tobe hill (gondola access) for city views, and Medeu/Shymbulak just outside town for a mountain day trip."}, {name:"Charyn Canyon",lat:43.3500,lng:79.0667,notes:"Often called a mini Grand Canyon; the \"Valley of Castles\" section is the most photographed part and walkable in a few hours."}, {name:"Turkistan",lat:43.2975,lng:68.2517,notes:"The Yasawi Mausoleum (UNESCO) is the main draw — one of Central Asia's most significant Timurid-era religious buildings."}, {name:"Shymkent",lat:42.3417,lng:69.5901,notes:"Far less touristed than Almaty; mostly a practical stopover rather than a sightseeing destination."}], transport_to_next: "Bus or shared taxi Almaty-Bishkek, overland, busy but easy border crossing", notes: "Nur-Sultan/Astana deliberately cut (2026-08) — it was an isolated 1200 km detour too far out of the route; the rest of Kazakhstan now forms one continuous southern loop, no more backtracking needed." },
+    KZ: { days: 8, budget: 500, lat: 43.2567, lng: 76.9286, destinations: [{name:"Almaty",lat:43.2567,lng:76.9286,notes:"Kok-Tobe hill (gondola access) for city views, and Medeu/Shymbulak just outside town for a mountain day trip."}, {name:"Charyn Canyon",lat:43.3500,lng:79.0667,notes:"Often called a mini Grand Canyon; the \"Valley of Castles\" section is the most photographed part and walkable in a few hours."}, {name:"Turkistan",lat:43.2975,lng:68.2517,notes:"The Yasawi Mausoleum (UNESCO) is the main draw — one of Central Asia's most significant Timurid-era religious buildings."}, {name:"Shymkent",lat:42.3417,lng:69.5901,notes:"Far less touristed than Almaty; mostly a practical stopover rather than a sightseeing destination."}], transport_to_next: "Bus or shared taxi Shymkent-Bishkek via Taraz (~10-12 hours, Chaldovar/Merke border crossing) — or back to Almaty first for the shorter, busy but easy Almaty-Bishkek crossing (~4-5 hours)", notes: "Nur-Sultan/Astana deliberately cut (2026-08) — it was an isolated 1200 km detour too far out of the route; the rest of Kazakhstan now forms one continuous southern loop, no more backtracking needed." },
     KG: { days: 12, budget: 600, lat: 42.8746, lng: 74.5698, destinations: [{name:"Bishkek",lat:42.8746,lng:74.5698,notes:"Soviet-era architecture around Ala-Too Square and the sprawling Osh Bazaar are the main things to see; otherwise a fairly low-key capital."}, {name:"Issyk-Kul",lat:42.6500,lng:77.0833,notes:"Second-largest alpine lake in the world by some measures; Cholpon-Ata has petroglyph fields and is the main lakeside resort town."}, {name:"Karakol",lat:42.4907,lng:78.3936,notes:"Base for the Ala-Kul trek; also home to a wooden Dungan mosque built without nails and a lively Sunday livestock/animal market."}, {name:"Song-Kul",lat:41.8333,lng:75.1333,notes:"Yurt stays at a remote high-altitude lake, but only reachable roughly June-September — outside that window the passes are snowed in, so timing this leg matters."}, {name:"Osh",lat:40.5283,lng:72.7985,notes:"Sulaiman-Too, a sacred rocky outcrop (UNESCO) with pilgrimage sites carved into it, plus one of Central Asia's oldest and largest bazaars."}], transport_to_next: "Shared jeep over the Pamir Highway Osh-Khorog, overland, rough terrain, GBAO permit/visa needed for Tajikistan" },
     TJ: { days: 14, budget: 700, lat: 38.5598, lng: 68.787, destinations: [{name:"Khorog",lat:37.4913,lng:71.5551,notes:"Has one of the highest-altitude botanical gardens in the world; mostly functions as the last real town before/after the Pamirs."}, {name:"Pamir Highway",lat:37.8944,lng:73.0139,notes:"The M41 is the world's second-highest international highway; the Ak-Baital pass (~4,655m) is its highest point."}, {name:"Murghab",lat:38.1706,lng:74.0114,notes:"Remote, high-altitude Pamir settlement with a Sunday market; a common overnight stop rather than a sightseeing destination in itself."}, {name:"Iskanderkul",lat:39.0736,lng:68.3667,notes:"Turquoise glacial lake named after Alexander the Great, with local legends tying it to his campaigns; good for a swim/hike stop."}, {name:"Dushanbe",lat:38.5598,lng:68.7870,notes:"Rudaki Park and the Ismoili Somoni monument are the central landmarks; Hisor Fortress is a short trip outside the city."}], transport_to_next: "Bus or shared taxi Dushanbe-Samarkand, overland, border crossing can be time-consuming", notes: "The GBAO permit for the Pamir Highway can be added directly to the e-visa application (tick the box, +/-$20, total +/-$70). The Pamir jeep/driver (Khorog-Murghab area) is a separate, real cost on top of the daily budget: private 4x4+driver $150-400/day (often shared), shared taxi from ~$30-40 p.p. — arrange this through a local guesthouse/CBT/PECTA in Khorog. Khorog/GBAO has had periods of unrest in the past (most recently 2022) — check the current situation shortly before departure." },
     UZ: { days: 11, budget: 550, lat: 39.627, lng: 66.9749, destinations: [{name:"Samarkand",lat:39.6270,lng:66.9749,notes:"Registan Square (three madrasas facing each other) is the single most iconic sight in the country; Shah-i-Zinda's tiled necropolis is also a standout."}, {name:"Bukhara",lat:39.7747,lng:64.4286,notes:"More compact and walkable than Samarkand, with the Ark fortress, Kalyan minaret, and Lyab-i Hauz pool square all close together."}, {name:"Khiva",lat:41.3775,lng:60.3639,notes:"Itchan Kala, the walled inner city, is essentially an open-air museum — unusually intact compared to other Silk Road cities, easy to cover on foot in a day."}, {name:"Tashkent",lat:41.2995,lng:69.2401,notes:"The Soviet-era metro stations are individually decorated (mosaics, chandeliers) and worth a look; Chorsu Bazaar is the main traditional market."}], transport_to_next: "Flight Tashkent-Xi'an, direct connection (China Eastern/Loong Air, ~6x/week) — replaces the old Ürümqi flight now that Xinjiang is no longer on the route", notes: "A domestic flight Urgench (Khiva)-Tashkent is needed to keep this compact (~1.5h) — the road Khiva-Tashkent is >30 hours and not realistic." },
@@ -1151,7 +1151,7 @@ function rbBuildNorthAmericaRoute() {
           { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465, notes: "The Canadian Rockies' highest peak (3,954 m), usually wrapped in its own cloud cap (\"Yuh-hai-has-kun,\" the mountain of the spiral road to First Nations). The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking." },
           { name: 'Whistler', lat: 50.1163, lng: -122.9574, notes: "A globally ranked ski resort that runs just as well in summer, anchored by the PEAK 2 PEAK Gondola linking Whistler and Blackcomb mountains with valley views along the way. In summer, ride up for alpine hiking or hit the mountain bike park; book the gondola in advance in peak season to skip ticket-counter queues." },
         ],
-        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
+        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the car stays within Canada, so no border fees, but an Alberta-to-BC one-way fee (often ~CAD 150-300) is common; compare rental companies',
         notes: 'The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car 2 is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
       }],
       note: 'Rental car 2 (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.',
@@ -2706,10 +2706,16 @@ function rbSeedPanAmericanSplitExpeditions() {
   rbSave();
 }
 
+// Last-leg texts for standalone routes whose shared expedition text continues onward
+// (Phase 4 batches 21-26 route-text fixes, 2026-10-29; the expeditions themselves keep the onward leg).
+const RB_MEXICO_END = "End of this route — bus Bacalar-Cancún (~4 hours), then the return flight from Cancún to Amsterdam. Continuing into Guatemala instead: from San Cristóbal de las Casas, bus via the La Mesilla/El Carmen border crossing to Huehuetenango.";
+const RB_CENTRAL_AMERICA_LOOP_END = "End of this route — return flight from Panama City to Amsterdam (KLM, direct). Continuing into South America instead: sailboat (4-5 days) via the San Blas Islands to Cartagena, Colombia — no road connection through the Darién Gap.";
+const RB_ANDES_GRAND_TRAVERSE_END = "End of this route — night bus Potosí-La Paz (~9-10 hours), or Sucre-La Paz by domestic flight (~1 hour; Sucre is ~3 hours by road from Potosí), then the return flight from La Paz to Amsterdam (1 stopover).";
+
 function rbBuildMexicoRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Mexico 🌵', [
-    { name: 'Mexico', season: 'November–December', budget: 1000, note: 'Dry season, after the summer rains.', countries: [{ ...panAm('MX', 'Mexico'), notes: "Entry: direct KLM flight Amsterdam-Mexico City (±11 hours; from ±€800-950 return; best period November). Web-research price indication 2026-08, a snapshot. " + panAm('MX', 'Mexico').notes }] },
+    { name: 'Mexico', season: 'November–December', budget: 1000, note: 'Dry season, after the summer rains.', countries: [{ ...panAm('MX', 'Mexico'), transport_to_next: RB_MEXICO_END, notes: "Entry: direct KLM flight Amsterdam-Mexico City (±11 hours; from ±€800-950 return; best period November). Web-research price indication 2026-08, a snapshot. " + panAm('MX', 'Mexico').notes }] },
   ], {
     best_starting_month: 'November',
     travel_style: 'Backpacker — local buses and colectivos.',
@@ -2723,7 +2729,7 @@ function rbBuildCentralAmericaLoopRoute() {
   const panAm = (code, name) => rbContentFor('Pan-American Grand Tour 🌎', code, name);
   return rbBuildSeedRoute('Central America Loop 🌋', [
     { name: 'Northern Central America', season: 'December–January', budget: 1770, note: 'Dry season, hurricane season over.', countries: [{ ...panAm('GT', 'Guatemala'), notes: "Entry: flight Amsterdam-Guatemala City (±14-17 hours, 1-2 stopovers, e.g. via Madrid/Houston/Miami; from ±€600-900 return; best period December). Web-research price indication 2026-08, a snapshot. " + panAm('GT', 'Guatemala').notes }, panAm('BZ', 'Belize'), panAm('HN', 'Honduras'), panAm('SV', 'El Salvador')] },
-    { name: 'Southern Central America', season: 'January–February', budget: 1975, note: 'Pacific dry season in Costa Rica/Panama — best time for the coast.', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), panAm('PA', 'Panama')] },
+    { name: 'Southern Central America', season: 'January–February', budget: 1975, note: 'Pacific dry season in Costa Rica/Panama — best time for the coast.', countries: [panAm('NI', 'Nicaragua'), panAm('CR', 'Costa Rica'), { ...panAm('PA', 'Panama'), transport_to_next: RB_CENTRAL_AMERICA_LOOP_END }] },
   ], {
     best_starting_month: 'December',
     travel_style: 'Backpacker — local buses (chicken bus to fancier overland bus), sailboat through the San Blas Islands instead of flying over the Darién Gap.',
@@ -2739,7 +2745,7 @@ function rbBuildAndesGrandTraverseRoute() {
     { name: 'Colombia', season: 'February–March', budget: 1260, note: 'Dry in both the Caribbean region and the coffee zone/Andes.', countries: [{ ...panAm('CO', 'Colombia'), notes: "Entry: flight Amsterdam-Cartagena (±14-16 hours, 1 stopover, e.g. via Madrid/Bogotá/Panama City — no direct connection; from ±€650-900 return; best period February). Web-research price indication 2026-08, a snapshot. " + panAm('CO', 'Colombia').notes }] },
     { name: 'Ecuador', season: 'March–April', budget: 1650, note: 'Sierra dry enough for hiking; Galápagos is good year-round but quieter in this season.', countries: [panAm('EC', 'Ecuador')] },
     { name: 'Peru', season: 'April–May', budget: 1050, note: "The Andes dry season begins — ideal for Cusco/Sacred Valley and Huaraz trekking.", countries: [panAm('PE', 'Peru')] },
-    { name: 'Bolivia', season: 'May–June', budget: 344, note: 'Dry season, clear Uyuni Salt Flat (note: no mirror effect like in the wet season — a deliberate trade-off).', countries: [panAm('BO', 'Bolivia')] },
+    { name: 'Bolivia', season: 'May–June', budget: 344, note: 'Dry season, clear Uyuni Salt Flat (note: no mirror effect like in the wet season — a deliberate trade-off).', countries: [{ ...panAm('BO', 'Bolivia'), transport_to_next: RB_ANDES_GRAND_TRAVERSE_END }] },
   ], {
     best_starting_month: 'February',
     travel_style: 'Backpacker — local buses through the Andes, no flights needed at all between these four countries (uninterrupted overland corridor).',
@@ -2781,6 +2787,12 @@ function rbSeedAfricaSplitExpeditions() {
   rbSave();
 }
 
+// Last-leg texts for standalone routes whose shared expedition text continues onward
+// (Phase 4 batches 21-26 route-text fixes, 2026-10-29; the expeditions themselves keep the onward leg).
+const RB_SOUTHERN_AFRICA_LOOP_END = "End of this route — return flight from Lilongwe to Amsterdam (1-2 stops, e.g. via Addis Ababa, Nairobi or Johannesburg). Continuing to Madagascar instead: flight via Johannesburg or Nairobi to Antananarivo (no direct connection from Malawi).";
+const RB_AFRICAN_ISLANDS_END = "End of this route — return flight from Mauritius to Amsterdam (1 stop, e.g. via Paris or Dubai). Continuing to Tanzania instead: flight Port Louis-Dar es Salaam/Zanzibar, usually with a connection in Johannesburg or Nairobi.";
+const RB_EAST_AFRICA_SAFARI_END = "End of this route — return flight from Nairobi to Amsterdam (KLM, direct). Continuing to Ethiopia instead: overland via the Moyale border crossing (rough, multi-day bus ride), or a flight Nairobi-Addis Ababa if in doubt about safety/road conditions — Mount Kenya/Nanyuki already sits on the way to Moyale (same route as Nairobi-Nanyuki).";
+
 function rbBuildSouthernAfricaSafariLoopRoute() {
   const mea = (code, name) => rbContentFor('Africa Grand Tour 🌍', code, name);
   return rbBuildSeedRoute('Southern Africa Safari Loop 🦁', [
@@ -2792,7 +2804,7 @@ function rbBuildSouthernAfricaSafariLoopRoute() {
     {
       name: 'Southern Africa', season: 'July–October', budget: 14035,
       note: "From Mozambique to Malawi via Zimbabwe, Botswana, Namibia, Angola and Zambia — with this order it falls almost entirely within the dry season (May-October), with the best wildlife viewing right toward the end (August-October). The Angola-Zambia border crossing in southeastern Angola is less traveled than the rest of this route — check extra carefully beforehand.",
-      countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), mea('MW', 'Malawi')],
+      countries: [mea('MZ', 'Mozambique'), mea('ZW', 'Zimbabwe'), mea('BW', 'Botswana'), mea('NA', 'Namibia'), mea('AO', 'Angola'), mea('ZM', 'Zambia'), { ...mea('MW', 'Malawi'), transport_to_next: RB_SOUTHERN_AFRICA_LOOP_END }],
     },
   ], {
     best_starting_month: 'June',
@@ -2809,7 +2821,7 @@ function rbBuildAfricaIslandsRoute() {
     {
       name: 'Islands', season: 'October–November', budget: 2650,
       note: "Madagascar and Mauritius — Madagascar's notoriously slow roads are the biggest time sink here, not the sights themselves.",
-      countries: [{ ...mea('MG', 'Madagascar'), notes: "Entry: flight Amsterdam-Antananarivo (±13-16 hours, 1 stopover, e.g. via Nairobi or Paris with Kenya Airways/Air France; from ±€650-1,100 return; best period October — note, the cheapest month is usually March, so budget toward the higher end of this range). Price indication from 2026-08 web research, a snapshot. " + (mea('MG', 'Madagascar').notes || '') }, mea('MU', 'Mauritius')],
+      countries: [{ ...mea('MG', 'Madagascar'), notes: "Entry: flight Amsterdam-Antananarivo (±13-16 hours, 1 stopover, e.g. via Nairobi or Paris with Kenya Airways/Air France; from ±€650-1,100 return; best period October — note, the cheapest month is usually March, so budget toward the higher end of this range). Price indication from 2026-08 web research, a snapshot. " + (mea('MG', 'Madagascar').notes || '') }, { ...mea('MU', 'Mauritius'), transport_to_next: RB_AFRICAN_ISLANDS_END }],
     },
   ], {
     best_starting_month: 'October',
@@ -2826,7 +2838,7 @@ function rbBuildEastAfricaSafariClassicRoute() {
     {
       name: 'East Africa', season: 'November–January', budget: 10320,
       note: "Tanzania, Rwanda, Uganda and Kenya — lands in the short rains (October-December, light afternoon showers, manageable) and the following short dry spell (January-February), including the southern Serengeti's calving season. Not the absolute peak (June-October), but a recognized strong alternative.",
-      countries: [{ ...mea('TZ', 'Tanzania'), notes: "Entry: direct KLM flight Amsterdam-Kilimanjaro (±8h45; from ±€1,050-1,500 return; best period November). Price indication from 2026-08 web research, a snapshot. " + (mea('TZ', 'Tanzania').notes || '') }, mea('RW', 'Rwanda'), mea('UG', 'Uganda'), mea('KE', 'Kenya')],
+      countries: [{ ...mea('TZ', 'Tanzania'), notes: "Entry: direct KLM flight Amsterdam-Kilimanjaro (±8h45; from ±€1,050-1,500 return; best period November). Price indication from 2026-08 web research, a snapshot. " + (mea('TZ', 'Tanzania').notes || '') }, mea('RW', 'Rwanda'), mea('UG', 'Uganda'), { ...mea('KE', 'Kenya'), transport_to_next: RB_EAST_AFRICA_SAFARI_END }],
     },
   ], {
     best_starting_month: 'November',
@@ -3485,7 +3497,7 @@ function rbBuildWesternCanadaRockiesVancouverRoute() {
           { name: 'Mount Robson Provincial Park', lat: 53.1216, lng: -119.1465, notes: "The Canadian Rockies' highest peak (3,954 m), usually wrapped in its own cloud cap (\"Yuh-hai-has-kun,\" the mountain of the spiral road to First Nations). The multi-day Berg Lake Trail to its base reopened in June 2025 after 2021 flood damage and is fully running for 2026 — book campground reservations well ahead as they're released months in advance and fill fast; otherwise the highway viewpoint near the visitor centre gives a solid view without hiking." },
           { name: 'Whistler', lat: 50.1163, lng: -122.9574, notes: "A globally ranked ski resort that runs just as well in summer, anchored by the PEAK 2 PEAK Gondola linking Whistler and Blackcomb mountains with valley views along the way. In summer, ride up for alpine hiking or hit the mountain bike park; book the gondola in advance in peak season to skip ticket-counter queues." },
         ],
-        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees',
+        transport_to_next: 'Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the car stays within Canada, so no border fees, but an Alberta-to-BC one-way fee (often ~CAD 150-300) is common; compare rental companies',
         notes: 'Entry: flight Amsterdam-Calgary, with a stopover (±12-14 hours, from ±€650-950 return, best period June-July). Price indication from 2026-08 web research, a snapshot. The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.',
       }],
       note: 'Rental car (Calgary-Vancouver). Plan for at least 2-3 nights per national park so you can also hike, not just drive through.',
@@ -3696,7 +3708,7 @@ function rbBuildTropicalOutbackAustraliaRoute() {
             { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
           ],
           notes: 'Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day.',
-          transport_to_next: 'End of this route — flight home from Cairns (or overland to Sydney to continue on to Temperate/Southern Australia 🍇)',
+          transport_to_next: 'End of this route — flight home from Brisbane (~300 km south of Fraser Island/K\'gari, the last stop; Cairns is ~1,600 km back north) (or overland to Sydney to continue on to Temperate/Southern Australia 🍇)',
         },
       ],
     },
@@ -4061,7 +4073,7 @@ function rbBuildWestAfricaOverlandRoute() {
             { name: 'Makasutu Culture Forest', lat: 13.3667, lng: -16.6333, notes: "A private reserve of palm forest, savanna, and mangrove about an hour from Banjul, best known for a pirogue trip through mangrove channels plus guided walks past palm-wine tapping and a crafts centre. Full-day tours combine the forest/mangrove walk with a traditional drumming/dance demonstration — worth booking as a full day, not a quick stop, to get all of it." },
           ],
           notes: "Small but with its own recognizable highlight: Kunta Kinteh Island (formerly James Island) is one of the most important slavery heritage sites in West Africa. Price verified (2026-07), holds up. Presidential election December 5, 2026 — possible unrest, check the current situation shortly before departure.",
-          transport_to_next: 'End of this route — return flight from Banjul (or flight to Abidjan to continue to Gulf of Guinea, below).',
+          transport_to_next: 'Flight Banjul-Abidjan (usually 1 stop via Dakar; there is no practical overland route through Guinea/Liberia) to continue to the Gulf of Guinea.',
         },
       ],
     },
@@ -7575,7 +7587,7 @@ function rbBuildMoroccoRoute() {
   return rbBuildFlatSeedRoute('Morocco 🕌', [
     {
       ...med(),
-      notes: 'Entry: direct flight Amsterdam-Marrakech (Transavia/easyJet, ±3h50; from ±€100-280 return; best period September). Price indication from 2026-08 web research, a snapshot. ' + med().notes,
+      notes: 'Entry: direct flight Amsterdam-Tangier (Transavia, ±3h15; open jaw, the route ends in Marrakech; from ±€100-280 return; best period September). Price indication from 2026-08 web research, a snapshot. ' + med().notes,
       transport_to_next: 'End of this route — return flight from Marrakech to Amsterdam (Transavia/easyJet, direct).',
     },
   ], {
@@ -13354,7 +13366,7 @@ function rbBuildTanzaniaRoute() {
     {
       ...mea('TZ', 'Tanzania'),
       notes: 'Entry: direct KLM flight Amsterdam-Kilimanjaro (±8h45; from ±€1,050-1,500 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (mea('TZ', 'Tanzania').notes || ''),
-      transport_to_next: 'End of this route — return flight from Kilimanjaro (or Dar es Salaam/Zanzibar) to Amsterdam, direct from Kilimanjaro with KLM.',
+      transport_to_next: 'End of this route — return flight from Dar es Salaam or Zanzibar (the last stops) to Amsterdam, 1 stop — KLM flies direct only from Kilimanjaro, which would mean a domestic flight back north.',
     },
   ], {
     best_starting_month: 'November',
@@ -13371,7 +13383,7 @@ function rbBuildBotswanaRoute() {
     {
       ...mea('BW', 'Botswana'),
       notes: 'Entry: flight Amsterdam-Kasane, with a connection via Johannesburg (no direct connection, ±14-16 hours incl. connection; from ±€900-1,300 return; best period July). Price indication from 2026-08 web research, a snapshot. ' + (mea('BW', 'Botswana').notes || ''),
-      transport_to_next: 'End of this route — back to Kasane (from Central Kalahari), then a flight to Amsterdam via Johannesburg.',
+      transport_to_next: 'End of this route — drive back to Maun (~4-5 hours from Central Kalahari; Kasane is ~1,000 km away), return the 4x4 there and fly Maun-Johannesburg, then on to Amsterdam.',
     },
   ], {
     best_starting_month: 'July',
@@ -13433,7 +13445,7 @@ function rbBuildCairnsGreatBarrierReefRoute() {
         { name: "Fraser Island / K'gari", lat: -25.2333, lng: 153.1500 },
       ],
       notes: 'Entry: flight Amsterdam-Cairns, with multiple connections (no direct connection, e.g. via Doha/Dubai/Singapore, ±24-28 hours incl. connections; from ±€1,600-2,500 return — January is usually the cheapest flight month, but falls outside this route\'s dry season; best travel period June-August). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 24-28 hours of travel time with multiple connections justifies an arrival day with no plans. Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day.',
-      transport_to_next: 'End of this route — flight home from Cairns to Amsterdam (multiple connections, no direct connection).',
+      transport_to_next: 'End of this route — flight home from Brisbane (~300 km south of Fraser Island/K\'gari, the last stop; Cairns is ~1,600 km back north) to Amsterdam (multiple connections, no direct connection).',
     },
   ], {
     best_starting_month: 'June',
@@ -13616,11 +13628,16 @@ function rbBuildMauritiusRoute() {
   });
 }
 
+// Last-leg texts for standalone routes whose shared expedition text continues onward
+// (Phase 4 batches 21-26 route-text fixes, 2026-10-29; the expeditions themselves keep the onward leg).
+const RB_ARGENTINE_PATAGONIA_LEG = "Flight El Calafate-Ushuaia (~1h20, Aerolíneas Argentinas) — overland is a ~18-20 hour bus trip via Río Gallegos and Chilean Tierra del Fuego.";
+
 function rbBuildArgentinePatagoniaRoute() {
   const patagonia = (code, name) => rbContentFor('Patagonia & Antarctica Expedition 🧊', code, name);
   return rbBuildFlatSeedRoute('Argentine Patagonia 🥩', [
     {
       ...patagonia('AR', 'Argentina'),
+      transport_to_next: RB_ARGENTINE_PATAGONIA_LEG,
       notes: 'Entry: flight Amsterdam-El Calafate, via Buenos Aires (KLM/Aerolíneas Argentinas + a domestic connecting flight, ±21.5-24 hours total incl. connection; from ±€1,200-1,800 return; best period November). Price indication from 2026-08 web research, a snapshot. ' + (patagonia('AR', 'Argentina').notes || ''),
     },
     {
@@ -14095,7 +14112,7 @@ function rbBuildBoliviaRoute() {
     {
       ...panAm('BO', 'Bolivia'),
       notes: 'Entry: flight Amsterdam-La Paz, with a stopover (e.g. via Madrid/Bogotá/Santa Cruz, ±20-24 hours total; from ±€700-1,300 return; best period June/November). Web-research price indication 2026-08, a snapshot. ' + (panAm('BO', 'Bolivia').notes || ''),
-      transport_to_next: 'End of this route — return flight from La Paz to Amsterdam (1 stopover).',
+      transport_to_next: 'End of this route — night bus Potosí-La Paz (~9-10 hours), or Sucre-La Paz by domestic flight (~1 hour; Sucre is ~3 hours by road from Potosí), then the return flight from La Paz to Amsterdam (1 stopover).',
     },
   ], {
     best_starting_month: 'June',
@@ -14397,7 +14414,7 @@ function rbBuildPacificNorthwestRoute() {
         { name: 'Redwood National & State Parks', lat: 41.2132, lng: -124.0046, notes: "Home to the tallest trees on Earth, including groves easily rivaling (and quieter than) the more famous Sequoia giants further south. Driving in to Tall Trees Grove requires a free permit (limited number per day) available at the Kuchel Visitor Center — plan for that if it's the specific grove you want, otherwise the roadside groves along Newton B. Drury Parkway need no permit at all." },
       ],
       notes: 'Entry: direct KLM flight Amsterdam-Seattle (±9-10 hours; from ±€880-1,090 return, January is cheaper but falls outside the best hiking season; best period July-August). Price indication from 2026-08 web research, a snapshot. American nature on a grand scale: rainforest, volcanoes, rugged coastline and the tallest trees in the world. ESTA was raised to $40.27 (from $21) as of Sept 30, 2025 — valid 2 years.',
-      transport_to_next: 'End of this route — return flight from San Francisco or Portland to Amsterdam (return the rental car at the end of the coastal route).',
+      transport_to_next: 'End of this route — drive on from the Redwoods to San Francisco (~5-6 hours), return the rental car there (one-way fee) and take the direct KLM return flight from SFO.',
     },
   ], {
     best_starting_month: 'July',
@@ -14798,7 +14815,7 @@ function rbBuildKazakhstanKyrgyzstanRoute() {
     },
     {
       ...eurasia('KG', 'Kyrgyzstan'),
-      transport_to_next: 'End of this route — flight from Bishkek to Amsterdam (1 stopover via Istanbul, Turkish Airlines/Pegasus).',
+      transport_to_next: 'End of this route — domestic flight Osh-Bishkek (~1 hour, several daily; the stops end in Osh), then a flight from Bishkek to Amsterdam (1 stopover via Istanbul, Turkish Airlines/Pegasus).',
     },
   ], {
     best_starting_month: 'June',
@@ -31391,6 +31408,1387 @@ const RB_ROUTE_COSTS = {
       ],
     },
 
+
+// ---- Phase 4 batch 21: Asia & Himalaya, extracted 2026-10-29, approved by Youri (planning/budget_batch21/REVIEW.md) ----
+// NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. All routes priced as public transport (no car) - see REVIEW.md.
+// Fares: flights_from_ams.csv + flights_batch21.csv. Domestic exit legs the route text chains to the intercontinental flight sit in flight_out_cost.
+
+  'gt_seed_united-arab-emirates': {
+    checked: '2026-10-29',
+    flight_in_cost: 300,   // AMS-Dubai one way, KLM/Emirates direct (WebSearch 2026-10-29: floors EUR 175-182, Emirates USD 739; notes EUR 450-750 return)
+    flight_out_cost: 280,  // Dubai-AMS direct (est from out fare)
+    blocks: [
+      { code: 'AE', local: 100, extras: [   // E100 Dubai-Abu Dhabi ~6 (notes) + Abu Dhabi-Al Ain bus ~5 + Liwa/Fujairah by shared taxi/ride-hail ~85 (est; no car in the rate)
+        rbExtra('Burj Khalifa observation deck (notes: roughly EUR 39-63)', 51, 'activity'),
+        rbExtra('Desert safari (notes: roughly EUR 62)', 62, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_bhutan': {
+    checked: '2026-10-29',
+    flight_in_cost: 900,   // AMS-Paro one way via Delhi/Bangkok (Trip.com ~EUR 1350 return floor; est as 2 tickets, low)
+    flight_out_cost: 900,  // Paro-AMS (flights_from_ams.csv PBH back)
+    blocks: [
+      { code: 'BT', local: 60, extras: [   // Paro-Thimphu-Punakha-Paro by taxi/car+driver (est); SDF is in the daily rate (notes)
+        rbExtra('Bhutan visa fee USD 40 (VISA_VACCINATION_RESEARCH.md; SDF already in the daily rate)', 36, 'visa'),
+        rbExtra('Bumthang side trip: flights Paro-Bumthang and back, 2 x ~EUR 80 (est, notes give no price)', 160, 'transport', true),
+      ] },
+    ],
+  },
+
+  'gt_seed_caucasus': {
+    checked: '2026-10-29',
+    flight_in_cost: 260,   // AMS-Tbilisi one way, 1 stop (notes EUR 250-400 return; est)
+    flight_out_cost: 280,  // Baku-AMS one way, 1 stop (est)
+    blocks: [
+      { code: 'GE', transport: 30, local: 58, extras: [   // transport: Batumi-Tbilisi train ~13 + Tbilisi-Yerevan marshrutka ~17 (est); local: Kazbegi/Sighnaghi marshrutkas + Kutaisi, Mestia 2 x 17 (notes ~17 to/from), Batumi
+      ] },
+      { code: 'AM', transport: 42, local: 40, extras: [   // transport: Yerevan-Tbilisi marshrutka ~17 + Tbilisi-Baku bus ~25 (est; flight alternative ~70); local: Khor Virap, Goris/Tatev, Sevan, Dilijan (est)
+      ] },
+      { code: 'AZ', local: 28, extras: [   // Gobustan, Baku-Sheki, Sheki-Qabala, Qabala-Baku buses (est)
+        rbExtra('Azerbaijan e-visa USD 23 (VISA_VACCINATION_RESEARCH.md)', 21, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_north-india': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,   // AMS-Delhi (flights_from_ams.csv DEL out)
+    flight_out_cost: 605,  // Varanasi-Delhi ~55 (est, notes: flight ~1h20) + Delhi-AMS 550 (est from out fare / notes EUR 350-550 return)
+    blocks: [
+      { code: 'IN', local: 105, extras: [   // Delhi-Jaipur-Pushkar-Jodhpur-Jaisalmer-Udaipur trains/buses ~46, Udaipur-Delhi train ~15 + Delhi-Manali Volvo ~16, Manali-Rishikesh bus ~13, Rishikesh-Varanasi train ~15 (all est)
+        rbExtra('India e-Tourist visa, 30 days (est ~USD 25; research file gives only the 1-year USD 40 option)', 22, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_jordan': {
+    checked: '2026-10-29',
+    flight_in_cost: 260,   // AMS-Amman one way, 1 stop (notes EUR 300-700 return; est)
+    flight_out_cost: 240,  // Amman-AMS (est)
+    blocks: [
+      { code: 'JO', local: 70, extras: [   // Jerash, Amman-Petra JETT bus ~11, Petra-Wadi Rum ~10, Wadi Rum-Dead Sea/Amman by taxi (est)
+        rbExtra('Jordan Pass (notes ~50-60 JOD, midpoint 55 JOD; includes visa + Petra)', 69, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_japan-taiwan': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Tokyo one way (WebSearch 2026-10-29: floors EUR 361-375 / USD 420-432; typical higher; notes EUR 900-1300 return)
+    flight_out_cost: 450,  // Taipei-AMS (flights_from_ams.csv TPE back)
+    blocks: [
+      { code: 'JP', transport: 150, local: 250, extras: [   // transport: Osaka-Taipei flight (LCC/EVA ~EUR 100-180, est); local: Shinkansen Tokyo-Kyoto ~83, Hakone ~50, Kyoto-Nara-Osaka ~10, Osaka-Hiroshima-Osaka ~110 (est)
+      ] },
+      { code: 'TW', local: 120, extras: [   // Taipei-Hualien/Taroko ~10, onward to Sun Moon Lake ~15, HSR to Tainan ~25, Kenting ~12, HSR back to Taipei ~45 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_kazakhstan-kyrgyzstan': {
+    checked: '2026-10-29',
+    flight_in_cost: 300,   // AMS-Almaty one way via Istanbul (notes EUR 250-650 return; est)
+    flight_out_cost: 320,  // Bishkek-AMS one way via Istanbul (est)
+    blocks: [
+      { code: 'KZ', transport: 15, local: 40, extras: [   // Shymkent-Bishkek bus (est); local: Charyn day trip ~15, Almaty-Turkistan train ~18, Turkistan-Shymkent ~5 (est)
+      ] },
+      { code: 'KG', local: 110, extras: [   // Issyk-Kul/Karakol marshrutkas ~18, Song-Kul shared 4x4 ~25, Kochkor-Osh ~20, Osh-Bishkek flight ~45 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_kyrgyzstan': {
+    checked: '2026-10-29',
+    flight_in_cost: 330,   // AMS-Bishkek one way via Istanbul (notes EUR 450-700 return; est)
+    flight_out_cost: 320,  // Bishkek-AMS (est)
+    blocks: [
+      { code: 'KG', local: 110, extras: [   // same legs as in the Kazakhstan-Kyrgyzstan route (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_south-korea': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Seoul one way (WebSearch 2026-10-29: floors EUR 314-370, USD 406-458; notes EUR 700-1100 return)
+    flight_out_cost: 450,  // Seoul-AMS (Skyscanner EUR 426 floor; est)
+    blocks: [
+      { code: 'KR', local: 120, extras: [   // KTX Seoul-Gyeongju ~32, Gyeongju-Busan ~6, Busan-Jeju flight ~40, Jeju-Seoul flight ~40 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_sri-lanka': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Colombo one way, 1 stop via Gulf hub (est; low)
+    flight_out_cost: 470,  // Colombo-AMS (est)
+    blocks: [
+      { code: 'LK', local: 40, extras: [   // buses Colombo-Sigiriya-Kandy, Kandy-Ella train ~8, Ella-Tissa, south coast, back to Colombo (est)
+        rbExtra('Yala safari entry + jeep (notes ~EUR 85-90)', 88, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_mongolia': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Ulaanbaatar one way via Istanbul (notes EUR 600-800 return; est)
+    flight_out_cost: 420,  // Ulaanbaatar-AMS (est)
+    blocks: [
+      { code: 'MN', local: 40, extras: [   // Terelj + Kharkhorin shared vans/buses (est)
+        rbExtra('Gobi jeep tour: assumed 5 days x USD 100 (notes USD 80-120/day p.p.; day count is my assumption)', 447, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_maldives': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Male one way, 1 stop via Gulf hub (est; low)
+    flight_out_cost: 480,  // Male-AMS (est)
+    blocks: [
+      { code: 'MV', local: 70, extras: [   // public ferries ~3 (3 legs) + shared speedboats ~23 (2 legs), notes (est legs)
+        rbExtra('Green Tax 9 nights x ~EUR 5.50 (notes)', 50, 'other'),
+        rbExtra('Departure tax economy (notes ~EUR 46)', 46, 'other'),
+      ] },
+    ],
+  },
+
+  'gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Kuala Lumpur one way KLM direct (notes EUR 650-950 return; est)
+    flight_out_cost: 472,  // Kota Kinabalu-KL ~52 (notes EUR 35-70) + KL-AMS 420 (est)
+    blocks: [
+      { code: 'MY', transport: 120, local: 0, extras: [] },   // KL-Bandar Seri Begawan flight (Royal Brunei/MAS ~2h; est)
+      { code: 'BN', transport: 80, local: 0, extras: [       // BSB-Kota Kinabalu flight (~40 min; est)
+        rbExtra('Ulu Temburong guided day tour (notes BND 140-180 ~ EUR 115-150, midpoint)', 133, 'tour'),
+      ] },
+      { code: 'MY', transport: 0, local: 0, extras: [] },     // transfer to Kinabalu Park is part of the climb package
+      { code: 'MY', transport: 50, local: 0, extras: [] },    // park-KK transfer ~10 + Kota Kinabalu-Sandakan flight ~40 (est)
+      { code: 'MY', transport: 12, local: 0, extras: [       // Sandakan/Sepilok-Sukau van (est; lodge may include)
+        rbExtra('Sepilok Orang-utan centre entry RM90 (notes)', 18, 'park_fee'),
+      ] },
+      { code: 'MY', transport: 18, local: 0, extras: [] },    // Kinabatangan-Semporna van ~4-5h (est)
+      { code: 'MY', transport: 50, local: 0, extras: [        // Semporna-Tawau van ~5 + Tawau-Kota Kinabalu flight ~45 (est)
+        rbExtra('Sipadan/Mabul diving: assumed 3 dive days x EUR 200 (notes: EUR 150-250/day on top; day count is my assumption)', 600, 'activity'),
+      ] },
+      { code: 'MY', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_malaysia': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-KL one way KLM direct (est)
+    flight_out_cost: 420,  // KL-AMS (est)
+    blocks: [
+      { code: 'MY', local: 82, extras: [   // KL-Langkawi flight ~40, Langkawi-Penang ferry ~15, Penang-Cameron ~10, Cameron-Malacca ~12, Malacca-KL ~5 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_nepal': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Kathmandu one way, 1 stop (notes EUR 550-950 return, Nov peak; est)
+    flight_out_cost: 420,  // Kathmandu-AMS (est)
+    blocks: [
+      { code: 'NP', local: 55, extras: [   // Kathmandu-Lumbini bus ~15, Lumbini-Chitwan ~8, Chitwan-Pokhara ~10, Annapurna trailhead ~12, Pokhara-Kathmandu ~10 (est)
+        rbExtra('Nepal visa 30 days USD 50 (VISA_VACCINATION_RESEARCH.md)', 45, 'visa'),
+        rbExtra('TIMS/ACAP permits (notes ~USD 50 one-off)', 45, 'park_fee'),
+      ] },
+    ],
+  },
+
+  'gt_seed_gulf-states-trio': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Muscat one way KLM direct (notes EUR 1190-1300 return, raised by regional tensions; est, low)
+    flight_out_cost: 420,  // Doha-AMS (flights_from_ams.csv DOH back)
+    blocks: [
+      { code: 'OM', transport: 140, local: 0, extras: [   // Muscat-Manama flight (est); 4x4 is in the daily rate (carInDailyRate true)
+        rbExtra('Oman e-visa, 30 days (est ~OMR 20; research file gives no fee)', 46, 'visa'),
+      ] },
+      { code: 'BH', transport: 95, local: 0, extras: [     // Manama-Doha flight (Gulf Air/Qatar, ~1h; est)
+        rbExtra('Bahrain e-visa ~USD 25 (VISA_VACCINATION_RESEARCH.md)', 22, 'visa'),
+      ] },
+      { code: 'QA', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_philippines': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Manila one way KLM direct (notes EUR 700-900 return; est)
+    flight_out_cost: 495,  // Cebu-Manila ~45 (est) + Manila-AMS 450 (est)
+    blocks: [
+      { code: 'PH', local: 260, extras: [   // Manila-Banaue-Manila buses ~20, Manila-El Nido flight ~70, Coron-Cebu ~50, Cebu-Siargao ~45, Siargao-Cebu-Bohol ~45 + ferries ~30 (all est)
+        rbExtra('El Nido-Coron multi-day boat expedition (notes ~EUR 160-220 all-in, midpoint)', 190, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_thailand': {
+    checked: '2026-10-29',
+    flight_in_cost: 460,   // AMS-Bangkok one way 420 (WebSearch 2026-10-29: floors EUR 344-365, typical higher) + BKK-Chiang Mai ~40 (notes: domestic connection)
+    flight_out_cost: 435,  // Krabi/Phuket-Bangkok ~35 (est) + Bangkok-AMS 400 (est)
+    blocks: [
+      { code: 'TH', local: 86, extras: [   // Chiang Mai-Sukhothai ~10, -Ayutthaya ~14, -Bangkok ~2, Bangkok-Krabi ~30, Krabi-Koh Lipe ~30 (est)
+      ] },
+    ],
+  },
+
+  'gt_seed_central-asia': {
+    checked: '2026-10-29',
+    flight_in_cost: 300,   // AMS-Almaty one way via Istanbul (est)
+    flight_out_cost: 320,  // Tashkent-AMS (flights_from_ams.csv TAS back)
+    blocks: [
+      { code: 'KZ', transport: 15, local: 40, extras: [] },   // Shymkent-Bishkek bus; Charyn, Almaty-Turkistan train (est)
+      { code: 'KG', transport: 110, local: 60, extras: [] },  // Osh-Khorog shared jeep on the Pamir Highway ~USD 120 (notes: shared taxi from ~USD 30-40/stretch; est); local: Issyk-Kul, Karakol, Song-Kul, Kochkor-Osh (est)
+      { code: 'TJ', transport: 25, local: 55, extras: [      // Dushanbe-Samarkand shared taxi (est); local: Khorog-Dushanbe ~40, Iskanderkul ~15
+        rbExtra('Tajikistan e-visa + GBAO permit (notes: total ~USD 70)', 63, 'visa'),
+      ] },
+      { code: 'UZ', local: 65, extras: [] },                  // Samarkand-Bukhara ~10, -Khiva ~10, Urgench-Tashkent flight ~45 (est)
+    ],
+  },
+
+  'gt_seed_uzbekistan-tajikistan': {
+    checked: '2026-10-29',
+    flight_in_cost: 330,   // AMS-Tashkent one way via Istanbul (notes EUR 500-700 return; est)
+    flight_out_cost: 350,  // Dushanbe-AMS one way via Istanbul (est)
+    blocks: [
+      { code: 'UZ', transport: 30, local: 85, extras: [] },   // transport: Tashkent-Samarkand Afrosiyob ~20 + marshrutka to Panjakent border ~10 (est); local: Tashkent-Samarkand ~20, -Bukhara ~10, -Khiva ~10, Urgench-Tashkent flight ~45
+      { code: 'TJ', local: 165, extras: [                      // Panjakent-Iskanderkul/Dushanbe ~15, Dushanbe-Khorog ~40, Khorog-Murghab ~35, Murghab-Dushanbe ~75 by shared taxi (notes: from USD 30-40 p.p.; est)
+        rbExtra('Tajikistan e-visa + GBAO permit (notes: total ~USD 70)', 63, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_bodrum-aegean-coast-6-days': {
+    checked: '2026-10-29',
+    flight_in_cost: 170,   // AMS-Bodrum one way, seasonal direct/1 stop (est; low)
+    flight_out_cost: 160,  // Bodrum-AMS (est)
+    blocks: [
+      { code: 'TR', local: 0, extras: [
+        rbExtra('Bodrum-Kos ferry day trip, return (notes EUR 35-60 return, midpoint)', 48, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_izmir-aegean-coast-ephesus-cesme-5-days': {
+    checked: '2026-10-29',
+    flight_in_cost: 170,   // AMS-Izmir (flights_from_ams.csv ADB out)
+    flight_out_cost: 160,  // Izmir-AMS (est from out fare)
+    blocks: [
+      { code: 'TR', local: 15, extras: [   // Izmir-Selcuk train, Selcuk-Cesme bus (est)
+        rbExtra('Ephesus entry 2026 (notes EUR 40)', 40, 'park_fee'),
+        rbExtra('Ephesus Terrace Houses (notes EUR 15 extra)', 15, 'park_fee'),
+        rbExtra('Cesme-Chios ferry trip, return (notes EUR 25-30 one-way, midpoint x2)', 55, 'transport', true),
+      ] },
+    ],
+  },
+
+  'gt_seed_uzbekistan': {
+    checked: '2026-10-29',
+    flight_in_cost: 330,   // AMS-Tashkent one way via Istanbul (est)
+    flight_out_cost: 320,  // Tashkent-AMS (flights_from_ams.csv TAS back)
+    blocks: [
+      { code: 'UZ', local: 85, extras: [] },   // Tashkent-Samarkand ~20, -Bukhara ~10, -Khiva ~10, Urgench-Tashkent flight ~45 (est)
+    ],
+  },
+
+  'gt_seed_vietnam-cambodia': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Hanoi (flights_from_ams.csv HAN out)
+    flight_out_cost: 520,  // Phnom Penh-AMS, 1-2 stops (est; low)
+    blocks: [
+      { code: 'VN', transport: 13, local: 180, extras: [   // transport: HCMC-Phnom Penh bus ~13 (est); local: Hanoi-HCMC flight ~50 (notes EUR 40-60), Ha Giang/Ha Long buses ~40, Da Lat ~20, Phu Quoc flights ~70 (est)
+        rbExtra('Ha Giang Loop easy-rider: assumed 3 days x EUR 40 (notes EUR 35-45/day; day count is my assumption)', 120, 'tour'),
+      ] },
+      { code: 'KH', local: 73, extras: [   // Phnom Penh-Sihanoukville-Koh Rong ~21, -Battambang ~16, -Siem Reap ~6, Stung Treng round ~30 (est)
+        rbExtra('Angkor 3-day ticket USD 62 (notes)', 55, 'park_fee'),
+        rbExtra('Cambodia e-visa ~USD 36 (VISA_VACCINATION_RESEARCH.md)', 32, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_vietnam': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Hanoi (flights_from_ams.csv HAN out)
+    flight_out_cost: 480,  // HCMC-AMS, 1 stop (est; low)
+    blocks: [
+      { code: 'VN', local: 180, extras: [   // as in the Vietnam-Cambodia route
+        rbExtra('Ha Giang Loop easy-rider: assumed 3 days x EUR 40 (notes EUR 35-45/day; day count is my assumption)', 120, 'tour'),
+      ] },
+    ],
+  },
+
+// ---- Phase 4 batch 22: Africa, extracted 2026-10-29, approved by Youri (planning/budget_batch22/REVIEW.md) ----
+
+  'gt_seed_botswana': {
+    checked: '2026-10-29',
+    flight_in_cost: 800,   // AMS-Kasane one way via Johannesburg (notes return ±€900-1,300; typical one-way; est)
+    flight_out_cost: 750,  // Maun-AMS via Johannesburg (Maun-JNB ~€170 + KLM JNB-AMS ~€580; est)
+    blocks: [
+      { code: 'BW', local: 25, extras: [
+        rbExtra('Chobe entrance 2 days × €19 (BWP 270/day per notes; days assumed)', 38, 'park_fee'),
+        rbExtra('Car: 4x4 rental 12 days (from Maun, after Kasane/Chobe by bus + game drives) × €150 + fuel ≈920 km × 7 L/100 × €1.19 + border road tax/insurance ≈€30 (est)', 1907, 'transport'),
+      ] },  // Kasane-Maun bus ~€25 (est); car from Maun on
+    ],
+  },
+
+  'gt_seed_cape-verde': {
+    checked: '2026-10-29',
+    flight_in_cost: 250,   // AMS-São Vicente one way (reuse VXE row, flights_from_ams.csv)
+    flight_out_cost: 240,  // Praia-AMS via Lisbon (TAP ~€240; est)
+    blocks: [
+      { code: 'CV', local: 195, extras: [
+        rbExtra('EASE registration incl. airport security fee (file ~€35; notes ~€30 fee, one charge)', 35, 'visa'),
+      ] },  // Santo Antão ferry return ~€20 + Mindelo-Praia ~€55 + Praia-Fogo ~€60 + Fogo-Praia ~€60 (Binter, est)
+    ],
+  },
+
+  'gt_seed_egypt': {
+    checked: '2026-10-29',
+    flight_in_cost: 180,   // AMS-Cairo (reuse CAI out)
+    flight_out_cost: 230,  // Cairo-AMS (reuse CAI back)
+    blocks: [
+      { code: 'EG', local: 130, extras: [
+        rbExtra('Nile tourist-class cruise Luxor-Aswan, 3-4 nights all-in (notes €320-550, midpoint)', 435, 'tour'),
+        rbExtra('Egypt e-visa ($25-30 per notes; file $25-45)', 25, 'visa'),
+      ] },  // Cairo-Dahab bus ~20, Dahab-Luxor bus/ferry via Hurghada ~45, Aswan-Cairo sleeper ~55 + Cairo-Alexandria train ~8 (all est)
+    ],
+  },
+
+  'gt_seed_horn-of-africa-egypt': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Addis Ababa direct Ethiopian (notes return ±€500-700; typical one-way; est)
+    flight_out_cost: 230,  // Cairo-AMS (reuse CAI back)
+    blocks: [
+      { code: 'ET', transport: 250, local: 750, extras: [
+        rbExtra('Danakil Depression 3-day guided tour (escort/permits incl., notes ~€430)', 430, 'tour'),
+        rbExtra('Simien Mountains trekking: park/scout/guide/mule 3-4 days (notes ~€175)', 175, 'park_fee'),
+        rbExtra('Ethiopia e-visa ($62 per file, 30 days)', 55, 'visa'),
+      ] },  // domestic flights Addis-Lalibela-Gondar ~€400 (notes) + Addis-Mekele return for Danakil ~€180 (est) + Addis-Arba Minch/Jinka return ~€170 (est)
+      { code: 'EG', local: 130, extras: [
+        rbExtra('Nile tourist-class cruise Luxor-Aswan, 3-4 nights all-in (notes €320-550, midpoint)', 435, 'tour'),
+        rbExtra('Egypt e-visa ($25-30 per notes; file $25-45)', 25, 'visa'),
+      ] },  // Cairo-Dahab bus ~20, Dahab-Luxor bus/ferry via Hurghada ~45, Aswan-Cairo sleeper ~55 + Cairo-Alexandria train ~8 (all est)
+    ],
+  },
+
+  'gt_seed_ethiopia': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Addis Ababa one way with a connection (notes return ±€700-900; est)
+    flight_out_cost: 450,  // Addis Ababa-AMS one way, 1 connection (est)
+    blocks: [
+      { code: 'ET', local: 750, extras: [
+        rbExtra('Danakil Depression 3-day guided tour (escort/permits incl., notes ~€430)', 430, 'tour'),
+        rbExtra('Simien Mountains trekking: park/scout/guide/mule 3-4 days (notes ~€175)', 175, 'park_fee'),
+        rbExtra('Ethiopia e-visa ($62 per file, 30 days)', 55, 'visa'),
+      ] },  // domestic flights Addis-Lalibela-Gondar ~€400 (notes) + Addis-Mekele return for Danakil ~€180 (est) + Addis-Arba Minch/Jinka return ~€170 (est)
+    ],
+  },
+
+  'gt_seed_gabon': {
+    checked: '2026-10-29',
+    flight_in_cost: 700,   // AMS-Libreville (reuse LBV back 700; est)
+    flight_out_cost: 700,  // Libreville-AMS (reuse LBV back)
+    blocks: [
+      { code: 'GA', local: 0, extras: [
+        rbExtra('Gabon e-visa (fee not in files; est)', 90, 'visa'),
+      ] },  // Loango logistics in the rate (inDailyRate); Pongara boat ~45 min, not priced
+    ],
+  },
+
+  'gt_seed_ghana': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Accra direct KLM (notes return ±€700-1,100; typical one-way; est)
+    flight_out_cost: 420,  // Accra-AMS direct KLM (est)
+    blocks: [
+      { code: 'GH', local: 30, extras: [
+        rbExtra('Ghana e-visa ($260 per VISA_VACCINATION_RESEARCH; notes say $60-150, see REVIEW)', 230, 'visa'),
+      ] },  // STC/tro-tro Accra-Cape Coast-Kakum-Volta (est)
+    ],
+  },
+
+  'gt_seed_kenya': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Nairobi direct KLM (notes return ±€700-1,100; est)
+    flight_out_cost: 450,  // Nairobi-AMS direct KLM (est)
+    blocks: [
+      { code: 'KE', local: 150, extras: [
+        rbExtra('Kenya eTA (notes $51)', 45, 'visa'),
+      ] },  // matatu/shuttles Nairobi-Mara/Nakuru/Amboseli return ~€110, SGR Nairobi-Mombasa return ~€30, Nanyuki bus ~€10 (est)
+    ],
+  },
+
+  'gt_seed_morocco': {
+    checked: '2026-10-29',
+    flight_in_cost: 120,   // AMS-Tangier (Transavia/Ryanair, est); notes say Marrakech but route starts in Tangier
+    flight_out_cost: 120,  // Marrakech-AMS direct Transavia/easyJet (notes return ±€100-280; est)
+    blocks: [
+      { code: 'MA', local: 50, extras: [] },  // buses Tangier-Chefchaouen ~7, -Fes ~9, taxi Volubilis ~15, train Fes-Marrakech ~20 (est)
+    ],
+  },
+
+  'gt_seed_african-islands': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,   // AMS-Antananarivo 1 stop (notes return ±€650-1,100; est)
+    flight_out_cost: 600,  // Mauritius-AMS one way, 1 stop (notes return ±€600-1,500; est)
+    blocks: [
+      { code: 'MG', transport: 180, local: 450, extras: [
+        rbExtra('4x4 + driver Tana-Andasibe and Tana-Isalo, ~€400-500 together (notes, midpoint)', 450, 'transport'),
+        rbExtra('Madagascar e-visa 30 days (notes ~€34)', 34, 'visa'),
+      ] },  // Tana-Nosy Be return flight ~€230 (notes €210-250) + Tana-Morondava return flight ~€220 (est); Isalo/Andasibe by 4x4+driver is the extra
+      { code: 'MU', local: 20, extras: [
+        rbExtra('Île aux Cerfs organised day tour boat+lunch (notes €50-70, midpoint)', 60, 'tour'),
+      ] },  // public buses/taxis (est); no car (route text never mentions one)
+    ],
+  },
+
+  'gt_seed_madagascar': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,   // AMS-Antananarivo 1 stop (est)
+    flight_out_cost: 650,  // Antananarivo-AMS 1 stop (est)
+    blocks: [
+      { code: 'MG', local: 450, extras: [
+        rbExtra('4x4 + driver Tana-Andasibe and Tana-Isalo, ~€400-500 together (notes, midpoint)', 450, 'transport'),
+        rbExtra('Madagascar e-visa 30 days (notes ~€34)', 34, 'visa'),
+      ] },  // Tana-Nosy Be return flight ~€230 (notes €210-250) + Tana-Morondava return flight ~€220 (est); Isalo/Andasibe by 4x4+driver is the extra
+    ],
+  },
+
+  'gt_seed_mauritius': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Mauritius 1 stop (notes return ±€600-1,500; est)
+    flight_out_cost: 600,  // Mauritius-AMS 1 stop (est)
+    blocks: [
+      { code: 'MU', local: 20, extras: [
+        rbExtra('Île aux Cerfs organised day tour boat+lunch (notes €50-70, midpoint)', 60, 'tour'),
+      ] },  // public buses/taxis (est); no car (route text never mentions one)
+    ],
+  },
+
+  'gt_seed_mozambique': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Maputo via Doha (notes return ±€610-900; est)
+    flight_out_cost: 600,  // Maputo-AMS via Doha (the Nampula-Maputo flight is in local)
+    blocks: [
+      { code: 'MZ', local: 375, extras: [
+        rbExtra('Bazaruto Archipelago boat trip (notes €80-140, midpoint)', 110, 'tour'),
+        rbExtra('Mozambique eTA (notes ~€10)', 10, 'visa'),
+      ] },  // 2 domestic LAM flights (Vilankulo/Inhambane-Nampula, Nampula-Maputo) ~€350 (notes €300-400) + chapa Maputo-Inhambane-Vilankulo ~€25 (est)
+    ],
+  },
+
+  'gt_seed_victoria-falls-kalahari-loop': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Maputo via Lisbon TAP (notes return ±€750-1,200; est)
+    flight_out_cost: 750,  // Maun-AMS via Johannesburg (est)
+    blocks: [
+      { code: 'MZ', transport: 60, local: 375, extras: [
+        rbExtra('Bazaruto Archipelago boat trip (notes €80-140, midpoint)', 110, 'tour'),
+        rbExtra('Mozambique eTA (notes ~€10)', 10, 'visa'),
+      ] },  // 2 domestic LAM flights (Vilankulo/Inhambane-Nampula, Nampula-Maputo) ~€350 (notes €300-400) + chapa Maputo-Inhambane-Vilankulo ~€25 (est)
+      { code: 'ZW', transport: 30, local: 40, extras: [
+        rbExtra('Mana Pools mandatory guided walking/canoe safari 3-4 days all-in (notes €1,300-1,650, midpoint)', 1475, 'tour'),
+        rbExtra('Victoria Falls entry, Zimbabwe side (notes ~€46)', 46, 'park_fee'),
+        rbExtra('Hwange NP entrance 2 days × €22 (notes ~€22/day; days assumed)', 44, 'park_fee'),
+        rbExtra('Zimbabwe visa on arrival/e-visa ($30 per notes)', 27, 'visa'),
+      ] },  // buses Harare-Masvingo-Bulawayo-Victoria Falls ~€40 (est); no car (route text never mentions one, rental restricted)
+      { code: 'BW', local: 25, extras: [
+        rbExtra('Chobe entrance 2 days × €19 (BWP 270/day per notes; days assumed)', 38, 'park_fee'),
+        rbExtra('Car: 4x4 rental 12 days (from Maun, after Kasane/Chobe by bus + game drives) × €150 + fuel ≈920 km × 7 L/100 × €1.19 + border road tax/insurance ≈€30 (est)', 1907, 'transport'),
+      ] },  // Kasane-Maun bus ~€25 (est); car from Maun on
+    ],
+  },
+
+  'gt_seed_namibia': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,   // AMS-Windhoek, 1 connection (notes return ±€700-1,200; est)
+    flight_out_cost: 620,  // Windhoek-AMS, 1 connection (est)
+    blocks: [
+      { code: 'NA', local: 0, extras: [
+        rbExtra('Etosha park fees 3 days × (NAD 280 p.p. + NAD 60 car) ≈ €17/day (notes; days assumed)', 50, 'park_fee'),
+        rbExtra('Sossusvlei/Namib-Naukluft 2 days × (NAD 150 + 50) ≈ €10/day (notes)', 20, 'park_fee'),
+        rbExtra('Fish River Canyon NAD 160 + 50 (notes)', 10, 'park_fee'),
+      ] },  // 4x4 in the daily rate (inDailyRate)
+    ],
+  },
+
+  'gt_seed_rwanda': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Kigali direct KLM (notes return ±€800-1,000; est)
+    flight_out_cost: 470,  // Kigali-AMS direct KLM (est)
+    blocks: [
+      { code: 'RW', local: 35, extras: [
+        rbExtra('Rwanda visa on arrival/e-visa ($50)', 45, 'visa'),
+      ] },  // minibuses Kigali-Musanze-Karongi-Nyungwe-Kigali (est)
+    ],
+  },
+
+  'gt_seed_seychelles': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Mahé 1 stop (notes return ±€680-900; est)
+    flight_out_cost: 580,  // Mahé-AMS 1 stop (est)
+    blocks: [
+      { code: 'SC', local: 140, extras: [
+        rbExtra('Seychelles Travel Authorization (notes ~€10)', 10, 'visa'),
+      ] },  // full 3-island ferry loop €130-150 (notes, midpoint)
+    ],
+  },
+
+  'gt_seed_sao-tome-principe': {
+    checked: '2026-10-29',
+    flight_in_cost: 550,   // AMS-São Tomé via Lisbon TAP (notes return ±€700-2,500; est)
+    flight_out_cost: 550,  // São Tomé-AMS via Lisbon (est)
+    blocks: [
+      { code: 'ST', local: 200, extras: [] },  // São Tomé-Príncipe return flight ~€200 (est; not in notes). No visa under 15 days (notes)
+    ],
+  },
+
+  'gt_seed_east-africa-safari-classic': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Kilimanjaro direct KLM (notes return ±€1,050-1,500; est)
+    flight_out_cost: 450,  // Nairobi-AMS direct KLM (est)
+    blocks: [
+      { code: 'TZ', transport: 55, local: 130, extras: [
+        rbExtra('Tanzania e-visa ($50 per notes)', 45, 'visa'),
+      ] },  // Kilimanjaro-Zanzibar flight ~€90 (notes: direct, several daily) + Zanzibar-Dar ferry ~€35 + Arusha-Moshi bus ~€5 (est)
+      { code: 'RW', transport: 18, local: 35, extras: [
+        rbExtra('Rwanda visa on arrival/e-visa ($50)', 45, 'visa'),
+      ] },  // minibuses Kigali-Musanze-Karongi-Nyungwe-Kigali (est)
+      { code: 'UG', transport: 35, local: 120, extras: [
+        rbExtra('Uganda e-visa ($50 per file)', 45, 'visa'),
+      ] },  // shuttles/minibuses Kampala-Bwindi-QENP-Kibale-Murchison-Kampala-Jinja (est); permits in the rate
+      { code: 'KE', local: 150, extras: [
+        rbExtra('Kenya eTA (notes $51)', 45, 'visa'),
+      ] },  // matatu/shuttles Nairobi-Mara/Nakuru/Amboseli return ~€110, SGR Nairobi-Mombasa return ~€30, Nanyuki bus ~€10 (est)
+    ],
+  },
+
+  'gt_seed_tanzania': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Kilimanjaro direct KLM (est)
+    flight_out_cost: 600,  // Dar es Salaam-AMS 1 stop (route ends in Dar; est)
+    blocks: [
+      { code: 'TZ', local: 130, extras: [
+        rbExtra('Tanzania e-visa ($50 per notes)', 45, 'visa'),
+      ] },  // Kilimanjaro-Zanzibar flight ~€90 (notes: direct, several daily) + Zanzibar-Dar ferry ~€35 + Arusha-Moshi bus ~€5 (est)
+    ],
+  },
+
+  'gt_seed_south-africa-mountain-kingdoms': {
+    checked: '2026-10-29',
+    flight_in_cost: 620,   // AMS-Cape Town (reuse CPT out)
+    flight_out_cost: 680,  // Manzini-AMS: Airlink Eswatini-JNB ~€120 (est) + KLM JNB-AMS ~€560 (est)
+    blocks: [
+      { code: 'ZA', transport: 15, local: 0, extras: [] },  // car + park levies in the daily rate (carInDailyRate true)
+      { code: 'LS', transport: 35, local: 40, extras: [
+        rbExtra('Sani Pass guided 4x4 day tour from Durban (notes ~R3,845)', 185, 'tour'),
+      ] },  // minibus taxis Maseru-Malealea-Roma-Semonkong-Sani (est)
+      { code: 'SZ', local: 20, extras: [
+        rbExtra('Hlane Royal NP guided game drive, 1 × €30 (notes €25-35/activity)', 30, 'activity'),
+      ] },  // kombis (est)
+    ],
+  },
+
+  'gt_seed_south-africa': {
+    checked: '2026-10-29',
+    flight_in_cost: 620,   // AMS-Cape Town (reuse CPT out)
+    flight_out_cost: 560,  // Johannesburg-AMS direct KLM (notes: back via CT or JNB; route ends near JNB; est)
+    blocks: [
+      { code: 'ZA', local: 0, extras: [] },  // car + park levies in the daily rate (carInDailyRate true)
+    ],
+  },
+
+  'gt_seed_southern-africa-safari-loop': {
+    checked: '2026-10-29',
+    flight_in_cost: 620,   // AMS-Cape Town (reuse CPT out)
+    flight_out_cost: 600,  // Lilongwe-AMS 1 connection (notes return €600-1,250; est)
+    blocks: [
+      { code: 'ZA', transport: 15, local: 0, extras: [] },  // car + park levies in the daily rate (carInDailyRate true)
+      { code: 'LS', transport: 35, local: 40, extras: [
+        rbExtra('Sani Pass guided 4x4 day tour from Durban (notes ~R3,845)', 185, 'tour'),
+      ] },  // minibus taxis Maseru-Malealea-Roma-Semonkong-Sani (est)
+      { code: 'SZ', transport: 25, local: 20, extras: [
+        rbExtra('Hlane Royal NP guided game drive, 1 × €30 (notes €25-35/activity)', 30, 'activity'),
+      ] },  // kombis (est)
+      { code: 'MZ', transport: 60, local: 375, extras: [
+        rbExtra('Bazaruto Archipelago boat trip (notes €80-140, midpoint)', 110, 'tour'),
+        rbExtra('Mozambique eTA (notes ~€10)', 10, 'visa'),
+      ] },  // 2 domestic LAM flights (Vilankulo/Inhambane-Nampula, Nampula-Maputo) ~€350 (notes €300-400) + chapa Maputo-Inhambane-Vilankulo ~€25 (est)
+      { code: 'ZW', transport: 30, local: 40, extras: [
+        rbExtra('Mana Pools mandatory guided walking/canoe safari 3-4 days all-in (notes €1,300-1,650, midpoint)', 1475, 'tour'),
+        rbExtra('Victoria Falls entry, Zimbabwe side (notes ~€46)', 46, 'park_fee'),
+        rbExtra('Hwange NP entrance 2 days × €22 (notes ~€22/day; days assumed)', 44, 'park_fee'),
+        rbExtra('Zimbabwe visa on arrival/e-visa ($30 per notes)', 27, 'visa'),
+      ] },  // buses Harare-Masvingo-Bulawayo-Victoria Falls ~€40 (est); no car (route text never mentions one, rental restricted)
+      { code: 'BW', transport: 60, local: 25, extras: [
+        rbExtra('Chobe entrance 2 days × €19 (BWP 270/day per notes; days assumed)', 38, 'park_fee'),
+        rbExtra('Car: 4x4 rental 12 days (from Maun, after Kasane/Chobe by bus + game drives) × €150 + fuel ≈920 km × 7 L/100 × €1.19 + border road tax/insurance ≈€30 (est)', 1907, 'transport'),
+      ] },  // Kasane-Maun bus ~€25 (est); car from Maun on
+      { code: 'NA', transport: 50, local: 0, extras: [
+        rbExtra('Etosha park fees 3 days × (NAD 280 p.p. + NAD 60 car) ≈ €17/day (notes; days assumed)', 50, 'park_fee'),
+        rbExtra('Sossusvlei/Namib-Naukluft 2 days × (NAD 150 + 50) ≈ €10/day (notes)', 20, 'park_fee'),
+        rbExtra('Fish River Canyon NAD 160 + 50 (notes)', 10, 'park_fee'),
+      ] },  // 4x4 in the daily rate (inDailyRate)
+      { code: 'AO', transport: 150, local: 180, extras: [] },  // Lubango-Luanda return flight ~€180 (est; notes: Luanda is flight-only); car/driver in the rate
+      { code: 'ZM', transport: 30, local: 0, extras: [
+        rbExtra('Car: 4x4 rental 12 days (Lusaka-Lower Zambezi-Livingstone-South Luangwa) × €150 + fuel ≈1760 km × 7 L/100 × €1.41 + COMESA/road tax ≈€35 (est) + one-way drop Mfuwe/Chipata ≈€150 (est)', 2159, 'transport'),
+        rbExtra('Local guide Zambezi town 2 days × €30 (notes €20-40/day, "recommended")', 60, 'tour', true),
+      ] },  // car covers it (extra on this block); Zambia visa-free per file
+      { code: 'MW', local: 45, extras: [
+        rbExtra('Mount Mulanje mandatory guide 2 days × €20 (notes €15-25/day; days assumed)', 40, 'park_fee'),
+        rbExtra('Malawi visa ($75 per file; notes say ~€45 e-visa)', 65, 'visa'),
+      ] },  // shuttles/minibuses Lilongwe-Cape Maclear-Liwonde-Zomba-Mulanje (est); Liwonde fee in the rate (notes)
+    ],
+  },
+
+  'gt_seed_zambia-malawi': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-Lusaka 1 connection (notes return ±€600-1,250; est)
+    flight_out_cost: 600,  // Lilongwe-AMS 1 connection (est)
+    blocks: [
+      { code: 'ZM', transport: 30, local: 0, extras: [
+        rbExtra('Car: 4x4 rental 12 days (Lusaka-Lower Zambezi-Livingstone-South Luangwa) × €150 + fuel ≈1760 km × 7 L/100 × €1.41 + COMESA/road tax ≈€35 (est) + one-way drop Mfuwe/Chipata ≈€150 (est)', 2159, 'transport'),
+        rbExtra('Local guide Zambezi town 2 days × €30 (notes €20-40/day, "recommended")', 60, 'tour', true),
+      ] },  // car covers it (extra on this block); Zambia visa-free per file
+      { code: 'MW', local: 45, extras: [
+        rbExtra('Mount Mulanje mandatory guide 2 days × €20 (notes €15-25/day; days assumed)', 40, 'park_fee'),
+        rbExtra('Malawi visa ($75 per file; notes say ~€45 e-visa)', 65, 'visa'),
+      ] },  // shuttles/minibuses Lilongwe-Cape Maclear-Liwonde-Zomba-Mulanje (est); Liwonde fee in the rate (notes)
+    ],
+  },
+
+  'gt_seed_zimbabwe': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,   // AMS-Harare via Addis (notes return ±€700-1,000; est)
+    flight_out_cost: 600,  // Victoria Falls-AMS via Addis (est)
+    blocks: [
+      { code: 'ZW', local: 40, extras: [
+        rbExtra('Mana Pools mandatory guided walking/canoe safari 3-4 days all-in (notes €1,300-1,650, midpoint)', 1475, 'tour'),
+        rbExtra('Victoria Falls entry, Zimbabwe side (notes ~€46)', 46, 'park_fee'),
+        rbExtra('Hwange NP entrance 2 days × €22 (notes ~€22/day; days assumed)', 44, 'park_fee'),
+        rbExtra('Zimbabwe visa on arrival/e-visa ($30 per notes)', 27, 'visa'),
+      ] },  // buses Harare-Masvingo-Bulawayo-Victoria Falls ~€40 (est); no car (route text never mentions one, rental restricted)
+    ],
+  },
+
+// ---- Phase 4 batch 23: Caribbean, Amazon & Pan-American, extracted 2026-10-29, approved by Youri (planning/budget_batch23/REVIEW.md) ----
+// NOT yet in RB_ROUTE_COSTS: waiting for Youri's review. 0 web searches: every new airport fare is an estimate
+// (one-way typical ~55-60% of the "return" ranges in the route notes, cross-checked with flights_from_ams.csv rows).
+// No car in this batch (all routes public transport; Costa Rica's rental is "optional" in its own text).
+// Intercity local/transport figures are estimates from typical bus/shuttle/ferry fares ("(est)").
+
+  'gt_seed_bolivia': {
+    checked: '2026-10-29',
+    flight_in_cost: 600,   // AMS-La Paz one way via Madrid/Bogota (notes: 700-1300 return; est, low)
+    flight_out_cost: 580,  // La Paz-AMS one way (est, low)
+    blocks: [
+      { code: 'BO', local: 55, extras: [   // Copacabana-La Paz 4, La Paz-Uyuni night bus 20, Uyuni-Potosi 8, Potosi-Sucre 4, Sucre-La Paz night bus 18 (est)
+        rbExtra('Uyuni Salt Flat 3-day jeep tour (notes: ~€140-180 all-in, midpoint)', 160, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_northern-brazil': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Belem via Lisbon (TAP); notes 650-950 return (est, low)
+    flight_out_cost: 480,  // Fortaleza-AMS (reuse flights_from_ams.csv FOR back)
+    blocks: [
+      { code: 'BR', local: 115, extras: [] },  // Belem-Marajo ferry 2x8, Belem-Sao Luis night bus 30, Sao Luis-Barreirinhas 10, Barreirinhas-Jericoacoara 4x4 transfer 40, Jeri-Fortaleza 20 (est)
+    ],
+  },
+
+  'gt_seed_southern-cone-brazil-finale': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Santiago (KLM) + domestic to Calama; notes 800-900 return incl. domestic (est, low)
+    flight_out_cost: 650,  // Rio-AMS (reuse flights_from_ams.csv GIG back)
+    blocks: [
+      { code: 'CL', transport: 75, local: 35, extras: [] },   // Iquique-Calama-San Pedro ~30 + San Pedro-Salta via Paso de Jama ~45 (est); local: San Pedro-Antofagasta 12, Antofagasta-Iquique 22 (est)
+      { code: 'AR', transport: 220, local: 65, extras: [] },  // flight Salta-Buenos Aires-Foz do Iguacu (Aerolineas/GOL ~USD 200-280, est); local Quebrada buses Salta-Cafayate-Purmamarca-Tilcara-Humahuaca-Salta (est)
+      { code: 'BR', local: 125, extras: [] },                // Foz-Curitiba 22, Ilha do Mel bus+boat 10, Floripa 25, Sao Paulo 35, Paraty 20, Rio 15 (est)
+    ],
+  },
+
+  'gt_seed_suriname-northern-brazil': {
+    checked: '2026-10-29',
+    flight_in_cost: 750,   // AMS-Paramaribo KLM direct; notes 1100-1800 return (est)
+    flight_out_cost: 480,  // Fortaleza-AMS (reuse FOR back)
+    blocks: [
+      { code: 'SR', transport: 420, local: 30, extras: [   // flight Paramaribo-Belem, scarce connection (est, low); local: Atjoni/Brownsberg minibus+boat shuttles (est)
+        rbExtra('Suriname ICF entry form fee (amount not in notes/research; est)', 25, 'visa'),
+      ] },
+      { code: 'BR', local: 115, extras: [] },   // as Northern Brazil
+    ],
+  },
+
+  'gt_seed_andes-grand-traverse': {
+    checked: '2026-10-29',
+    flight_in_cost: 460,   // AMS-Cartagena 1 stop; notes 650-900 return (est, low)
+    flight_out_cost: 580,  // La Paz-AMS (est, low); route ends in Bolivia, Potosi-La Paz night bus is in BO local
+    blocks: [
+      { code: 'CO', transport: 45, local: 135, extras: [] },  // San Agustin-Pasto-Ipiales-Quito bus ~45 (est); local: Cartagena-Santa Marta 12, Tayrona 3, Santa Marta-Medellin flight 65, Medellin-Salento 15, Salento-Bogota 20, Bogota-San Agustin 22 (est)
+      { code: 'EC', transport: 18, local: 434, extras: [] },  // Guayaquil-Tumbes-Mancora buses (est). local: Otavalo/Mindo/Banos/Cuenca/Guayaquil buses ~44 + Galapagos return flights Guayaquil-Galapagos ~390 (est; NOT in the rate, which only has park fee + tour)
+      { code: 'PE', transport: 12, local: 135, extras: [   // Puno-Copacabana bus (est); local buses Mancora-Huaraz 45, Lima 11+12, Ica-Arequipa 22, Arequipa-Cusco 24, Cusco-Puno 12, Sacred Valley 8 (est)
+        rbExtra('Machu Picchu: train + entrance (notes ~€150-250, midpoint)', 200, 'tour'),
+      ] },
+      { code: 'BO', local: 55, extras: [
+        rbExtra('Uyuni Salt Flat 3-day jeep tour (notes ~€140-180, midpoint)', 160, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_colombia': {
+    checked: '2026-10-29',
+    flight_in_cost: 460,   // AMS-Cartagena (as Andes; est, low)
+    flight_out_cost: 450,  // Bogota-AMS one way (est, low)
+    blocks: [
+      { code: 'CO', local: 157, extras: [] },  // as Andes CO 135 + San Agustin-Bogota bus 22 back to the airport (est)
+    ],
+  },
+
+  'gt_seed_central-america-loop': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Guatemala City, 1-2 stops; notes 600-900 return (est, low)
+    flight_out_cost: 450,  // Panama City-AMS KLM direct (est). Route ends Panama City, NOT the San Blas sailboat to Cartagena in the last block's text
+    blocks: [
+      { code: 'GT', transport: 22, local: 80, extras: [] },   // Flores-San Ignacio shuttle (est); Xela-Atitlan-Antigua-Guatemala City-Semuc-Flores shuttles (est)
+      { code: 'BZ', transport: 70, local: 20, extras: [] },   // ferry Placencia/Dangriga-Puerto Cortes (est, no price in notes); local buses only: the island water taxis are in the €72/day rate (notes: 2026-07 correction)
+      { code: 'HN', transport: 32, local: 125, extras: [] },  // Tegucigalpa-San Salvador bus (est); local: Copan 15, Yojoa 12, La Ceiba 12, Roatan ferry return 2x32, Tegucigalpa 22 (est)
+      { code: 'SV', transport: 42, local: 35, extras: [] },   // Ticabus San Salvador-Leon (est); chicken buses (est)
+      { code: 'NI', transport: 40, local: 40, extras: [] },   // Ticabus Managua-San Jose (est); local buses + Ometepe ferry (est)
+      { code: 'CR', transport: 33, local: 150, extras: [     // Puerto Viejo-Bocas shuttle+boat (est)
+        rbExtra('National park entrances: 3 parks at ~$15-22 (notes), ~€17 each', 50, 'park_fee'),
+      ] },
+      { code: 'PA', local: 55, extras: [] },   // Bocas-Boquete 25, Boquete-Panama City 24 (est); San Blas tour not priced (no price in notes)
+    ],
+  },
+
+  'gt_seed_costa-rica': {
+    checked: '2026-10-29',
+    flight_in_cost: 470,   // AMS-San Jose KLM direct; notes 730-850 return (est)
+    flight_out_cost: 450,  // San Jose-AMS (est)
+    blocks: [
+      { code: 'CR', local: 182, extras: [   // SJO-Liberia 14, buses/shuttles 150, Puerto Viejo-SJO 18 (est). No rental car: route text says buses, rental optional
+        rbExtra('National park entrances: 3 parks at ~$15-22 (notes), ~€17 each', 50, 'park_fee'),
+      ] },
+    ],
+  },
+
+  'gt_seed_caribbean-islands-hop': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Havana (reuse flights_from_ams.csv HAV out)
+    flight_out_cost: 600,  // Grenada-AMS 1 stop (est, low)
+    blocks: [
+      { code: 'CU', transport: 300, local: 80, extras: [   // flight Havana-Kingston via Panama/Miami (est); Viazul buses Havana-Vinales-Cienfuegos-Trinidad-Havana (est)
+        rbExtra('Cuba e-Visa (notes ~$50)', 45, 'visa'),
+      ] },
+      { code: 'JM', transport: 320, local: 45, extras: [] },  // flight Kingston-Curacao via Panama/Miami (est); Knutsford Express + route taxis (est)
+      { code: 'CW', transport: 95, local: 0, extras: [] },    // flight Curacao-Bonaire (est, ~USD 100)
+      { code: 'BQ', transport: 450, local: 0, extras: [      // flight Bonaire-Guadeloupe via Aruba/Panama/San Juan (est, low)
+        rbExtra('Bonaire entry tax (notes ~€70 p.p.)', 70, 'other'),
+      ] },
+      { code: 'GP', transport: 65, local: 30, extras: [] },  // L'Express des Iles ferry to Dominica (est); Les Saintes ferry return (est)
+      { code: 'DM', transport: 90, local: 0, extras: [       // L'Express des Iles Roseau-Castries (est)
+        rbExtra('Boiling Lake mandatory guide (notes ~€55-70, midpoint)', 63, 'tour'),
+      ] },
+      { code: 'LC', transport: 180, local: 0, extras: [] },  // flight St Lucia-Grenada (est)
+      { code: 'GD', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_cuba': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // Havana out (reuse HAV out)
+    flight_out_cost: 500,  // Havana-AMS (est)
+    blocks: [
+      { code: 'CU', local: 80, extras: [
+        rbExtra('Cuba e-Visa (notes ~$50)', 45, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_abc-islands': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Aruba KLM direct; notes 740-820 return (est)
+    flight_out_cost: 515,  // Curacao-AMS 420 (est) + Bonaire-Curacao hop 95 (route text: fly back via Curacao)
+    blocks: [
+      { code: 'AW', transport: 96, local: 0, extras: [   // flight Aruba-Curacao ~$100-115 (notes, midpoint)
+        rbExtra('Aruba ED Card sustainability fee ($20, notes)', 18, 'other'),
+      ] },
+      { code: 'CW', transport: 95, local: 0, extras: [] },   // flight Curacao-Bonaire (est)
+      { code: 'BQ', local: 0, extras: [
+        rbExtra('Bonaire entry tax (notes ~€70 p.p.)', 70, 'other'),
+      ] },
+    ],
+  },
+
+  'gt_seed_curacao-bonaire': {
+    checked: '2026-10-29',
+    flight_in_cost: 440,   // AMS-Curacao KLM direct; notes 650-750 return (est)
+    flight_out_cost: 515,  // Curacao-AMS 420 (est) + Bonaire-Curacao hop 95
+    blocks: [
+      { code: 'CW', transport: 95, local: 0, extras: [] },
+      { code: 'BQ', local: 0, extras: [
+        rbExtra('Bonaire entry tax (notes ~€70 p.p.)', 70, 'other'),
+      ] },
+    ],
+  },
+
+  'gt_seed_guadeloupe-dominica': {
+    checked: '2026-10-29',
+    flight_in_cost: 420,   // AMS-Pointe-a-Pitre via Paris; notes 650-1700 return (est)
+    flight_out_cost: 650,  // Dominica-AMS 1-2 stops (est, low)
+    blocks: [
+      { code: 'GP', transport: 65, local: 30, extras: [] },  // L'Express des Iles ferry (est); Les Saintes ferry return (est)
+      { code: 'DM', local: 0, extras: [
+        rbExtra('Boiling Lake mandatory guide (notes ~€55-70, midpoint)', 63, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_ecuador': {
+    checked: '2026-10-29',
+    flight_in_cost: 520,   // AMS-Quito via Madrid; notes 800-1000 return (est)
+    flight_out_cost: 500,  // Quito-AMS (est)
+    blocks: [
+      { code: 'EC', local: 434, extras: [] },  // buses ~44 + Galapagos return flights ~390 (est; the rate holds only park fee + tour); Galapagos-Quito flight on the way back
+    ],
+  },
+
+  'gt_seed_guatemala': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Guatemala City, stopover; notes 700-1300 return (est)
+    flight_out_cost: 480,  // Guatemala City-AMS (est)
+    blocks: [
+      { code: 'GT', local: 135, extras: [] },  // shuttles 80 + Flores-Guatemala City flight/bus 55 (est)
+    ],
+  },
+
+  'gt_seed_jamaica': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,   // AMS-Kingston with stopover; notes 750-900 return (est)
+    flight_out_cost: 460,  // Kingston-AMS (est)
+    blocks: [
+      { code: 'JM', local: 45, extras: [] },
+    ],
+  },
+
+  'gt_seed_saint-lucia-grenada': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-St Lucia (UVF) via US; notes 700-1000 return (est, low)
+    flight_out_cost: 600,  // Grenada-AMS 1 stop (est, low)
+    blocks: [
+      { code: 'LC', transport: 180, local: 0, extras: [] },  // regional flight St Lucia-Grenada (est)
+      { code: 'GD', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_mexico': {
+    checked: '2026-10-29',
+    flight_in_cost: 550,   // Mexico City out (reuse MEX out)
+    flight_out_cost: 450,  // Cancun-AMS (est); route ends Bacalar, bus to Cancun in local
+    blocks: [
+      { code: 'MX', local: 152, extras: [] },  // ADO buses CDMX-Oaxaca 22, Oaxaca-San Cristobal 30, -Palenque 14, -Merida 30, -Tulum 22, -Bacalar 12, Bacalar-Cancun 22 (est)
+    ],
+  },
+
+  'gt_seed_nicaragua': {
+    checked: '2026-10-29',
+    flight_in_cost: 430,   // AMS-Managua via Panama City (Copa); notes 520-900 return (est)
+    flight_out_cost: 430,
+    blocks: [
+      { code: 'NI', local: 40, extras: [] },
+    ],
+  },
+
+  'gt_seed_panama': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Panama City KLM direct; notes 700-900 return (est)
+    flight_out_cost: 450,
+    blocks: [
+      { code: 'PA', local: 55, extras: [] },  // San Blas boat tour not priced (no price in notes)
+    ],
+  },
+
+  'gt_seed_peru': {
+    checked: '2026-10-29',
+    flight_in_cost: 500,   // AMS-Lima KLM direct; notes 800-950 return (est)
+    flight_out_cost: 480,
+    blocks: [
+      { code: 'PE', local: 205, extras: [   // buses 135 (as Andes) + domestic flight Juliaca-Lima ~70 (est)
+        rbExtra('Machu Picchu: train + entrance (notes ~€150-250, midpoint)', 200, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_suriname': {
+    checked: '2026-10-29',
+    flight_in_cost: 750,   // AMS-Paramaribo KLM direct; notes 1100-1800 return (est)
+    flight_out_cost: 700,
+    blocks: [
+      { code: 'SR', local: 30, extras: [
+        rbExtra('Suriname ICF entry form fee (amount not in notes/research; est)', 25, 'visa'),
+      ] },
+    ],
+  },
+
+// ---- Phase 4 batch 24: North America & Oceania 1/2, extracted 2026-10-29, approved by Youri (planning/budget_batch24/REVIEW.md) ----
+// NOT yet in RB_ROUTE_COSTS. Fares: flights_from_ams.csv + flights_batch24.csv (all new fares are estimates, no WebSearch this batch).
+// Car: data/cost_reference/car_costs_by_country.csv (7 L/100 km; AU 1.46, NZ 1.86, CA 1.29 EUR/l; rental AU 55, NZ 60, CA 50 EUR/day).
+// Tours/park fees are only added when the route notes name a price; none of this batch's notes do, so no tour extras.
+
+  'gt_seed_cairns-great-barrier-reef': {
+    checked: '2026-10-29',
+    flight_in_cost: 1050,  // AMS-Cairns one way, 2+ stops (notes: return EUR 1,600-2,500 -> half of midpoint; est)
+    flight_out_cost: 1050, // Cairns-AMS one way (same, est)
+    blocks: [
+      { code: 'AU', local: 285, extras: [                 // local: Greyhound Cairns-Airlie-Hervey Bay ~165 (est AUD ~270) + Hervey Bay/Brisbane-Cairns flight back ~120 (est), because the route ends with the flight home from Cairns
+        rbExtra('Car: rental 4 days (Cairns/Daintree only) × €55 + fuel ≈300 km (no tolls)', 251, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_sydneybyron-great-ocean-road': {
+    checked: '2026-10-29',
+    flight_in_cost: 900,   // AMS-Sydney one way, 1 stop (notes: return EUR 1,100-1,900; est)
+    flight_out_cost: 850,  // Melbourne-AMS one way, 1 stop (est)
+    blocks: [
+      { code: 'AU', transport: 0, local: 140, extras: [   // local: Sydney-Byron Bay and back by bus/budget flight ~2 × 70 (est); Blue Mountains by train is city transport
+        rbExtra('Car: rental 12 days (Sydney→Melbourne + Great Ocean Road/Grampians) × €55 + fuel ≈1,580 km + one-way drop Sydney→Melbourne ≈€150 (est, flagged)', 971, 'transport'),
+      ] },
+      { code: 'AU', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_tasmania': {
+    checked: '2026-10-29',
+    flight_in_cost: 1100,  // AMS-Hobart one way, 2 stops (notes: return EUR 1,300-1,800; est)
+    flight_out_cost: 1100, // Hobart-AMS one way (est)
+    blocks: [
+      { code: 'AU', local: 0, extras: [
+        rbExtra('Car: rental 9 days (14 minus Overland Track walk and arrival buffer) × €55 + fuel ≈730 km, returned in Hobart (no tolls)', 570, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_temperatesouthern-australia': {
+    checked: '2026-10-29',
+    flight_in_cost: 900,   // AMS-Sydney one way (as above)
+    flight_out_cost: 850,  // Adelaide-AMS one way, 1 stop (est)
+    blocks: [
+      { code: 'AU', transport: 0, local: 140, extras: [   // local: Sydney-Byron-Sydney bus/flight (est)
+        rbExtra('Car: rental 12 days (Sydney→Melbourne + Great Ocean Road/Grampians) × €55 + fuel ≈1,580 km + one-way drop Sydney→Melbourne ≈€150 (est, flagged)', 971, 'transport'),
+      ] },
+      { code: 'AU', transport: 90, local: 0, extras: [] }, // flight Melbourne-Hobart ~AUD 150 (notes: Spirit of Tasmania ferry or flight; est, car returned in Melbourne)
+      { code: 'AU', transport: 120, local: 0, extras: [    // flight Hobart-Adelaide direct (est)
+        rbExtra('Car: Tasmania rental 9 days × €55 + fuel ≈730 km, returned in Hobart', 570, 'transport'),
+      ] },
+      { code: 'AU', local: 80, extras: [                   // local: Kangaroo Island ferry foot passenger return (est AUD ~130)
+        rbExtra('Car: Adelaide/Barossa/Flinders rental 4 days × €55 + fuel ≈500 km', 271, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_tropicaloutback-australia': {
+    checked: '2026-10-29',
+    flight_in_cost: 800,   // AMS-Perth one way, 1 stop (notes: return EUR 910-1,500; est)
+    flight_out_cost: 1050, // Cairns-AMS one way (est)
+    blocks: [
+      { code: 'AU', transport: 240, local: 0, extras: [   // flight Broome-Darwin (est AUD ~400), as batch 1 (Youri 2026-10-27: compact car Perth-Broome + flight)
+        rbExtra('Car: compact rental 18 days Perth-Broome × €55 + fuel ≈2,800 km (incl. Ningaloo) + one-way fee Perth→Broome ≈€250 (est, flagged)', 1526, 'transport'),
+      ] },
+      { code: 'AU', transport: 280, local: 0, extras: [   // flight Alice Springs-Cairns (est AUD ~460), as batch 1
+        rbExtra('Car: rental 14 days Darwin-Alice Springs × €55 + fuel ≈3,200 km + one-way fee Darwin→Alice ≈€300 (est, flagged)', 1397, 'transport'),
+      ] },
+      { code: 'AU', local: 285, extras: [                 // as route Cairns: buses Cairns-Hervey Bay 165 + flight back to Cairns 120 (est)
+        rbExtra('Car: rental 4 days (Cairns/Daintree only) × €55 + fuel ≈300 km', 251, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_eastern-canada': {
+    checked: '2026-10-29',
+    flight_in_cost: 400,   // AMS-Halifax one way (existing YHZ row)
+    flight_out_cost: 380,  // Toronto-AMS one way, direct (est)
+    blocks: [
+      { code: 'CA', transport: 170, local: 0, extras: [   // flight Halifax-Quebec City (~CAD 250, est)
+        rbExtra('eTA Canada (CAD 7, 5 years; per VISA file and block notes)', 5, 'visa'),
+        rbExtra('Car: rental 6 days (Halifax/Cape Breton, Cabot Trail) × €50 + fuel ≈900 km, returned in Halifax', 381, 'transport'),
+      ] },
+      { code: 'CA', local: 140, extras: [] },              // trains/buses Quebec-Montreal ~40, Montreal-Ottawa ~25, Ottawa-Toronto ~35, Niagara day trip from Toronto ~40 (all est)
+    ],
+  },
+
+  'gt_seed_western-canada-rockies-vancouver': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-Calgary one way, 1 stop (notes: return EUR 650-950; est)
+    flight_out_cost: 650,  // Anchorage-AMS one way via Seattle/Vancouver (est)
+    blocks: [
+      { code: 'CA', transport: 0, local: 0, extras: [     // car in the daily rate (carInDailyRate true): only the drop fee
+        rbExtra('eTA Canada (CAD 7, 5 years)', 5, 'visa'),
+        rbExtra('Car: one-way drop fee Calgary→Vancouver (est CAD ~250; rental itself is in the rate; notes claim no one-way fee, flagged)', 155, 'transport'),
+      ] },
+      { code: 'CA', transport: 240, local: 0, extras: [] }, // flight Vancouver-Anchorage (est USD ~260)
+      { code: 'US', transport: 160, local: 0, extras: [   // Alaska Railroad Denali Star Anchorage-Denali (est USD ~175 one way)
+        rbExtra('ESTA (USD 40.27 since 30 Sep 2025; VISA file still says $21)', 36, 'visa'),
+      ] },
+      { code: 'US', transport: 225, local: 0, extras: [   // Denali-Anchorage train ~160 + Anchorage-Seward bus/train ~65 (est)
+        rbExtra('Denali park shuttle bus to Wonder Lake, mandatory (notes give no price; est USD ~60)', 55, 'transport'),
+      ] },
+      { code: 'US', local: 70, extras: [] },              // Seward-Anchorage bus/train back before the flight home (est)
+    ],
+  },
+
+  'gt_seed_fiji-vanuatu': {
+    checked: '2026-10-29',
+    flight_in_cost: 1500,  // AMS-Port Vila one way (existing VLI row)
+    flight_out_cost: 950,  // Nadi-AMS one way, multiple stops (notes: return EUR 1,150-1,500 ending in Fiji; est)
+    blocks: [
+      { code: 'VU', transport: 280, local: 500, extras: [] }, // Vila-Nadi Fiji Airways (batch 1, est); local: Vila-Tanna + Vila-Santo return flights (batch 1, est)
+      { code: 'FJ', local: 595, extras: [] },              // Yasawa Flyer pass ~255 + Mamanuca ferry ~45 + Nadi-Taveuni return flights ~295 (batch 1, est)
+    ],
+  },
+
+  'gt_seed_fiji': {
+    checked: '2026-10-29',
+    flight_in_cost: 950,   // AMS-Nadi one way (est)
+    flight_out_cost: 950,  // Nadi-AMS one way (est)
+    blocks: [
+      { code: 'FJ', local: 595, extras: [] },              // as Fiji block in Fiji & Vanuatu (the notes name the Yasawa Flyer pass + the Taveuni flight as extra costs)
+    ],
+  },
+
+  'gt_seed_pacific-islands': {
+    checked: '2026-10-29',
+    flight_in_cost: 1500,  // AMS-Port Vila one way (existing VLI row)
+    flight_out_cost: 1400, // Rarotonga-AMS one way via Auckland/Los Angeles, multiple stops (est)
+    blocks: [
+      { code: 'VU', transport: 280, local: 0, extras: [] }, // Vila-Nadi (batch 1, est); inDailyRate: Tanna/Santo flights + Yasur tour in the rate
+      { code: 'FJ', transport: 300, local: 595, extras: [] }, // Nadi-Nuku'alofa Fiji Airways (batch 1, est); local as in Fiji & Vanuatu
+      { code: 'TO', transport: 450, local: 260, extras: [] }, // Tonga-Samoa via Fiji/Auckland (batch 1, est); local: Tongatapu-Vava'u return flights (batch 1, est)
+      { code: 'WS', transport: 700, local: 0, extras: [] },  // Samoa-Rarotonga via Auckland, two tickets (batch 1, est)
+      { code: 'CK', local: 0, extras: [] },                // inDailyRate: Aitutaki flight + lagoon cruise
+    ],
+  },
+
+  'gt_seed_new-zealand': {
+    checked: '2026-10-29',
+    flight_in_cost: 1200,  // AMS-Christchurch one way, 2+ stops (notes: return EUR 1,300-2,000; est)
+    flight_out_cost: 1100, // Auckland-AMS one way (existing AKL row)
+    blocks: [
+      { code: 'NZ', transport: 55, local: 0, extras: [    // Picton-Wellington foot-passenger ferry (est NZD ~105); car returned in Picton
+        rbExtra('NZeTA + International Visitor Levy (NZD ~123; per VISA file)', 63, 'visa'),
+        rbExtra('Car: rental 21 days South Island × €60 + fuel ≈2,000 km + one-way drop Christchurch→Picton ≈€60 (est, flagged)', 1580, 'transport'),
+      ] },
+      { code: 'NZ', local: 0, extras: [
+        rbExtra('Car: rental 14 days North Island × €60 + fuel ≈1,210 km + one-way drop Wellington→Auckland ≈€55 (est, flagged)', 1053, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_new-zealand-north-island': {
+    checked: '2026-10-29',
+    flight_in_cost: 1200,  // AMS-Wellington one way, 2-3 stops (notes: return EUR 1,400-1,800; est)
+    flight_out_cost: 1100, // Auckland-AMS one way (existing AKL row)
+    blocks: [
+      { code: 'NZ', local: 0, extras: [
+        rbExtra('NZeTA + International Visitor Levy (NZD ~123; per VISA file)', 63, 'visa'),
+        rbExtra('Car: rental 14 days (16 minus 2 arrival-buffer days) × €60 + fuel ≈1,210 km + one-way drop Wellington→Auckland ≈€55 (est, flagged)', 1053, 'transport'),
+      ] },
+    ],
+  },
+
+// ---- Phase 4 batch 25: North America & Oceania 2/2, extracted 2026-10-29, approved by Youri (planning/budget_batch25/REVIEW.md) ----
+// Fares: flights_from_ams.csv + flights_batch25.csv (mostly estimates, low confidence, 0 web searches).
+// Car: data/cost_reference/car_costs_by_country.csv (US EUR 45/day, fuel 1.09/l; NZ EUR 60/day, fuel 1.86/l; 7 L/100 km). USD at 1.1188.
+
+  'gt_seed_new-zealand-south-island': {
+    checked: '2026-10-29',
+    flight_in_cost: 1150,  // AMS-Christchurch one way, 1-2 stops via Asia/Gulf/US (est from AKL back 1100 in reference file; notes: return EUR 1300-2000)
+    flight_out_cost: 1100, // Christchurch-AMS one way (est, same logic; low confidence)
+    blocks: [
+      { code: 'NZ', local: 0, extras: [
+        rbExtra('NZeTA (NZD 17 app) + International Visitor Levy NZD 100 = NZD 117 (VISA_VACCINATION_RESEARCH.md, NZD at ~EUR 0.50)', 58, 'visa'),
+        rbExtra('Car: rental 21 days (23 minus 2 buffer days) × €60 + fuel ≈2,700 km (loop CHC-Franz Josef-Queenstown-Milford-Dunedin-Catlins-Kaikoura-Abel Tasman-CHC, est) × €0.13/km + no tolls, no drop fee (return to Christchurch)', 1611, 'transport'),
+      ] },
+    ],
+  },
+
+  'gt_seed_papua-new-guinea': {
+    checked: '2026-10-29',
+    flight_in_cost: 1000,  // AMS-Port Moresby one way, 2 stops via Singapore/Australia (est; notes: return EUR 1470-2020; low confidence)
+    flight_out_cost: 950,  // Port Moresby-AMS one way (est)
+    blocks: [
+      { code: 'PG', local: 1360, extras: [   // 8 domestic hub flights via Port Moresby × €170 (notes: €140-200 each, midpoint); Tufi/Alotau assumed linked by one boat/land hop
+        rbExtra('eVisa Easy Visitor Permit (USD 50)', 45, 'visa'),
+        rbExtra('Sepik River guided canoe/village charter, 3 days × €210 (notes: €140-280/day; days est)', 630, 'tour'),
+        rbExtra('Goroka Highlands guided vehicle+guide+village fee, 2 days × €165 (notes: €95-235/day; days est)', 330, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_palau': {
+    checked: '2026-10-29',
+    flight_in_cost: 900,   // AMS-Koror one way, 2 stops via Manila/Seoul/Taipei (est; notes: return EUR 1300-1750; includes the USD 100 Pristine Paradise fee; low confidence)
+    flight_out_cost: 850,  // Koror-AMS one way (est)
+    blocks: [
+      { code: 'PW', local: 0, extras: [
+        rbExtra('Rock Islands Permit incl. Jellyfish Lake (USD 100, 5 days)', 89, 'park_fee'),
+        rbExtra('2-tank boat dives, 5 dive days × €152.50 (notes: €140-165/day on top of the daily rate; number of days est)', 763, 'activity'),
+      ] },
+    ],
+  },
+
+  'gt_seed_california': {
+    checked: '2026-10-29',
+    flight_in_cost: 450,   // AMS-San Francisco one way, KLM/United direct (est from SFO back 380; summer out higher)
+    flight_out_cost: 380,  // San Francisco-AMS one way (flights_from_ams.csv)
+    blocks: [
+      { code: 'US', local: 0, extras: [
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+        rbExtra('Car: rental 6 days (Yosemite + Sequoia loop; SF days car-free, est) × €45 + fuel ≈1,000 km (SF-Yosemite-Sequoia-SF, est; notes: last leg alone 270 mi) + no tolls, no drop fee', 346, 'transport'),
+        rbExtra('America the Beautiful Non-Resident Annual Pass (as US Southwest, ~€230; cheaper than 2+ parks at USD 35 + 100 non-resident surcharge each; added in orchestrator review)', 230, 'park_fee'),
+      ] },
+    ],
+  },
+
+  'gt_seed_florida': {
+    checked: '2026-10-29',
+    flight_in_cost: 380,   // AMS-Miami one way, KLM direct (est; typical return ~EUR 750)
+    flight_out_cost: 360,  // Miami-AMS one way (est)
+    blocks: [
+      { code: 'US', transport: 0, local: 0, extras: [
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+        rbExtra('Car: rental 7 days (Miami to Key West and back, Everglades/Keys blocks) × €45 + fuel ≈680 km (est) + SunPass/toll fees ≈€10 (est)', 377, 'transport'),
+      ] },
+      { code: 'US', transport: 0, local: 0, extras: [] },
+      { code: 'US', transport: 0, local: 0, extras: [] },
+      { code: 'US', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_hawaii': {
+    checked: '2026-10-29',
+    flight_in_cost: 750,   // AMS-Honolulu one way, 1 stop via US hub (est; typical return ~EUR 1,300-1,500; low confidence)
+    flight_out_cost: 800,  // Lihue-AMS one way via Honolulu/US hub (est)
+    blocks: [
+      { code: 'US', transport: 70, local: 0, extras: [   // Honolulu-Kahului, Hawaiian/Southwest ~USD 60-90 advance (est)
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+      ] },
+      { code: 'US', transport: 70, local: 0, extras: [   // Kahului-Lihue (est)
+        rbExtra('Car: Maui 5 days + Kauai 5 days (Oahu car-free, TheBus) × €75 (est; notes: weekly rates USD 1,154-2,015 in 2026 scarcity) + fuel ≈600 km × €0.11/km (Hawaii fuel ≈+50%) + no tolls, no drop fee', 817, 'transport'),
+      ] },
+      { code: 'US', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_pacific-northwest': {
+    checked: '2026-10-29',
+    flight_in_cost: 420,   // AMS-Seattle one way, KLM direct (est; notes: return EUR 880-1,090)
+    flight_out_cost: 380,  // San Francisco-AMS one way (flights_from_ams.csv; route ends at the Redwoods, car dropped in SF)
+    blocks: [
+      { code: 'US', local: 0, extras: [
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+        rbExtra('Car: rental 13 days (15 minus 2 Seattle city days) × €45 + fuel ≈2,200 km (Seattle-Rainier-Olympic-Astoria-Redwoods-SF, est) + one-way drop Seattle-SF ≈€200 (est, flagged; USD 100-500+) + no tolls', 953, 'transport'),
+        rbExtra('America the Beautiful Non-Resident Annual Pass (as US Southwest, ~€230; cheaper than 2+ parks at USD 35 + 100 non-resident surcharge each; added in orchestrator review)', 230, 'park_fee'),
+      ] },
+    ],
+  },
+
+  'gt_seed_us-northeast': {
+    checked: '2026-10-29',
+    flight_in_cost: 400,   // AMS-Washington Dulles one way, KLM direct (est; typical return ~EUR 750-850)
+    flight_out_cost: 380,  // Boston-AMS one way, direct (est)
+    blocks: [
+      { code: 'US', transport: 35, local: 0, extras: [   // Amtrak DC-Philadelphia Saver ~USD 30-45 (est)
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+      ] },
+      { code: 'US', transport: 30, local: 0, extras: [] },   // Amtrak Philadelphia-New York Saver ~USD 30-40 (est)
+      { code: 'US', transport: 45, local: 0, extras: [] },   // Amtrak New York-Boston Saver ~USD 40-60 (est)
+      { code: 'US', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_us-southwest': {
+    checked: '2026-10-29',
+    flight_in_cost: 560,   // AMS-Las Vegas one way, 1 stop (est; notes: connecting, 13-15 h)
+    flight_out_cost: 560,  // Phoenix-AMS one way, 1 stop (est)
+    blocks: [
+      { code: 'US', transport: 0, local: 0, extras: [
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+        rbExtra('America the Beautiful Non-Resident Annual Pass (notes: ~€230; replaces USD 35 + 100 surcharge at Zion/Bryce/Grand Canyon)', 230, 'park_fee'),
+        rbExtra("Car: rental 12 days Las Vegas-Phoenix × €45 + fuel ≈1,640 km (Vegas-Zion 270 + the notes' hours between stops, est) + one-way drop Phoenix ≈€180 (notes: placeholder USD 150-250, flagged) + no tolls", 845, 'transport'),
+      ] },
+      { code: 'US', transport: 0, local: 0, extras: [] },
+      { code: 'US', transport: 0, local: 0, extras: [
+        rbExtra('Antelope Canyon mandatory Navajo guide tour (USD 80.50)', 72, 'tour'),
+      ] },
+      { code: 'US', transport: 0, local: 0, extras: [
+        rbExtra('Navajo Nation entry (notes: USD 8-10 pp + USD 15/vehicle, midpoint USD 24; not covered by the pass)', 21, 'park_fee'),
+      ] },
+      { code: 'US', transport: 0, local: 0, extras: [] },
+      { code: 'US', local: 0, extras: [
+        rbExtra('Red Rock Pass, Sedona trailhead parking (USD 5/day × 2 days)', 9, 'park_fee'),
+      ] },
+    ],
+  },
+
+  'gt_seed_us-west-coast-roadtrip': {
+    checked: '2026-10-29',
+    flight_in_cost: 420,   // AMS-Seattle one way, KLM direct (est)
+    flight_out_cost: 380,  // San Francisco-AMS one way (flights_from_ams.csv)
+    blocks: [
+      { code: 'US', transport: 0, local: 0, extras: [
+        rbExtra('ESTA (USD 40.27)', 36, 'visa'),
+        rbExtra('Car: rental 1 = Seattle pickup 15 days × €45 + fuel ≈2,200 km + one-way drop SF ≈€200 (est, flagged) = 1,043; rental 2 = SF short rental 6 days (Yosemite/Sequoia) × €45 + fuel ≈1,000 km = 346; no tolls', 1389, 'transport'),
+        rbExtra('America the Beautiful Non-Resident Annual Pass (as US Southwest, ~€230; cheaper than 2+ parks at USD 35 + 100 non-resident surcharge each; added in orchestrator review)', 230, 'park_fee'),
+      ] },
+      { code: 'US', local: 0, extras: [] },
+    ],
+  },
+
+// ---- Phase 4 batch 26: South America, Patagonia & West/Central Africa, extracted 2026-10-29, approved by Youri (planning/budget_batch26/REVIEW.md) ----
+// Fares: flights_from_ams.csv (PMC out, USH back, VXE out, LBV back) + flights_batch26.csv. No web searches this batch: all new fares are estimates (low confidence).
+// USD -> EUR at 0.87. Car costs: none (all routes public transport / tours).
+
+  'gt_seed_antarctica-cruise': {
+    checked: '2026-10-29',
+    flight_in_cost: 1100,   // AMS-Ushuaia one way via Buenos Aires + domestic leg (mirror of USH back; est, December high season)
+    flight_out_cost: 1100,  // Ushuaia-AMS one way via Buenos Aires (flights_from_ams.csv USH back, low)
+    blocks: [
+      { code: 'AQ', local: 0, extras: [] },   // cruise IS the daily rate (inDailyRate); nothing added
+    ],
+  },
+
+  'gt_seed_argentine-patagonia': {
+    checked: '2026-10-29',
+    flight_in_cost: 1000,   // AMS-El Calafate one way via Buenos Aires + domestic (notes: return EUR 1,200-1,800; est)
+    flight_out_cost: 1100,  // Ushuaia-AMS (flights_from_ams.csv USH back, low)
+    blocks: [
+      { code: 'AR', transport: 100, local: 60, extras: [] },   // flight El Calafate-Ushuaia (Aerolineas/Flybondi, est 100; the route text says "overland to Torres del Paine", a parent-route leftover); El Calafate-El Chalten bus return (est 2 x 30)
+      { code: 'AR', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_chilean-patagonia': {
+    checked: '2026-10-29',
+    flight_in_cost: 800,    // AMS-Puerto Montt one way via Santiago (flights_from_ams.csv PMC out, low)
+    flight_out_cost: 900,   // Punta Arenas-AMS one way via Santiago (flights_batch26.csv PUQ back, est)
+    blocks: [
+      { code: 'CL', transport: 130, local: 130, extras: [] },  // transport: Chile Chico-Los Antiguos 5 + Ruta 40 bus Los Antiguos-El Calafate ~95 + El Calafate-Puerto Natales ~30 (est), per the route text; local: Carretera Austral buses/ferries Puerto Montt-Chaiten-Coyhaique-Rio Tranquilo + Chiloe day trip (est)
+      { code: 'CL', local: 55, extras: [] },                   // Puerto Natales-Torres del Paine bus return ~25 + Punta Arenas day-trip bus return ~22 + local hops (est)
+    ],
+  },
+
+  'gt_seed_patagonia-overland': {
+    checked: '2026-10-29',
+    flight_in_cost: 800,    // AMS-Puerto Montt one way via Santiago (flights_from_ams.csv PMC out, low)
+    flight_out_cost: 1100,  // Ushuaia-AMS (flights_from_ams.csv USH back, low)
+    blocks: [
+      { code: 'CL', transport: 95, local: 130, extras: [] },  // Chile Chico-Los Antiguos ~5 + Ruta 40 bus to El Calafate ~90 (est); local = Carretera Austral buses/ferry + Chiloe (est)
+      { code: 'AR', transport: 30, local: 60, extras: [] },   // bus El Calafate-Torres del Paine/Puerto Natales ~30 (est); El Calafate-El Chalten bus return (est)
+      { code: 'CL', transport: 65, local: 55, extras: [] },   // bus + Strait of Magellan ferry + border Punta Arenas-Ushuaia ~65 (est); Torres bus + Punta Arenas day trip (est)
+      { code: 'AR', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_west-africa-overland': {
+    checked: '2026-10-29',
+    flight_in_cost: 250,    // AMS-Sao Vicente one way via Lisbon (flights_from_ams.csv VXE out, low)
+    flight_out_cost: 550,   // Cotonou-AMS one way via hub (flights_batch26.csv COO back, est)
+    blocks: [
+      { code: 'CV', transport: 230, local: 100, extras: [          // Fogo-Praia Binter ~60 + Praia-Dakar ~170 (est); local = Santo Antao ferry ~10 x2, Sao Vicente-Fogo Binter ~70, island buses ~10 (est)
+        rbExtra('EASE pre-travel registration Cape Verde (VISA file ~EUR 35)', 35, 'visa'),
+      ] },
+      { code: 'SN', transport: 12, local: 45, extras: [] },        // bus/shared taxi Sine-Saloum to Banjul ~12 (est); Dakar-Lompoul-Saint-Louis-Sine-Saloum (est)
+      { code: 'GM', transport: 330, local: 15, extras: [] },       // flight Banjul-Abidjan (ASKY/Air Cote dIvoire via hub, est, low); Banjul/Serrekunda minibuses (est)
+      { code: 'CI', transport: 25, local: 8, extras: [            // bus Abidjan-Elubo-Cape Coast ~15+10 (est); Abidjan-Grand-Bassam shared taxi (est)
+        rbExtra('Cote dIvoire e-visa (VISA file ~EUR 73)', 73, 'visa'),
+      ] },
+      { code: 'GH', transport: 8, local: 25, extras: [             // bus Accra/Volta-Aflao-Lome ~8 (est); Cape Coast-Accra-Volta buses (est)
+        rbExtra('Ghana e-visa (VISA file ~USD 260 = EUR 226)', 226, 'visa'),
+      ] },
+      { code: 'TG', transport: 12, local: 5, extras: [             // bus Lome-Cotonou-Abomey ~12 (est)
+        rbExtra('Togo e-visa 15-day tier (VISA file ~25,000 CFA)', 38, 'visa'),
+      ] },
+      { code: 'BJ', local: 20, extras: [                           // Abomey-Ouidah-Cotonou/Ganvie shared taxis (est)
+        rbExtra('Benin e-visa (VISA file EUR 50-100, midpoint)', 75, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_guyana': {
+    checked: '2026-10-29',
+    flight_in_cost: 650,    // KLM AMS-Georgetown one way (notes: return ~EUR 740-1,460; est)
+    flight_out_cost: 600,   // KLM Georgetown-AMS nonstop one way (est)
+    blocks: [
+      { code: 'GY', local: 230, extras: [                          // bush/domestic flights Georgetown-Rupununi return (est USD 130 each way; set to 0 if the lodge packages include them)
+        rbExtra('Kaieteur Falls day trip: bush flight + guided walk (notes EUR 250-330 all-in, midpoint)', 290, 'tour'),
+        rbExtra('Interior lodges Iwokrama/Atta/Karanambu: 4 lodge days x EUR 300 (notes EUR 230-370/day, midpoint; 4 days = my call) minus the 4 x EUR 62 daily rate already in the block budget (no double count)', 952, 'tour'),
+      ] },
+    ],
+  },
+
+  'gt_seed_peru-bolivia-andes-salt-flats-20-days': {
+    checked: '2026-10-29',
+    flight_in_cost: 550,    // AMS-Lima one way with a connection (notes: return EUR 800-950; est)
+    flight_out_cost: 650,   // La Paz-AMS one way with a connection (est, La Paz pricier than Lima)
+    blocks: [
+      { code: 'PE', transport: 70, local: 0, extras: [] },        // flight Lima-Cusco LATAM/Sky/JetSMART booked ahead (est)
+      { code: 'PE', transport: 3, local: 0, extras: [] },         // collectivo Cusco-Pisac (est)
+      { code: 'PE', transport: 63, local: 15, extras: [] },       // train Ollantaytambo-Aguas Calientes Expedition USD 72 (notes); Pisac/Ollantaytambo/Chinchero-Moray collectivos+taxi (est)
+      { code: 'PE', transport: 88, local: 0, extras: [           // train back ~70 (est) + tourist bus Cusco-Puno ~18 (est)
+        rbExtra('Machu Picchu entrance ~S/163 = USD 55 (notes)', 48, 'park_fee'),
+      ] },
+      { code: 'PE', transport: 10, local: 0, extras: [] },        // bus Puno-Copacabana incl. border (est)
+      { code: 'BO', transport: 6, local: 0, extras: [] },         // bus Copacabana-La Paz incl. Tiquina ferry (est)
+      { code: 'BO', transport: 17, local: 0, extras: [] },        // overnight bus La Paz-Uyuni (est)
+      { code: 'BO', transport: 17, local: 0, extras: [            // bus Uyuni-La Paz (est)
+        rbExtra('Uyuni 3-day/2-night jeep tour (notes USD 150-280, midpoint USD 215)', 187, 'tour'),
+      ] },
+      { code: 'BO', local: 0, extras: [] },
+    ],
+  },
+
+  'gt_seed_senegambia': {
+    checked: '2026-10-29',
+    flight_in_cost: 350,    // AMS-Dakar one way (notes: return EUR 500-900; est)
+    flight_out_cost: 320,   // Banjul-AMS one way, winter TUI fly/Corendon (est)
+    blocks: [
+      { code: 'SN', transport: 15, local: 45, extras: [] },       // bus/shared taxi Sine-Saloum-Banjul incl. border (est); Dakar-Lompoul-Saint-Louis-Sine-Saloum (est)
+      { code: 'GM', local: 15, extras: [
+        rbExtra('Gambia airport security fee on exit via Banjul (notes ~USD 20)', 17, 'other'),
+      ] },
+    ],
+  },
+
+  'gt_seed_central-africa-islands': {
+    checked: '2026-10-29',
+    flight_in_cost: 480,    // AMS-Douala one way via Paris/Brussels (notes: return EUR 700-1,150; est)
+    flight_out_cost: 700,   // Libreville-AMS one way (flights_from_ams.csv LBV back, medium)
+    blocks: [
+      { code: 'CM', transport: 336, local: 16, extras: [          // bus Kribi-Douala ~6 + flight Douala-Sao Tome via hub ~330 (est, low); Douala-Yaounde-Kribi buses (est)
+        rbExtra('Cameroon e-visa (notes EUR 150-230, midpoint)', 190, 'visa'),
+      ] },
+      { code: 'ST', transport: 250, local: 130, extras: [         // flight Sao Tome-Libreville (est, low); Sao Tome-Principe flights return ~120 + taxis (est)
+        rbExtra('Sao Tome e-visa (no fee in VISA file; est)', 75, 'visa'),
+      ] },
+      { code: 'GA', local: 0, extras: [
+        rbExtra('Loango logistics 3 days x USD 200 (notes USD 100-300+/day, midpoint; 3 days = my call; transfers assumed inside)', 522, 'tour'),
+        rbExtra('Gabon e-visa (no fee in VISA file; est)', 115, 'visa'),
+      ] },
+    ],
+  },
+
+  'gt_seed_uruguay': {
+    checked: '2026-10-29',
+    flight_in_cost: 560,    // AMS-Montevideo one way, one stop (notes: return EUR 850-1,100; est)
+    flight_out_cost: 520,   // Montevideo-AMS one way (est)
+    blocks: [
+      { code: 'UY', local: 70, extras: [                           // buses Montevideo-Colonia-Punta del Este-Cabo Polonio-Punta del Diablo-Montevideo (est)
+        rbExtra('Estancia (working ranch) stay, 1 night all-inclusive (notes EUR 130-215, midpoint)', 172, 'other', true),
+        rbExtra('Carmelo/Canelones wine tour (notes EUR 45-90, midpoint)', 68, 'tour', true),
+      ] },
+    ],
+  },
 };
 
 /**
@@ -32054,5 +33452,78 @@ function rbMigrateBatch1320RouteFixes() {
   localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH1320_ROUTE_FIXES, '1');
   let touched = false;
   rbRoutes.forEach(r => { if (rbFixBatch1320RouteTexts(r)) touched = true; });
+  if (touched) rbSave();
+}
+
+// ---- Route-text fixes found by Phase 4 batches 21-26 (2026-10-29, fixed without asking per Youri) ----
+//  - Route endings that didn't match the last stop: Bolivia/Andes Grand Traverse (end in Potosí, fly from
+//    La Paz), Botswana (Kasane is ~1,000 km from the Kalahari), Tanzania (ends in Dar es Salaam),
+//    Cairns & GBR / Tropical-Outback (end at Fraser Island, not Cairns), Pacific Northwest (ends at the
+//    Redwoods), Kazakhstan & Kyrgyzstan (stops end in Osh).
+//  - Standalone routes still carrying their expedition's onward leg as the last leg: Mexico, Central
+//    America Loop, Southern Africa Safari Loop, African Islands, East Africa Safari Classic, West Africa
+//    Overland (Gambia block said "end of this route" mid-route), Argentine Patagonia (Torres del Paine).
+//  - Kazakhstan stops end in Shymkent, not Almaty (4 routes); Western Canada: Alberta-to-BC one-way fee
+//    (2 routes); Morocco: entry flight goes to Tangier (open jaw).
+const RB_BOLIVIA_END = ['End of this route — return flight from La Paz to Amsterdam (1 stopover).',
+  'End of this route — night bus Potosí-La Paz (~9-10 hours), or Sucre-La Paz by domestic flight (~1 hour; Sucre is ~3 hours by road from Potosí), then the return flight from La Paz to Amsterdam (1 stopover).'];
+const RB_KZ_BISHKEK = ['Bus or shared taxi Almaty-Bishkek, overland, busy but easy border crossing',
+  'Bus or shared taxi Shymkent-Bishkek via Taraz (~10-12 hours, Chaldovar/Merke border crossing) — or back to Almaty first for the shorter, busy but easy Almaty-Bishkek crossing (~4-5 hours)'];
+const RB_FRASER_END = ['flight home from Cairns',
+  "flight home from Brisbane (~300 km south of Fraser Island/K'gari, the last stop; Cairns is ~1,600 km back north)"];
+const RB_BATCH2126_TEXT_FIXES = [
+  // batch 21
+  ['gt_seed_kazakhstan-kyrgyzstan', 0, ...RB_KZ_BISHKEK, 'transport_to_next'],
+  ['gt_seed_central-asia', 0, ...RB_KZ_BISHKEK, 'transport_to_next'],
+  ['gt_seed_eurasia-grand-tour', 9, ...RB_KZ_BISHKEK, 'transport_to_next'],
+  ['gt_seed_west-eurasia-overland', 9, ...RB_KZ_BISHKEK, 'transport_to_next'],
+  ['gt_seed_kazakhstan-kyrgyzstan', 1, 'End of this route — flight from Bishkek to Amsterdam',
+    'End of this route — domestic flight Osh-Bishkek (~1 hour, several daily; the stops end in Osh), then a flight from Bishkek to Amsterdam', 'transport_to_next'],
+  // batch 22
+  ['gt_seed_botswana', 0, 'End of this route — back to Kasane (from Central Kalahari), then a flight to Amsterdam via Johannesburg.',
+    'End of this route — drive back to Maun (~4-5 hours from Central Kalahari; Kasane is ~1,000 km away), return the 4x4 there and fly Maun-Johannesburg, then on to Amsterdam.', 'transport_to_next'],
+  ['gt_seed_southern-africa-safari-loop', 9, 'Flight (usually via Johannesburg or Nairobi) to Antananarivo, Madagascar — no direct connection from Malawi.',
+    'End of this route — return flight from Lilongwe to Amsterdam (1-2 stops, e.g. via Addis Ababa, Nairobi or Johannesburg). Continuing to Madagascar instead: flight via Johannesburg or Nairobi to Antananarivo (no direct connection from Malawi).', 'transport_to_next'],
+  ['gt_seed_african-islands', 1, 'Flight Port Louis-Dar es Salaam/Zanzibar (Tanzania), usually with a connection in Johannesburg or Nairobi.',
+    'End of this route — return flight from Mauritius to Amsterdam (1 stop, e.g. via Paris or Dubai). Continuing to Tanzania instead: flight Port Louis-Dar es Salaam/Zanzibar, usually with a connection in Johannesburg or Nairobi.', 'transport_to_next'],
+  ['gt_seed_east-africa-safari-classic', 3, 'Overland via the Moyale border crossing',
+    'End of this route — return flight from Nairobi to Amsterdam (KLM, direct). Continuing to Ethiopia instead: overland via the Moyale border crossing', 'transport_to_next'],
+  ['gt_seed_tanzania', 0, 'return flight from Kilimanjaro (or Dar es Salaam/Zanzibar) to Amsterdam, direct from Kilimanjaro with KLM.',
+    'return flight from Dar es Salaam or Zanzibar (the last stops) to Amsterdam, 1 stop — KLM flies direct only from Kilimanjaro, which would mean a domestic flight back north.', 'transport_to_next'],
+  ['gt_seed_morocco', 0, 'Entry: direct flight Amsterdam-Marrakech (Transavia/easyJet, ±3h50;',
+    'Entry: direct flight Amsterdam-Tangier (Transavia, ±3h15; open jaw, the route ends in Marrakech;'],
+  // batch 23
+  ['gt_seed_bolivia', 0, ...RB_BOLIVIA_END, 'transport_to_next'],
+  ['gt_seed_andes-grand-traverse', 3, 'Jeep trip via the 3-day Uyuni Salt Flat tour overland to San Pedro de Atacama, Chile.', RB_BOLIVIA_END[1], 'transport_to_next'],
+  ['gt_seed_central-america-loop', 6, 'Sailboat (4-5 days) via the San Blas Islands to Cartagena, Colombia',
+    'End of this route — return flight from Panama City to Amsterdam (KLM, direct). Continuing into South America instead: sailboat (4-5 days) via the San Blas Islands to Cartagena, Colombia', 'transport_to_next'],
+  ['gt_seed_mexico', 0, 'Overland bus via the La Mesilla/El Carmen border crossing to Huehuetenango, Guatemala.',
+    'End of this route — bus Bacalar-Cancún (~4 hours), then the return flight from Cancún to Amsterdam. Continuing into Guatemala instead: from San Cristóbal de las Casas, bus via the La Mesilla/El Carmen border crossing to Huehuetenango.', 'transport_to_next'],
+  // batch 24
+  ['gt_seed_cairns-great-barrier-reef', 0, ...RB_FRASER_END, 'transport_to_next'],
+  ['gt_seed_tropicaloutback-australia', 2, ...RB_FRASER_END, 'transport_to_next'],
+  ['gt_seed_western-canada-rockies-vancouver', 0, '— the same rental car stays within Canada, so no one-way or border fees',
+    '— the car stays within Canada, so no border fees, but an Alberta-to-BC one-way fee (often ~CAD 150-300) is common; compare rental companies', 'transport_to_next'],
+  ['gt_seed_north-america-grand-traverse', 2, '— the same rental car stays within Canada, so no one-way or border fees',
+    '— the car stays within Canada, so no border fees, but an Alberta-to-BC one-way fee (often ~CAD 150-300) is common; compare rental companies', 'transport_to_next'],
+  // batch 25
+  ['gt_seed_pacific-northwest', 0, 'return flight from San Francisco or Portland to Amsterdam (return the rental car at the end of the coastal route).',
+    'drive on from the Redwoods to San Francisco (~5-6 hours), return the rental car there (one-way fee) and take the direct KLM return flight from SFO.', 'transport_to_next'],
+  // batch 26
+  ['gt_seed_argentine-patagonia', 0, 'Overland via the Cancha Carrera border crossing straight to Torres del Paine (~2.5-3 hours) — no detour via Puerto Natales needed.',
+    'Flight El Calafate-Ushuaia (~1h20, Aerolíneas Argentinas) — overland is a ~18-20 hour bus trip via Río Gallegos and Chilean Tierra del Fuego.', 'transport_to_next'],
+  ['gt_seed_west-africa-overland', 2, 'End of this route — return flight from Banjul (or flight to Abidjan to continue to Gulf of Guinea, below).',
+    'Flight Banjul-Abidjan (usually 1 stop via Dakar; there is no practical overland route through Guinea/Liberia) to continue to the Gulf of Guinea.', 'transport_to_next'],
+];
+
+function rbFixBatch2126RouteTexts(route) {
+  return rbApplyBlockTextFixes(route, RB_BATCH2126_TEXT_FIXES);
+}
+
+function rbMigrateBatch2126RouteFixes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_BATCH2126_ROUTE_FIXES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_BATCH2126_ROUTE_FIXES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixBatch2126RouteTexts(r)) touched = true; });
   if (touched) rbSave();
 }

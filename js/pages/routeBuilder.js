@@ -279,6 +279,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   rbMigrateBatch78RouteFixes();
   rbMigrateBatch912RouteFixes();
   rbMigrateBatch1320RouteFixes();
+  rbMigrateBatch2126RouteFixes();
   rbRoutes = rbRoutes.filter(r => !RB_REMOVED_ROUTE_IDS.has(r.id));
 
   // Sheet as source of truth once reachable, localStorage as offline fallback — same

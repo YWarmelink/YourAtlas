@@ -1,0 +1,1289 @@
+{
+ "batch": 24,
+ "group": "North America & Oceania",
+ "routes": [
+  {
+   "id": "gt_seed_cairns-great-barrier-reef",
+   "name": "Cairns & Great Barrier Reef 🐠",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — boat trips for the Great Barrier Reef, camper/rental car for the coast.",
+   "description": "Cairns, the Daintree Rainforest, the Great Barrier Reef, the Whitsundays and Fraser Island.",
+   "notes": "Split off from Tropical/Outback Australia 🐊 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 21 to 23 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Tropical/Outback Australia 🐊 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_cairns-great-barrier-reef",
+    "name": "Cairns & Great Barrier Reef 🐠",
+    "stops": 5,
+    "km_in_route": 1800,
+    "km_from_nl": 19250,
+    "km_back_to_nl": 20800,
+    "km_by_country": {
+     "AU": 1800
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 23,
+     "budget": 1978,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Cairns, with multiple connections (no direct connection, e.g. via Doha/Dubai/Singapore, ±24-28 hours incl. connections; from ±€1,600-2,500 return — January is usually the cheapest flight month, but falls outside this route's dry season; best travel period June-August). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (21→23) — 24-28 hours of travel time with multiple connections justifies an arrival day with no plans. Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day.",
+     "transport_to_next": "End of this route — flight home from Cairns to Amsterdam (multiple connections, no direct connection).",
+     "destinations": [
+      {
+       "name": "Cairns",
+       "lat": -16.9203,
+       "lng": 145.771
+      },
+      {
+       "name": "Daintree Rainforest",
+       "lat": -16.1667,
+       "lng": 145.4167
+      },
+      {
+       "name": "Great Barrier Reef",
+       "lat": -16.5,
+       "lng": 145.9667
+      },
+      {
+       "name": "Whitsundays & Whitehaven Beach",
+       "lat": -20.2833,
+       "lng": 149.0333
+      },
+      {
+       "name": "Fraser Island / K'gari",
+       "lat": -25.2333,
+       "lng": 153.15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sydneybyron-great-ocean-road",
+   "name": "Sydney/Byron & Great Ocean Road 🦘",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — rental car for the Great Ocean Road.",
+   "description": "The east coast from Sydney to Melbourne and the Great Ocean Road.",
+   "notes": "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of the fourth batch of standalone countries (2026-08) — the Sydney/Byron and Great Ocean Road part of that block as its own, shorter trip, without Tasmania/Adelaide. Country and daily budgets are carried over unchanged; days of the first leg increased from 12 to 14 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_sydneybyron-great-ocean-road",
+    "name": "Sydney/Byron & Great Ocean Road 🦘",
+    "stops": 6,
+    "km_in_route": 2460,
+    "km_from_nl": 21240,
+    "km_back_to_nl": 21230,
+    "km_by_country": {
+     "AU": 2460
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 14,
+     "budget": 1225,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Sydney, with a connection (e.g. via Singapore/Dubai/Doha, ±24-25 hours total; from ±€1,100-1,900 return; best period August-September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (12→14) — 24-25 hours of travel time with a mandatory connection justifies an arrival day with no plans, even though the trip itself is already long. Classic backpacker trail with good infrastructure; Sydney is too iconic to skip. Price verified (2026-07), holds up.",
+     "transport_to_next": "Car overland via the coast or the Hume Highway to Melbourne.",
+     "destinations": [
+      {
+       "name": "Byron Bay",
+       "lat": -28.6474,
+       "lng": 153.602
+      },
+      {
+       "name": "Sydney",
+       "lat": -33.8688,
+       "lng": 151.2093
+      },
+      {
+       "name": "Blue Mountains",
+       "lat": -33.7,
+       "lng": 150.3
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 10,
+     "budget": 875,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The best roadtrip experience in the whole country. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of this route — flight from Melbourne to Amsterdam (1 connection, open-jaw versus the outbound Sydney flight, similarly priced).",
+     "destinations": [
+      {
+       "name": "Great Ocean Road",
+       "lat": -38.6667,
+       "lng": 143.6667
+      },
+      {
+       "name": "Melbourne",
+       "lat": -37.8136,
+       "lng": 144.9631
+      },
+      {
+       "name": "Grampians National Park",
+       "lat": -37.2333,
+       "lng": 142.5167
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tasmania",
+   "name": "Tasmania 🐾",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car between the national parks, multi-day trekking on the Overland Track (permit required in advance).",
+   "description": "Cradle Mountain, Wineglass Bay, the Overland Track and Hobart.",
+   "notes": "Split off from Temperate/Southern Australia 🍇 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Tasmanian part of that block as its own, shorter trip, without Sydney/Byron/Great Ocean Road/Adelaide. Country and daily budget are carried over unchanged; days increased from 12 to 14 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Temperate/Southern Australia 🍇 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_tasmania",
+    "name": "Tasmania 🐾",
+    "stops": 4,
+    "km_in_route": 730,
+    "km_from_nl": 21930,
+    "km_back_to_nl": 22150,
+    "km_by_country": {
+     "AU": 730
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 14,
+     "budget": 1204,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Hobart, with 2 connections (e.g. via Dubai/Doha/Singapore, then Melbourne/Sydney, ±25-29.5 hours total; from ±€1,300-1,800 return; best period November/March, within the Overland Track permit season October-May). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (12→14) — 25-29.5 hours of travel time with 2 connections exceeds the 24-hour threshold, regardless of trip length. Rugged nature, little mass tourism. Pack warm clothing, even outside winter. Price correction (2026-07): €87.50→€105/day — the Overland Track permit alone costs ~€120-150 per person.",
+     "transport_to_next": "End of this route — flight home from Hobart to Amsterdam (2 connections).",
+     "destinations": [
+      {
+       "name": "Cradle Mountain",
+       "lat": -41.6833,
+       "lng": 145.9333
+      },
+      {
+       "name": "Wineglass Bay (Freycinet)",
+       "lat": -42.15,
+       "lng": 148.3
+      },
+      {
+       "name": "Overland Track",
+       "lat": -41.85,
+       "lng": 145.95
+      },
+      {
+       "name": "Hobart",
+       "lat": -42.8821,
+       "lng": 147.3272
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_temperatesouthern-australia",
+   "name": "Temperate/Southern Australia 🍇",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — rental car for the Great Ocean Road, ferry to Tasmania.",
+   "description": "The east coast from Sydney to Melbourne, the Great Ocean Road, Tasmania and Adelaide/Kangaroo Island.",
+   "notes": "Split off from Oceania Grand Expedition 🌊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days, budgets and order are carried over unchanged. This splits Australia into two separate Route Builder expeditions by climate zone — see Tropical/Outback Australia 🐊 for the other half. Follow-up to Tropical/Outback Australia 🐊; itself followed by New Zealand 🥝. Oceania Grand Expedition 🌊 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Hobart-Adelaide flight text corrected (direct, no detour via Melbourne). See Oceania Grand Expedition 🌊's own notes for the full reasoning.",
+   "distance": {
+    "id": "gt_seed_temperatesouthern-australia",
+    "name": "Temperate/Southern Australia 🍇",
+    "stops": 14,
+    "km_in_route": 6380,
+    "km_from_nl": 21240,
+    "km_back_to_nl": 20320,
+    "km_by_country": {
+     "AU": 6380
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 12,
+     "budget": 1050,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Sydney, with a connection (±22-24 hours, from ±€900-1,450 return, best period August) — Byron Bay is reachable from there by domestic flight (Ballina/Gold Coast) or bus, not directly. Price indication from 2026-08 web research, a snapshot. Classic backpacker trail with good infrastructure; Sydney is too iconic to skip. Price verified (2026-07), holds up.",
+     "transport_to_next": "Car overland via the coast or the Hume Highway to Melbourne",
+     "destinations": [
+      {
+       "name": "Byron Bay",
+       "lat": -28.6474,
+       "lng": 153.602
+      },
+      {
+       "name": "Sydney",
+       "lat": -33.8688,
+       "lng": 151.2093
+      },
+      {
+       "name": "Blue Mountains",
+       "lat": -33.7,
+       "lng": 150.3
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 10,
+     "budget": 875,
+     "dailyRate": 88,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The best roadtrip experience in the whole country. Price verified (2026-07), holds up.",
+     "transport_to_next": "Spirit of Tasmania ferry (Melbourne-Devonport) or short flight to Hobart/Launceston",
+     "destinations": [
+      {
+       "name": "Great Ocean Road",
+       "lat": -38.6667,
+       "lng": 143.6667
+      },
+      {
+       "name": "Melbourne",
+       "lat": -37.8136,
+       "lng": 144.9631
+      },
+      {
+       "name": "Grampians National Park",
+       "lat": -37.2333,
+       "lng": 142.5167
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 12,
+     "budget": 1032,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Rugged nature, little mass tourism. August-September is still crisp (sometimes snow in the highlands), so pack warm clothing. Price correction (2026-07): €87.50→€105/day. Route-logic check (2026-08): Hobart-Adelaide is a daily direct flight — no detour via Melbourne needed, see Oceania Grand Expedition 🌊's own notes.",
+     "transport_to_next": "Flight Hobart-Adelaide (direct, no connection in Melbourne needed).",
+     "destinations": [
+      {
+       "name": "Cradle Mountain",
+       "lat": -41.6833,
+       "lng": 145.9333
+      },
+      {
+       "name": "Wineglass Bay (Freycinet)",
+       "lat": -42.15,
+       "lng": 148.3
+      },
+      {
+       "name": "Overland Track",
+       "lat": -41.85,
+       "lng": 145.95
+      },
+      {
+       "name": "Hobart",
+       "lat": -42.8821,
+       "lng": 147.3272
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 9,
+     "budget": 774,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Kangaroo Island is excellent for wildlife (sea lions, koalas). Barossa Valley (wine) is the first candidate to drop if shortening is needed. Price correction (2026-07): €87.78→€105/day.",
+     "transport_to_next": "End of this route — flight home from Adelaide (or flight Adelaide-Christchurch to continue on to New Zealand 🥝)",
+     "destinations": [
+      {
+       "name": "Adelaide",
+       "lat": -34.9285,
+       "lng": 138.6007
+      },
+      {
+       "name": "Kangaroo Island",
+       "lat": -35.8333,
+       "lng": 137.2167
+      },
+      {
+       "name": "Barossa Valley",
+       "lat": -34.5333,
+       "lng": 138.95
+      },
+      {
+       "name": "Flinders Ranges",
+       "lat": -31.5,
+       "lng": 138.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_tropicaloutback-australia",
+   "name": "Tropical/Outback Australia 🐊",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — camper/rental car for the Kimberley and Red Centre.",
+   "description": "\"Top end\" Australia: Perth and the Kimberley, Uluru and the Red Centre, and Cairns with the Great Barrier Reef.",
+   "notes": "Split off from Oceania Grand Expedition 🌊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days, budgets and order are carried over unchanged. This splits Australia into two separate Route Builder expeditions by climate zone (this tropical part and Temperate/Southern Australia 🍇) — the same \"same country, different block\" pattern as Chile/Argentina between Pan-American Grand Tour 🌎 and Patagonia & Antarctica Expedition 🧊. Follow-up to Pacific Islands 🌺. Oceania Grand Expedition 🌊 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): region already found optimal, no change needed — only coordinates added per destination. See Oceania Grand Expedition 🌊's own notes.",
+   "distance": {
+    "id": "gt_seed_tropicaloutback-australia",
+    "name": "Tropical/Outback Australia 🐊",
+    "stops": 16,
+    "km_in_route": 12470,
+    "km_from_nl": 18360,
+    "km_back_to_nl": 20800,
+    "km_by_country": {
+     "AU": 12470
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 21,
+     "budget": 1806,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Perth, with a connection (±19-22 hours, from ±€910-1,500 return, best period June). Price indication from 2026-08 web research, a snapshot. Ningaloo Reef and the Kimberley are spectacular and see little mass tourism. Also the most expensive/remote region of this route in terms of distances. Price correction (2026-07): €87.62→€120/day.",
+     "transport_to_next": "Car overland via the Gibb River Road and Kununurra to Darwin, or flight Broome-Darwin for those who'd rather cross the Kimberley by plane",
+     "destinations": [
+      {
+       "name": "Perth",
+       "lat": -31.9505,
+       "lng": 115.8605
+      },
+      {
+       "name": "Ningaloo Reef (whale sharks)",
+       "lat": -22.6833,
+       "lng": 113.6667
+      },
+      {
+       "name": "Kimberley & Bungle Bungles",
+       "lat": -17.5333,
+       "lng": 128.4167
+      },
+      {
+       "name": "Gibb River Road",
+       "lat": -16.5,
+       "lng": 126.5
+      },
+      {
+       "name": "Broome",
+       "lat": -17.9614,
+       "lng": 122.2359
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 14,
+     "budget": 1204,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Top End and Red Centre together — the most iconic landscapes of Australia. June-August is also the coolest period for Uluru. Price correction (2026-07): €87.50→€105/day.",
+     "transport_to_next": "Flight Alice Springs-Cairns or Darwin-Cairns (overland would take days via the outback highways)",
+     "destinations": [
+      {
+       "name": "Darwin",
+       "lat": -12.4634,
+       "lng": 130.8456
+      },
+      {
+       "name": "Kakadu National Park",
+       "lat": -12.85,
+       "lng": 132.9667
+      },
+      {
+       "name": "Litchfield National Park",
+       "lat": -13.1333,
+       "lng": 130.7833
+      },
+      {
+       "name": "Uluru",
+       "lat": -25.3444,
+       "lng": 131.0369
+      },
+      {
+       "name": "Kata Tjuta",
+       "lat": -25.3,
+       "lng": 130.7333
+      },
+      {
+       "name": "Kings Canyon",
+       "lat": -24.25,
+       "lng": 131.5667
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AU",
+     "country": "Australia",
+     "days": 21,
+     "budget": 1806,
+     "dailyRate": 86,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Dry season also means no jellyfish season (that runs November-May) near Cairns. Price correction (2026-07): €87.62→€110/day.",
+     "transport_to_next": "End of this route — flight home from Cairns (or overland to Sydney to continue on to Temperate/Southern Australia 🍇)",
+     "destinations": [
+      {
+       "name": "Cairns",
+       "lat": -16.9203,
+       "lng": 145.771
+      },
+      {
+       "name": "Daintree Rainforest",
+       "lat": -16.1667,
+       "lng": 145.4167
+      },
+      {
+       "name": "Great Barrier Reef",
+       "lat": -16.5,
+       "lng": 145.9667
+      },
+      {
+       "name": "Whitsundays & Whitehaven Beach",
+       "lat": -20.2833,
+       "lng": 149.0333
+      },
+      {
+       "name": "Fraser Island / K'gari",
+       "lat": -25.2333,
+       "lng": 153.15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_eastern-canada",
+   "name": "Eastern Canada 🍁",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — hostels and simple hotels, train (Via Rail) between the historic cities, no rental car needed.",
+   "description": "From the rugged Atlantic coast of Nova Scotia by train to the French/colonial cities of Quebec City, Montreal, Ottawa and Toronto.",
+   "notes": "Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged. Follow-up to this route: Western Canada: Rockies & Vancouver 🏔️. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Halifax hub-and-spoke order verified, already optimal — no change needed. Coordinates per destination added. See North America Grand Traverse 🌎's own notes for the full writeup.",
+   "distance": {
+    "id": "gt_seed_eastern-canada",
+    "name": "Eastern Canada 🍁",
+    "stops": 8,
+    "km_in_route": 2580,
+    "km_from_nl": 6430,
+    "km_back_to_nl": 7810,
+    "km_by_country": {
+     "CA": 2580
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CA",
+     "country": "Canada",
+     "days": 8,
+     "budget": 760,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Starting block: flight Netherlands-Halifax. Introduction to Canada via the rugged Atlantic coast, fishing villages, lighthouses and Celtic/Acadian culture on Cape Breton. Price verified (2026-07), holds up. eTA (when entering by flight) costs only ~€4.70, valid 5 years.",
+     "transport_to_next": "Flight Halifax-Quebec City (~2 hours) — no practical overland route given the distance through uninhabited Eastern Canada",
+     "destinations": [
+      {
+       "name": "Halifax",
+       "lat": 44.6488,
+       "lng": -63.5752
+      },
+      {
+       "name": "Peggy's Cove",
+       "lat": 44.4918,
+       "lng": -63.9148
+      },
+      {
+       "name": "Lunenburg",
+       "lat": 44.3767,
+       "lng": -64.3097
+      },
+      {
+       "name": "Cape Breton Island & Cabot Trail",
+       "lat": 46.2036,
+       "lng": -60.6136
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CA",
+     "country": "Canada",
+     "days": 10,
+     "budget": 950,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "No long car ride through Canada: the train connections between these four cities are fast and comfortable. French culture and colonial history in Quebec City, food and a modern city in Montreal, politics and museums in Ottawa, skyline and Niagara Falls from Toronto.",
+     "transport_to_next": "End of this route — return flight from Toronto (or flight Toronto-Calgary to continue on to Western Canada: Rockies & Vancouver 🏔️)",
+     "destinations": [
+      {
+       "name": "Quebec City (Vieux-Québec)",
+       "lat": 46.8139,
+       "lng": -71.208
+      },
+      {
+       "name": "Montreal (Old Port & Mile End)",
+       "lat": 45.5019,
+       "lng": -73.5674
+      },
+      {
+       "name": "Ottawa (Parliament Hill & museums)",
+       "lat": 45.4215,
+       "lng": -75.6972
+      },
+      {
+       "name": "Toronto (skyline, with Niagara Falls as a day trip)",
+       "lat": 43.6532,
+       "lng": -79.3832
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_western-canada-rockies-vancouver",
+   "name": "Western Canada: Rockies & Vancouver 🏔️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — rental car for the Rockies (Calgary-Vancouver, stays within Canada, no border complications), no car needed in Vancouver itself.",
+   "description": "The Canadian Rockies (Banff, Lake Louise, Icefields Parkway, Jasper) followed by Vancouver. Optional continuation: Alaska (Anchorage, Denali National Park, Seward/Kenai Fjords).",
+   "notes": "Split off from North America Grand Traverse 🌎 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the warning about the mandatory Moraine Lake Road shuttle). This is one of the most classic standalone Canada trips there is. Follow-up to Eastern Canada 🍁. North America Grand Traverse 🌎 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): Rockies order (Yoho detour, Mount Robson-Whistler) verified, already optimal — no change needed. Coordinates per destination added. See North America Grand Traverse 🌎's own notes for the full writeup.\n\nAlaska added (2026-08) after an audit that found the whole region missing from Route Builder — Youri's choice to combine this with Vancouver instead of building a new, partly overlapping standalone route with a third Vancouver entry, since the Vancouver-Anchorage flight is already the natural connection. Researched via a WebSearch-backed research agent. Strictly seasonal (mid-June-mid-August) — the Denali shuttle buses, the Alaska Railroad and the Kenai Fjords boat tours all only run mid-May-mid-September, which happens to already fall within this route's existing June starting window. Inside Passage/Juneau/Glacier Bay deliberately not included — no road connection at all from Anchorage (the Alaska Marine Highway ferry doesn't even serve Anchorage), only by flight or a separate multi-day ferry from the Lower 48 — its own mini-expedition, not something that fits in here. Fairbanks (+2-3 days) deliberately not included — a train connection already exists, but the main draw (aurora) is invisible due to the midnight sun in summer. New total: 32 days (was 22), €5,875 ground costs (was €4,275).",
+   "distance": {
+    "id": "gt_seed_western-canada-rockies-vancouver",
+    "name": "Western Canada: Rockies & Vancouver 🏔️",
+    "stops": 18,
+    "km_in_route": 4900,
+    "km_from_nl": 9420,
+    "km_back_to_nl": 9530,
+    "km_by_country": {
+     "CA": 1110,
+     "US": 3780
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "CA",
+     "country": "Canada",
+     "days": 17,
+     "budget": 3400,
+     "dailyRate": 200,
+     "carInDailyRate": true,
+     "inDailyRate": "rental car 2 is in the rate (drop fee only as extra)",
+     "notes": "Entry: flight Amsterdam-Calgary, with a stopover (±12-14 hours, from ±€650-950 return, best period June-July). Price indication from 2026-08 web research, a snapshot. The nature highlight of the entire expedition: glacier lakes, one of the most beautiful roads in the world (Icefields Parkway) and a good chance of wildlife (moose, bears, bighorn sheep). Rental car is picked up here in Calgary. Price verified (2026-07), holds up (provided it is booked well in advance during high season). ⚠️ Moraine Lake Road is only accessible via the mandatory Parks Canada shuttle (no private cars allowed) — booking usually opens mid-April, limited spots, arrange well in advance.",
+     "transport_to_next": "Car Whistler-Vancouver (~2 hours), return the rental car in Vancouver — the same rental car stays within Canada, so no one-way or border fees",
+     "destinations": [
+      {
+       "name": "Banff National Park",
+       "lat": 51.4968,
+       "lng": -115.9281
+      },
+      {
+       "name": "Lake Louise & Moraine Lake",
+       "lat": 51.4254,
+       "lng": -116.1773
+      },
+      {
+       "name": "Yoho National Park (Emerald Lake)",
+       "lat": 51.437,
+       "lng": -116.5326
+      },
+      {
+       "name": "Icefields Parkway",
+       "lat": 52.2,
+       "lng": -117.2
+      },
+      {
+       "name": "Jasper National Park",
+       "lat": 52.8737,
+       "lng": -118.0814
+      },
+      {
+       "name": "Mount Robson Provincial Park",
+       "lat": 53.1216,
+       "lng": -119.1465
+      },
+      {
+       "name": "Whistler",
+       "lat": 50.1163,
+       "lng": -122.9574
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "CA",
+     "country": "Canada",
+     "days": 5,
+     "budget": 475,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Last Canadian stop: a city between mountains and sea, easy to combine mountains (North Shore) and water (Stanley Park, Granville Island) without a rental car.",
+     "transport_to_next": "Flight Vancouver-Anchorage (~3.5-4 hours) to continue on to Alaska — or, if you want to stop here, a return flight from Vancouver to Amsterdam (this route works fine as a shorter version without Alaska).",
+     "destinations": [
+      {
+       "name": "Stanley Park",
+       "lat": 49.3017,
+       "lng": -123.1444
+      },
+      {
+       "name": "Granville Island",
+       "lat": 49.2714,
+       "lng": -123.1348
+      },
+      {
+       "name": "North Shore (Grouse Mountain / Capilano Suspension Bridge)",
+       "lat": 49.3796,
+       "lng": -123.0902
+      },
+      {
+       "name": "Gastown & Kitsilano Beach",
+       "lat": 49.2837,
+       "lng": -123.1064
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "US",
+     "country": "United States",
+     "days": 2,
+     "budget": 204,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Arrival/logistics — pick up rental car or connect to the Alaska Railroad.",
+     "transport_to_next": "Alaska Railroad Denali Star (~8 hours, only mid-May-mid-September) or car via the Parks Highway to Denali National Park.",
+     "destinations": [
+      {
+       "name": "Downtown Anchorage",
+       "lat": 61.2181,
+       "lng": -149.9003
+      },
+      {
+       "name": "Earthquake Park",
+       "lat": 61.1953,
+       "lng": -149.9727
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "US",
+     "country": "United States",
+     "days": 4,
+     "budget": 408,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Private cars aren't allowed past mile 15 — a shuttle/tour bus is mandatory for the park interior, book well in advance (only available mid-May-mid-September). Bears along the way: bear spray within reach, hike in groups, store food properly.",
+     "transport_to_next": "Car or train back to Anchorage (~4.5 hours), then onward to Seward (~2.5 hours) — or the seasonal Coastal Classic train direct (~4 hours total).",
+     "destinations": [
+      {
+       "name": "Denali Visitor Center",
+       "lat": 63.1717,
+       "lng": -150.9317
+      },
+      {
+       "name": "Savage River",
+       "lat": 63.4478,
+       "lng": -149.7856
+      },
+      {
+       "name": "Kantishna / Wonder Lake (shuttle bus)",
+       "lat": 63.4872,
+       "lng": -150.9067
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "US",
+     "country": "United States",
+     "days": 4,
+     "budget": 408,
+     "dailyRate": 102,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Glacier terrain only guided (real crevasse risks). Travel insurance with explicit evacuation coverage is not overkill here — rescues can cost tens of thousands of dollars and often fall outside a standard policy.",
+     "transport_to_next": "End of this route — car/train back to Anchorage (~2.5 hours), then return flight to Amsterdam (via Seattle/Vancouver, no direct connection from Anchorage).",
+     "destinations": [
+      {
+       "name": "Kenai Fjords National Park (glacier and wildlife boat tour)",
+       "lat": 59.9229,
+       "lng": -149.6503
+      },
+      {
+       "name": "Exit Glacier",
+       "lat": 60.1875,
+       "lng": -149.6294
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_fiji-vanuatu",
+   "name": "Fiji & Vanuatu 🐚",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Flight Port Vila-Nadi between the two countries, boat pass (Yasawa Flyer) within Fiji.",
+   "description": "Port Vila and Mount Yasur in Vanuatu, followed by the Mamanuca and Yasawa Islands and Taveuni in Fiji.",
+   "notes": "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the Vanuatu/Fiji double bill from that block, without Samoa/Tonga/Cook Islands. Countries and daily budgets are carried over unchanged; days of the Vanuatu leg increased from 11 to 13 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_fiji-vanuatu",
+    "name": "Fiji & Vanuatu 🐚",
+    "stops": 8,
+    "km_in_route": 2960,
+    "km_from_nl": 20700,
+    "km_back_to_nl": 20890,
+    "km_by_country": {
+     "VU": 960,
+     "FJ": 2000
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "VU",
+     "country": "Vanuatu",
+     "days": 13,
+     "budget": 715,
+     "dailyRate": 55,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Port Vila via Nadi (Fiji), with 2-3 connections (e.g. via Doha/Dubai/Hong Kong/Singapore, ±25-30+ hours total); from ±€1,200-2,300 return (multi-city, ending in Fiji); best period May/October, outside cyclone season (November-April) and the July rush. Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (11→13) — 25-30+ hours of travel time with multiple connections exceeds the 24-hour threshold, regardless of trip length, the same reasoning as for the already-existing standalone Fiji 🌊 route. One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur. World-class wreck diving on the SS President Coolidge. Price correction (2026-07): €70→€95/day.",
+     "transport_to_next": "Flight Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2h15).",
+     "destinations": [
+      {
+       "name": "Port Vila",
+       "lat": -17.7333,
+       "lng": 168.3273
+      },
+      {
+       "name": "Mount Yasur (Tanna)",
+       "lat": -19.5236,
+       "lng": 169.4451
+      },
+      {
+       "name": "SS President Coolidge wreck (Espiritu Santo)",
+       "lat": -15.5085,
+       "lng": 167.1739
+      },
+      {
+       "name": "Blue Holes",
+       "lat": -15.5,
+       "lng": 167.15
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FJ",
+     "country": "Fiji",
+     "days": 14,
+     "budget": 714,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day.",
+     "transport_to_next": "End of this route — flight home from Nadi to Amsterdam (multiple connections).",
+     "destinations": [
+      {
+       "name": "Nadi",
+       "lat": -17.7765,
+       "lng": 177.4356
+      },
+      {
+       "name": "Mamanuca Islands",
+       "lat": -17.6667,
+       "lng": 177.1
+      },
+      {
+       "name": "Yasawa Islands",
+       "lat": -16.8,
+       "lng": 177.45
+      },
+      {
+       "name": "Taveuni",
+       "lat": -16.85,
+       "lng": 179.9833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_fiji",
+   "name": "Fiji 🌊",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — boat pass (Yasawa Flyer) between the island groups.",
+   "description": "Nadi, the Mamanuca and Yasawa Islands and Taveuni — classic Pacific island-hopping.",
+   "notes": "Split off from Pacific Islands 🌺 (itself already split off from Oceania Grand Expedition 🌊 — see ROUTE_BUILDER_MODULES.md) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Country and budget (daily rate) are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Pacific Islands 🌺 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_fiji",
+    "name": "Fiji 🌊",
+    "stops": 4,
+    "km_in_route": 530,
+    "km_from_nl": 20980,
+    "km_back_to_nl": 20890,
+    "km_by_country": {
+     "FJ": 530
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "FJ",
+     "country": "Fiji",
+     "days": 16,
+     "budget": 816,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Nadi, with multiple connections (no direct connection, ±24-30 hours incl. connections; from ±€1,150-1,500 return — September is usually the cheapest flight month, but falls outside this route's best season; best travel period May-June). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (14→16) — 24-30 hours of travel time with multiple connections justifies an arrival day with no plans. Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day (Yasawa Flyer boat pass + flight to Taveuni weren't covered).",
+     "transport_to_next": "End of this route — flight home from Nadi to Amsterdam (multiple connections, no direct connection).",
+     "destinations": [
+      {
+       "name": "Nadi",
+       "lat": -17.7765,
+       "lng": 177.4356
+      },
+      {
+       "name": "Mamanuca Islands",
+       "lat": -17.6667,
+       "lng": 177.1
+      },
+      {
+       "name": "Yasawa Islands",
+       "lat": -16.8,
+       "lng": 177.45
+      },
+      {
+       "name": "Taveuni",
+       "lat": -16.85,
+       "lng": 179.9833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_pacific-islands",
+   "name": "Pacific Islands 🌺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — flights between the islands (no practical boat alternative).",
+   "description": "The most beautiful Pacific islands in a row: Vanuatu, Fiji, Tonga, Samoa and the Cook Islands.",
+   "notes": "Split off from Oceania Grand Expedition 🌊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Countries, days, budgets and order are carried over unchanged (incl. the 2026-07 price corrections on almost every island). Follow-up to this route: Tropical/Outback Australia 🐊. Oceania Grand Expedition 🌊 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): island order reversed to Vanuatu→Fiji→Tonga→Samoa→Cook Islands (was Fiji→Vanuatu→Samoa→Tonga→Cook Islands) to avoid a double detour via the Fiji hub. See Oceania Grand Expedition 🌊's own notes for the full reasoning.",
+   "distance": {
+    "id": "gt_seed_pacific-islands",
+    "name": "Pacific Islands 🌺",
+    "stops": 17,
+    "km_in_route": 7780,
+    "km_from_nl": 20700,
+    "km_back_to_nl": 20920,
+    "km_by_country": {
+     "VU": 960,
+     "FJ": 2000,
+     "TO": 1480,
+     "WS": 1040,
+     "CK": 2310
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "VU",
+     "country": "Vanuatu",
+     "days": 11,
+     "budget": 1045,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": "domestic flights to Tanna/Santo + Yasur tour in the rate",
+     "notes": "Entry: flight Amsterdam-Port Vila, with multiple connections (e.g. via Los Angeles/Auckland or Fiji-Nadi, ±28-30 hours total, from ±€1,800-3,000 return, best period May-June) — one of the most expensive and longest single connections in the whole world-trip planning. Price indication from 2026-08 web research, a snapshot. One of the most accessible active volcanoes in the world — right up to the crater rim of Mount Yasur. World-class wreck diving on the SS President Coolidge. Price correction (2026-07): €70→€95/day (domestic flights to Tanna/Santo + the Yasur tour weren't covered; Air Vanuatu went bankrupt in 2024, flights have become scarcer/more expensive). Route-logic fix (2026-08): visited as the first country instead of after Fiji — see Oceania Grand Expedition 🌊's own notes for the full reasoning.",
+     "transport_to_next": "Flight Port Vila-Nadi (Fiji Airways, direct, ±7x/week, 2h15).",
+     "destinations": [
+      {
+       "name": "Port Vila",
+       "lat": -17.7333,
+       "lng": 168.3273
+      },
+      {
+       "name": "Mount Yasur (Tanna)",
+       "lat": -19.5236,
+       "lng": 169.4451
+      },
+      {
+       "name": "SS President Coolidge wreck (Espiritu Santo)",
+       "lat": -15.5085,
+       "lng": 167.1739
+      },
+      {
+       "name": "Blue Holes",
+       "lat": -15.5,
+       "lng": 167.15
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "FJ",
+     "country": "Fiji",
+     "days": 14,
+     "budget": 714,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Best backpacker infrastructure in the Pacific — island-hopping by boat (Yasawa Flyer) between the Mamanucas and Yasawas, snorkeling and diving on the coral reefs. Price correction (2026-07): €62.50→€75/day (Yasawa Flyer boat pass + flight to Taveuni weren't covered). Route-logic fix (2026-08): Fiji is now visited after Vanuatu, so the rest of the chain keeps moving eastward.",
+     "transport_to_next": "Flight Nadi-Nuku'alofa (Fiji Airways, direct, 12x/week, ~2h).",
+     "destinations": [
+      {
+       "name": "Nadi",
+       "lat": -17.7765,
+       "lng": 177.4356
+      },
+      {
+       "name": "Mamanuca Islands",
+       "lat": -17.6667,
+       "lng": 177.1
+      },
+      {
+       "name": "Yasawa Islands",
+       "lat": -16.8,
+       "lng": 177.45
+      },
+      {
+       "name": "Taveuni",
+       "lat": -16.85,
+       "lng": 179.9833
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "TO",
+     "country": "Tonga",
+     "days": 8,
+     "budget": 408,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "One of the few places in the world where you can legally swim with humpback whales — the best season for that is July-October, so check the exact timing when planning the start date. Price correction (2026-07): €67.50→€100/day, the biggest correction on the route — flight to Vava'u + the whale-swim tour itself weren't covered. Route-logic fix (2026-08): now visited before Samoa (sits closer to Fiji) instead of after.",
+     "transport_to_next": "Flight Nuku'alofa-Apia (no direct flight, via Auckland or Fiji, 5h+).",
+     "destinations": [
+      {
+       "name": "Nuku'alofa",
+       "lat": -21.1393,
+       "lng": -175.2046
+      },
+      {
+       "name": "Vava'u (swimming with humpback whales)",
+       "lat": -18.65,
+       "lng": -173.9833
+      },
+      {
+       "name": "Ha'apai",
+       "lat": -19.8333,
+       "lng": -174.35
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "WS",
+     "country": "Samoa",
+     "days": 9,
+     "budget": 459,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Authentic Polynesian culture, still little affected by mass tourism. Beach fales are traditional, budget-friendly beach huts. Price verified (2026-07), holds up — relatively cheap for the Pacific.",
+     "transport_to_next": "Flight Apia-Rarotonga (no direct flight, 12-16h via Auckland or Nadi+Auckland).",
+     "destinations": [
+      {
+       "name": "Apia",
+       "lat": -13.8506,
+       "lng": -171.7513
+      },
+      {
+       "name": "To Sua Ocean Trench",
+       "lat": -13.9333,
+       "lng": -171.5333
+      },
+      {
+       "name": "Lalomanu (beach fales)",
+       "lat": -14.0167,
+       "lng": -171.4333
+      },
+      {
+       "name": "Upolu",
+       "lat": -13.9167,
+       "lng": -171.7667
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "CK",
+     "country": "Cook Islands",
+     "days": 7,
+     "budget": 665,
+     "dailyRate": 95,
+     "carInDailyRate": false,
+     "inDailyRate": "Aitutaki flight + lagoon cruise in the rate",
+     "notes": "The Aitutaki Lagoon is at least as beautiful as Bora Bora, for a fraction of the price. Price correction (2026-07): €80→€95/day (Air Rarotonga has a monopoly on the Aitutaki flight, plus lagoon cruise).",
+     "transport_to_next": "End of this route — flight home from Rarotonga (or flight Rarotonga-Perth to continue on to Tropical/Outback Australia 🐊)",
+     "destinations": [
+      {
+       "name": "Rarotonga",
+       "lat": -21.2367,
+       "lng": -159.7777
+      },
+      {
+       "name": "Aitutaki Lagoon",
+       "lat": -18.8333,
+       "lng": -159.7833
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_new-zealand",
+   "name": "New Zealand 🥝",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Backpacking between budget and comfort — rental car on both islands, ferry Picton-Wellington.",
+   "description": "The South Island (Milford Sound, glaciers, Queenstown) and the North Island (Tongariro, Rotorua, Bay of Islands).",
+   "notes": "Split off from Oceania Grand Expedition 🌊 as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budgets are carried over unchanged. New Zealand is one of the most booked standalone trips in the world — this block stands entirely on its own. Follow-up to Temperate/Southern Australia 🍇. Oceania Grand Expedition 🌊 itself remains unchanged as a separate, complete expedition.\n\nRoute-logic revision (2026-08): South Island order reversed (Kaikoura/Abel Tasman now last, right before the Picton ferry) to avoid an unmentioned ≈692 km backtrack from Dunedin. See Oceania Grand Expedition 🌊's own notes for the full reasoning.",
+   "distance": {
+    "id": "gt_seed_new-zealand",
+    "name": "New Zealand 🥝",
+    "stops": 13,
+    "km_in_route": 3180,
+    "km_from_nl": 24290,
+    "km_back_to_nl": 23580,
+    "km_by_country": {
+     "NZ": 3180
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NZ",
+     "country": "New Zealand",
+     "days": 21,
+     "budget": 1701,
+     "dailyRate": 81,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Christchurch, with multiple connections (no direct connection, ±27-38 hours total, from ±€1,300-2,000 return, best period September-November). Price indication from 2026-08 web research, a snapshot. Concentrates most of the iconic New Zealand scenery. Consider at least one Great Walk (Milford Track, Routeburn or Kepler) as a multi-day hut-to-hut trek — book well in advance. Price correction (2026-07): €80→€108/day. Route-logic fix (2026-08): order reversed so Kaikoura/Abel Tasman are visited last, right before the Picton ferry, instead of an unmentioned backtrack of ≈692 km from Dunedin. See Oceania Grand Expedition 🌊's own notes for the full reasoning.",
+     "transport_to_next": "Ferry Picton-Wellington, continuing overland into the North Island",
+     "destinations": [
+      {
+       "name": "Christchurch",
+       "lat": -43.5321,
+       "lng": 172.6362
+      },
+      {
+       "name": "Franz Josef & Fox Glaciers",
+       "lat": -43.4667,
+       "lng": 170.1667
+      },
+      {
+       "name": "Queenstown",
+       "lat": -45.0312,
+       "lng": 168.6626
+      },
+      {
+       "name": "Milford Sound & Fiordland",
+       "lat": -44.6714,
+       "lng": 167.925
+      },
+      {
+       "name": "Dunedin & Catlins",
+       "lat": -45.8788,
+       "lng": 170.5028
+      },
+      {
+       "name": "Kaikoura",
+       "lat": -42.4,
+       "lng": 173.6817
+      },
+      {
+       "name": "Abel Tasman",
+       "lat": -40.9333,
+       "lng": 173
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "NZ",
+     "country": "New Zealand",
+     "days": 14,
+     "budget": 1120,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The Tongariro Alpine Crossing is the best day hike in the country. Rotorua for geothermal phenomena and Māori culture. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of the expedition — flight home from Auckland to the Netherlands",
+     "destinations": [
+      {
+       "name": "Wellington",
+       "lat": -41.2865,
+       "lng": 174.7762
+      },
+      {
+       "name": "Tongariro Alpine Crossing",
+       "lat": -39.1333,
+       "lng": 175.6333
+      },
+      {
+       "name": "Rotorua",
+       "lat": -38.1368,
+       "lng": 176.2497
+      },
+      {
+       "name": "Coromandel",
+       "lat": -36.7614,
+       "lng": 175.4972
+      },
+      {
+       "name": "Bay of Islands",
+       "lat": -35.2667,
+       "lng": 174.1167
+      },
+      {
+       "name": "Auckland",
+       "lat": -36.8485,
+       "lng": 174.7633
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_new-zealand-north-island",
+   "name": "New Zealand North Island 🌿",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car on the North Island.",
+   "description": "Wellington, the Tongariro Alpine Crossing, Rotorua, Coromandel, Bay of Islands and Auckland.",
+   "notes": "Split off from New Zealand 🥝 (itself already split off from Oceania Grand Expedition 🌊) as part of the fifth batch of standalone countries (2026-08) — the North Island part of that route as its own, shorter trip, without the South Island (which already exists as its own \"New Zealand South Island 🏔️\" route, batch 2). Country and daily budget are carried over unchanged; days increased from 14 to 16 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). New Zealand 🥝 and Oceania Grand Expedition 🌊 themselves remain unchanged.",
+   "distance": {
+    "id": "gt_seed_new-zealand-north-island",
+    "name": "New Zealand North Island 🌿",
+    "stops": 6,
+    "km_in_route": 1210,
+    "km_from_nl": 24160,
+    "km_back_to_nl": 23580,
+    "km_by_country": {
+     "NZ": 1210
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NZ",
+     "country": "New Zealand",
+     "days": 16,
+     "budget": 1280,
+     "dailyRate": 80,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Wellington, with 2-3 connections (e.g. via Singapore or a Gulf-state hub, ±26-30+ hours total); exit from Auckland (open-jaw, similarly priced) — from ±€1,400-1,800 return; best period March/November. Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days versus the original count (14→16) — 26-30+ hours of travel time with multiple connections exceeds the 24-hour threshold, regardless of trip length. The Tongariro Alpine Crossing is the best day hike in the country. Rotorua for geothermal phenomena and Māori culture. Price verified (2026-07), holds up.",
+     "transport_to_next": "End of this route — flight home from Auckland to Amsterdam (2-3 connections).",
+     "destinations": [
+      {
+       "name": "Wellington",
+       "lat": -41.2865,
+       "lng": 174.7762
+      },
+      {
+       "name": "Tongariro Alpine Crossing",
+       "lat": -39.1333,
+       "lng": 175.6333
+      },
+      {
+       "name": "Rotorua",
+       "lat": -38.1368,
+       "lng": 176.2497
+      },
+      {
+       "name": "Coromandel",
+       "lat": -36.7614,
+       "lng": 175.4972
+      },
+      {
+       "name": "Bay of Islands",
+       "lat": -35.2667,
+       "lng": 174.1167
+      },
+      {
+       "name": "Auckland",
+       "lat": -36.8485,
+       "lng": 174.7633
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

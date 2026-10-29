@@ -1,0 +1,2155 @@
+{
+ "batch": 21,
+ "group": "Asia & Himalaya",
+ "routes": [
+  {
+   "id": "gt_seed_united-arab-emirates",
+   "name": "United Arab Emirates 🏙️",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Metro/Nol Card within Dubai, intercity bus or rental car between cities, 4x4 tour for Liwa/the dunes.",
+   "description": "Skyscrapers, souks and the Empty Quarter's dunes — a direct 7-hour hop into a city that outbuilds its own myth.",
+   "notes": "New standalone route (2026-09) — first time the UAE appears in Route Builder as its own destination (distinct from the existing Gulf States Trio 🛢️ combo route). Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, taxes, and the advisory split (yellow vs. the uninhabited red-zone islands). Re-verify the advisory before booking given regional volatility.",
+   "distance": {
+    "id": "gt_seed_united-arab-emirates",
+    "name": "United Arab Emirates 🏙️",
+    "stops": 5,
+    "km_in_route": 1100,
+    "km_from_nl": 6680,
+    "km_back_to_nl": 6780,
+    "km_by_country": {
+     "AE": 1100
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "AE",
+     "country": "United Arab Emirates",
+     "days": 9,
+     "budget": 540,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct flight Amsterdam-Dubai (KLM/Emirates, ±6h40-45, from ±€450-750 return; best period November-March, 17-28°C — June-September runs 40-50°C+ and is effectively indoor-only). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed (direct flight). Dubai's skyscrapers (Burj Khalifa, roughly €39-63 to go up), Abu Dhabi (noticeably cheaper than Dubai for food/lodging), the oasis town Al Ain, the Empty Quarter's dunes at Liwa, and the East Coast's beaches/mountains at Fujairah as a change of pace. A desert safari (roughly €62) and a Dubai-Abu Dhabi E100 intercity bus (roughly €6) are the two things worth budgeting on top of the daily rate. Avoid the Dec 3-6 2026 F1 Abu Dhabi Grand Prix and the mid-December-January Dubai Shopping Festival if cost matters — both spike hotel prices heavily. Dutch travel advisory (2026-09 snapshot): yellow for the vast majority of the country including Dubai/Abu Dhabi (regional Middle East tensions — worth rechecking given how fast this can shift), red only for the uninhabited disputed Abu Musa/Tunb islands, well off this route. Visa: visa-free 90 days within a rolling 180-day period, stamped free on arrival.",
+     "transport_to_next": "End of this route — return flight from Dubai to Amsterdam, direct.",
+     "destinations": [
+      {
+       "name": "Dubai",
+       "lat": 25.2048,
+       "lng": 55.2708
+      },
+      {
+       "name": "Abu Dhabi",
+       "lat": 24.4539,
+       "lng": 54.3773
+      },
+      {
+       "name": "Al Ain",
+       "lat": 24.2075,
+       "lng": 55.7447
+      },
+      {
+       "name": "Liwa Oasis / Empty Quarter",
+       "lat": 23.1167,
+       "lng": 53.75
+      },
+      {
+       "name": "Fujairah / East Coast",
+       "lat": 25.1288,
+       "lng": 56.3265
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bhutan",
+   "name": "Bhutan 🐉",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Mandatory local guide and fixed daily rate (Sustainable Development Fee included).",
+   "description": "The secluded kingdom of Bhutan: Paro, Thimphu and Tiger's Nest Monastery.",
+   "notes": "Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. In terms of duration and logistics Bhutan is mainly interesting as an extension of Nepal/India (mandatory guide + $100/night sustainable fee), but it also stands here as a fully independent expedition for anyone who just wants to do Bhutan. India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic review (2026-08): coordinates per destination added; Bumthang side trip now by flight Paro-Bumthang instead of the long overland return drive (Youri's preference); new 5% GST on tourist services since 1 January 2026 noted — see India & Himalaya Expedition 🏔️'s own Bhutan notes for details.",
+   "distance": {
+    "id": "gt_seed_bhutan",
+    "name": "Bhutan 🐉",
+    "stops": 6,
+    "km_in_route": 390,
+    "km_from_nl": 9440,
+    "km_back_to_nl": 9430,
+    "km_by_country": {
+     "BT": 390
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "BT",
+     "country": "Bhutan",
+     "days": 8,
+     "budget": 1504,
+     "dailyRate": 188,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Paro, via Delhi or Bangkok with a connecting Drukair/Bhutan Airlines flight (±15-20 hours total, from ±€1,300-1,900 return, December still falls within the good season). Price indication from 2026-08 web research, a snapshot. Price verified (2026-07), comfortably correct — the mandatory Sustainable Development Fee ($100/night, unchanged since 2023, guaranteed through 31 August 2027) is already comfortably absorbed into this daily rate. Flight Paro-Kathmandu (~$400-500 one-way) is a separate cost, not included in this daily rate. New (2026-08): Bhutan has levied a 5% GST on tourist services (hotels, guides, transport) since 1 January 2026 — doesn't affect the SDF/visa costs themselves, but slightly raises the effective daily spend. Bumthang side trip: at Youri's request, the domestic flight Paro-Bumthang is noted as the standard option instead of the long overland return drive.",
+     "transport_to_next": "End of the expedition — flight back from Paro International Airport",
+     "destinations": [
+      {
+       "name": "Paro",
+       "lat": 27.4305,
+       "lng": 89.4133
+      },
+      {
+       "name": "Thimphu",
+       "lat": 27.4728,
+       "lng": 89.639
+      },
+      {
+       "name": "Dochula Pass",
+       "lat": 27.3025,
+       "lng": 89.6529
+      },
+      {
+       "name": "Punakha",
+       "lat": 27.5921,
+       "lng": 89.8797
+      },
+      {
+       "name": "Bumthang (optional, by flight Paro-Bumthang)",
+       "lat": 27.5405,
+       "lng": 90.7438
+      },
+      {
+       "name": "Tiger's Nest Monastery",
+       "lat": 27.4919,
+       "lng": 89.3628
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_caucasus",
+   "name": "Caucasus 🍷",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overland (bus, marshrutka/shared taxi) between the three countries.",
+   "description": "Georgia, Armenia and Azerbaijan: Tbilisi, Svaneti, Yerevan and Baku.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own \"Strong\" block in ROUTE_BUILDER_MODULES.md — \"Georgia/Armenia/Azerbaijan is already a well-known standalone trip\") as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_caucasus",
+    "name": "Caucasus 🍷",
+    "stops": 15,
+    "km_in_route": 2920,
+    "km_from_nl": 4140,
+    "km_back_to_nl": 4470,
+    "km_by_country": {
+     "GE": 1050,
+     "AM": 880,
+     "AZ": 990
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "GE",
+     "country": "Georgia",
+     "days": 13,
+     "budget": 494,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Tbilisi, with a connection (no direct connection, e.g. via Frankfurt/Zürich or Istanbul, ±7-10 hours incl. connection; from ±€250-400 return — January is usually the cheapest flight month, but falls outside this route's mountain season; best travel period June). Price indication from 2026-08 web research, a snapshot. Mestia/Svaneti sits above the rest of the route price-wise (guesthouse with half-board plus a pricier marshrutka to/from Mestia, ~€17) — the daily budget only works as a trip-wide average combined with the cheaper days elsewhere (Tbilisi/Kutaisi/Batumi/Sighnaghi, realistically €35-45/day).",
+     "transport_to_next": "Back to Tbilisi (train or marshrutka from Batumi, ~5-6h, busy but good connection), then marshrutka Tbilisi-Yerevan, overland, easy border crossing, no visa needed",
+     "destinations": [
+      {
+       "name": "Tbilisi",
+       "lat": 41.7151,
+       "lng": 44.8271
+      },
+      {
+       "name": "Kazbegi",
+       "lat": 42.6572,
+       "lng": 44.6461
+      },
+      {
+       "name": "Sighnaghi",
+       "lat": 41.6206,
+       "lng": 45.9184
+      },
+      {
+       "name": "Kutaisi",
+       "lat": 42.2679,
+       "lng": 42.6946
+      },
+      {
+       "name": "Mestia (Svaneti)",
+       "lat": 43.0454,
+       "lng": 42.7276
+      },
+      {
+       "name": "Batumi",
+       "lat": 41.6168,
+       "lng": 41.6367
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "AM",
+     "country": "Armenia",
+     "days": 8,
+     "budget": 296,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Stay away from the border strip with Azerbaijan: roads H53/H26 near Ijevan, the M14 along the northeastern shore of Lake Sevan, and the M2 Yeraskh-Zangakatun/Yeraskh-Noravank (landmines) are orange/red (2026-07). Tatev (via Goris/Kapan) lies close to the Syunik border region — the standard route is reported as open/safe, stay on the usual tourist route.",
+     "transport_to_next": "No direct border (closed due to conflict) — travel back via Georgia (Tbilisi) to Baku, overland plus a short flight or bus",
+     "destinations": [
+      {
+       "name": "Yerevan",
+       "lat": 40.1792,
+       "lng": 44.4991
+      },
+      {
+       "name": "Khor Virap",
+       "lat": 39.8817,
+       "lng": 44.4453
+      },
+      {
+       "name": "Tatev",
+       "lat": 39.3789,
+       "lng": 46.2506
+      },
+      {
+       "name": "Lake Sevan",
+       "lat": 40.3667,
+       "lng": 45.3333
+      },
+      {
+       "name": "Dilijan",
+       "lat": 40.7431,
+       "lng": 44.865
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "AZ",
+     "country": "Azerbaijan",
+     "days": 7,
+     "budget": 266,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "",
+     "transport_to_next": "End of this route — back to Baku (bus/shared taxi from Qabala/Sheki, ~3h), then a return flight Baku-Amsterdam (1 stopover, no direct connection).",
+     "destinations": [
+      {
+       "name": "Baku",
+       "lat": 40.4093,
+       "lng": 49.8671
+      },
+      {
+       "name": "Gobustan",
+       "lat": 40.1064,
+       "lng": 49.3969
+      },
+      {
+       "name": "Sheki",
+       "lat": 41.197,
+       "lng": 47.1706
+      },
+      {
+       "name": "Qabala",
+       "lat": 40.98,
+       "lng": 47.85
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_north-india",
+   "name": "North India 🕌",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train and local bus, with a domestic flight where the distance justifies it.",
+   "description": "Rajasthan, Manali and Varanasi (Delhi, Agra and Amritsar/Dharamshala were already visited before, so no longer sightseeing stops on this route).",
+   "notes": "Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged. India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic review (2026-08): same round as the main expedition — Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut (already visited by Youri), Udaipur-Manali now direct, coordinates added. See India & Himalaya Expedition 🏔️'s own notes for the full explanation. New total: 22 days, €935 (was 30 days/€1,275).",
+   "distance": {
+    "id": "gt_seed_north-india",
+    "name": "North India 🕌",
+    "stops": 9,
+    "km_in_route": 3910,
+    "km_from_nl": 8250,
+    "km_back_to_nl": 9100,
+    "km_by_country": {
+     "IN": 3910
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "IN",
+     "country": "India",
+     "days": 22,
+     "budget": 638,
+     "dailyRate": 29,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Delhi (KLM, direct, ±8h15, from ±€600-950 return, best period early October). Price indication from 2026-08 web research, a snapshot. Trimmed (2026-08, at Youri's request — already visited): Agra/Taj Mahal, Amritsar/Golden Temple and Dharamshala/McLeod Ganj cut. Delhi stays as the mandatory arrival point but without extra sightseeing (Red Fort etc. already seen). Udaipur-Manali is now direct (train/flight via Delhi) — no more stopover in Amritsar/Dharamshala needed. Days/budget scaled along (30→22 days, €1,275→€935). Travel advisory, Punjab border region (2026-08, search-confirmed): explosive incidents near Amritsar/Jalandhar on 5 May 2026 — no longer directly relevant now that Amritsar is off the route, but still a signal to avoid that region regardless.",
+     "transport_to_next": "End of the expedition — domestic flight Varanasi-Delhi (±1h20), then return flight Delhi-Amsterdam (KLM, direct, ±8h15, from ±€350-550 return, no direct international connection from Varanasi itself). Price indication from 2026-08 web research, a snapshot.",
+     "destinations": [
+      {
+       "name": "Delhi (arrival, no extra sightseeing — already visited)",
+       "lat": 28.6139,
+       "lng": 77.209
+      },
+      {
+       "name": "Jaipur",
+       "lat": 26.9124,
+       "lng": 75.7873
+      },
+      {
+       "name": "Pushkar",
+       "lat": 26.4899,
+       "lng": 74.5511
+      },
+      {
+       "name": "Jodhpur",
+       "lat": 26.2389,
+       "lng": 73.0243
+      },
+      {
+       "name": "Jaisalmer",
+       "lat": 26.9157,
+       "lng": 70.9083
+      },
+      {
+       "name": "Udaipur",
+       "lat": 24.5854,
+       "lng": 73.7125
+      },
+      {
+       "name": "Manali",
+       "lat": 32.2432,
+       "lng": 77.1892
+      },
+      {
+       "name": "Rishikesh",
+       "lat": 30.0869,
+       "lng": 78.2676
+      },
+      {
+       "name": "Varanasi",
+       "lat": 25.3176,
+       "lng": 82.9739
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_jordan",
+   "name": "Jordan 🏺",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Rental car or organized tour — Amman, Jerash, Petra, Wadi Rum and the Dead Sea.",
+   "description": "Petra, Wadi Rum and the Dead Sea — short and punchy, Petra alone carries the trip.",
+   "notes": "Split off from Egypt & Arabian Peninsula 🐪 (itself already split off from Mediterranean Civilizations Expedition 🏛️ — see ROUTE_BUILDER_MODULES.md) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — \"Petra alone carries it\". Country and daily budget are carried over unchanged; days increased from 8 to 10 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md) — at 8 days this was also the shortest of this second batch, so a connecting flight took up relatively the largest share of the trip. Egypt & Arabian Peninsula 🐪 and Mediterranean Civilizations Expedition 🏛️ themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_jordan",
+    "name": "Jordan 🏺",
+    "stops": 5,
+    "km_in_route": 730,
+    "km_from_nl": 4350,
+    "km_back_to_nl": 4360,
+    "km_by_country": {
+     "JO": 730
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "JO",
+     "country": "Jordan",
+     "days": 10,
+     "budget": 625,
+     "dailyRate": 63,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Amman, usually with 1 stopover (e.g. via Vienna with Austrian Airlines, ±5-8 hours incl. stopover; from ±€300-700 return; best period December). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (8→10) — on a trip of only a week, a connecting flight eats up relatively the most of the trip out of this whole batch. Nabataean trade routes (Petra), Roman history (Jerash) and the Wadi Rum desert. December gives pleasant daytime temperatures for the hike to the Treasury and for camping in Wadi Rum. Practical tip: the Jordan Pass (~50-60 JOD, buy online well in advance) bundles entry to Petra/Jerash/Wadi Rum/40 other sites and waives the separate 40 JOD visa fee for a stay of 3+ nights. ⚠️ Travel advisory (July 2026): orange for the whole of Jordan (normally only the border area with Syria/Iraq) due to the regional Iran-Israel/US conflict — check nederlandwereldwijd.nl shortly before departure, this may have changed again by then.",
+     "transport_to_next": "End of this route — return flight from Amman to Amsterdam (usually 1 stopover, e.g. via Vienna).",
+     "destinations": [
+      {
+       "name": "Amman",
+       "lat": 31.9454,
+       "lng": 35.9284
+      },
+      {
+       "name": "Jerash",
+       "lat": 32.2811,
+       "lng": 35.8994
+      },
+      {
+       "name": "Petra",
+       "lat": 30.3285,
+       "lng": 35.4444
+      },
+      {
+       "name": "Wadi Rum",
+       "lat": 29.5766,
+       "lng": 35.4206
+      },
+      {
+       "name": "Dead Sea",
+       "lat": 31.559,
+       "lng": 35.4732
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_japan-taiwan",
+   "name": "Japan & Taiwan 🗻",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker/budget-comfort hybrid — train/metro in Japan, HSR in Taiwan, a short flight between them.",
+   "description": "From Tokyo via Kyoto/Osaka to Taiwan: Taipei, Taroko Gorge and Kenting in the south.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻, where this already stood as its own \"Strong\" block in ROUTE_BUILDER_MODULES.md — \"classic East Asia combination, visa-free, no snags\") as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_japan-taiwan",
+    "name": "Japan & Taiwan 🗻",
+    "stops": 11,
+    "km_in_route": 3410,
+    "km_from_nl": 12100,
+    "km_back_to_nl": 12610,
+    "km_by_country": {
+     "JP": 940,
+     "TW": 2470
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "JP",
+     "country": "Japan",
+     "days": 18,
+     "budget": 1314,
+     "dailyRate": 73,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct flight Amsterdam-Tokyo (KLM/Air France/SAS, ±13h15; from ±€900-1,300 return; best period October-November). Price indication from 2026-08 web research, a snapshot. ",
+     "transport_to_next": "Flight Osaka/Tokyo-Taipei, short flight, no visa needed for Taiwan",
+     "destinations": [
+      {
+       "name": "Tokyo",
+       "lat": 35.6762,
+       "lng": 139.6503
+      },
+      {
+       "name": "Hakone/Fuji",
+       "lat": 35.2323,
+       "lng": 139.1069
+      },
+      {
+       "name": "Kyoto",
+       "lat": 35.0116,
+       "lng": 135.7681
+      },
+      {
+       "name": "Nara",
+       "lat": 34.6851,
+       "lng": 135.8048
+      },
+      {
+       "name": "Osaka",
+       "lat": 34.6937,
+       "lng": 135.5023
+      },
+      {
+       "name": "Hiroshima",
+       "lat": 34.3853,
+       "lng": 132.4553
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "TW",
+     "country": "Taiwan",
+     "days": 10,
+     "budget": 480,
+     "dailyRate": 48,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "",
+     "transport_to_next": "End of this route — HSR back to Taipei (~2h from Kenting), then a return flight Taipei-Amsterdam (1 stopover, no direct connection).",
+     "destinations": [
+      {
+       "name": "Taipei",
+       "lat": 25.033,
+       "lng": 121.5654
+      },
+      {
+       "name": "Taroko Gorge",
+       "lat": 24.1588,
+       "lng": 121.6222
+      },
+      {
+       "name": "Sun Moon Lake",
+       "lat": 23.8618,
+       "lng": 120.9155
+      },
+      {
+       "name": "Tainan",
+       "lat": 22.9997,
+       "lng": 120.227
+      },
+      {
+       "name": "Kenting",
+       "lat": 21.9447,
+       "lng": 120.7969
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kazakhstan-kyrgyzstan",
+   "name": "Kazakhstan & Kyrgyzstan ⛺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Overland bus/shared taxi between the two countries — Almaty-Bishkek is a busy but straightforward border crossing.",
+   "description": "Almaty and the Charyn Canyon in Kazakhstan, followed by Bishkek, Issyk-Kul, Karakol and Song-Kul in Kyrgyzstan.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫 and the existing combo route Central Asia 🐎) as part of the note on Central Asia 🐎 to split it further. Countries, days and budgets are carried over unchanged. Visa correction vs. earlier assumptions: Kyrgyzstan is visa-free for 30 days within any 60-day period, not \"60 days\" — plenty for this 12-day leg. Eurasia Grand Tour 🌏, West Eurasia Overland 🐫 and Central Asia 🐎 themselves continue to exist unchanged (Kyrgyzstan 🐴 and Uzbekistan 🐪 also already exist standalone, from batch 4).",
+   "distance": {
+    "id": "gt_seed_kazakhstan-kyrgyzstan",
+    "name": "Kazakhstan & Kyrgyzstan ⛺",
+    "stops": 9,
+    "km_in_route": 3180,
+    "km_from_nl": 6810,
+    "km_back_to_nl": 6700,
+    "km_by_country": {
+     "KZ": 1560,
+     "KG": 1620
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "KZ",
+     "country": "Kazakhstan",
+     "days": 8,
+     "budget": 328,
+     "dailyRate": 41,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Almaty, with a connection (e.g. via Istanbul with Turkish Airlines, or seasonally via Frankfurt with Lufthansa from March 2026, ±10-13 hours total; from ±€250-650 return; best period June). Price indication from 2026-08 web research, a snapshot. Nur-Sultan/Astana deliberately cut (2026-08) — it was an isolated 1200 km detour too far out of the route; the rest of Kazakhstan now forms one continuous southern loop, no more backtracking needed.",
+     "transport_to_next": "Bus or shared taxi Almaty-Bishkek, overland, busy but easy border crossing",
+     "destinations": [
+      {
+       "name": "Almaty",
+       "lat": 43.2567,
+       "lng": 76.9286
+      },
+      {
+       "name": "Charyn Canyon",
+       "lat": 43.35,
+       "lng": 79.0667
+      },
+      {
+       "name": "Turkistan",
+       "lat": 43.2975,
+       "lng": 68.2517
+      },
+      {
+       "name": "Shymkent",
+       "lat": 42.3417,
+       "lng": 69.5901
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "KG",
+     "country": "Kyrgyzstan",
+     "days": 12,
+     "budget": 384,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "",
+     "transport_to_next": "End of this route — flight from Bishkek to Amsterdam (1 stopover via Istanbul, Turkish Airlines/Pegasus).",
+     "destinations": [
+      {
+       "name": "Bishkek",
+       "lat": 42.8746,
+       "lng": 74.5698
+      },
+      {
+       "name": "Issyk-Kul",
+       "lat": 42.65,
+       "lng": 77.0833
+      },
+      {
+       "name": "Karakol",
+       "lat": 42.4907,
+       "lng": 78.3936
+      },
+      {
+       "name": "Song-Kul",
+       "lat": 41.8333,
+       "lng": 75.1333
+      },
+      {
+       "name": "Osh",
+       "lat": 40.5283,
+       "lng": 72.7985
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_kyrgyzstan",
+   "name": "Kyrgyzstan 🐴",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Shared taxi/marshrutka between Bishkek, Issyk-Kul and Karakol; horse/guide for the trek around Song-Kul.",
+   "description": "Trekking around Issyk-Kul, Karakol and the high-altitude yurt camp at Song-Kul.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫) as part of this fourth batch of standalone countries (2026-08) — growing popularity as a standalone trekking destination. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_kyrgyzstan",
+    "name": "Kyrgyzstan 🐴",
+    "stops": 5,
+    "km_in_route": 1090,
+    "km_from_nl": 6650,
+    "km_back_to_nl": 6700,
+    "km_by_country": {
+     "KG": 1090
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "KG",
+     "country": "Kyrgyzstan",
+     "days": 12,
+     "budget": 384,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Bishkek, with a connection via Istanbul (Turkish Airlines/Pegasus, ±9h40-10 hours total; from ±€450-700 return; best period September). Price indication from 2026-08 web research, a snapshot. ",
+     "transport_to_next": "End of this route — return flight from Bishkek to Amsterdam (1 stopover via Istanbul).",
+     "destinations": [
+      {
+       "name": "Bishkek",
+       "lat": 42.8746,
+       "lng": 74.5698
+      },
+      {
+       "name": "Issyk-Kul",
+       "lat": 42.65,
+       "lng": 77.0833
+      },
+      {
+       "name": "Karakol",
+       "lat": 42.4907,
+       "lng": 78.3936
+      },
+      {
+       "name": "Song-Kul",
+       "lat": 41.8333,
+       "lng": 75.1333
+      },
+      {
+       "name": "Osh",
+       "lat": 40.5283,
+       "lng": 72.7985
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_south-korea",
+   "name": "South Korea 🏯",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "KTX high-speed rail between cities, T-money card for local metro/bus, guided tour for the DMZ, flight or ferry to Jeju.",
+   "description": "Seoul, Busan and Gyeongju — hyper-modern cities bookending a 1,000-year-old Silla capital, with the DMZ's frozen tension and Jeju's volcanic coastline as the wild cards.",
+   "notes": "New standalone route (2026-09) — first time South Korea appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, visa (K-ETA waiver status) and the DMZ-area advisory split. Re-verify K-ETA/visa status and the advisory before booking, especially if traveling after 2026.",
+   "distance": {
+    "id": "gt_seed_south-korea",
+    "name": "South Korea 🏯",
+    "stops": 5,
+    "km_in_route": 960,
+    "km_from_nl": 11140,
+    "km_back_to_nl": 11610,
+    "km_by_country": {
+     "KR": 960
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "KR",
+     "country": "South Korea",
+     "days": 13,
+     "budget": 845,
+     "dailyRate": 65,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct flight Amsterdam-Seoul (KLM/Korean Air, ±11h50, from ±€700-1,100 return; best period early-to-mid October for autumn foliage, or late March/early April for cherry blossoms — avoid Chuseok, Sept 24-27 2026, which jams transport and hotels). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed (direct flight, trip already 13 days). Hyper-modern Seoul, the DMZ's frozen Cold War tension, the 1,000-year-old Silla capital Gyeongju, port city Busan and Jeju's volcanic coastline. The DMZ can only be visited on an organized/guided tour (no independent access) — book one from Seoul. KTX high-speed rail connects Seoul-Gyeongju-Busan; Jeju has no bridge/rail link, fly or ferry from Busan. Dutch travel advisory (2026-09 snapshot): red for the DMZ border strip itself, yellow for the area just south of it (guided tours only), green for the rest of the route (Seoul, Gyeongju, Busan, Jeju) — check nederlandwereldwijd.nl before departure. Visa: visa-free 90 days for a Dutch passport; K-ETA is currently waived for Dutch citizens through 31 Dec 2026 but re-check if traveling later, as it will likely become mandatory again ($10, apply 72h ahead).",
+     "transport_to_next": "End of this route — return flight from Seoul (Incheon) to Amsterdam, direct.",
+     "destinations": [
+      {
+       "name": "Seoul",
+       "lat": 37.5665,
+       "lng": 126.978
+      },
+      {
+       "name": "DMZ / Imjingak",
+       "lat": 37.9022,
+       "lng": 126.7367
+      },
+      {
+       "name": "Gyeongju",
+       "lat": 35.8562,
+       "lng": 129.2247
+      },
+      {
+       "name": "Busan",
+       "lat": 35.1796,
+       "lng": 129.0756
+      },
+      {
+       "name": "Jeju Island",
+       "lat": 33.4996,
+       "lng": 126.5312
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_sri-lanka",
+   "name": "Sri Lanka 🐆",
+   "mode": "rental",
+   "carInBudgetWording": "unknown",
+   "carEvidence": "",
+   "travel_style": "Mix of public bus/3rd-class train and a private driver for the harder legs; tuk-tuk self-drive optional.",
+   "description": "Ancient rock fortresses, misty tea-country trains, and leopard safaris ending on a palm-fringed coast — Sri Lanka packs a continent's variety into one island loop.",
+   "notes": "New standalone route (2026-09) — first time Sri Lanka appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering costs, the 2026 free-ETA policy change, and the current advisory/dengue/rail-status notes above. Re-verify all of these before booking.",
+   "distance": {
+    "id": "gt_seed_sri-lanka",
+    "name": "Sri Lanka 🐆",
+    "stops": 6,
+    "km_in_route": 640,
+    "km_from_nl": 10870,
+    "km_back_to_nl": 11030,
+    "km_by_country": {
+     "LK": 640
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "LK",
+     "country": "Sri Lanka",
+     "days": 15,
+     "budget": 585,
+     "dailyRate": 39,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Colombo, one stop (via Doha/Dubai/Abu Dhabi, ±13-16 hours total; best period December-April, with February/March the sweet spot for the south/west coast + hill country — avoid Kandy's Esala Perahera festival, roughly late July-late August 2026, which triples/quadruples Kandy hotel prices). Web-research price/timing indication 2026-09, a snapshot. No long-haul flight buffer needed despite the connecting flight — trip is well over the 10-day threshold. Ancient rock fortresses (Sigiriya), misty tea-country trains (Kandy-Ella), leopard safaris (Yala) and a palm-fringed south coast (Mirissa/Galle) in one island loop. Kandy-Ella is the classic scenic train leg — reserved seats sell out within minutes of the 30-day booking window opening, book the moment it opens; the Nanu Oya-Badulla section only reopened June 2026 after cyclone damage, confirm current status before relying on it. Yala safari entry + jeep runs roughly €85-90/person all-in. Dutch travel advisory (2026-09 snapshot): yellow nationwide — flagged risks include landmines in the North/East (Trincomalee, Batticaloa, Ampara, north of the A12 — outside this route), nationwide terrorism risk, high traffic-fatality risk, monsoon flooding and an active dengue outbreak; check nederlandwereldwijd.nl before departure. Visa: as of 25 May 2026 Dutch passport holders get a free 30-day double-entry tourist ETA (eta.gov.lk) — this policy has changed repeatedly, re-verify before booking.",
+     "transport_to_next": "End of this route — return flight from Colombo to Amsterdam, one stop.",
+     "destinations": [
+      {
+       "name": "Colombo",
+       "lat": 6.9271,
+       "lng": 79.8612
+      },
+      {
+       "name": "Sigiriya",
+       "lat": 7.957,
+       "lng": 80.7603
+      },
+      {
+       "name": "Kandy",
+       "lat": 7.2906,
+       "lng": 80.6337
+      },
+      {
+       "name": "Ella",
+       "lat": 6.8667,
+       "lng": 81.0466
+      },
+      {
+       "name": "Yala National Park",
+       "lat": 6.3735,
+       "lng": 81.5061
+      },
+      {
+       "name": "Mirissa / Galle",
+       "lat": 5.9483,
+       "lng": 80.4589
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_mongolia",
+   "name": "Mongolia 🦅",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Organized jeep tour for the Gobi Desert leg, own transport/day trips elsewhere around Ulaanbaatar.",
+   "description": "Ulaanbaatar, Terelj National Park, Kharkhorin and a jeep trip through the Gobi Desert.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via East Asia & Pacific 🗻) as part of this fifth batch of standalone countries (2026-08). Country and daily budget are carried over unchanged; days increased from 10 to 12 as a long-haul flight buffer, block budget scaled along at the same daily rate (2026-10 fix — it had been left at the old day count) (see CLAUDE.md). Eurasia Grand Tour 🌏 and East Asia & Pacific 🗻 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_mongolia",
+    "name": "Mongolia 🦅",
+    "stops": 4,
+    "km_in_route": 1070,
+    "km_from_nl": 8660,
+    "km_back_to_nl": 8940,
+    "km_by_country": {
+     "MN": 1070
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MN",
+     "country": "Mongolia",
+     "days": 12,
+     "budget": 444,
+     "dailyRate": 37,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Ulaanbaatar, with a connection via Istanbul (Turkish Airlines) or Berlin (MIAT, seasonal) (±14-19 hours total; from ±€600-800 return; best period September). Price indication from 2026-08 web research, a snapshot. Long-haul flight buffer (2026-08, see CLAUDE.md): +2 days compared to the original count (10→12) — a short trip (≤10 days) with a connecting flight justifies an arrival day with no programme. The Gobi Desert leg requires an organized jeep tour (shared 4x4 + driver + guide + ger camps) — budget $80-120 per day p.p. for those specific days, a separate cost on top of the rest of the trip. Free travel within 100 km of the Russian/Chinese border is not allowed without permission — check that the tour operator accounts for this, especially in the southern Gobi close to the Chinese border.",
+     "transport_to_next": "End of this route — return flight from Ulaanbaatar to Amsterdam (1 stopover).",
+     "destinations": [
+      {
+       "name": "Ulaanbaatar",
+       "lat": 47.8864,
+       "lng": 106.9057
+      },
+      {
+       "name": "Terelj NP",
+       "lat": 47.9714,
+       "lng": 107.4756
+      },
+      {
+       "name": "Kharkhorin",
+       "lat": 47.1975,
+       "lng": 102.8317
+      },
+      {
+       "name": "Gobi Desert",
+       "lat": 43.5711,
+       "lng": 104.4256
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_maldives",
+   "name": "Maldives 🏝️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Public inter-island ferry where schedules allow, shared speedboat otherwise; day-trip boats for snorkeling/whale shark/manta excursions.",
+   "description": "Maafushi and the local-island atolls — palm-fringed white sand and turquoise reefs on a backpacker's budget, whale sharks and sandbanks without the overwater-villa price tag.",
+   "notes": "New standalone route (2026-09) — first time the Maldives appears in Route Builder, not split off from an existing expedition. Built from a dedicated research pass (route-price-checker style, 2026-09-16) covering local-island (not resort) costs, the mandatory IMUGA declaration, and local-island conduct rules (alcohol/swimwear). Re-verify all of these before booking.",
+   "distance": {
+    "id": "gt_seed_maldives",
+    "name": "Maldives 🏝️",
+    "stops": 5,
+    "km_in_route": 280,
+    "km_from_nl": 10630,
+    "km_back_to_nl": 10660,
+    "km_by_country": {
+     "MV": 280
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MV",
+     "country": "Maldives",
+     "days": 10,
+     "budget": 920,
+     "dailyRate": 92,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Malé, one stop (via Doha/Dubai/Istanbul/Vienna, ±11.5-14 hours total; best period January-March, dry season with calmer seas for the inter-island boat transfers). Web-research price/timing indication 2026-09, a snapshot. Long-haul flight buffer applied (see CLAUDE.md): +2 days on top of the 8-day base recommendation (10 total) — a short trip combined with a connecting flight. The local-island guesthouse circuit (Maafushi, Thulusdhoo, Fulidhoo, Dhigurah) instead of overwater resorts — palm-fringed white sand and turquoise reefs on a backpacker budget, with whale shark and manta ray day trips from Dhigurah/Fulidhoo. Public ferries between islands are cheap (roughly €3) but run on limited schedules — this is the dominant route-planning constraint, check timetables before committing to an island order; a shared speedboat (roughly €23) is the faster fallback. Mandatory: complete the IMUGA online arrival/departure declaration within 96 hours of arrival. Alcohol and swimwear are confined to licensed resorts / designated \"bikini beaches\" — walking through a local island village in swimwear is illegal and enforced by fines on some islands. Green Tax (roughly €5.50/person/night at guesthouses) and a departure tax (roughly €46 economy) apply on top of the daily budget. Dutch travel advisory (2026-09 snapshot): yellow — no acute terrorism threat but stay alert; strict drug laws (life imprisonment possible); no Dutch embassy in-country, consular support runs via Colombo.",
+     "transport_to_next": "End of this route — return flight from Malé to Amsterdam, one stop.",
+     "destinations": [
+      {
+       "name": "Malé",
+       "lat": 4.1755,
+       "lng": 73.5093
+      },
+      {
+       "name": "Maafushi",
+       "lat": 3.9403,
+       "lng": 73.4889
+      },
+      {
+       "name": "Thulusdhoo",
+       "lat": 4.3728,
+       "lng": 73.6489
+      },
+      {
+       "name": "Fulidhoo",
+       "lat": 3.6806,
+       "lng": 73.4147
+      },
+      {
+       "name": "Dhigurah",
+       "lat": 3.5264,
+       "lng": 72.9239
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
+   "name": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Direct flights between Peninsula Malaysia, Brunei and Sabah (no overland legs needed), a guided climb for Mount Kinabalu, a multi-night river lodge for Kinabatangan, and a dive-focused stay in Semporna.",
+   "description": "Kuala Lumpur, a stop in Brunei (Bandar Seri Begawan and Ulu Temburong NP), the Mount Kinabalu summit climb, Sepilok's orang-utans, Kinabatangan River wildlife cruises, and Semporna/Sipadan diving.",
+   "notes": "Built (2026-09) to replace a Trips-sheet wishlist entry ('Malaysia + Borneo + Brunei Nature Trip', 21 days/~€2,700/dry season preferred) that Youri decided belongs in Route Builder instead, as a someday-aspiration rather than a concretely planned trip. Researched via a WebSearch-backed research agent — a curated ~21-day version of Youri's own vision ('jungle + islands + city mix, KL, Borneo wildlife, Brunei stop'), not a mechanical concatenation of the full standalone Malaysia Peninsula (10 days), Sarawak (6 days), Brunei (2 days) and Sabah (11 days) blocks (which together would run 29 days). Deliberately cut: all of Sarawak (Kuching/Bako/Mulu Caves) — Mulu specifically is a costly detour that doesn't add unique value beyond what Sabah's wildlife stops already deliver, and the Miri overland crossing costs a travel day; most of the Peninsula circuit (Langkawi/Penang/Cameron Highlands) — Youri named only 'KL', not a beach/hill-station tour. The Mount Kinabalu summit climb was initially proposed as optional/cuttable (it doesn't add wildlife value and costs ~€560-580 pp plus 2-3 days) — Youri's explicit call: include it anyway. The Semporna/Sipadan diving leg carries a genuine orange travel-advisory rating (kidnapping/piracy risk, not just a general caution) — also explicitly kept in by Youri's own decision, with the warning documented directly in that leg's notes above. Ground-cost/package budget across the 21 days comes to roughly €1,835, plus the international flight (~€650-950) and optional Sipadan diving-day costs — landing close to Youri's original €2,700 estimate. Not yet checked against a specific travel date — re-verify the Sabah advisory status (see the Semporna leg's notes) before actually booking.",
+   "distance": {
+    "id": "gt_seed_malaysia-borneo-brunei-jungle-wildlife-21-days",
+    "name": "Malaysia + Borneo + Brunei: Jungle & Wildlife (21 days) 🦧",
+    "stops": 19,
+    "km_in_route": 3400,
+    "km_from_nl": 13230,
+    "km_back_to_nl": 14140,
+    "km_by_country": {
+     "MY": 1460,
+     "BN": 1940
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 4,
+     "budget": 132,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Kuala Lumpur (±12h25; from ±€650-950 return; best period April-May, secondary option August — confirmed current, KLM is the only nonstop carrier, ~4x/week). Web check (2026-09): Malaysia requires a Malaysia Digital Arrival Card, registered online within 3 days before arrival — a mandatory registration step, not a visa (Dutch passport holders remain visa-free for tourism). KL city (Petronas Towers, Batu Caves, Chinatown/Merdeka Square) plus an optional Malacca day trip (~2h bus each way) — deliberately just the capital here, not the full Langkawi/Penang/Cameron Highlands peninsula circuit, since Youri's own trip notes named only 'KL' for the city component. Budget ~€50/day. Travel advisory: Malaysia overall is yellow — travel possible, be aware of specific security risks (see the Semporna leg below for a more serious regional exception).",
+     "transport_to_next": "Direct flight Kuala Lumpur-Bandar Seri Begawan (Royal Brunei/Malaysia Airlines, ~2h).",
+     "destinations": [
+      {
+       "name": "Petronas Towers / KLCC",
+       "lat": 3.1579,
+       "lng": 101.7116
+      },
+      {
+       "name": "Batu Caves",
+       "lat": 3.2379,
+       "lng": 101.684
+      },
+      {
+       "name": "Chinatown & Merdeka Square",
+       "lat": 3.1428,
+       "lng": 101.6953
+      },
+      {
+       "name": "Malacca (optional day trip)",
+       "lat": 2.1896,
+       "lng": 102.2501
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BN",
+     "country": "Brunei",
+     "days": 2,
+     "budget": 106,
+     "dailyRate": 53,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Bandar Seri Begawan (Kampong Ayer, Sultan Omar Ali Mosque, Royal Regalia Museum) plus a full-day guided Ulu Temburong NP tour — confirmed still mandatory-guide-only, no independent access, ~BND 140-180 (~€115-150) all-in including transfers/permit/guide/lunch, a separate cost; only 4 licensed operators run it. Budget ~€120/day (Brunei is genuinely pricier than its neighbors). Visa-free for Dutch passport holders up to 90 days, no changes. Travel advisory: yellow, general risks only (earthquakes/floods in rainy season, petty crime, strict Sharia-law enforcement on alcohol/dress/behavior) — no elevated regional warning.",
+     "transport_to_next": "Direct flight Bandar Seri Begawan-Kota Kinabalu (Royal Brunei/Malaysia Airlines, ~40 min, ~11-14x/week) — a real upgrade over the old overland bus/ferry-via-Labuan option, which stays available as a slower budget alternative.",
+     "destinations": [
+      {
+       "name": "Bandar Seri Begawan",
+       "lat": 4.9031,
+       "lng": 114.9398
+      },
+      {
+       "name": "Kampong Ayer",
+       "lat": 4.8875,
+       "lng": 114.9425
+      },
+      {
+       "name": "Ulu Temburong NP (guided day tour)",
+       "lat": 4.5333,
+       "lng": 115.1667
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 1,
+     "budget": 49,
+     "dailyRate": 49,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Kota Kinabalu on arrival — city and waterfront, base for the Mount Kinabalu climb next. Budget ~€65/day.",
+     "transport_to_next": "Transfer to Kinabalu Park HQ (~2h drive) for the climb.",
+     "destinations": [
+      {
+       "name": "Kota Kinabalu waterfront",
+       "lat": 5.9788,
+       "lng": 116.0753
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 3,
+     "budget": 580,
+     "dailyRate": 193,
+     "carInDailyRate": false,
+     "inDailyRate": "the Kinabalu climb package IS this rate",
+     "notes": "Youri's explicit call: the Mount Kinabalu 2D1N summit climb, added on top of the base itinerary. Web check (2026-09): confirmed as a real, expensive, physically demanding package, not something to fold casually into a daily budget — 2D1N package ~RM2,790-2,890 (~€560-580) per non-Malaysian, including the mandatory guide (RM350) and permit (RM400); the budget field here reflects that all-in package cost for these 3 days (transfer + climb + descent), not a normal daily rate. Bookings for 2026 opened 1 December 2025 via sabapakeco.com and peak-period slots fill fast — book well ahead. Doesn't add wildlife value (it's a mountaineering objective, not orangutans/proboscis monkeys) but Youri wants it included regardless.",
+     "transport_to_next": "Transfer back to Kota Kinabalu, then on to Sandakan (fly or drive) for Sepilok.",
+     "destinations": [
+      {
+       "name": "Mount Kinabalu (Low's Peak summit)",
+       "lat": 6.0754,
+       "lng": 116.558
+      },
+      {
+       "name": "Laban Rata (overnight rest stop)",
+       "lat": 6.0667,
+       "lng": 116.55
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 2,
+     "budget": 72,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Sepilok: the Orang-utan Rehabilitation Centre, the Rainforest Discovery Centre canopy walk, and the Sun Bear Conservation Centre. Sepilok entry ~RM90 (~€18) for foreigners, confirmed current. Budget ~€65/day.",
+     "transport_to_next": "Transfer to Sukau/Bilit on the Kinabatangan River (~1.5-2h).",
+     "destinations": [
+      {
+       "name": "Sepilok Orang-utan Rehabilitation Centre",
+       "lat": 5.8742,
+       "lng": 117.9478
+      },
+      {
+       "name": "Rainforest Discovery Centre",
+       "lat": 5.8781,
+       "lng": 117.9464
+      },
+      {
+       "name": "Bornean Sun Bear Conservation Centre",
+       "lat": 5.8756,
+       "lng": 117.9481
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 3,
+     "budget": 210,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "inDailyRate": "riverside lodge package (meals + cruises) in the rate",
+     "notes": "A multi-night riverside lodge stay rather than a single day trip — confirmed via research that consecutive dawn/dusk cruises significantly raise wildlife-sighting odds (proboscis monkeys, orangutans, pygmy elephants, hornbills) over a one-off visit. Includes a guided night walk. Budget ~€70/day (lodge packages typically bundle meals and cruises into the rate).",
+     "transport_to_next": "Transfer to Semporna via Lahad Datu/Tawau (~4-5h).",
+     "destinations": [
+      {
+       "name": "Kinabatangan River wildlife cruises",
+       "lat": 5.5,
+       "lng": 118.3667
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 4,
+     "budget": 168,
+     "dailyRate": 42,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "⚠️ Travel advisory (checked 2026-09): the islands Mabul, Pom Pom, Kapalai, Ligitan, Sipadan and Mataking (this exact leg) are separately coded ORANGE by the Dutch government advisory — \"only travel if necessary\" — due to an explicit kidnapping/piracy risk in this part of the Celebes Sea, a step above Malaysia's general yellow rating elsewhere on this route. Youri's explicit decision (2026-09): keep this leg in the route with this warning attached, rather than cutting or relocating it. Sipadan diving itself remains capped at 254 daily permits, allocated to resorts/operators (not individually bookable) — realistically needs a 3-5 night stay on Mabul/Kapalai/Semporna booked 6-12 months ahead for peak season, plus an Advanced Open Water certification (mandatory since Oct 2022). Sipadan is closed annually 15-30 November for conservation — avoid that window regardless of season. Non-divers can still snorkel around Mabul/Kapalai without the permit constraint. Base budget ~€70/day; diving days add ~€150-250/day on top as a separate cost, not included above.",
+     "transport_to_next": "Transfer back to Kota Kinabalu via Tawau.",
+     "destinations": [
+      {
+       "name": "Semporna",
+       "lat": 4.4816,
+       "lng": 118.612
+      },
+      {
+       "name": "Mabul Island",
+       "lat": 4.25,
+       "lng": 118.6333
+      },
+      {
+       "name": "Sipadan (diving, permit required)",
+       "lat": 4.1147,
+       "lng": 118.6289
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 2,
+     "budget": 78,
+     "dailyRate": 39,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Buffer day plus an optional Mari Mari Cultural Village visit, before flying home. Budget ~€65/day.",
+     "transport_to_next": "End of this route — domestic flight Kota Kinabalu-Kuala Lumpur (very frequent, 9+ daily flights, ~2h25, from ~€35-70), connecting to the KLM Kuala Lumpur-Amsterdam nonstop. Given KLM's limited ~4x/week frequency on that final leg, book with a comfortable buffer (or an overnight in KL) rather than a tight same-day connection — no direct flight exists from Kota Kinabalu to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Kota Kinabalu (departure buffer)",
+       "lat": 5.9788,
+       "lng": 116.0753
+      },
+      {
+       "name": "Mari Mari Cultural Village (optional)",
+       "lat": 6.0333,
+       "lng": 116.1333
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_malaysia",
+   "name": "Malaysia 🦋",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train/bus between the cities on the peninsula.",
+   "description": "Langkawi, Penang, the Cameron Highlands, Malacca and Kuala Lumpur — deliberately just the peninsula, without Borneo.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this sixth batch of standalone countries (2026-08) — deliberately just the peninsula part here, Sarawak/Sabah (Borneo) stays in the larger expedition. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_malaysia",
+    "name": "Malaysia 🦋",
+    "stops": 5,
+    "km_in_route": 870,
+    "km_from_nl": 12700,
+    "km_back_to_nl": 13230,
+    "km_by_country": {
+     "MY": 870
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "MY",
+     "country": "Malaysia",
+     "days": 10,
+     "budget": 330,
+     "dailyRate": 33,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Kuala Lumpur (±12h25; from ±€650-950 return; best period August). Price indication from 2026-08 web research, a snapshot.",
+     "transport_to_next": "End of this route — direct KLM return flight Kuala Lumpur-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Langkawi",
+       "lat": 6.35,
+       "lng": 99.8
+      },
+      {
+       "name": "Penang",
+       "lat": 5.4141,
+       "lng": 100.3288
+      },
+      {
+       "name": "Cameron Highlands",
+       "lat": 4.47,
+       "lng": 101.38
+      },
+      {
+       "name": "Malacca",
+       "lat": 2.1896,
+       "lng": 102.2501
+      },
+      {
+       "name": "Kuala Lumpur",
+       "lat": 3.139,
+       "lng": 101.6869
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_nepal",
+   "name": "Nepal 🏔️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Organized trekking with a local guide/porter (mandatory since 2023, solo trekking no longer allowed).",
+   "description": "Trekking in the Annapurna Region, plus Kathmandu, Pokhara and Chitwan National Park.",
+   "notes": "Split off from India & Himalaya Expedition 🏔️ as part of the 2026-07 modularization analysis (see ROUTE_BUILDER_MODULES.md). Country, days and budget are carried over unchanged (incl. the 2026-07 price correction for the mandatory guide/porter on Annapurna trekking days). India & Himalaya Expedition 🏔️ itself remains unchanged as a separate, full expedition.\n\nRoute-logic review (2026-08): coordinates per destination added; TIMS is in practice no longer checked on Annapurna trails and TAAN dropped the minimum-2-trekkers requirement (22 March 2026) — see India & Himalaya Expedition 🏔️'s own Nepal notes for details.",
+   "distance": {
+    "id": "gt_seed_nepal",
+    "name": "Nepal 🏔️",
+    "stops": 7,
+    "km_in_route": 540,
+    "km_from_nl": 8900,
+    "km_back_to_nl": 9070,
+    "km_by_country": {
+     "NP": 540
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "NP",
+     "country": "Nepal",
+     "days": 21,
+     "budget": 1260,
+     "dailyRate": 60,
+     "carInDailyRate": false,
+     "inDailyRate": "mandatory trekking guide + porter in the rate",
+     "notes": "Entry: flight Amsterdam-Kathmandu, with a connection (±13-16 hours, from ±€550-950 return, November is the peak trekking season so prices are on the higher side). Price indication from 2026-08 web research, a snapshot. Price correction (2026-07): €47.60→€60/day. Annapurna trekking days cost more than the average: a mandatory guide (since 2023, no more solo trekking) plus porter together already run $50-60/day, plus TIMS/ACAP permits (~$50 one-off). Update (2026-08, search-confirmed): the TIMS card is still officially required but in practice is no longer checked on Annapurna trails (the ACAP permit is the only one actually checked); on 22 March 2026 TAAN dropped the requirement of a minimum of 2 trekkers per group — solo trekking with a guide is now allowed too.",
+     "transport_to_next": "End of the expedition — return flight Kathmandu-Amsterdam, with a connection (e.g. via Doha or Istanbul, ±13-16 hours, from ±€350-550 return, no direct connection from Kathmandu). Price indication from 2026-08 web research, a snapshot.",
+     "destinations": [
+      {
+       "name": "Lumbini",
+       "lat": 27.4833,
+       "lng": 83.2767
+      },
+      {
+       "name": "Chitwan National Park",
+       "lat": 27.5291,
+       "lng": 84.3542
+      },
+      {
+       "name": "Pokhara",
+       "lat": 28.2096,
+       "lng": 83.9856
+      },
+      {
+       "name": "Annapurna Region",
+       "lat": 28.5308,
+       "lng": 83.8797
+      },
+      {
+       "name": "Kathmandu",
+       "lat": 27.7172,
+       "lng": 85.324
+      },
+      {
+       "name": "Patan",
+       "lat": 27.6588,
+       "lng": 85.3247
+      },
+      {
+       "name": "Bhaktapur",
+       "lat": 27.671,
+       "lng": 85.4298
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_gulf-states-trio",
+   "name": "Gulf States Trio 🛢️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Short Gulf flights between the three countries.",
+   "description": "Muscat, Nizwa and the Omani desert, followed by Manama in Bahrain and Doha in Qatar.",
+   "notes": "Split off from Mediterranean Civilizations Expedition 🏛️ (via Egypt & Arabian Peninsula 🐪) as part of the sixth batch of standalone countries (2026-08). Countries, days and budgets are carried over unchanged. ⚠️⚠️ IMPORTANT NOTE: the regional Iran-Israel/US conflict is still fully ongoing (2026-08) — Bahrain is at RED (hard no-go, no Dutch embassy), Qatar at orange (\"not a good time for a vacation trip\"), and even Oman has orange zones just outside this route. This is explicitly not a minor travel-advisory nuance but the highest risk category for a third of this route. Exactly the same trade-off as for the parent expedition: Route Builder is the aspirational/someday layer, so the route stays as planned, but check nederlandwereldwijd.nl yourself thoroughly and recently (these advisories are updated every 2-4 weeks) shortly before any actual trip, and be prepared to cut Bahrain (and possibly Qatar) if the situation hasn't improved. Mediterranean Civilizations Expedition 🏛️ and Egypt & Arabian Peninsula 🐪 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_gulf-states-trio",
+    "name": "Gulf States Trio 🛢️",
+    "stops": 8,
+    "km_in_route": 1860,
+    "km_from_nl": 7120,
+    "km_back_to_nl": 6350,
+    "km_by_country": {
+     "OM": 440,
+     "BH": 1230,
+     "QA": 190
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "OM",
+     "country": "Oman",
+     "days": 7,
+     "budget": 770,
+     "dailyRate": 110,
+     "carInDailyRate": true,
+     "inDailyRate": "4x4 rental/tour for Jebel Shams/Wahiba is in the rate",
+     "notes": "Entry: direct KLM flight Amsterdam-Muscat (±6h50-7h; from ±€1,190-1,300 return — higher than historically usual due to regional tensions; best period November). Price indication from 2026-08 web research, a snapshot. Arabian trade routes, forts (Nizwa) and both mountains (Jebel Shams) and desert (Wahiba Sands) within short reach of each other. Travel advisory (2026-08, live reconfirmed): Muscat/Nizwa/Jebel Shams/Wahiba Sands remain yellow — only Musandam and the ports of Duqm/Salalah/Sohar are orange (not on this route).",
+     "transport_to_next": "Flight Muscat-Manama.",
+     "destinations": [
+      {
+       "name": "Muscat",
+       "lat": 23.588,
+       "lng": 58.3829
+      },
+      {
+       "name": "Nizwa",
+       "lat": 22.9333,
+       "lng": 57.5333
+      },
+      {
+       "name": "Jebel Shams",
+       "lat": 23.2394,
+       "lng": 57.2661
+      },
+      {
+       "name": "Wahiba Sands",
+       "lat": 22.0667,
+       "lng": 58.5
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "BH",
+     "country": "Bahrain",
+     "days": 3,
+     "budget": 177,
+     "dailyRate": 59,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "⚠️⚠️ Travel advisory (2026-08, live reconfirmed): still RED — \"do not travel here under any circumstances\". Iran has been regularly attacking military targets in Bahrain since July 9, 2026; no Dutch embassy on the ground (nearest: Kuwait). No direct flight available from Amsterdam. No improvement compared to earlier checks.",
+     "transport_to_next": "Flight Manama-Doha.",
+     "destinations": [
+      {
+       "name": "Qal'at al-Bahrain (Bahrain Fort)",
+       "lat": 26.2333,
+       "lng": 50.5217
+      },
+      {
+       "name": "Bahrain National Museum",
+       "lat": 26.2367,
+       "lng": 50.5936
+      },
+      {
+       "name": "Al Fateh Grand Mosque",
+       "lat": 26.2361,
+       "lng": 50.5464
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "QA",
+     "country": "Qatar",
+     "days": 3,
+     "budget": 210,
+     "dailyRate": 70,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "⚠️ Travel advisory (2026-08, live reconfirmed): orange — \"not a good time for a vacation trip\", only necessary travel. Qatar Airways only resumed its full schedule on August 8, 2026 after earlier suspensions. Entry/exit flight Amsterdam-Doha (Qatar Airways, direct, ±6h15; from ±€700-1,050 return, also raised by the regional situation).",
+     "transport_to_next": "End of this route — return flight from Doha to Amsterdam.",
+     "destinations": [
+      {
+       "name": "Doha",
+       "lat": 25.2854,
+       "lng": 51.531
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_philippines",
+   "name": "Philippines 🏖️",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — domestic flights between the island groups, boat trips for El Nido/Coron.",
+   "description": "Manila, Banaue, the islands of El Nido and Coron, Siargao, Bohol and Cebu.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — island-hopping in its own way, different from Vietnam/Thailand. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_philippines",
+    "name": "Philippines 🏖️",
+    "stops": 7,
+    "km_in_route": 2690,
+    "km_from_nl": 13510,
+    "km_back_to_nl": 14250,
+    "km_by_country": {
+     "PH": 2690
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "PH",
+     "country": "Philippines",
+     "days": 21,
+     "budget": 756,
+     "dailyRate": 36,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Manila (±15 hours; from ±€700-900 return; best period February — September is cheaper flight-wise but falls outside this route's best season). Price indication from 2026-08 web research, a snapshot. Revised (2026-08): a round trip instead of a fixed base in Manila. Multi-day boat expedition El Nido-Coron (e.g. Tao Philippines style) added — extra cost ~€160-220 all-in, on top of the daily budget. Cebu is the natural endpoint: all flights between Coron/Siargao/Bohol run via Cebu or Manila anyway.",
+     "transport_to_next": "End of this route — back to Manila (domestic flight from Cebu), then a direct KLM return flight Manila-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Manila",
+       "lat": 14.5995,
+       "lng": 120.9842
+      },
+      {
+       "name": "Banaue",
+       "lat": 16.9166,
+       "lng": 121.0562
+      },
+      {
+       "name": "El Nido",
+       "lat": 11.1949,
+       "lng": 119.4079
+      },
+      {
+       "name": "Coron",
+       "lat": 12.0083,
+       "lng": 120.2036
+      },
+      {
+       "name": "Siargao",
+       "lat": 9.7897,
+       "lng": 126.1578
+      },
+      {
+       "name": "Bohol",
+       "lat": 9.6474,
+       "lng": 123.8536
+      },
+      {
+       "name": "Cebu",
+       "lat": 10.3157,
+       "lng": 123.8854
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_thailand",
+   "name": "Thailand 🛕",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses/trains, a domestic flight Chiang Mai-Bangkok.",
+   "description": "From Chiang Mai and Sukhothai via Bangkok to the islands and beaches around Krabi.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick) — one of the most-visited countries in the world. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_thailand",
+    "name": "Thailand 🛕",
+    "stops": 6,
+    "km_in_route": 1860,
+    "km_from_nl": 11220,
+    "km_back_to_nl": 12640,
+    "km_by_country": {
+     "TH": 1860
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TH",
+     "country": "Thailand",
+     "days": 18,
+     "budget": 684,
+     "dailyRate": 38,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: direct KLM flight Amsterdam-Bangkok (±11h15; from ±€650-900 return; best period December), with a domestic connection to Chiang Mai. Price indication from 2026-08 web research, a snapshot. Revised (2026-08): entry now from Laos in the north (Chiang Khong), so Chiang Mai is now the first stop instead of Bangkok. Travel advisory (2026-07): yellow for the entire travel area, with red/orange border strips near Cambodia and at the far south/Myanmar border — not relevant to this route. Visa-free stay may be shortened from 60 to 30 days (cabinet decision May 2026, not yet published) — check the current duration shortly before departure.",
+     "transport_to_next": "End of this route — return flight from Krabi/Phuket to Bangkok, then a direct KLM return flight Bangkok-Amsterdam.",
+     "destinations": [
+      {
+       "name": "Chiang Mai",
+       "lat": 18.7883,
+       "lng": 98.9853
+      },
+      {
+       "name": "Sukhothai",
+       "lat": 17.0067,
+       "lng": 99.8264
+      },
+      {
+       "name": "Ayutthaya",
+       "lat": 14.3532,
+       "lng": 100.568
+      },
+      {
+       "name": "Bangkok",
+       "lat": 13.7563,
+       "lng": 100.5018
+      },
+      {
+       "name": "Krabi/islands",
+       "lat": 8.0863,
+       "lng": 98.9063
+      },
+      {
+       "name": "Koh Lipe",
+       "lat": 6.4794,
+       "lng": 99.3006
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_central-asia",
+   "name": "Central Asia 🐎",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — overland (bus, shared taxi, Pamir Highway jeep) between the four countries.",
+   "description": "The four \"Stans\": Almaty, the Pamir Highway, and the Silk Road cities of Samarkand, Bukhara and Khiva.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own \"Strong\" block in ROUTE_BUILDER_MODULES.md — \"visa/season-bound to the Pamir Highway, exactly the kind of self-contained-identity block\") as part of this third batch of standalone countries (2026-08, Youri's own second top-10 pick). Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.\n\nAt 4 countries and ~45 days this is the longest/broadest of all standalone country routes so far — see README.md for the note that this could later be split further (e.g. Kazakhstan+Kyrgyzstan separate from Tajikistan+Uzbekistan), the same way the big expeditions were split earlier.",
+   "distance": {
+    "id": "gt_seed_central-asia",
+    "name": "Central Asia 🐎",
+    "stops": 18,
+    "km_in_route": 6690,
+    "km_from_nl": 6810,
+    "km_back_to_nl": 6330,
+    "km_by_country": {
+     "KZ": 1560,
+     "KG": 1620,
+     "TJ": 1500,
+     "UZ": 2000
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "KZ",
+     "country": "Kazakhstan",
+     "days": 8,
+     "budget": 328,
+     "dailyRate": 41,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Almaty, with a connection (e.g. via Istanbul, ±10-15 hours incl. connection; from ±€250-650 return — January is usually the cheapest flight month, but falls outside this route's mountain season; best travel period June). Price indication from 2026-08 web research, a snapshot. Nur-Sultan/Astana deliberately cut (2026-08) — it was an isolated 1200 km detour too far out of the route; the rest of Kazakhstan now forms one continuous southern loop, no more backtracking needed.",
+     "transport_to_next": "Bus or shared taxi Almaty-Bishkek, overland, busy but easy border crossing",
+     "destinations": [
+      {
+       "name": "Almaty",
+       "lat": 43.2567,
+       "lng": 76.9286
+      },
+      {
+       "name": "Charyn Canyon",
+       "lat": 43.35,
+       "lng": 79.0667
+      },
+      {
+       "name": "Turkistan",
+       "lat": 43.2975,
+       "lng": 68.2517
+      },
+      {
+       "name": "Shymkent",
+       "lat": 42.3417,
+       "lng": 69.5901
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "KG",
+     "country": "Kyrgyzstan",
+     "days": 12,
+     "budget": 384,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "",
+     "transport_to_next": "Shared jeep over the Pamir Highway Osh-Khorog, overland, rough terrain, GBAO permit/visa needed for Tajikistan",
+     "destinations": [
+      {
+       "name": "Bishkek",
+       "lat": 42.8746,
+       "lng": 74.5698
+      },
+      {
+       "name": "Issyk-Kul",
+       "lat": 42.65,
+       "lng": 77.0833
+      },
+      {
+       "name": "Karakol",
+       "lat": 42.4907,
+       "lng": 78.3936
+      },
+      {
+       "name": "Song-Kul",
+       "lat": 41.8333,
+       "lng": 75.1333
+      },
+      {
+       "name": "Osh",
+       "lat": 40.5283,
+       "lng": 72.7985
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "country_code": "TJ",
+     "country": "Tajikistan",
+     "days": 14,
+     "budget": 448,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The GBAO permit for the Pamir Highway can be added directly to the e-visa application (tick the box, +/-$20, total +/-$70). The Pamir jeep/driver (Khorog-Murghab area) is a separate, real cost on top of the daily budget: private 4x4+driver $150-400/day (often shared), shared taxi from ~$30-40 p.p. — arrange this through a local guesthouse/CBT/PECTA in Khorog. Khorog/GBAO has had periods of unrest in the past (most recently 2022) — check the current situation shortly before departure.",
+     "transport_to_next": "Bus or shared taxi Dushanbe-Samarkand, overland, border crossing can be time-consuming",
+     "destinations": [
+      {
+       "name": "Khorog",
+       "lat": 37.4913,
+       "lng": 71.5551
+      },
+      {
+       "name": "Pamir Highway",
+       "lat": 37.8944,
+       "lng": 73.0139
+      },
+      {
+       "name": "Murghab",
+       "lat": 38.1706,
+       "lng": 74.0114
+      },
+      {
+       "name": "Iskanderkul",
+       "lat": 39.0736,
+       "lng": 68.3667
+      },
+      {
+       "name": "Dushanbe",
+       "lat": 38.5598,
+       "lng": 68.787
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "country_code": "UZ",
+     "country": "Uzbekistan",
+     "days": 11,
+     "budget": 385,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "A domestic flight Urgench (Khiva)-Tashkent is needed to keep this compact (~1.5h) — the road Khiva-Tashkent is >30 hours and not realistic.",
+     "transport_to_next": "End of this route — return flight from Tashkent to Amsterdam (1 stopover, e.g. via Istanbul).",
+     "destinations": [
+      {
+       "name": "Samarkand",
+       "lat": 39.627,
+       "lng": 66.9749
+      },
+      {
+       "name": "Bukhara",
+       "lat": 39.7747,
+       "lng": 64.4286
+      },
+      {
+       "name": "Khiva",
+       "lat": 41.3775,
+       "lng": 60.3639
+      },
+      {
+       "name": "Tashkent",
+       "lat": 41.2995,
+       "lng": 69.2401
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_uzbekistan-tajikistan",
+   "name": "Uzbekistan & Tajikistan 🌄",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train/marshrutka in Uzbekistan, shared taxi/jeep on the Pamir Highway in Tajikistan — a genuine overland route, the two countries share a border near Samarkand/Panjakent.",
+   "description": "The Silk Road cities of Samarkand, Bukhara, Khiva and Tashkent, followed by the Pamir Highway, Murghab and Dushanbe.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫 and the existing combo route Central Asia 🐎) as part of the note on Central Asia 🐎 to split it further. Countries, days and budgets are carried over unchanged. Replaces the earlier-built \"Kazakhstan & Tajikistan\" combo (2026-08) — that one flew over Kyrgyzstan/Uzbekistan because Kazakhstan and Tajikistan don't share a border; Uzbekistan and Tajikistan do share a border (near Samarkand/Panjakent, the Jartepa/Sarazm crossing), making this a more logical, fully overland-doable combo — Youri's own preference. Tajikistan visa: e-visa ($30) with an optional GBAO permit for the Pamir Highway applied for at the same time (+$20) — arrange well in advance, not available on arrival. Eurasia Grand Tour 🌏, West Eurasia Overland 🐫 and Central Asia 🐎 themselves continue to exist unchanged (as do Kyrgyzstan 🐴 and Uzbekistan 🐪, which also already exist standalone from batch 4).",
+   "distance": {
+    "id": "gt_seed_uzbekistan-tajikistan",
+    "name": "Uzbekistan & Tajikistan 🌄",
+    "stops": 9,
+    "km_in_route": 3390,
+    "km_from_nl": 6280,
+    "km_back_to_nl": 6530,
+    "km_by_country": {
+     "UZ": 1750,
+     "TJ": 1640
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "UZ",
+     "country": "Uzbekistan",
+     "days": 11,
+     "budget": 385,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Tashkent, with a connection via Istanbul (Turkish Airlines, ±9-12 hours total; from ±€500-700 return; best period June-September, needed for the high-altitude Pamir Highway later in the route). Price indication from 2026-08 web research, a snapshot. A domestic flight Urgench (Khiva)-Tashkent is needed to keep this compact (~1.5h) — the road Khiva-Tashkent is >30 hours and not realistic.",
+     "transport_to_next": "Back to Samarkand (±300 km from Tashkent, ±2h on the Afrosiyob high-speed train), then a marshrutka/shared taxi to Panjakent and the Jartepa/Sarazm border crossing (±60 km, a common crossing, usually without issues) into Tajikistan. Check the current border status shortly before departure (e.g. via caravanistan.com) — the border has been reliably open since 2018, but has had periods of temporary closure in the past.",
+     "destinations": [
+      {
+       "name": "Samarkand",
+       "lat": 39.627,
+       "lng": 66.9749
+      },
+      {
+       "name": "Bukhara",
+       "lat": 39.7747,
+       "lng": 64.4286
+      },
+      {
+       "name": "Khiva",
+       "lat": 41.3775,
+       "lng": 60.3639
+      },
+      {
+       "name": "Tashkent",
+       "lat": 41.2995,
+       "lng": 69.2401
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "TJ",
+     "country": "Tajikistan",
+     "days": 14,
+     "budget": 448,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "The GBAO permit for the Pamir Highway can be added directly to the e-visa application (tick the box, +/-$20, total +/-$70). The Pamir jeep/driver (Khorog-Murghab area) is a separate, real cost on top of the daily budget: private 4x4+driver $150-400/day (often shared), shared taxi from ~$30-40 p.p. — arrange this through a local guesthouse/CBT/PECTA in Khorog. Khorog/GBAO has had periods of unrest in the past (most recently 2022) — check the current situation shortly before departure.",
+     "transport_to_next": "End of this route — return flight from Dushanbe to Amsterdam (1 stopover via Istanbul, Turkish Airlines; ±9-12 hours total).",
+     "destinations": [
+      {
+       "name": "Khorog",
+       "lat": 37.4913,
+       "lng": 71.5551
+      },
+      {
+       "name": "Pamir Highway",
+       "lat": 37.8944,
+       "lng": 73.0139
+      },
+      {
+       "name": "Murghab",
+       "lat": 38.1706,
+       "lng": 74.0114
+      },
+      {
+       "name": "Iskanderkul",
+       "lat": 39.0736,
+       "lng": 68.3667
+      },
+      {
+       "name": "Dushanbe",
+       "lat": 38.5598,
+       "lng": 68.787
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_bodrum-aegean-coast-6-days",
+   "name": "Bodrum + Aegean Coast (6 days) 🏰",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Based in Bodrum, plus a ferry day trip to Kos.",
+   "description": "Bodrum's castle, marina and beach clubs, the Yalıkavak marina, and a ferry day trip to Kos.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a beach/nightlife-focused counterpart to the history-focused Izmir + Aegean Coast route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_bodrum-aegean-coast-6-days",
+    "name": "Bodrum + Aegean Coast (6 days) 🏰",
+    "stops": 2,
+    "km_in_route": 20,
+    "km_from_nl": 3140,
+    "km_back_to_nl": 3120,
+    "km_by_country": {
+     "TR": 20
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 6,
+     "budget": 306,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Beach and nightlife focus, unlike Izmir's history focus above. Bodrum (3-4 days: the castle, the marina, the Bar Street/Gümbet beach clubs, the Halikarnas open-air club) plus the Yalıkavak marina and a ferry day trip to Kos. Budget ~€90-105/day (Bodrum runs pricier than Izmir, nightlife and beach clubs push the price up, especially July-August). Season: June-September for beach/nightlife (the town's population swells from 35k to 300k+ in July); May/September are a quieter, cheaper alternative. Web check (2026-08): the Bodrum-Kos ferry costs ~€20-35 one-way (€35-60 return), a 20-30 minute catamaran crossing, 3-6x/day June-September, far fewer sailings off-season — book ahead in high season. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "End of this route — fly home from Bodrum.",
+     "destinations": [
+      {
+       "name": "Bodrum (castle & marina)",
+       "lat": 37.0344,
+       "lng": 27.4305
+      },
+      {
+       "name": "Yalıkavak",
+       "lat": 37.1053,
+       "lng": 27.2733
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
+   "name": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Based in Izmir, day trip to Ephesus, a few days in Çeşme.",
+   "description": "Izmir, ancient Ephesus, and the seaside town of Çeşme.",
+   "notes": "Built (2026-08) as part of Phase 2 batch 10/21 (Eastern Mediterranean: Greece + Cyprus + Turkey) converting EUROPA_TRIP_IDEAS.md into Route Builder content — a history-focused counterpart to the beach/nightlife-focused Bodrum + Aegean Coast route. Not yet checked against Route Builder-level price research — treat as a first concept, not a bookable plan.",
+   "distance": {
+    "id": "gt_seed_izmir-aegean-coast-ephesus-cesme-5-days",
+    "name": "Izmir + Aegean Coast: Ephesus & Çeşme (5 days) 📜",
+    "stops": 4,
+    "km_in_route": 210,
+    "km_from_nl": 2970,
+    "km_back_to_nl": 2920,
+    "km_by_country": {
+     "TR": 210
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "TR",
+     "country": "Turkey",
+     "days": 5,
+     "budget": 255,
+     "dailyRate": 51,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "History-heavy, unlike Bodrum's beach/nightlife focus below. Izmir (2 days, the city and ancient Smyrna) plus a day trip to Ephesus from Selçuk/Kuşadası, then Çeşme (2 days, a quiet seaside town, optionally a ferry trip to Chios). Budget ~€65-75/day (Izmir is the cheapest of the coastal options). Season: April-June or September-October (Ephesus gets very hot in summer with little shade among the ruins — go early). Web check (2026-08): 2026 Ephesus entry is €40 (including the now-mandatory new 'Ephesus Experience' museum), the Terrace Houses cost an extra €15; in summer (3 June-1 October) there's an evening opening Wed-Sat until 23:00, but after 18:45 only the lower level is accessible and the Terrace Houses are already closed by then. The Çeşme-Chios ferry runs ~€25-30 one-way, 20-30 minutes, year-round but with more frequency in summer. Visa (visa-exempt, max 90/180 days), travel advisory (yellow) and earthquake/lira notes: see the standalone Istanbul trip.",
+     "transport_to_next": "End of this route — fly home from Izmir.",
+     "destinations": [
+      {
+       "name": "Izmir",
+       "lat": 38.4237,
+       "lng": 27.1428
+      },
+      {
+       "name": "Selçuk",
+       "lat": 37.95,
+       "lng": 27.3667
+      },
+      {
+       "name": "Ephesus",
+       "lat": 37.941,
+       "lng": 27.3417
+      },
+      {
+       "name": "Çeşme",
+       "lat": 38.3225,
+       "lng": 26.3033
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_uzbekistan",
+   "name": "Uzbekistan 🐪",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Train/bus between the Silk Road cities — Samarkand-Bukhara-Khiva-Tashkent is well connected by domestic high-speed trains.",
+   "description": "The Silk Road cities of Samarkand, Bukhara, Khiva and Tashkent.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via West Eurasia Overland 🐫, where this already stood as its own \"Strong\" block in ROUTE_BUILDER_MODULES.md — \"classic Silk Road city trip\") as part of this fourth batch of standalone countries (2026-08). Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and West Eurasia Overland 🐫 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_uzbekistan",
+    "name": "Uzbekistan 🐪",
+    "stops": 4,
+    "km_in_route": 1750,
+    "km_from_nl": 6280,
+    "km_back_to_nl": 6330,
+    "km_by_country": {
+     "UZ": 1750
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "UZ",
+     "country": "Uzbekistan",
+     "days": 11,
+     "budget": 385,
+     "dailyRate": 35,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Tashkent, with a connection via Istanbul (Turkish Airlines, ±10h20 total; from ±€500-700 return; best period September-October). Price indication from 2026-08 web research, a snapshot. A domestic flight Urgench (Khiva)-Tashkent is needed to keep this compact (~1.5h) — the road Khiva-Tashkent is >30 hours and not realistic.",
+     "transport_to_next": "End of this route — return flight from Tashkent to Amsterdam (1 stopover via Istanbul).",
+     "destinations": [
+      {
+       "name": "Samarkand",
+       "lat": 39.627,
+       "lng": 66.9749
+      },
+      {
+       "name": "Bukhara",
+       "lat": 39.7747,
+       "lng": 64.4286
+      },
+      {
+       "name": "Khiva",
+       "lat": 41.3775,
+       "lng": 60.3639
+      },
+      {
+       "name": "Tashkent",
+       "lat": 41.2995,
+       "lng": 69.2401
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_vietnam-cambodia",
+   "name": "Vietnam & Cambodia 🛺",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — domestic flight Hanoi-Ho Chi Minh City, bus/boat across the Mekong Delta into Cambodia.",
+   "description": "From Hanoi and the Ha Giang Loop via Ho Chi Minh City to Phnom Penh, Siem Reap and Angkor Wat.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕, where this was already the \"Mainland Southeast Asia\" block, \"Strong — the classic SEA backpacker route\" per ROUTE_BUILDER_MODULES.md) as part of this fifth batch of standalone countries (2026-08) — deliberately just the Vietnam/Cambodia pairing here, without Laos/Thailand. Countries, days and budgets are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_vietnam-cambodia",
+    "name": "Vietnam & Cambodia 🛺",
+    "stops": 12,
+    "km_in_route": 4400,
+    "km_from_nl": 11540,
+    "km_back_to_nl": 12410,
+    "km_by_country": {
+     "VN": 3140,
+     "KH": 1260
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "VN",
+     "country": "Vietnam",
+     "days": 17,
+     "budget": 544,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Hanoi — from June 16, 2026 direct with Vietnam Airlines (3x/week, ±11-12 hours), otherwise with 1 stopover (e.g. via Istanbul/Doha/Munich, ±14-16 hours total); from ±€700-1,000 return (open-jaw with the Cambodia exit); best period May/September-October. Price indication from 2026-08 web research, a snapshot. Revised (2026-08): Hue, Hoi An and Da Nang deliberately cut (already visited); Ha Giang Loop added as a highlight from Hanoi. Domestic flight Hanoi-Ho Chi Minh City (~2h, frequent and cheap) replaces the coastal route. Da Lat and Phu Quoc are side trips from HCMC. Extra costs (not in the daily budget): guide+motorbike for the Ha Giang Loop (~€35-45/day, usually 'easy rider' style rather than self-driving given the notorious mountain roads), domestic flight Hanoi-HCMC (~€40-60).",
+     "transport_to_next": "Bus/boat across the Mekong Delta from Ho Chi Minh City to Phnom Penh, border crossing Bavet/Moc Bai, overland — one of the region's classic backpacker border crossings",
+     "destinations": [
+      {
+       "name": "Hanoi",
+       "lat": 21.0285,
+       "lng": 105.8542
+      },
+      {
+       "name": "Ha Giang Loop",
+       "lat": 22.8256,
+       "lng": 104.9784
+      },
+      {
+       "name": "Ha Long Bay",
+       "lat": 20.9101,
+       "lng": 107.1839
+      },
+      {
+       "name": "Ho Chi Minh City",
+       "lat": 10.8231,
+       "lng": 106.6297
+      },
+      {
+       "name": "Da Lat",
+       "lat": 11.9404,
+       "lng": 108.4583
+      },
+      {
+       "name": "Phu Quoc",
+       "lat": 10.227,
+       "lng": 103.967
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "country_code": "KH",
+     "country": "Cambodia",
+     "days": 12,
+     "budget": 525,
+     "dailyRate": 44,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Revised (2026-08): entry now from Ho Chi Minh City (Mekong Delta route) instead of from Thailand, so the old Poipet border warning no longer applies here. Travel advisory (updated 2026-08): yellow for the entire country; the border crossing to Laos at Stung Treng carries no elevated risk. Angkor Wat entry (3-day ticket ~$62) is a separate cost, not just food/accommodation/local transport.",
+     "transport_to_next": "End of this route — return flight from Phnom Penh or Siem Reap to Amsterdam (1-2 stopovers, e.g. via Bangkok/Singapore/Doha).",
+     "destinations": [
+      {
+       "name": "Phnom Penh",
+       "lat": 11.5564,
+       "lng": 104.9282
+      },
+      {
+       "name": "Koh Rong",
+       "lat": 10.7,
+       "lng": 103.2
+      },
+      {
+       "name": "Battambang",
+       "lat": 13.0957,
+       "lng": 103.2022
+      },
+      {
+       "name": "Siem Reap",
+       "lat": 13.3671,
+       "lng": 103.8448
+      },
+      {
+       "name": "Angkor Wat",
+       "lat": 13.4125,
+       "lng": 103.867
+      },
+      {
+       "name": "Stung Treng",
+       "lat": 13.5259,
+       "lng": 105.9683
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gt_seed_vietnam",
+   "name": "Vietnam 🛵",
+   "mode": "public",
+   "carInBudgetWording": "n/a",
+   "carEvidence": "",
+   "travel_style": "Backpacker — local buses, the Ha Giang Loop with a guide/motorbike, a domestic flight Hanoi-HCMC.",
+   "description": "From Hanoi and the Ha Giang Loop via Ha Long Bay to Ho Chi Minh City, Da Lat and Phu Quoc.",
+   "notes": "Split off from Eurasia Grand Tour 🌏 (via Southeast Asia Grand Loop 🛕) as part of this second batch of standalone countries (2026-08, Youri's own top-10 pick) — one of the most-booked backpacker destinations worldwide. Country, days and budget are carried over unchanged. Eurasia Grand Tour 🌏 and Southeast Asia Grand Loop 🛕 themselves continue to exist unchanged.",
+   "distance": {
+    "id": "gt_seed_vietnam",
+    "name": "Vietnam 🛵",
+    "stops": 6,
+    "km_in_route": 3140,
+    "km_from_nl": 11540,
+    "km_back_to_nl": 12620,
+    "km_by_country": {
+     "VN": 3140
+    }
+   },
+   "blocks": [
+    {
+     "index": 0,
+     "country_code": "VN",
+     "country": "Vietnam",
+     "days": 17,
+     "budget": 544,
+     "dailyRate": 32,
+     "carInDailyRate": false,
+     "inDailyRate": null,
+     "notes": "Entry: flight Amsterdam-Hanoi (±15-17 hours, usually 1 stopover; from ±€630-720 return; best period December). Price indication from 2026-08 web research, a snapshot. Revised (2026-08): Hue, Hoi An and Da Nang deliberately cut (already visited); Ha Giang Loop added as a highlight from Hanoi. Domestic flight Hanoi-Ho Chi Minh City (~2h, frequent and cheap) replaces the coastal route. Da Lat and Phu Quoc are side trips from HCMC. Extra costs (not in the daily budget): guide+motorbike for the Ha Giang Loop (~€35-45/day, usually 'easy rider' style rather than self-driving given the notorious mountain roads), domestic flight Hanoi-HCMC (~€40-60).",
+     "transport_to_next": "End of this route — return flight from Ho Chi Minh City to Amsterdam (1 stopover, no direct connection).",
+     "destinations": [
+      {
+       "name": "Hanoi",
+       "lat": 21.0285,
+       "lng": 105.8542
+      },
+      {
+       "name": "Ha Giang Loop",
+       "lat": 22.8256,
+       "lng": 104.9784
+      },
+      {
+       "name": "Ha Long Bay",
+       "lat": 20.9101,
+       "lng": 107.1839
+      },
+      {
+       "name": "Ho Chi Minh City",
+       "lat": 10.8231,
+       "lng": 106.6297
+      },
+      {
+       "name": "Da Lat",
+       "lat": 11.9404,
+       "lng": 108.4583
+      },
+      {
+       "name": "Phu Quoc",
+       "lat": 10.227,
+       "lng": 103.967
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
