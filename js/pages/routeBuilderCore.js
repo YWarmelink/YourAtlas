@@ -276,7 +276,7 @@ const RB_MIGRATE_FLAG_2026_10_BATCH2126_ROUTE_FIXES = 'atlas_grand_trips_migrate
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES = 'atlas_grand_trips_migrate_2026_10_quality_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_B = 'atlas_grand_trips_migrate_2026_10_quality_fixes_b_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_2B_FARES = 'atlas_grand_trips_migrate_2026_10_quality_2b_fares_v1';
-const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_C = 'atlas_grand_trips_migrate_2026_10_quality_fixes_c_v2';
+const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_C = 'atlas_grand_trips_migrate_2026_10_quality_fixes_c_v3';
 const RB_MIGRATE_FLAG_2026_10_MY_PLAN_NOTES = 'atlas_grand_trips_migrate_2026_10_my_plan_notes_v1';
 // Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
 // each later backfill batch still applies once to its own routes).

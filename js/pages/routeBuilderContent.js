@@ -33949,8 +33949,20 @@ const RB_QUALITY_2026_10C_TEXT_FIXES = [
     'no separate application per island needed (web check 2026-10: confirmed; the £20 fee applies since 8 April 2026).'],
 ];
 
+// Australia: Dutch passports need the free eVisitor (subclass 651; the paid ETA is for other nationalities). €0, but
+// listed so the cost panel and the CSV export show it has to be applied for. On each route's first Australia block.
+const RB_AU_EVISITOR = { label: 'eVisitor (subclass 651), free: apply online via ImmiAccount before travel, valid 12 months, max 3 months per visit',
+                         cost: 0, category: 'visa', optional: false };
+
 function rbFixQuality202610cRoute(route) {
-  return rbApplyBlockTextFixes(route, RB_QUALITY_2026_10C_TEXT_FIXES);
+  let changed = rbApplyBlockTextFixes(route, RB_QUALITY_2026_10C_TEXT_FIXES);
+  const blocks = route.blocks || [];
+  const au = blocks.find(b => b.country_code === 'AU');
+  if (au && !blocks.some(b => b.country_code === 'AU' && (b.extras || []).some(e => e.category === 'visa'))) {
+    au.extras = [...(au.extras || []), { ...RB_AU_EVISITOR }];
+    changed = true;
+  }
+  return changed;
 }
 
 function rbQuality202610cRouteIds() {
