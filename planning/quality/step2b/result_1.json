@@ -1,0 +1,288 @@
+[
+ {
+  "id": "L1",
+  "leg": "Ushuaia-AMS",
+  "airport_code": "USH",
+  "direction": "back",
+  "eur_one_way": 1200,
+  "routing": "Aerolineas USH-AEP + long-haul via EZE/MAD",
+  "confidence": "low",
+  "sources": [
+   "https://nz.trip.com/flights/ushuaia-to-amsterdam/airfares-ush-ams"
+  ],
+  "note": "Only Trip.com NZD 3,547 cheapest one-way (~1,750 EUR) for USH-AMS; reverse AMS-USH one-way floors $1,595 (~1,420 EUR), GBP 844 (~975 EUR); lower-middle estimate"
+ },
+ {
+  "id": "L2",
+  "leg": "AMS-Christchurch",
+  "airport_code": "CHC",
+  "direction": "out",
+  "eur_one_way": 900,
+  "routing": "2-stop via Gulf/Asia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html",
+   "https://www.nz.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Christchurch-CHC",
+   "https://www.expedia.com/cn/lp/flights/ams/chc/amsterdam-to-christchurch"
+  ],
+  "note": "One-way quotes: 529 EUR, $724, $924, Kayak $1,343 (2 stops); lower-middle ~900"
+ },
+ {
+  "id": "L3",
+  "leg": "Cairns-AMS",
+  "airport_code": "CNS",
+  "direction": "back",
+  "eur_one_way": 750,
+  "routing": "1-2 stops via Gulf/Asia",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/cns/ams/cairns-to-amsterdam-schiphol.html",
+   "https://www.kayak.com.au/flight-routes/Cairns-CNS/Amsterdam-Schiphol-AMS",
+   "https://momondo.com.au/flights/cairns/amsterdam"
+  ],
+  "note": "One-way: Skyscanner 355 EUR (likely promo), Expedia $669, Kayak $764, momondo $938; ~750"
+ },
+ {
+  "id": "L4",
+  "leg": "Nadi-AMS",
+  "airport_code": "NAN",
+  "direction": "back",
+  "eur_one_way": 750,
+  "routing": "multi-stop via Asia/Gulf or LAX",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/nan/ams/nadi-to-amsterdam-schiphol.html",
+   "https://expedia.com/lp/flights/nan/ams/nadi-to-amsterdam"
+  ],
+  "note": "Skyscanner one-way 702 EUR, Expedia $778; typical ~750"
+ },
+ {
+  "id": "L5",
+  "leg": "La Paz-AMS",
+  "airport_code": "LPB",
+  "direction": "back",
+  "eur_one_way": 800,
+  "routing": "1-stop via Lima/Bogota/Madrid",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/lpb/ams/la-paz-to-amsterdam-schiphol.html",
+   "https://www.expedia.com/lp/flights/6053938/6055842/la-paz-to-texel-island"
+  ],
+  "note": "Skyscanner one-way 552 EUR (low), Expedia $904, Travelocity $886; ~800"
+ },
+ {
+  "id": "L6",
+  "leg": "AMS-Puerto Montt",
+  "airport_code": "PMC",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "via Santiago",
+  "confidence": "low",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/pmc/amsterdam-schiphol-to-puerto-montt.html",
+   "https://in.trip.com/flights/amsterdam-to-puerto-montt/airfares-ams-pmc"
+  ],
+  "note": "Skyscanner return from 841 EUR; Trip.com one-way mixed (~570 old one-stop, ~1,250 cheapest); no solid one-way, kept ~800"
+ },
+ {
+  "id": "L7",
+  "leg": "Maun-AMS via Johannesburg",
+  "airport_code": "MUB",
+  "direction": "back",
+  "eur_one_way": 800,
+  "routing": "Maun-JNB + JNB-AMS (or via ADD/NBO)",
+  "confidence": "low",
+  "sources": [
+   "https://www.rome2rio.com/s/Maun/Amsterdam",
+   "https://nz.trip.com/flights/maun-to-amsterdam/airfares-mub-ams"
+  ],
+  "note": "Rome2Rio 500-1,000 EUR; Trip.com NZD 1,436-1,743 (~720-870 EUR); ~800"
+ },
+ {
+  "id": "L8",
+  "leg": "AMS-Paramaribo KLM direct",
+  "airport_code": "PBM",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "KLM direct",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/pbm/amsterdam-to-paramaribo",
+   "https://www.travelocity.com/lp/flight-routes/klm-from-schiphol-to-johan-adolf-pengel-intl/kl/ams/pbm",
+   "https://www.skyscanner.ie/routes/ams/pbma/amsterdam-schiphol-to-paramaribo.html"
+  ],
+  "note": "Expedia one-way $772 (~690 EUR), KLM $1,130 (~1,010 EUR), Skyscanner 744-840 EUR; ~800"
+ },
+ {
+  "id": "L9",
+  "leg": "Rarotonga-AMS",
+  "airport_code": "RAR",
+  "direction": "back",
+  "eur_one_way": 1500,
+  "routing": "via AKL/LAX/PPT, 2+ stops",
+  "confidence": "low",
+  "sources": [
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Rarotonga-RAR/market.html",
+   "https://www.rome2rio.com/s/Rarotonga/Amsterdam"
+  ],
+  "note": "Farecompare avg one-way $946; Rome2Rio $1,100-4,100; no solid quote; ~1,500"
+ },
+ {
+  "id": "L10",
+  "leg": "AMS-Antananarivo 1 stop",
+  "airport_code": "TNR",
+  "direction": "out",
+  "eur_one_way": 700,
+  "routing": "1 stop (Addis/Nairobi/Paris/Istanbul)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelocity.com/lp/flights/ams/tnr/amsterdam-to-antananarivo",
+   "https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-ivato-intl/kl/ams/tnr",
+   "https://skyscanner.ie/routes/ams/tnr/amsterdam-schiphol-to-antananarivo.html"
+  ],
+  "note": "One-way: Ethiopian $657, Travelocity $648, KLM $1,105-1,222, Skyscanner 472 EUR (stale); ~700"
+ },
+ {
+  "id": "L11",
+  "leg": "AMS-Wellington",
+  "airport_code": "WLG",
+  "direction": "out",
+  "eur_one_way": 900,
+  "routing": "2-3 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/wlg/amsterdam-to-wellington",
+   "https://www.travelocity.com/lp/flights/ams/wlg/schiphol-to-wellington-intl",
+   "https://www.nz.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Wellington-WLG"
+  ],
+  "note": "One-way $960 (Expedia), $1,019 (Travelocity), Kayak $1,584 (3 stops); ~900"
+ },
+ {
+  "id": "L12",
+  "leg": "AMS-Kilimanjaro direct KLM",
+  "airport_code": "JRO",
+  "direction": "out",
+  "eur_one_way": 700,
+  "routing": "KLM direct",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-kilimanjaro-intl/kl/ams/jro",
+   "https://www.trip.com/flights/amsterdam-to-kilmanjaro/airfares-ams-jro/"
+  ],
+  "note": "Very wide: Expedia KLM one-way $1,289, Trip direct from $1,279, connecting 420-470; typical ~700"
+ },
+ {
+  "id": "L13",
+  "leg": "Lilongwe-AMS 1 connection",
+  "airport_code": "LLW",
+  "direction": "back",
+  "eur_one_way": 680,
+  "routing": "1 connection (ADD/NBO/JNB)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.travelocity.com/lp/flight-routes/ethiopian-airlines-from-kamuzu-intl-to-schiphol/et/llw/ams",
+   "https://www.booking.com/flights/route/city-to-city/mw-lilongwe-to-nl-amsterdam.html?aid=898224"
+  ],
+  "note": "One-way Ethiopian $807 (~720 EUR), Booking.com late Oct ~$711-716 (~640 EUR); ~680"
+ },
+ {
+  "id": "L14",
+  "leg": "Grenada-AMS 1 stop",
+  "airport_code": "GND",
+  "direction": "back",
+  "eur_one_way": 620,
+  "routing": "1 stop",
+  "confidence": "medium",
+  "sources": [
+   "https://www.farecompare.com/flights/Grenada-GND/Amsterdam-AMS/market.html",
+   "https://nz.trip.com/flights/grenada-to-amsterdam/airfares-gnd-ams"
+  ],
+  "note": "Farecompare avg one-way $687 (~610 EUR); Trip.com NZD 1,084 (~600 EUR)"
+ },
+ {
+  "id": "L15",
+  "leg": "AMS-Hobart",
+  "airport_code": "HBA",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "2 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/hba/amsterdam-to-hobart",
+   "https://www.kayak.com.au/flight-routes/Amsterdam-Schiphol-AMS/Hobart-HBA"
+  ],
+  "note": "One-way Expedia $893, Kayak $607-932, Farecompare avg $775; ~800"
+ },
+ {
+  "id": "L16",
+  "leg": "Hobart-AMS",
+  "airport_code": "HBA",
+  "direction": "back",
+  "eur_one_way": 750,
+  "routing": "2 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/hba/ams/hobart-a-amsterdam",
+   "https://au.trip.com/flights/hobart-to-amsterdam/airfares-hba-ams/"
+  ],
+  "note": "Expedia one-way $717 (~640 EUR), Trip.com AU$869+, Expedia AU AU$1,763+; ~750"
+ },
+ {
+  "id": "L17",
+  "leg": "Christchurch-AMS",
+  "airport_code": "CHC",
+  "direction": "back",
+  "eur_one_way": 800,
+  "routing": "2-3 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html",
+   "https://www.nz.kayak.com/flight-routes/Christchurch-CHC/Amsterdam-Schiphol-AMS",
+   "https://expedia.co.nz/lp/flights/chc/ams/christchurch-to-amsterdam"
+  ],
+  "note": "One-way Skyscanner 576 EUR, NZ$1,079 (~580 EUR), Travelocity $676, Kayak $987 (3 stops); ~800"
+ },
+ {
+  "id": "L18",
+  "leg": "AMS-Ushuaia",
+  "airport_code": "USH",
+  "direction": "out",
+  "eur_one_way": 1250,
+  "routing": "AMS-EZE/AEP + domestic to USH",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flight-routes/aerolineas-argentinas-from-schiphol-to-malvinas-argentinas-intl/ar/ams/ush",
+   "https://www.expedia.co.uk/lp/flights/ams/ush/amsterdam-to-ushuaia"
+  ],
+  "note": "One-way floors $1,595 (~1,420 EUR) and GBP 844 (~975 EUR); December peak -> ~1,250"
+ },
+ {
+  "id": "L19",
+  "leg": "AMS-Cairns",
+  "airport_code": "CNS",
+  "direction": "out",
+  "eur_one_way": 850,
+  "routing": "1-2 stops",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.ie/lp/flights/ams/cns/amsterdam-to-cairns",
+   "https://www.cheapflights.com.au/flights-to-Amsterdam/Cairns"
+  ],
+  "note": "Expedia IE one-way 839 EUR, others lower; ~850"
+ },
+ {
+  "id": "L20",
+  "leg": "Curacao-AMS 420",
+  "airport_code": "CUR",
+  "direction": "back",
+  "eur_one_way": 445,
+  "routing": "direct CUR-AMS ~350 + Bonaire-Curacao hop 95",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/cur/ams/willemstad-to-amsterdam",
+   "https://skyscanner.ie/routes/cur/ams/curacao-to-amsterdam-schiphol.html",
+   "https://www.trip.com/flights/curacao-to-amsterdam/airfares-cur-ams/"
+  ],
+  "note": "One-way direct: Expedia $319, Skyscanner 294 EUR, Trip.com $357; ~350 plus unverified 95 Bonaire hop from the note"
+ }
+]

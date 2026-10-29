@@ -33830,6 +33830,22 @@ function rbMigrateQuality202610bFixes() {
 // Filled per batch by scripts/apply_step2b_fares.js (between the markers); guarded by the old value.
 const RB_QUALITY_2B_FARES = [
   // step2b:start
+  ["gt_seed_new-zealand", 'flight_in_cost', 1200, 900],  // AMS-Christchurch (medium, 2b-1)
+  ["gt_seed_new-zealand-south-island", 'flight_in_cost', 1150, 900],  // AMS-Christchurch (medium, 2b-1)
+  ["gt_seed_cairns-great-barrier-reef", 'flight_out_cost', 1050, 750],  // Cairns-AMS (medium, 2b-1)
+  ["gt_seed_tropicaloutback-australia", 'flight_out_cost', 1050, 750],  // Cairns-AMS (medium, 2b-1)
+  ["gt_seed_fiji-vanuatu", 'flight_out_cost', 950, 750],  // Nadi-AMS (medium, 2b-1)
+  ["gt_seed_fiji", 'flight_out_cost', 950, 750],  // Nadi-AMS (medium, 2b-1)
+  ["gt_seed_peru-bolivia-andes-salt-flats-20-days", 'flight_out_cost', 650, 800],  // La Paz-AMS (medium, 2b-1)
+  ["gt_seed_bolivia", 'flight_out_cost', 580, 800],  // La Paz-AMS (medium, 2b-1)
+  ["gt_seed_andes-grand-traverse", 'flight_out_cost', 580, 800],  // La Paz-AMS (medium, 2b-1)
+  ["gt_seed_new-zealand-north-island", 'flight_in_cost', 1200, 900],  // AMS-Wellington (medium, 2b-1)
+  ["gt_seed_east-africa-safari-classic", 'flight_in_cost', 600, 700],  // AMS-Kilimanjaro direct KLM (low, 2b-1)
+  ["gt_seed_tanzania", 'flight_in_cost', 600, 700],  // AMS-Kilimanjaro direct KLM (low, 2b-1)
+  ["gt_seed_tasmania", 'flight_in_cost', 1100, 800],  // AMS-Hobart (medium, 2b-1)
+  ["gt_seed_tasmania", 'flight_out_cost', 1100, 750],  // Hobart-AMS (medium, 2b-1)
+  ["gt_seed_new-zealand-south-island", 'flight_out_cost', 1100, 800],  // Christchurch-AMS (medium, 2b-1)
+  ["gt_seed_cairns-great-barrier-reef", 'flight_in_cost', 1050, 850],  // AMS-Cairns (medium, 2b-1)
   // step2b:end
 ];
 

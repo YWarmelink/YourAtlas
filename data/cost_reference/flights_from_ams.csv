@@ -2,8 +2,8 @@ airport_code,city,country_code,direction,eur_one_way,airline_or_routing,source,d
 SJJ,Sarajevo,BA,out,230,Air Serbia/Lufthansa via BEG/FRA,Expedia/Travelocity/Air Serbia pages (USD 145-255 floors; EUR 134 promo ignored),2026-10-27,medium,typical major-carrier fare
 DEL,Delhi,IN,out,650,connecting (Gulf/Air India); KLM nonstop EUR 850+,KLM page EUR 842+ / Expedia USD 459-906,2026-10-27,low,sources spread widely
 PBH,Paro,BT,back,900,Paro-Delhi/Bangkok (Drukair) + long haul to AMS,Trip.com AMS-PBH ~EUR 1350 floor; estimated as 2 tickets ~EUR 200+700,2026-10-27,low,est
-PMC,Puerto Montt,CL,out,800,via Santiago (LATAM/KLM/Iberia),Skyscanner return from EUR 841 -> one-way estimate,2026-10-27,low,no one-way price found
-USH,Ushuaia,AR,back,1100,via Buenos Aires,Expedia one-way floors USD 1595-1682 vs 2-ticket build ~EUR 900,2026-10-27,low,estimate between floor and 2-ticket build
+PMC,Puerto Montt,CL,out,800,via Santiago,Step 2b web check: https://www.skyscanner.ie/routes/ams/pmc/amsterdam-schiphol-to-puerto-montt.html https://in.trip.com/flights/amsterdam-to-puerto-montt/airfares-ams-pmc,2026-10-29,low,"Skyscanner return from 841 EUR; Trip.com one-way mixed (~570 old one-stop, ~1,250 cheapest); no solid one-way, kept ~800"
+USH,Ushuaia,AR,back,1200,Aerolineas USH-AEP + long-haul via EZE/MAD,Step 2b web check: https://nz.trip.com/flights/ushuaia-to-amsterdam/airfares-ush-ams,2026-10-29,low,"Only Trip.com NZD 3,547 cheapest one-way (~1,750 EUR) for USH-AMS; reverse AMS-USH one-way floors $1,595 (~1,420 EUR), GBP 844 (~975 EUR); lower-middle estimate"
 SIN,Singapore,SG,back,470,reuse pilot,pilot RB_ROUTE_COSTS,2026-10-27,medium,
 MEX,Mexico City,MX,out,550,KLM direct / Aeromexico,Expedia/Omio/Monde du Voyage snapshots ($600-700; KLM EUR 596 one date),2026-10-27,medium,
 GIG,Rio de Janeiro,BR,back,650,Air France/KLM direct or LATAM/TAP via hub,Farecompare avg $706; one-way $815-1100,2026-10-27,low,One-way fares inconsistent between sources
@@ -255,7 +255,7 @@ TAS,Tashkent,UZ,out,330,via Istanbul (Turkish),route notes EUR 500-700 return; e
 SGN,Ho Chi Minh City,VN,back,480,1 stop,estimate (HAN out 520 reused as benchmark),2026-10-29,low,est
 PNH,Phnom Penh,KH,back,520,1-2 stops via Bangkok/Singapore/Doha,estimate (no search),2026-10-29,low,est
 BBK,Kasane,BW,out,800,via Johannesburg (KLM + Airlink/Air Botswana),route notes (return ±EUR 900-1300) one-way estimate; no web search,2026-10-29,low,est
-MUB,Maun,BW,back,750,Maun-JNB (~EUR 170) + KLM JNB-AMS ~EUR 580,estimate from route notes + typical JNB fare,2026-10-29,low,est
+MUB,Maun,BW,back,800,Maun-JNB + JNB-AMS (or via ADD/NBO),Step 2b web check: https://www.rome2rio.com/s/Maun/Amsterdam https://nz.trip.com/flights/maun-to-amsterdam/airfares-mub-ams,2026-10-29,low,"Rome2Rio 500-1,000 EUR; Trip.com NZD 1,436-1,743 (~720-870 EUR); ~800"
 RAI,Praia,CV,back,240,TAP via Lisbon,estimate from VXE out fare 250,2026-10-29,low,est
 ADD,Addis Ababa,ET,out,450,Ethiopian direct / 1 connection,route notes (return ±EUR 500-900) one-way estimate; no web search,2026-10-29,low,est
 ADD,Addis Ababa,ET,back,450,Ethiopian direct / 1 connection,same as out,2026-10-29,low,est
@@ -266,7 +266,7 @@ NBO,Nairobi,KE,out,480,KLM direct,route notes (return ±EUR 700-1100) one-way es
 NBO,Nairobi,KE,back,450,KLM direct,same as out,2026-10-29,low,est
 TNG,Tangier,MA,out,120,Transavia/Ryanair direct (seasonal),estimate; no web search,2026-10-29,low,est
 RAK,Marrakech,MA,back,120,Transavia/easyJet direct,route notes (return ±EUR 100-280),2026-10-29,medium,est
-TNR,Antananarivo,MG,out,650,1 stop via Paris/Nairobi,route notes (return ±EUR 650-1100),2026-10-29,low,est
+TNR,Antananarivo,MG,out,700,1 stop (Addis/Nairobi/Paris/Istanbul),Step 2b web check: https://www.travelocity.com/lp/flights/ams/tnr/amsterdam-to-antananarivo https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-ivato-intl/kl/ams/tnr,2026-10-29,medium,"One-way: Ethiopian $657, Travelocity $648, KLM $1,105-1,222, Skyscanner 472 EUR (stale); ~700"
 TNR,Antananarivo,MG,back,650,1 stop via Paris/Nairobi,same as out,2026-10-29,low,est
 MRU,Mauritius,MU,out,600,1 stop via Paris/Dubai/Istanbul,route notes (return ±EUR 600-1500),2026-10-29,low,est
 MRU,Mauritius,MU,back,600,1 stop,same as out,2026-10-29,low,est
@@ -280,19 +280,19 @@ SEZ,Mahe,SC,out,600,1 stop via Doha/Abu Dhabi/Nairobi,route notes (return ±EUR 
 SEZ,Mahe,SC,back,580,1 stop,same as out,2026-10-29,low,est
 TMS,Sao Tome,ST,out,550,TAP via Lisbon,route notes (return ±EUR 700-2500 volatile),2026-10-29,low,est
 TMS,Sao Tome,ST,back,550,TAP via Lisbon,same as out,2026-10-29,low,est
-JRO,Kilimanjaro,TZ,out,600,KLM direct,route notes (return ±EUR 1050-1500),2026-10-29,low,est
+JRO,Kilimanjaro,TZ,out,700,KLM direct,Step 2b web check: https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-kilimanjaro-intl/kl/ams/jro https://www.trip.com/flights/amsterdam-to-kilmanjaro/airfares-ams-jro/,2026-10-29,low,"Very wide: Expedia KLM one-way $1,289, Trip direct from $1,279, connecting 420-470; typical ~700"
 DAR,Dar es Salaam,TZ,back,600,1 stop (Doha/Addis/Nairobi),estimate; JRO direct would need an extra domestic flight,2026-10-29,low,est
 JNB,Johannesburg,ZA,back,560,KLM direct,estimate; no web search,2026-10-29,low,est
 MTS,Manzini,SZ,back,680,Airlink to JNB (~EUR 120) + KLM JNB-AMS (~EUR 560),estimate,2026-10-29,low,est
 HRE,Harare,ZW,out,650,via Addis (Ethiopian),route notes (return ±EUR 700-1000),2026-10-29,low,est
 VFA,Victoria Falls,ZW,back,600,via Addis (Ethiopian),route notes,2026-10-29,low,est
 LUN,Lusaka,ZM,out,600,1 connection (Nairobi/Doha/Addis),route notes (return ±EUR 600-1250),2026-10-29,low,est
-LLW,Lilongwe,MW,back,600,1 connection,route notes,2026-10-29,low,est
+LLW,Lilongwe,MW,back,680,1 connection (ADD/NBO/JNB),Step 2b web check: https://www.travelocity.com/lp/flight-routes/ethiopian-airlines-from-kamuzu-intl-to-schiphol/et/llw/ams https://www.booking.com/flights/route/city-to-city/mw-lilongwe-to-nl-amsterdam.html?aid=898224,2026-10-29,medium,"One-way Ethiopian $807 (~720 EUR), Booking.com late Oct ~$711-716 (~640 EUR); ~680"
 LPB,La Paz,BO,out,600,via Madrid/Bogota/Santa Cruz,estimate from route notes (700-1300 return),2026-10-29,low,no search
-LPB,La Paz,BO,back,580,via hub,estimate,2026-10-29,low,
+LPB,La Paz,BO,back,800,1-stop via Lima/Bogota/Madrid,Step 2b web check: https://www.skyscanner.ie/routes/lpb/ams/la-paz-to-amsterdam-schiphol.html https://www.expedia.com/lp/flights/6053938/6055842/la-paz-to-texel-island,2026-10-29,medium,"Skyscanner one-way 552 EUR (low), Expedia $904, Travelocity $886; ~800"
 BEL,Belem,BR,out,480,TAP via Lisbon,estimate from route notes (650-950 return),2026-10-29,low,
 CJC,Calama,CL,out,520,KLM AMS-Santiago + domestic to Calama,estimate from route notes (800-900 return incl. domestic),2026-10-29,low,
-PBM,Paramaribo,SR,out,750,KLM direct,estimate from route notes (1100-1800 return),2026-10-29,low,
+PBM,Paramaribo,SR,out,800,KLM direct,Step 2b web check: https://www.expedia.com/lp/flights/ams/pbm/amsterdam-to-paramaribo https://www.travelocity.com/lp/flight-routes/klm-from-schiphol-to-johan-adolf-pengel-intl/kl/ams/pbm,2026-10-29,medium,"Expedia one-way $772 (~690 EUR), KLM $1,130 (~1,010 EUR), Skyscanner 744-840 EUR; ~800"
 PBM,Paramaribo,SR,back,700,KLM direct,estimate,2026-10-29,low,
 CTG,Cartagena,CO,out,460,1 stop via Madrid/Bogota/Panama,estimate from route notes (650-900 return),2026-10-29,low,
 BOG,Bogota,CO,back,450,KLM/Avianca direct or 1 stop,estimate,2026-10-29,low,
@@ -306,12 +306,12 @@ HAV,Havana,CU,back,500,Connection (Air Europa/Air France/Turkish),estimate (mirr
 KIN,Kingston,JM,out,480,stopover via Panama City/Miami/Madrid,estimate from route notes (750-900 return),2026-10-29,low,
 KIN,Kingston,JM,back,460,stopover,estimate,2026-10-29,low,
 CUR,Curacao,CW,out,440,KLM direct,estimate from route notes (650-750 return),2026-10-29,low,
-CUR,Curacao,CW,back,420,KLM direct,estimate,2026-10-29,low,
+CUR,Curacao,CW,back,445,direct CUR-AMS ~350 + Bonaire-Curacao hop 95,Step 2b web check: https://www.expedia.com/lp/flights/cur/ams/willemstad-to-amsterdam https://skyscanner.ie/routes/cur/ams/curacao-to-amsterdam-schiphol.html,2026-10-29,medium,"One-way direct: Expedia $319, Skyscanner 294 EUR, Trip.com $357; ~350 plus unverified 95 Bonaire hop from the note"
 AUA,Aruba,AW,out,450,KLM direct,estimate from route notes (740-820 return),2026-10-29,low,
 PTP,Pointe-a-Pitre,GP,out,420,Air France/KLM via Paris,estimate from route notes (650-1700 return),2026-10-29,low,
 DOM,Dominica,DM,back,650,1-2 stops,estimate,2026-10-29,low,
 UVF,Saint Lucia,LC,out,500,via US hub,estimate from route notes (700-1000 return),2026-10-29,low,
-GND,Grenada,GD,back,600,1 stop (open-jaw),estimate,2026-10-29,low,
+GND,Grenada,GD,back,620,1 stop,Step 2b web check: https://www.farecompare.com/flights/Grenada-GND/Amsterdam-AMS/market.html https://nz.trip.com/flights/grenada-to-amsterdam/airfares-gnd-ams,2026-10-29,medium,"Farecompare avg one-way $687 (~610 EUR); Trip.com NZD 1,084 (~600 EUR)"
 UIO,Quito,EC,out,520,Iberia via Madrid,estimate from route notes (800-1000 return),2026-10-29,low,
 UIO,Quito,EC,back,500,Iberia via Madrid,estimate,2026-10-29,low,
 CUN,Cancun,MX,back,450,KLM/TUI/Transavia direct or 1 stop,estimate,2026-10-29,low,
@@ -319,23 +319,23 @@ MGA,Managua,NI,out,430,Copa via Panama City,estimate from route notes (520-900 r
 MGA,Managua,NI,back,430,Copa via Panama City,estimate,2026-10-29,low,
 LIM,Lima,PE,out,500,KLM direct,estimate from route notes (800-950 return),2026-10-29,low,
 LIM,Lima,PE,back,480,KLM direct,estimate,2026-10-29,low,
-CNS,Cairns,AU,out,1050,2+ stops via Gulf/Singapore,estimate from route notes (return EUR 1600-2500 halved; no WebSearch),2026-10-29,low,est
-CNS,Cairns,AU,back,1050,2+ stops via Gulf/Singapore,same as out,2026-10-29,low,est
+CNS,Cairns,AU,out,850,1-2 stops,Step 2b web check: https://expedia.ie/lp/flights/ams/cns/amsterdam-to-cairns https://www.cheapflights.com.au/flights-to-Amsterdam/Cairns,2026-10-29,medium,"Expedia IE one-way 839 EUR, others lower; ~850"
+CNS,Cairns,AU,back,750,1-2 stops via Gulf/Asia,Step 2b web check: https://www.skyscanner.ie/routes/cns/ams/cairns-to-amsterdam-schiphol.html https://www.kayak.com.au/flight-routes/Cairns-CNS/Amsterdam-Schiphol-AMS,2026-10-29,medium,"One-way: Skyscanner 355 EUR (likely promo), Expedia $669, Kayak $764, momondo $938; ~750"
 SYD,Sydney,AU,out,900,1 stop via Gulf/Singapore,estimate from route notes (return EUR 1100-1900),2026-10-29,low,est
 MEL,Melbourne,AU,back,850,1 stop via Gulf/Singapore,estimate from route notes,2026-10-29,low,est
 ADL,Adelaide,AU,back,850,1-2 stops,estimate (Sydney-level fare),2026-10-29,low,est
-HBA,Hobart,AU,out,1100,2 stops via hub + Melbourne/Sydney,estimate from route notes (return EUR 1300-1800),2026-10-29,low,est
-HBA,Hobart,AU,back,1100,2 stops,same as out,2026-10-29,low,est
+HBA,Hobart,AU,out,800,2 stops,Step 2b web check: https://www.expedia.com/lp/flights/ams/hba/amsterdam-to-hobart https://www.kayak.com.au/flight-routes/Amsterdam-Schiphol-AMS/Hobart-HBA,2026-10-29,medium,"One-way Expedia $893, Kayak $607-932, Farecompare avg $775; ~800"
+HBA,Hobart,AU,back,750,2 stops,Step 2b web check: https://www.expedia.com/es/lp/vuelos/hba/ams/hobart-a-amsterdam https://au.trip.com/flights/hobart-to-amsterdam/airfares-hba-ams/,2026-10-29,medium,"Expedia one-way $717 (~640 EUR), Trip.com AU$869+, Expedia AU AU$1,763+; ~750"
 PER,Perth,AU,out,800,1 stop via Gulf/Singapore,estimate from route notes (return EUR 910-1500),2026-10-29,low,est
 YYC,Calgary,CA,out,450,1 stop (KLM/Air Canada/WestJet),estimate from route notes (return EUR 650-950),2026-10-29,low,est
 YYZ,Toronto,CA,back,380,KLM/Air Canada direct,estimate (similar to SFO/YHZ rows),2026-10-29,low,est
 ANC,Anchorage,US,back,650,via Seattle/Vancouver (no direct),estimate,2026-10-29,low,est
 NAN,Nadi,FJ,out,950,multiple stops via Asia/Gulf,estimate from route notes (return EUR 1150-1500),2026-10-29,low,est
-NAN,Nadi,FJ,back,950,multiple stops,same as out,2026-10-29,low,est
-RAR,Rarotonga,CK,back,1400,via Auckland/Los Angeles,estimate,2026-10-29,low,est
-CHC,Christchurch,NZ,out,1200,2+ stops,estimate from route notes (return EUR 1300-2000),2026-10-29,low,est
-WLG,Wellington,NZ,out,1200,2-3 stops,estimate from route notes (return EUR 1400-1800),2026-10-29,low,est
-CHC,Christchurch,NZ,back,1100,1-2 stops via Asia/Gulf/US,"Estimate from AKL back 1100; no web search",2026-10-29,low,
+NAN,Nadi,FJ,back,750,multi-stop via Asia/Gulf or LAX,Step 2b web check: https://www.skyscanner.ie/routes/nan/ams/nadi-to-amsterdam-schiphol.html https://expedia.com/lp/flights/nan/ams/nadi-to-amsterdam,2026-10-29,medium,"Skyscanner one-way 702 EUR, Expedia $778; typical ~750"
+RAR,Rarotonga,CK,back,1500,"via AKL/LAX/PPT, 2+ stops",Step 2b web check: https://www.farecompare.com/flights/Amsterdam-AMS/Rarotonga-RAR/market.html https://www.rome2rio.com/s/Rarotonga/Amsterdam,2026-10-29,low,"Farecompare avg one-way $946; Rome2Rio $1,100-4,100; no solid quote; ~1,500"
+CHC,Christchurch,NZ,out,900,2-stop via Gulf/Asia,Step 2b web check: https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html https://www.nz.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Christchurch-CHC,2026-10-29,medium,"One-way quotes: 529 EUR, $724, $924, Kayak $1,343 (2 stops); lower-middle ~900"
+WLG,Wellington,NZ,out,900,2-3 stops,Step 2b web check: https://www.expedia.com/lp/flights/ams/wlg/amsterdam-to-wellington https://www.travelocity.com/lp/flights/ams/wlg/schiphol-to-wellington-intl,2026-10-29,medium,"One-way $960 (Expedia), $1,019 (Travelocity), Kayak $1,584 (3 stops); ~900"
+CHC,Christchurch,NZ,back,800,2-3 stops,Step 2b web check: https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html https://www.nz.kayak.com/flight-routes/Christchurch-CHC/Amsterdam-Schiphol-AMS,2026-10-29,medium,"One-way Skyscanner 576 EUR, NZ$1,079 (~580 EUR), Travelocity $676, Kayak $987 (3 stops); ~800"
 POM,Port Moresby,PG,out,1000,Singapore/Australia + Air Niugini (2 stops),"Estimate; notes: return EUR 1470-2020; no web search",2026-10-29,low,
 POM,Port Moresby,PG,back,950,Air Niugini/Singapore/Australia (2 stops),"Estimate; no web search",2026-10-29,low,
 ROR,Koror,PW,out,900,Manila/Seoul/Taipei (2 stops),"Estimate; notes: return EUR 1300-1750; no web search",2026-10-29,low,"fare includes USD 100 Pristine Paradise fee"
@@ -350,7 +350,7 @@ IAD,Washington Dulles,US,out,400,KLM direct,"Estimate; no web search",2026-10-29
 BOS,Boston,US,back,380,KLM direct,"Estimate; no web search",2026-10-29,low,
 LAS,Las Vegas,US,out,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
 PHX,Phoenix,US,back,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
-USH,Ushuaia,AR,out,1100,via Buenos Aires (Aerolineas/KLM + domestic),mirror of USH back; no search,2026-10-29,low,Dec high season
+USH,Ushuaia,AR,out,1250,AMS-EZE/AEP + domestic to USH,Step 2b web check: https://www.expedia.com/lp/flight-routes/aerolineas-argentinas-from-schiphol-to-malvinas-argentinas-intl/ar/ams/ush https://www.expedia.co.uk/lp/flights/ams/ush/amsterdam-to-ushuaia,2026-10-29,low,"One-way floors $1,595 (~1,420 EUR) and GBP 844 (~975 EUR); December peak -> ~1,250"
 FTE,El Calafate,AR,out,1000,via Buenos Aires + domestic,notes return EUR 1200-1800 halved plus premium; est,2026-10-29,low,
 PUQ,Punta Arenas,CL,back,900,via Santiago (LATAM/KLM),estimate (no search),2026-10-29,low,
 COO,Cotonou,BJ,back,550,via hub (Air France/Brussels/Royal Air Maroc/Turkish),estimate (no search),2026-10-29,low,
