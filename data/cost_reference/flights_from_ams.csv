@@ -220,7 +220,7 @@ MRS,Marseille,FR,back,120,Transavia/KLM/Air France,estimate (no search),2026-10-
 ADB,Izmir,TR,out,170,Transavia/Pegasus/KLM,estimate (no search),2026-10-28,low,est
 DXB,Dubai,AE,out,300,KLM/Emirates direct,WebSearch 2026-10-29 (Kayak EUR 175 / Expedia EUR 182 floors; Emirates USD 739),2026-10-29,medium,typical above floors
 DXB,Dubai,AE,back,280,KLM/Emirates direct,estimate from out fare,2026-10-29,low,est
-PBH,Paro,BT,out,900,via Delhi/Bangkok (Drukair),mirror of PBH back (batch 21),2026-10-29,low,est
+PBH,Paro,BT,out,900,"AMS-Delhi (or Bangkok) + Drukair to Paro, 2 tickets",Step 2b web check: https://drukasia.com/bhutan/drukair-fare https://www.rome2rio.com/s/Netherlands/Bhutan,2026-10-29,low,"Drukair DEL-PBH USD 549-639, BKK-PBH USD 770-1,128; plus AMS-DEL one-way ~EUR 350-450; Rome2Rio AMS-PBH USD 550-1,600."
 TBS,Tbilisi,GE,out,260,1 stop (Istanbul/Frankfurt/Zurich etc.),route notes EUR 250-400 return; est,2026-10-29,low,est
 GYD,Baku,AZ,back,280,1 stop,estimate (no search),2026-10-29,low,est
 DEL,Delhi,IN,back,550,KLM direct / connecting,notes EUR 350-550 return; est,2026-10-29,low,est
@@ -254,16 +254,16 @@ ADB,Izmir,TR,back,160,Transavia/Pegasus/KLM,estimate from ADB out fare,2026-10-2
 TAS,Tashkent,UZ,out,330,via Istanbul (Turkish),route notes EUR 500-700 return; est,2026-10-29,low,est
 SGN,Ho Chi Minh City,VN,back,480,1 stop,estimate (HAN out 520 reused as benchmark),2026-10-29,low,est
 PNH,Phnom Penh,KH,back,520,1-2 stops via Bangkok/Singapore/Doha,estimate (no search),2026-10-29,low,est
-BBK,Kasane,BW,out,800,via Johannesburg (KLM + Airlink/Air Botswana),route notes (return ±EUR 900-1300) one-way estimate; no web search,2026-10-29,low,est
+BBK,Kasane,BW,out,750,KLM/Air France to JNB + Airlink JNB-BBK,Step 2b web check: https://www.skyscanner.com/routes/bbk/nl/kasane-to-netherlands.html https://us.jetcost.com/en/flights/amsterdam-schiphol/kasane/AMS-BBK,2026-10-29,medium,"BBK->NL one-way from USD 689 (Skyscanner), USD 751 (Booking); Jetcost AMS->BBK Qatar USD 1,098."
 MUB,Maun,BW,back,800,Maun-JNB + JNB-AMS (or via ADD/NBO),Step 2b web check: https://www.rome2rio.com/s/Maun/Amsterdam https://nz.trip.com/flights/maun-to-amsterdam/airfares-mub-ams,2026-10-29,low,"Rome2Rio 500-1,000 EUR; Trip.com NZD 1,436-1,743 (~720-870 EUR); ~800"
 RAI,Praia,CV,back,240,TAP via Lisbon,estimate from VXE out fare 250,2026-10-29,low,est
 ADD,Addis Ababa,ET,out,450,Ethiopian direct / 1 connection,route notes (return ±EUR 500-900) one-way estimate; no web search,2026-10-29,low,est
 ADD,Addis Ababa,ET,back,450,Ethiopian direct / 1 connection,same as out,2026-10-29,low,est
-LBV,Libreville,GA,out,700,via Paris or Addis,reuse LBV back fare,2026-10-29,low,est
+LBV,Libreville,GA,out,700,1 stop via Paris/Casablanca/Istanbul/Addis,Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/lbv/amsterdam-a-libreville https://www.farecompare.com/flights/Amsterdam-AMS/Libreville-LBV/market.html,2026-10-29,medium,"Expedia one-way from USD 647, Farecompare avg USD 814; ~EUR 700."
 ACC,Accra,GH,out,450,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
 ACC,Accra,GH,back,420,KLM direct,same as out,2026-10-29,low,est
 NBO,Nairobi,KE,out,480,KLM direct,route notes (return ±EUR 700-1100) one-way estimate; no web search,2026-10-29,low,est
-NBO,Nairobi,KE,back,450,KLM direct,same as out,2026-10-29,low,est
+NBO,Nairobi,KE,back,420,KLM direct NBO-AMS,Step 2b web check: https://www.klm.nl/en-nl/flights-from-amsterdam-to-nairobi https://orbitz.com/lp/flights/178290/178229/nairobi-to-amsterdam,2026-10-29,medium,"Orbitz NBO->AMS one-way from USD 349, Expedia AMS->NBO USD 420, KLM page from EUR 729 (likely return); KLM direct typical ~EUR 420."
 TNG,Tangier,MA,out,120,Transavia/Ryanair direct (seasonal),estimate; no web search,2026-10-29,low,est
 RAK,Marrakech,MA,back,120,Transavia/easyJet direct,route notes (return ±EUR 100-280),2026-10-29,medium,est
 TNR,Antananarivo,MG,out,700,1 stop (Addis/Nairobi/Paris/Istanbul),Step 2b web check: https://www.travelocity.com/lp/flights/ams/tnr/amsterdam-to-antananarivo https://www.expedia.com/lp/flight-routes/klm-from-schiphol-to-ivato-intl/kl/ams/tnr,2026-10-29,medium,"One-way: Ethiopian $657, Travelocity $648, KLM $1,105-1,222, Skyscanner 472 EUR (stale); ~700"
@@ -293,10 +293,10 @@ LPB,La Paz,BO,back,800,1-stop via Lima/Bogota/Madrid,Step 2b web check: https://
 BEL,Belem,BR,out,480,TAP via Lisbon,estimate from route notes (650-950 return),2026-10-29,low,
 CJC,Calama,CL,out,520,KLM AMS-Santiago + domestic to Calama,estimate from route notes (800-900 return incl. domestic),2026-10-29,low,
 PBM,Paramaribo,SR,out,800,KLM direct,Step 2b web check: https://www.expedia.com/lp/flights/ams/pbm/amsterdam-to-paramaribo https://www.travelocity.com/lp/flight-routes/klm-from-schiphol-to-johan-adolf-pengel-intl/kl/ams/pbm,2026-10-29,medium,"Expedia one-way $772 (~690 EUR), KLM $1,130 (~1,010 EUR), Skyscanner 744-840 EUR; ~800"
-PBM,Paramaribo,SR,back,700,KLM direct,estimate,2026-10-29,low,
+PBM,Paramaribo,SR,back,650,KLM direct PBM-AMS,Step 2b web check: https://www.expedia.com/lp/flights/pbm/ams/paramaribo-to-amsterdam https://www.kayak.com/flight-routes/Paramaribo-Zanderij-Intl-PBM/Amsterdam-Schiphol-AMS,2026-10-29,medium,"Kayak one-way USD 685, Expedia USD 699-769; ~EUR 650. Leg interpreted as Paramaribo->AMS (input note empty)."
 CTG,Cartagena,CO,out,460,1 stop via Madrid/Bogota/Panama,estimate from route notes (650-900 return),2026-10-29,low,
 BOG,Bogota,CO,back,450,KLM/Avianca direct or 1 stop,estimate,2026-10-29,low,
-GUA,Guatemala City,GT,out,500,1-2 stops via Madrid/US hub,estimate from route notes (600-1300 return),2026-10-29,low,
+GUA,Guatemala City,GT,out,600,1-2 stops via US hub/Madrid/Mexico,Step 2b web check: https://www.momondo.co.uk/flights/amsterdam/guatemala-city https://www.expedia.ie/lp/flights/ams/gua/amsterdam-to-guatemala-city,2026-10-29,medium,"Momondo one-way from GBP 491 (~EUR 560), Expedia IE EUR 621; typical slightly above floor."
 GUA,Guatemala City,GT,back,480,1-2 stops,estimate,2026-10-29,low,
 PTY,Panama City,PA,out,450,KLM direct,estimate from route notes (700-900 return),2026-10-29,low,
 PTY,Panama City,PA,back,450,KLM direct,estimate,2026-10-29,low,
@@ -321,38 +321,38 @@ LIM,Lima,PE,out,500,KLM direct,estimate from route notes (800-950 return),2026-1
 LIM,Lima,PE,back,480,KLM direct,estimate,2026-10-29,low,
 CNS,Cairns,AU,out,850,1-2 stops,Step 2b web check: https://expedia.ie/lp/flights/ams/cns/amsterdam-to-cairns https://www.cheapflights.com.au/flights-to-Amsterdam/Cairns,2026-10-29,medium,"Expedia IE one-way 839 EUR, others lower; ~850"
 CNS,Cairns,AU,back,750,1-2 stops via Gulf/Asia,Step 2b web check: https://www.skyscanner.ie/routes/cns/ams/cairns-to-amsterdam-schiphol.html https://www.kayak.com.au/flight-routes/Cairns-CNS/Amsterdam-Schiphol-AMS,2026-10-29,medium,"One-way: Skyscanner 355 EUR (likely promo), Expedia $669, Kayak $764, momondo $938; ~750"
-SYD,Sydney,AU,out,900,1 stop via Gulf/Singapore,estimate from route notes (return EUR 1100-1900),2026-10-29,low,est
-MEL,Melbourne,AU,back,850,1 stop via Gulf/Singapore,estimate from route notes,2026-10-29,low,est
-ADL,Adelaide,AU,back,850,1-2 stops,estimate (Sydney-level fare),2026-10-29,low,est
+SYD,Sydney,AU,out,650,1 stop via Gulf/Asia hub,Step 2b web check: https://www.airindia.com/en-ae/book-flights/amsterdam-to-sydney-flights,2026-10-29,medium,"Air India one-way from EUR 501 (floor, 2 stops); typical 1-stop ~EUR 600-700."
+MEL,Melbourne,AU,back,600,1 stop via Gulf/Singapore,Step 2b web check: https://www.travelocity.com/es/lp/flight-routes/etihad-airways-from-tullamarine-to-schiphol/ey/mel/ams https://www.kayak.com/flight-routes/Melbourne-MEL/Amsterdam-Schiphol-AMS,2026-10-29,low,"Floors very low (Skyscanner EUR 359, Kayak typical 511-653 in unstated currency), Etihad one-way USD 558; BA USD 965, Finnair 1,028; ~EUR 600 chosen."
+ADL,Adelaide,AU,back,600,1 stop via Doha/Singapore/Dubai,Step 2b web check: https://expedia.com/lp/flights/adl/ams/adelaide-to-amsterdam https://www.travelocity.com/es/lp/flight-routes/qatar-airways-from-adelaide-to-schiphol/qr/adl/ams,2026-10-29,medium,"Expedia one-way USD 540-550 (floor), Qatar one-way USD 717; ~EUR 600."
 HBA,Hobart,AU,out,800,2 stops,Step 2b web check: https://www.expedia.com/lp/flights/ams/hba/amsterdam-to-hobart https://www.kayak.com.au/flight-routes/Amsterdam-Schiphol-AMS/Hobart-HBA,2026-10-29,medium,"One-way Expedia $893, Kayak $607-932, Farecompare avg $775; ~800"
 HBA,Hobart,AU,back,750,2 stops,Step 2b web check: https://www.expedia.com/es/lp/vuelos/hba/ams/hobart-a-amsterdam https://au.trip.com/flights/hobart-to-amsterdam/airfares-hba-ams/,2026-10-29,medium,"Expedia one-way $717 (~640 EUR), Trip.com AU$869+, Expedia AU AU$1,763+; ~750"
-PER,Perth,AU,out,800,1 stop via Gulf/Singapore,estimate from route notes (return EUR 910-1500),2026-10-29,low,est
+PER,Perth,AU,out,600,1 stop via Gulf/Singapore,Step 2b web check: https://www.skyscanner.ie/routes/ams/per/amsterdam-schiphol-to-perth.html https://www.orbitz.com/lp/flights/178229/180013/amsterdam-to-perth,2026-10-29,medium,"Skyscanner low EUR 434, Orbitz one-way from USD 716; typical ~EUR 600."
 YYC,Calgary,CA,out,450,1 stop (KLM/Air Canada/WestJet),estimate from route notes (return EUR 650-950),2026-10-29,low,est
 YYZ,Toronto,CA,back,380,KLM/Air Canada direct,estimate (similar to SFO/YHZ rows),2026-10-29,low,est
 ANC,Anchorage,US,back,650,via Seattle/Vancouver (no direct),estimate,2026-10-29,low,est
-NAN,Nadi,FJ,out,950,multiple stops via Asia/Gulf,estimate from route notes (return EUR 1150-1500),2026-10-29,low,est
+NAN,Nadi,FJ,out,800,2 stops via Middle East/Asia or LAX (Fiji Airways),Step 2b web check: https://Kiwi.com/en/cheap-flights/amsterdam-netherlands/nadi-fiji/ https://www.travelocity.com/lp/flight-routes/etihad-airways-from-schiphol-to-nadi-intl/ey/ams/nan,2026-10-29,medium,"Kiwi one-way GBP 665 (~EUR 770), Etihad one-way from USD 838 (~EUR 750)."
 NAN,Nadi,FJ,back,750,multi-stop via Asia/Gulf or LAX,Step 2b web check: https://www.skyscanner.ie/routes/nan/ams/nadi-to-amsterdam-schiphol.html https://expedia.com/lp/flights/nan/ams/nadi-to-amsterdam,2026-10-29,medium,"Skyscanner one-way 702 EUR, Expedia $778; typical ~750"
 RAR,Rarotonga,CK,back,1500,"via AKL/LAX/PPT, 2+ stops",Step 2b web check: https://www.farecompare.com/flights/Amsterdam-AMS/Rarotonga-RAR/market.html https://www.rome2rio.com/s/Rarotonga/Amsterdam,2026-10-29,low,"Farecompare avg one-way $946; Rome2Rio $1,100-4,100; no solid quote; ~1,500"
 CHC,Christchurch,NZ,out,900,2-stop via Gulf/Asia,Step 2b web check: https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html https://www.nz.kayak.com/flight-routes/Amsterdam-Schiphol-AMS/Christchurch-CHC,2026-10-29,medium,"One-way quotes: 529 EUR, $724, $924, Kayak $1,343 (2 stops); lower-middle ~900"
 WLG,Wellington,NZ,out,900,2-3 stops,Step 2b web check: https://www.expedia.com/lp/flights/ams/wlg/amsterdam-to-wellington https://www.travelocity.com/lp/flights/ams/wlg/schiphol-to-wellington-intl,2026-10-29,medium,"One-way $960 (Expedia), $1,019 (Travelocity), Kayak $1,584 (3 stops); ~900"
 CHC,Christchurch,NZ,back,800,2-3 stops,Step 2b web check: https://www.skyscanner.ie/routes/chc/ams/christchurch-to-amsterdam-schiphol.html https://www.nz.kayak.com/flight-routes/Christchurch-CHC/Amsterdam-Schiphol-AMS,2026-10-29,medium,"One-way Skyscanner 576 EUR, NZ$1,079 (~580 EUR), Travelocity $676, Kayak $987 (3 stops); ~800"
-POM,Port Moresby,PG,out,1000,Singapore/Australia + Air Niugini (2 stops),"Estimate; notes: return EUR 1470-2020; no web search",2026-10-29,low,
-POM,Port Moresby,PG,back,950,Air Niugini/Singapore/Australia (2 stops),"Estimate; no web search",2026-10-29,low,
-ROR,Koror,PW,out,900,Manila/Seoul/Taipei (2 stops),"Estimate; notes: return EUR 1300-1750; no web search",2026-10-29,low,"fare includes USD 100 Pristine Paradise fee"
-ROR,Koror,PW,back,850,Manila/Seoul/Taipei (2 stops),"Estimate; no web search",2026-10-29,low,
+POM,Port Moresby,PG,out,950,"AMS-POM via Singapore/Doha/Asia hub, 2 stops",Step 2b web check: https://www.expedia.com/lp/flights/ams/pom/amsterdam-to-port-moresby https://www.farecompare.com/flights/Amsterdam-AMS/Port_Moresby-POM/market.html,2026-10-29,low,"Aggregator one-way from USD 940 (Expedia), ~USD 1,099 (Travelocity), EUR 1,172 (ebookers); thin route, mid-range taken."
+POM,Port Moresby,PG,back,900,"POM-AMS via Singapore/Asia hub, 2 stops",Step 2b web check: https://nz.trip.com/flights/cheap-flights-to-netherlands-43/pom-to-nl https://www.expedia.com.au/lp/flights/pom/ams/port-moresby-to-amsterdam,2026-10-29,low,"Trip.com POM->NL one-way ~NZD 1,428 (~EUR 740); no clean dated reverse quote, estimated slightly below outbound."
+ROR,Koror,PW,out,950,2 stops via Taipei/Manila/Seoul (China Airlines AMS-TPE-ROR),Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/ror/amsterdam-a-koror https://us.jetcost.com/en/flights/amsterdam-schiphol/koror-airal/AMS-ROR,2026-10-29,medium,"Expedia one-way USD 946-1,062, Jetcost USD 1,282; lower-middle ~EUR 950."
+ROR,Koror,PW,back,950,2 stops via Taipei/Manila/Seoul,Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/ror/amsterdam-a-koror,2026-10-29,low,No reverse one-way quote found; set equal to AMS-ROR.
 SFO,San Francisco,US,out,450,KLM/United direct,"Estimate from SFO back 380 in reference file; no web search",2026-10-29,low,"summer out typically above back"
-SEA,Seattle,US,out,420,KLM direct,"Estimate; notes: return EUR 880-1090; no web search",2026-10-29,low,
+SEA,Seattle,US,out,500,KLM/Delta direct AMS-SEA,Step 2b web check: https://www.klm.nl/en-nl/flights-from-amsterdam-to-seattle https://www.en.kayak.de/flight-routes/Amsterdam-Schiphol-AMS/Seattle-Tacoma-Intl-SEA,2026-10-29,medium,"Skyscanner low USD 418, Kayak EUR 436, Orbitz USD 581; KLM page from EUR 738 (likely return); typical ~EUR 500."
 MIA,Miami,US,out,380,KLM direct,"Estimate; no web search",2026-10-29,low,
 MIA,Miami,US,back,360,KLM direct,"Estimate; no web search",2026-10-29,low,
-HNL,Honolulu,US,out,750,1 stop via US hub,"Estimate; no web search",2026-10-29,low,
-LIH,Lihue,US,back,800,via Honolulu/US hub,"Estimate; no web search",2026-10-29,low,
+HNL,Honolulu,US,out,800,1 stop via US hub,Step 2b web check: https://www.expedia.com/lp/flights/ams/hnl/amsterdam-to-honolulu https://www.ratepunk.com/flights-from-to/AMS/HNL/cheap-flights-from-amsterdam-to-honolulu,2026-10-29,medium,"Expedia one-way from USD 730-759, Ratepunk typical USD 1,020-1,378; lower-middle ~EUR 800."
+LIH,Lihue,US,back,650,LIH-HNL/US hub + transatlantic,Step 2b web check: https://www.expedia.com/lp/flights/lih/ams/lihue-to-amsterdam https://www.ratepunk.com/flights-from-to/lih/ams/cheap-flights-from-kauai-to-amsterdam,2026-10-29,low,"Expedia one-way from USD 478, Skyscanner USD 490, Momondo USD 1,410 on specific date; wide spread, ~EUR 650."
 IAD,Washington Dulles,US,out,400,KLM direct,"Estimate; no web search",2026-10-29,low,
 BOS,Boston,US,back,380,KLM direct,"Estimate; no web search",2026-10-29,low,
 LAS,Las Vegas,US,out,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
 PHX,Phoenix,US,back,560,1 stop via US/EU hub,"Estimate; no web search",2026-10-29,low,
 USH,Ushuaia,AR,out,1250,AMS-EZE/AEP + domestic to USH,Step 2b web check: https://www.expedia.com/lp/flight-routes/aerolineas-argentinas-from-schiphol-to-malvinas-argentinas-intl/ar/ams/ush https://www.expedia.co.uk/lp/flights/ams/ush/amsterdam-to-ushuaia,2026-10-29,low,"One-way floors $1,595 (~1,420 EUR) and GBP 844 (~975 EUR); December peak -> ~1,250"
-FTE,El Calafate,AR,out,1000,via Buenos Aires + domestic,notes return EUR 1200-1800 halved plus premium; est,2026-10-29,low,
-PUQ,Punta Arenas,CL,back,900,via Santiago (LATAM/KLM),estimate (no search),2026-10-29,low,
+FTE,El Calafate,AR,out,900,KLM/Iberia/ITA to EZE/AEP + Aerolineas domestic to FTE,Step 2b web check: https://www.expedia.com/es/lp/vuelos/ams/fte/amsterdam-a-el-calafate https://uk.trip.com/flights/amsterdam-to-el-calafate/airfares-ams-fte,2026-10-29,medium,"Expedia one-way from USD 861, Trip.com one-way GBP 1,021-1,617; typical one-stop ~EUR 900-1,000."
+PUQ,Punta Arenas,CL,back,950,LATAM PUQ-SCL + KLM/Iberia/Air France SCL-AMS,Step 2b web check: https://www.expedia.com/cn/lp/flights/ams/puq/amsterdam-to-punta-arenas https://www.rome2rio.com/s/America/Punta-Arenas,2026-10-29,low,"Expedia AMS->PUQ one-way from USD 1,055 (~EUR 940, Iberia); reverse direction assumed similar; Rome2Rio USD 650-2,700."
 COO,Cotonou,BJ,back,550,via hub (Air France/Brussels/Royal Air Maroc/Turkish),estimate (no search),2026-10-29,low,
 GEO,Georgetown,GY,out,650,KLM (technical stop Sint Maarten),notes return EUR 740-1460; est,2026-10-29,low,2x/week
 GEO,Georgetown,GY,back,600,KLM nonstop,estimate (no search),2026-10-29,low,2x/week

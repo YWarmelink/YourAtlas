@@ -1,0 +1,280 @@
+[
+ {
+  "id": "L21",
+  "leg": "AMS-Port Moresby",
+  "airport_code": "POM",
+  "direction": "out",
+  "eur_one_way": 950,
+  "routing": "AMS-POM via Singapore/Doha/Asia hub, 2 stops",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/pom/amsterdam-to-port-moresby",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Port_Moresby-POM/market.html"
+  ],
+  "note": "Aggregator one-way from USD 940 (Expedia), ~USD 1,099 (Travelocity), EUR 1,172 (ebookers); thin route, mid-range taken."
+ },
+ {
+  "id": "L22",
+  "leg": "AMS-El Calafate",
+  "airport_code": "FTE",
+  "direction": "out",
+  "eur_one_way": 900,
+  "routing": "KLM/Iberia/ITA to EZE/AEP + Aerolineas domestic to FTE",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/fte/amsterdam-a-el-calafate",
+   "https://uk.trip.com/flights/amsterdam-to-el-calafate/airfares-ams-fte"
+  ],
+  "note": "Expedia one-way from USD 861, Trip.com one-way GBP 1,021-1,617; typical one-stop ~EUR 900-1,000."
+ },
+ {
+  "id": "L23",
+  "leg": "AMS-Guatemala City",
+  "airport_code": "GUA",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "1-2 stops via US hub/Madrid/Mexico",
+  "confidence": "medium",
+  "sources": [
+   "https://www.momondo.co.uk/flights/amsterdam/guatemala-city",
+   "https://www.expedia.ie/lp/flights/ams/gua/amsterdam-to-guatemala-city"
+  ],
+  "note": "Momondo one-way from GBP 491 (~EUR 560), Expedia IE EUR 621; typical slightly above floor."
+ },
+ {
+  "id": "L24",
+  "leg": "AMS-Nadi",
+  "airport_code": "NAN",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "2 stops via Middle East/Asia or LAX (Fiji Airways)",
+  "confidence": "medium",
+  "sources": [
+   "https://Kiwi.com/en/cheap-flights/amsterdam-netherlands/nadi-fiji/",
+   "https://www.travelocity.com/lp/flight-routes/etihad-airways-from-schiphol-to-nadi-intl/ey/ams/nan"
+  ],
+  "note": "Kiwi one-way GBP 665 (~EUR 770), Etihad one-way from USD 838 (~EUR 750)."
+ },
+ {
+  "id": "L25",
+  "leg": "Port Moresby-AMS",
+  "airport_code": "POM",
+  "direction": "back",
+  "eur_one_way": 900,
+  "routing": "POM-AMS via Singapore/Asia hub, 2 stops",
+  "confidence": "low",
+  "sources": [
+   "https://nz.trip.com/flights/cheap-flights-to-netherlands-43/pom-to-nl",
+   "https://www.expedia.com.au/lp/flights/pom/ams/port-moresby-to-amsterdam"
+  ],
+  "note": "Trip.com POM->NL one-way ~NZD 1,428 (~EUR 740); no clean dated reverse quote, estimated slightly below outbound."
+ },
+ {
+  "id": "L26",
+  "leg": "AMS-Paro",
+  "airport_code": "PBH",
+  "direction": "out",
+  "eur_one_way": 900,
+  "routing": "AMS-Delhi (or Bangkok) + Drukair to Paro, 2 tickets",
+  "confidence": "low",
+  "sources": [
+   "https://drukasia.com/bhutan/drukair-fare",
+   "https://www.rome2rio.com/s/Netherlands/Bhutan"
+  ],
+  "note": "Drukair DEL-PBH USD 549-639, BKK-PBH USD 770-1,128; plus AMS-DEL one-way ~EUR 350-450; Rome2Rio AMS-PBH USD 550-1,600."
+ },
+ {
+  "id": "L27",
+  "leg": "AMS-Sydney",
+  "airport_code": "SYD",
+  "direction": "out",
+  "eur_one_way": 650,
+  "routing": "1 stop via Gulf/Asia hub",
+  "confidence": "medium",
+  "sources": [
+   "https://www.airindia.com/en-ae/book-flights/amsterdam-to-sydney-flights"
+  ],
+  "note": "Air India one-way from EUR 501 (floor, 2 stops); typical 1-stop ~EUR 600-700."
+ },
+ {
+  "id": "L28",
+  "leg": "AMS-Koror",
+  "airport_code": "ROR",
+  "direction": "out",
+  "eur_one_way": 950,
+  "routing": "2 stops via Taipei/Manila/Seoul (China Airlines AMS-TPE-ROR)",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/ror/amsterdam-a-koror",
+   "https://us.jetcost.com/en/flights/amsterdam-schiphol/koror-airal/AMS-ROR"
+  ],
+  "note": "Expedia one-way USD 946-1,062, Jetcost USD 1,282; lower-middle ~EUR 950."
+ },
+ {
+  "id": "L29",
+  "leg": "Punta Arenas-AMS",
+  "airport_code": "PUQ",
+  "direction": "back",
+  "eur_one_way": 950,
+  "routing": "LATAM PUQ-SCL + KLM/Iberia/Air France SCL-AMS",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/cn/lp/flights/ams/puq/amsterdam-to-punta-arenas",
+   "https://www.rome2rio.com/s/America/Punta-Arenas"
+  ],
+  "note": "Expedia AMS->PUQ one-way from USD 1,055 (~EUR 940, Iberia); reverse direction assumed similar; Rome2Rio USD 650-2,700."
+ },
+ {
+  "id": "L30",
+  "leg": "Nairobi-AMS direct KLM",
+  "airport_code": "NBO",
+  "direction": "back",
+  "eur_one_way": 420,
+  "routing": "KLM direct NBO-AMS",
+  "confidence": "medium",
+  "sources": [
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-nairobi",
+   "https://orbitz.com/lp/flights/178290/178229/nairobi-to-amsterdam"
+  ],
+  "note": "Orbitz NBO->AMS one-way from USD 349, Expedia AMS->NBO USD 420, KLM page from EUR 729 (likely return); KLM direct typical ~EUR 420."
+ },
+ {
+  "id": "L31",
+  "leg": "Melbourne-AMS",
+  "airport_code": "MEL",
+  "direction": "back",
+  "eur_one_way": 600,
+  "routing": "1 stop via Gulf/Singapore",
+  "confidence": "low",
+  "sources": [
+   "https://www.travelocity.com/es/lp/flight-routes/etihad-airways-from-tullamarine-to-schiphol/ey/mel/ams",
+   "https://www.kayak.com/flight-routes/Melbourne-MEL/Amsterdam-Schiphol-AMS"
+  ],
+  "note": "Floors very low (Skyscanner EUR 359, Kayak typical 511-653 in unstated currency), Etihad one-way USD 558; BA USD 965, Finnair 1,028; ~EUR 600 chosen."
+ },
+ {
+  "id": "L32",
+  "leg": "Adelaide-AMS",
+  "airport_code": "ADL",
+  "direction": "back",
+  "eur_one_way": 600,
+  "routing": "1 stop via Doha/Singapore/Dubai",
+  "confidence": "medium",
+  "sources": [
+   "https://expedia.com/lp/flights/adl/ams/adelaide-to-amsterdam",
+   "https://www.travelocity.com/es/lp/flight-routes/qatar-airways-from-adelaide-to-schiphol/qr/adl/ams"
+  ],
+  "note": "Expedia one-way USD 540-550 (floor), Qatar one-way USD 717; ~EUR 600."
+ },
+ {
+  "id": "L33",
+  "leg": "Koror-AMS",
+  "airport_code": "ROR",
+  "direction": "back",
+  "eur_one_way": 950,
+  "routing": "2 stops via Taipei/Manila/Seoul",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/ror/amsterdam-a-koror"
+  ],
+  "note": "No reverse one-way quote found; set equal to AMS-ROR."
+ },
+ {
+  "id": "L34",
+  "leg": "AMS-Seattle",
+  "airport_code": "SEA",
+  "direction": "out",
+  "eur_one_way": 500,
+  "routing": "KLM/Delta direct AMS-SEA",
+  "confidence": "medium",
+  "sources": [
+   "https://www.klm.nl/en-nl/flights-from-amsterdam-to-seattle",
+   "https://www.en.kayak.de/flight-routes/Amsterdam-Schiphol-AMS/Seattle-Tacoma-Intl-SEA"
+  ],
+  "note": "Skyscanner low USD 418, Kayak EUR 436, Orbitz USD 581; KLM page from EUR 738 (likely return); typical ~EUR 500."
+ },
+ {
+  "id": "L35",
+  "leg": "AMS-Kasane",
+  "airport_code": "BBK",
+  "direction": "out",
+  "eur_one_way": 750,
+  "routing": "KLM/Air France to JNB + Airlink JNB-BBK",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.com/routes/bbk/nl/kasane-to-netherlands.html",
+   "https://us.jetcost.com/en/flights/amsterdam-schiphol/kasane/AMS-BBK"
+  ],
+  "note": "BBK->NL one-way from USD 689 (Skyscanner), USD 751 (Booking); Jetcost AMS->BBK Qatar USD 1,098."
+ },
+ {
+  "id": "L36",
+  "leg": "AMS-Perth",
+  "airport_code": "PER",
+  "direction": "out",
+  "eur_one_way": 600,
+  "routing": "1 stop via Gulf/Singapore",
+  "confidence": "medium",
+  "sources": [
+   "https://www.skyscanner.ie/routes/ams/per/amsterdam-schiphol-to-perth.html",
+   "https://www.orbitz.com/lp/flights/178229/180013/amsterdam-to-perth"
+  ],
+  "note": "Skyscanner low EUR 434, Orbitz one-way from USD 716; typical ~EUR 600."
+ },
+ {
+  "id": "L37",
+  "leg": "Lihue-AMS",
+  "airport_code": "LIH",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "LIH-HNL/US hub + transatlantic",
+  "confidence": "low",
+  "sources": [
+   "https://www.expedia.com/lp/flights/lih/ams/lihue-to-amsterdam",
+   "https://www.ratepunk.com/flights-from-to/lih/ams/cheap-flights-from-kauai-to-amsterdam"
+  ],
+  "note": "Expedia one-way from USD 478, Skyscanner USD 490, Momondo USD 1,410 on specific date; wide spread, ~EUR 650."
+ },
+ {
+  "id": "L38",
+  "leg": "AMS-Honolulu",
+  "airport_code": "HNL",
+  "direction": "out",
+  "eur_one_way": 800,
+  "routing": "1 stop via US hub",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/ams/hnl/amsterdam-to-honolulu",
+   "https://www.ratepunk.com/flights-from-to/AMS/HNL/cheap-flights-from-amsterdam-to-honolulu"
+  ],
+  "note": "Expedia one-way from USD 730-759, Ratepunk typical USD 1,020-1,378; lower-middle ~EUR 800."
+ },
+ {
+  "id": "L39",
+  "leg": "AMS-Libreville",
+  "airport_code": "LBV",
+  "direction": "out",
+  "eur_one_way": 700,
+  "routing": "1 stop via Paris/Casablanca/Istanbul/Addis",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/es/lp/vuelos/ams/lbv/amsterdam-a-libreville",
+   "https://www.farecompare.com/flights/Amsterdam-AMS/Libreville-LBV/market.html"
+  ],
+  "note": "Expedia one-way from USD 647, Farecompare avg USD 814; ~EUR 700."
+ },
+ {
+  "id": "L40",
+  "leg": "gt_seed_suriname flight_out_cost",
+  "airport_code": "PBM",
+  "direction": "back",
+  "eur_one_way": 650,
+  "routing": "KLM direct PBM-AMS",
+  "confidence": "medium",
+  "sources": [
+   "https://www.expedia.com/lp/flights/pbm/ams/paramaribo-to-amsterdam",
+   "https://www.kayak.com/flight-routes/Paramaribo-Zanderij-Intl-PBM/Amsterdam-Schiphol-AMS"
+  ],
+  "note": "Kayak one-way USD 685, Expedia USD 699-769; ~EUR 650. Leg interpreted as Paramaribo->AMS (input note empty)."
+ }
+]

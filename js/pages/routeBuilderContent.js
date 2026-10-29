@@ -33846,6 +33846,16 @@ const RB_QUALITY_2B_FARES = [
   ["gt_seed_tasmania", 'flight_out_cost', 1100, 750],  // Hobart-AMS (medium, 2b-1)
   ["gt_seed_new-zealand-south-island", 'flight_out_cost', 1100, 800],  // Christchurch-AMS (medium, 2b-1)
   ["gt_seed_cairns-great-barrier-reef", 'flight_in_cost', 1050, 850],  // AMS-Cairns (medium, 2b-1)
+  ["gt_seed_central-america-loop", 'flight_in_cost', 500, 600],  // AMS-Guatemala City (medium, 2b-2)
+  ["gt_seed_guatemala", 'flight_in_cost', 500, 600],  // AMS-Guatemala City (medium, 2b-2)
+  ["gt_seed_fiji", 'flight_in_cost', 950, 800],  // AMS-Nadi (medium, 2b-2)
+  ["gt_seed_sydneybyron-great-ocean-road", 'flight_in_cost', 900, 650],  // AMS-Sydney (medium, 2b-2)
+  ["gt_seed_sydneybyron-great-ocean-road", 'flight_out_cost', 850, 600],  // Melbourne-AMS (low, 2b-2)
+  ["gt_seed_temperatesouthern-australia", 'flight_out_cost', 850, 600],  // Adelaide-AMS (medium, 2b-2)
+  ["gt_seed_pacific-northwest", 'flight_in_cost', 420, 500],  // AMS-Seattle (medium, 2b-2)
+  ["gt_seed_us-west-coast-roadtrip", 'flight_in_cost', 420, 500],  // AMS-Seattle (medium, 2b-2)
+  ["gt_seed_tropicaloutback-australia", 'flight_in_cost', 800, 600],  // AMS-Perth (medium, 2b-2)
+  ["gt_seed_hawaii", 'flight_out_cost', 800, 650],  // Lihue-AMS (low, 2b-2)
   // step2b:end
 ];
 

@@ -150,3 +150,4 @@ Per batch: agent writes `result_N.json` → `node scripts/apply_step2b_fares.js 
 | Batch | € weight | Status | Agent tokens |
 |---|---|---|---|
 | 2b-1 | 30,040 | done: 16 fares in 13 routes changed (−€2,210; Oceania −25-30%, La Paz +€150-220, Kilimanjaro +€100), live + pushed | 89,207 |
+| 2b-2 | 17,340 | done: 10 fares in 9 routes changed (−€890; Australia −25-30%, Guatemala City + Seattle +€80-100), live + pushed | 88,128 |
