@@ -13,7 +13,9 @@
   },
   "sheet": {
    "sheetRoutes": 452,
-   "counts": {}
+   "counts": {
+    "notes": 4
+   }
   }
  },
  "findings": [
@@ -1101,6 +1103,46 @@
    "route": null,
    "block": null,
    "message": "Dutch-text scan: no real hits (only known place-name false positives)"
+  },
+  {
+   "check": "D1",
+   "severity": "medium",
+   "route_id": "gt_seed_peru-bolivia-andes-salt-flats-20-days",
+   "route": "Peru + Bolivia: Andes & Salt Flats (20 days) 🦙🧂",
+   "block": 0,
+   "message": "#0 PE notes differs",
+   "code": "Entry: flight Amsterdam-Lima (with a connection, ±14-16 hours; from ±€800-950 return; best period June-August). Web-research price indication 2026-09, a snapsho",
+   "sheet": "Entry: flight Amsterdam-Lima (with a connection, ±14-16 hours; from ±€800-950 return; best period June-August). Web-research price indication 2026-09, a snapsho"
+  },
+  {
+   "check": "D1",
+   "severity": "medium",
+   "route_id": "gt_seed_denmark-south-sweden-9-days",
+   "route": "Denmark + South Sweden (9 days) 🌉",
+   "block": 1,
+   "message": "#1 SE notes differs",
+   "code": "Skåne (Lund, Ystad, Kivik/Österlen, 3-4 days) — same Malmö/Lund/Ystad/Kivik coordinates as the standalone South Sweden (Skåne) (9 days) 🪨 route above, since th",
+   "sheet": "Skåne (Lund, Ystad, Kivik/Österlen, 3-4 days) — same Malmö/Lund/Ystad/Kivik coordinates as the standalone South Sweden (Skåne) (9 days) 🪨 route above, since th"
+  },
+  {
+   "check": "D1",
+   "severity": "medium",
+   "route_id": "gt_seed_jersey-guernsey-channel-islands-4-5-days",
+   "route": "Jersey + Guernsey (Channel Islands) (4-5 days) 🏝️",
+   "block": 0,
+   "message": "#0 GG notes differs",
+   "code": "Entry: no direct flight from the Netherlands — routed via Southampton/Gatwick (Aurigny hub) or via Jersey. Guernsey has its own currency, pegged 1:1 to the Brit",
+   "sheet": "Entry: no direct flight from the Netherlands — routed via Southampton/Gatwick (Aurigny hub) or via Jersey. Guernsey has its own currency, pegged 1:1 to the Brit"
+  },
+  {
+   "check": "D1",
+   "severity": "medium",
+   "route_id": "gt_seed_isle-of-man-3-4-days",
+   "route": "Isle of Man (3-4 days) 🏝️",
+   "block": 0,
+   "message": "#0 IM notes differs",
+   "code": "Entry: no direct connection from the Netherlands — via the UK: fly Liverpool/Manchester/Gatwick, or the Steam Packet ferry Douglas-Heysham (year-round)/Douglas-",
+   "sheet": "Entry: no direct connection from the Netherlands — via the UK: fly Liverpool/Manchester/Gatwick, or the Steam Packet ferry Douglas-Heysham (year-round)/Douglas-"
   }
  ]
 }
