@@ -135,7 +135,11 @@ function checkFareOutliers(routes) {
     [['in', fin], ['out', fout]].forEach(([d, v]) => {
       if (v === null || v === 0) return;  // 0 = overland/own car start, deliberate
       // Short Benelux/Rhineland trips carry train/fuel costs in the flight fields, not fares.
-      const nearHome = (r.blocks || []).every(b => ['NL', 'BE', 'LU', 'DE', 'FR'].includes(b.country_code));
+      // Same for road trips that start/end by driving from/to the Netherlands (fuel in the flight field).
+      const last = (r.blocks || [])[(r.blocks || []).length - 1] || {};
+      const drives = d === 'out' ? /drive (back )?(to the Netherlands|home)|back to the Netherlands/i.test(last.transport_to_next || '')
+        : /own car|drive (from|out of) the Netherlands|from the Netherlands by car/i.test(r.travel_style || '');
+      const nearHome = drives || (r.blocks || []).every(b => ['NL', 'BE', 'LU', 'DE', 'FR'].includes(b.country_code));
       if (v < 60) add('B3', nearHome ? 'info' : 'medium', r, null, `flight ${d} €${v} is suspiciously cheap${nearHome ? ' (near-home route: train/fuel, likely fine)' : ''}`);
       if (v > 2000) add('B3', 'medium', r, null, `flight ${d} €${v} is very expensive`);
     });
@@ -227,7 +231,7 @@ function checkNoteDailyRates(app, routes) {
   for (const r of routes) {
     (r.blocks || []).forEach((b, i) => {
       const days = num(b.days), budget = num(b.budget);
-      if (!days || budget === null || !b.notes) return;
+      if (!days || budget === null || !b.notes || b.notes.includes('My plan (2026-10):')) return;  // explained (rbFixMyPlanNotes)
       // skip per-day park/entrance fees ("Hwange NP entrance ~€22/day"), they aren't a daily budget
       const hits = [...b.notes.matchAll(/€\s?(\d{2,4})(?:\s?(?:\/|per)\s?day)/gi)]
         .filter(m => !/(entrance|fee|park|permit|ticket|pass|NP)\W{0,3}~?$/i.test(b.notes.slice(Math.max(0, m.index - 25), m.index)))

@@ -63,6 +63,8 @@ const FIXES = {
   qualityb: { fn: 'rbFixQuality202610bRoute', idsFn: 'rbQuality202610bRouteIds' },
   // quality check 2b: web-verified flight fares
   fares: { fn: 'rbFixQuality2bFares', idsFn: 'rbQuality2bFareRouteIds' },
+  // My-plan clarification line on notes quoting standard €/day: applies by rule, so it scans every route
+  myplan: { fn: 'rbFixMyPlanNotes', all: true },
 };
 
 function loadApp() {
@@ -82,14 +84,16 @@ async function main() {
   const app = loadApp();
   const routes = await vm.runInContext('dataService.getGrandTripsFull()', app);
   const toPush = [];
-  for (const id of fix.ids || app[fix.idsFn]()) {
+  let done = 0;
+  for (const id of fix.all ? routes.map(r => r.id) : (fix.ids || app[fix.idsFn]())) {
     const route = routes.find(r => r.id === id);
     if (!route) { console.log(`  MISSING  ${id}`); continue; }
     const before = route.blocks.map(b => `${b.country_code}${b.days}d/€${b.budget}`).join(' ');
-    if (!app[fix.fn](route)) { console.log(`  DONE     ${route.name}: ${before}`); continue; }
+    if (!app[fix.fn](route)) { done++; if (!fix.all) console.log(`  DONE     ${route.name}: ${before}`); continue; }
     console.log(`  FIX      ${route.name}: ${before} → ${route.blocks.map(b => `${b.country_code}${b.days}d/€${b.budget}`).join(' ')}`);
     toPush.push(route);
   }
+  if (fix.all) console.log(`  DONE     ${done} route(s) need no change`);
   if (!push) { console.log(`\nDry run — ${toPush.length} route(s) would be upserted. Re-run with --push to POST.`); return; }
   for (const route of toPush) {
     const res = await fetch(APPS_SCRIPT_URL, {

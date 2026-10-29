@@ -191,9 +191,6 @@ session and put non-web work at the end of a session, not the start.
 4. **Optional: season re-check of 2b-1 and 2b-2** (web, ~2 × 90k): those 40 legs were priced as year-round averages;
    most routes start in shoulder season, so expect small moves.
 5. **Visa leftovers** (web, small): Indonesia priced €29 / €30 / €53 across 3 routes, India €22 / €36 across 2 (B4).
-6. **No-web work, for the end of a session:**
-   - Reword ~200 notes quoting the old standard €/day ("Price correction: €90→€116/day", C1 low) so they don't
-     contradict the "My plan" budget (scriptable: a regex pass + one fix list + Sheet push).
-   - British Isles & Celtic Coast "flight out €21" (B3): check whether that field holds a ferry/train cost.
-   - Phase 5 export button (ROUTE_BUILDER_BUDGET_PLAN.md), if still wanted.
+6. ~~No-web work~~ **DONE 2026-10-29**: My-plan line on 202 notes (108 routes, live), British Isles €21 = fuel home (audit tuned),
+   Export budget CSV button (Phase 5; clicked in the browser on Eurasia Grand Tour, works).
 7. **Close-out:** re-run `node scripts/quality_audit.js`, update CHANGELOG + this plan, mark the quality check done.

@@ -33889,3 +33889,32 @@ function rbMigrateQuality2bFares() {
   rbRoutes.forEach(r => { if (rbFixQuality2bFares(r)) touched = true; });
   if (touched) rbSave();
 }
+
+// ---- Quality check (2026-10-29): notes that quote the old standard €/day ----
+// ~200 blocks' notes quote standard-level €/day prices (price checks from before R2d), while the block budget is
+// Youri's lower My plan level. Rather than rewording ~130 different sentences, one dated line explains it.
+const RB_MY_PLAN_NOTE = "My plan (2026-10): the €/day figures in these notes are standard-level prices (own room, sit-down meals); this block's budget uses Youri's My plan level (mostly dorms), so it is lower.";
+
+/** Adds RB_MY_PLAN_NOTE to every block whose notes quote a €/day >25% above its own daily budget (park/entry
+ *  fees per day don't count, same filter as quality_audit.js C1). True when it changed something. */
+function rbFixMyPlanNotes(route) {
+  let changed = false;
+  (route.blocks || []).forEach(b => {
+    const days = Number(b.days), budget = Number(b.budget);
+    if (!days || !budget || !b.notes || b.notes.includes('My plan (2026-10):')) return;
+    const hits = [...b.notes.matchAll(/€\s?(\d{2,4})(?:\s?(?:\/|per)\s?day)/gi)]
+      .filter(m => !/(entrance|fee|park|permit|ticket|pass|NP)\W{0,3}~?$/i.test(b.notes.slice(Math.max(0, m.index - 25), m.index)));
+    if (!hits.length || Number(hits[hits.length - 1][1]) <= 1.25 * budget / days) return;
+    b.notes = b.notes.trimEnd() + ' ' + RB_MY_PLAN_NOTE;
+    changed = true;
+  });
+  return changed;
+}
+
+function rbMigrateMyPlanNotes() {
+  if (localStorage.getItem(RB_MIGRATE_FLAG_2026_10_MY_PLAN_NOTES)) return;
+  localStorage.setItem(RB_MIGRATE_FLAG_2026_10_MY_PLAN_NOTES, '1');
+  let touched = false;
+  rbRoutes.forEach(r => { if (rbFixMyPlanNotes(r)) touched = true; });
+  if (touched) rbSave();
+}

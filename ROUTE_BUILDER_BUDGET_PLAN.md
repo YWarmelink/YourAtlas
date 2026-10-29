@@ -289,8 +289,8 @@ Original plan:
   fields (no more "separate cost" left only in text). Done 2026-10-28 with R2c.
 - [x] CLAUDE.md: describe the cost model in one paragraph (what's in the daily rate, what isn't).
   Done 2026-10-28 ("Route Builder cost model and budget levels").
-- Optional: an "Export budget" button that produces the same per-country/transport/extras
-  breakdown as CSV, as the successor to the hand-built Excel.
+- [x] "Export budget" button that produces the same per-country/transport/extras breakdown as
+  CSV, as the successor to the hand-built Excel. Done 2026-10-29 (`rbRouteBudgetCsv()`, "⬇ Export" in the cost panel).
 
 ## Risks / watch-outs
 

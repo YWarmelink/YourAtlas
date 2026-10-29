@@ -276,6 +276,7 @@ const RB_MIGRATE_FLAG_2026_10_BATCH2126_ROUTE_FIXES = 'atlas_grand_trips_migrate
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES = 'atlas_grand_trips_migrate_2026_10_quality_fixes_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_FIXES_B = 'atlas_grand_trips_migrate_2026_10_quality_fixes_b_v1';
 const RB_MIGRATE_FLAG_2026_10_QUALITY_2B_FARES = 'atlas_grand_trips_migrate_2026_10_quality_2b_fares_v1';
+const RB_MIGRATE_FLAG_2026_10_MY_PLAN_NOTES = 'atlas_grand_trips_migrate_2026_10_my_plan_notes_v1';
 // Route ids whose RB_ROUTE_COSTS entry rbMigrateApplyRouteCosts() has already applied (a list, so
 // each later backfill batch still applies once to its own routes).
 const RB_ROUTE_COSTS_APPLIED_KEY = 'atlas_grand_trips_route_costs_applied_v1';
@@ -589,6 +590,38 @@ function rbRouteCosts(route, tierKey = 'mine') {
     flightsMissing: flightIn === null || flightOut === null, hasCosts,
     complete: incomplete === 0 && stale === 0 && flightIn !== null && flightOut !== null,
   };
+}
+
+/**
+ * The route's budget as a CSV (Phase 5 "Export budget", successor to the hand-built Excel): one line per
+ * cost item (daily budget, transport, extras per country, flights from/to NL), then a summary per budget
+ * level. Semicolons and whole euros, with a BOM, so Dutch-locale Excel opens it straight into columns.
+ */
+function rbRouteBudgetCsv(route) {
+  const cell = v => { const s = String(v ?? ''); return /[;"\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  const eur = v => { const n = rbCostNum(v); return n === null ? '' : Math.round(n); };
+  const lines = [['Section', '#', 'Country', 'Item', 'Category', 'Days', 'EUR', 'Optional']];
+  const blocks = route.blocks || [];
+  lines.push(['Getting there', '', '', 'From NL (flight, train or own car)', 'flights', '', eur(route.flight_in_cost), '']);
+  blocks.forEach((b, i) => {
+    const n = i + 1, next = blocks[i + 1];
+    const days = parseInt(b.days) || 0, budget = rbCostNum(b.budget);
+    lines.push(['Country', n, b.country, `Daily costs (My plan${budget !== null && days ? `, ~€${Math.round(budget / days)}/day` : ''})`, 'ground', days, eur(b.budget), '']);
+    if (rbCostNum(b.local_transport_cost)) lines.push(['Country', n, b.country, 'Transport within the country', 'transport', '', eur(b.local_transport_cost), '']);
+    if (next && rbCostNum(b.transport_cost) !== null) lines.push(['Country', n, b.country, `Transport to ${next.country || 'next country'}`, 'transport', '', eur(b.transport_cost), '']);
+    (b.extras || []).forEach(x => lines.push(['Country', n, b.country, x.label || '', x.category || '', '', eur(x.cost), x.optional ? 'yes' : '']));
+  });
+  lines.push(['Getting back', '', '', 'Home to NL (flight, train or own car)', 'flights', '', eur(route.flight_out_cost), '']);
+
+  const tiers = Object.keys(RB_COST_TIERS), costs = tiers.map(k => rbRouteCosts(route, k));
+  lines.push([], ['Summary', '', '', 'Per person', '', '', ...tiers.map(k => RB_COST_TIERS[k].label)]);
+  [['ground', 'Daily costs'], ['transport', 'Transport'], ['flights', 'Getting there & back'], ['extras', 'Tours & fees'],
+   ['visas', 'Visas'], ['insurance', 'Travel insurance']].forEach(([key, label]) =>
+    lines.push(['Summary', '', '', label, '', '', ...costs.map(c => Math.round(c.rows[key]))]));
+  lines.push(['Summary', '', '', `Buffer (${costs[0].bufferPct}%)`, '', '', ...costs.map(c => Math.round(c.buffer))]);
+  lines.push(['Summary', '', '', 'Total', '', costs[0].days, ...costs.map(c => Math.round(c.total))]);
+  lines.push(['Summary', '', '', 'Optional extras (not in the total)', '', '', ...costs.map(c => Math.round(c.optional))]);
+  return '﻿' + lines.map(l => l.map(cell).join(';')).join('\r\n') + '\r\n';
 }
 
 function rbBuildGrandTripPayload(route) {

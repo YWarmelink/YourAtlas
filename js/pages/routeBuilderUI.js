@@ -819,7 +819,7 @@ function rbRenderCostPanel(route) {
   panel.innerHTML = `
     <div class="rb-cost-head">
       <span class="rb-cost-title">💶 Trip cost <span class="rb-cost-row-hint">per person</span></span>
-      <div class="rb-cost-tiers">${tierButtons}</div>
+      <div class="rb-cost-tiers">${tierButtons}<button class="rb-map-mode-btn" data-cost-export title="Download this route's budget as a CSV (opens in Excel)">⬇ Export</button></div>
     </div>
     <div class="rb-cost-tier-hint">${tierHint}</div>
     <div class="rb-cost-rows">
@@ -835,6 +835,18 @@ function rbRenderCostPanel(route) {
       ${c.optional ? `<div class="rb-cost-row rb-cost-optional"><span class="rb-cost-row-label">Optional extras <span class="rb-cost-row-hint">not in the total</span></span><span class="rb-cost-row-value">+${rbEuro(c.optional)}</span></div>` : ''}
     </div>
     ${status}`;
+}
+
+/** "⬇ Export" in the cost panel: the route's budget as a CSV download (rbRouteBudgetCsv(), Core). */
+function rbDownloadBudgetCsv(route) {
+  const url = URL.createObjectURL(new Blob([rbRouteBudgetCsv(route)], { type: 'text/csv;charset=utf-8' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${(route.name || 'route').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '')}-budget.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
 }
 
 // ---- overview mode: read-only trip-at-a-glance list (map lives in the HTML alongside it) ----
@@ -1836,8 +1848,9 @@ function rbBindEvents() {
     document.getElementById(id).addEventListener('input', handleRouteCostChange));
 
   document.getElementById('rbCostPanel').addEventListener('click', e => {
-    const btn = e.target.closest('[data-cost-tier]');
     const route = rbGetCurrent();
+    if (route && e.target.closest('[data-cost-export]')) { rbDownloadBudgetCsv(route); return; }
+    const btn = e.target.closest('[data-cost-tier]');
     if (!btn || !route) return;
     rbCostTier = btn.dataset.costTier;
     try { localStorage.setItem(RB_COST_TIER_KEY, rbCostTier); } catch (_) {}
